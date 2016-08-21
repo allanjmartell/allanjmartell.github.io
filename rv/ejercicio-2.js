@@ -5,11 +5,11 @@ var renderizador=new THREE.WebGLRenderer();
 renderizador.setSize(window.innerHeight*.95,window.innerHeight*.95);
 document.body.appendChild(renderizador.domElement);
 
-var forma=new THREE.BoxGeometry(1,1,1);
+var forma=new THREE.ConeGeometry();
 var material= new THREE.MeshNormalMaterial();
-var cubo=new THREE.Mesh(forma,material);
-cubo.rotateX(-Math.PI/4);
-cubo.rotateY(Math.PI/4);
+var arbol=new THREE.Mesh(forma,material);
+arbol.rotateX(-Math.PI/4);
+arbol.rotateY(Math.PI/4);
 
-escena.add(cubo);
+escena.add(arbol);
 renderizador.render(escena,camara);
