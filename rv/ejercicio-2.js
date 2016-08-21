@@ -13,8 +13,7 @@ var material= new THREE.MeshNormalMaterial();
 var arbol=new THREE.Mesh(forma,material);
 var arbol2=new THREE.Mesh(forma2,material);
 
-arbol.rotateX(Math.PI/4);
-arbol.rotateY(Math.PI/4);
+
 arbol2.position.set(0,2,1);
 
 
