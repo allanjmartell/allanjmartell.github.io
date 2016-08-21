@@ -8,7 +8,7 @@ document.body.appendChild(renderizador.domElement);
 var forma=new THREE.CylinderGeometry(1,1,1);
 var material= new THREE.MeshNormalMaterial();
 var arbol=new THREE.Mesh(forma,material);
-arbol.rotateX(-Math.PI/4);
+arbol.rotateX(Math.PI/4);
 arbol.rotateY(Math.PI/4);
 
 escena.add(arbol);
