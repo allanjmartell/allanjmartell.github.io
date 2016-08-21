@@ -15,9 +15,8 @@ var arbol2=new THREE.Mesh(forma2,material);
 
 arbol.rotateX(Math.PI/4);
 arbol.rotateY(Math.PI/4);
-arbol2.position.set(0,2,0);
-arbol2.rotateX(Math.PI/4);
-arbol2.rotateY(Math.PI/4);
+arbol2.position.set(.5,2,0);
+
 
 escena.add(arbol,arbol2);
 renderizador.render(escena,camara);
