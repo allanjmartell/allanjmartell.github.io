@@ -11,5 +11,10 @@ var arbol=new THREE.Mesh(forma,material);
 arbol.rotateX(Math.PI/4);
 arbol.rotateY(Math.PI/4);
 
-escena.add(arbol);
+var forma2=new THREE.SphereGeometry(.5,3,2);
+var arbol2=new THREE.Mesh(forma2,material);
+arbol2.rotateX(Math.PI/4);
+arbol2.rotateY(Math.PI/4);
+
+escena.add(arbol,arbol2);
 renderizador.render(escena,camara);
