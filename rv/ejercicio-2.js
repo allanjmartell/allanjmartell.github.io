@@ -8,7 +8,7 @@ renderizador.setSize(window.innerHeight*.95,window.innerHeight*.95);
 
 document.body.appendChild(renderizador.domElement);
 
-var forma=new THREE.CylinderGeometry(5,5,20,32);
+var forma=new THREE.ConeGeometry();
 var material=new THREE.MeshNormalMaterial();
 var arbol=new THREE.Mesh(forma,material);
 
