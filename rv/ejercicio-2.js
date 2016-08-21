@@ -14,7 +14,7 @@ var arbol=new THREE.Mesh(forma,material);
 var arbol2=new THREE.Mesh(forma2,material);
 
 
-arbol2.position.set(0,2,0);
+arbol2.position.set(0,1.7,0);
 
 
 escena.add(arbol,arbol2);
