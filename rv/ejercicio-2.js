@@ -6,7 +6,7 @@ renderizador.setSize(window.innerHeight*.95,window.innerHeight*.95);
 document.body.appendChild(renderizador.domElement);
 
 var forma=new THREE.CylinderGeometry(.5,.5,2);
-var forma2=new THREE.SphereGeometry(2,8,6);
+var forma2=new THREE.SphereGeometry(1,8,6);
 
 var material= new THREE.MeshNormalMaterial();
 
