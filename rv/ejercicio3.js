@@ -30,7 +30,7 @@ cubo.faces.push(new THREE.Face3(6,7,3));//Cara 11
 cubo.computeBoundingSphere();
 cubo.computeFaceNormals();
 
-var material=new THREE.MeshNormlaMaterial();
+var material=new THREE.MeshNormalMaterial();
 var malla=new THREE.Mesh(cubo,material);
 malla.rotateX(Math.PI/4);
 
