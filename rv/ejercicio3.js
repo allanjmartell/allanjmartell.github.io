@@ -32,14 +32,13 @@ cubo.computeFaceNormals();
 
 var material=new THREE.MeshNormalMaterial();
 var malla=new THREE.Mesh(cubo,material);
-malla.rotateX(Math.PI/4);
+cubo.rotate.Z=1;
 
 var escena=new THREE.Scene();
 escena.add(malla);
 
 var camara=new THREE.PerspectiveCamera();
 camara.position.z=6;
-camara.position.x=.5;
 
 var renderizador=new THREE.WebGLRenderer();
 renderizador.setSize(window.innerHeight*.95,window.innerHeight*.95);
