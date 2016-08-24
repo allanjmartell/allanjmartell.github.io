@@ -1,13 +1,13 @@
 var cubo= new THREE.Geometry();
 
-cubo.vertices.push(new THREE.Vector3(1,0,1));//Vértice 0
-cubo.vertices.push(new THREE.Vector3(1,0,-1));//Vértice 1
-cubo.vertices.push(new THREE.Vector3(-1,0,-1));//Vértice 2
-cubo.vertices.push(new THREE.Vector3(-1,0,1));//Vértice 3
-cubo.vertices.push(new THREE.Vector3(1,2,1));//Vértice 4
-cubo.vertices.push(new THREE.Vector3(1,2,-1));//Vértice 5
-cubo.vertices.push(new THREE.Vector3(-1,2,-1));//Vértice 6
-cubo.vertices.push(new THREE.Vector3(-1,2,1));//Vértice 7
+cubo.vertices.push(new THREE.Vector3(1,-1,1));//Vértice 0
+cubo.vertices.push(new THREE.Vector3(1,-1,-1));//Vértice 1
+cubo.vertices.push(new THREE.Vector3(-1,-1,-1));//Vértice 2
+cubo.vertices.push(new THREE.Vector3(-1,-1,1));//Vértice 3
+cubo.vertices.push(new THREE.Vector3(1,1,1));//Vértice 4
+cubo.vertices.push(new THREE.Vector3(1,1,-1));//Vértice 5
+cubo.vertices.push(new THREE.Vector3(-1,1,-1));//Vértice 6
+cubo.vertices.push(new THREE.Vector3(-1,1,1));//Vértice 7
 
 //Cara superior e inferior
 cubo.faces.push(new THREE.Face3(0,1,3));//Cara 0
