@@ -10,16 +10,16 @@ cubo.vertices.push(new THREE.Vector3(-1,1,-1));//Vértice 6
 cubo.vertices.push(new THREE.Vector3(-1,1,1));//Vértice 7
 
 //Cara superior e inferior
-cubo.faces.push(new THREE.Face3(0,1,3));//Cara 0
+cubo.faces.push(new THREE.Face3(3,0,1));//Cara 0
 cubo.faces.push(new THREE.Face3(1,2,3));//Cara 1
-cubo.faces.push(new THREE.Face3(4,5,7));//Cara 2
-cubo.faces.push(new THREE.Face3(5,6,7));//Cara 3
+cubo.faces.push(new THREE.Face3(4,5,6));//Cara 2
+cubo.faces.push(new THREE.Face3(6,7,4));//Cara 3
 
 //Cara delantera y trasera
 cubo.faces.push(new THREE.Face3(0,3,7));//Cara 4
 cubo.faces.push(new THREE.Face3(7,4,0));//Cara 5
-cubo.faces.push(new THREE.Face3(6,1,5));//Cara 6
-cubo.faces.push(new THREE.Face3(6,2,1));//Cara 7
+cubo.faces.push(new THREE.Face3(2,1,5));//Cara 6
+cubo.faces.push(new THREE.Face3(5,6,2));//Cara 7
 
 //Caras laterales
 cubo.faces.push(new THREE.Face3(0,1,5));//Cara 8
