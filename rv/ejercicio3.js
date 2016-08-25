@@ -32,7 +32,7 @@ cubo.computeFaceNormals();
 
 var material=new THREE.MeshNormalMaterial();
 var malla=new THREE.Mesh(cubo,material);
-malla.rotateX(Math.PI/8);
+malla.rotateX(Math.PI/2);
 
 var escena=new THREE.Scene();
 escena.add(malla);
