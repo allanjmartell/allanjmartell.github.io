@@ -16,16 +16,16 @@ cubo.faces.push(new THREE.Face3(4,5,6));//Cara 2
 cubo.faces.push(new THREE.Face3(6,7,4));//Cara 3
 
 //Cara delantera y trasera
-cubo.faces.push(new THREE.Face3(0,3,7));//Cara 4
-cubo.faces.push(new THREE.Face3(7,4,0));//Cara 5
+cubo.faces.push(new THREE.Face3(7,3,0));//Cara 4
+cubo.faces.push(new THREE.Face3(0,4,7));//Cara 5
 cubo.faces.push(new THREE.Face3(2,1,5));//Cara 6
 cubo.faces.push(new THREE.Face3(5,6,2));//Cara 7
 
 //Caras laterales
 cubo.faces.push(new THREE.Face3(0,1,5));//Cara 8
 cubo.faces.push(new THREE.Face3(5,4,0));//Cara 9
-cubo.faces.push(new THREE.Face3(3,2,6));//Cara 10
-cubo.faces.push(new THREE.Face3(6,7,3));//Cara 11
+cubo.faces.push(new THREE.Face3(3,7,6));//Cara 10
+cubo.faces.push(new THREE.Face3(6,2,3));//Cara 11
 
 cubo.computeBoundingSphere();
 cubo.computeFaceNormals();
