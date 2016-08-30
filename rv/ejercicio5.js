@@ -1,8 +1,8 @@
-var puntos=[];
+var puntos= new THREE.Shape();
 
-for (var i=0; i<10;i++){
-  puntos.push(new THREE.Vector2(i,i));
-  }
+puntos.lineTo(5,0);
+puntos.lineTo(5,10);
+puntos.lineTo(0,10);
 
 var forma= new THREE.LatheGeometry(puntos);
 
