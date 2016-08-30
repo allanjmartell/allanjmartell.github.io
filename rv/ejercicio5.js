@@ -3,6 +3,7 @@ var puntos= new THREE.Shape();
 puntos.lineTo(5,0);
 puntos.lineTo(5,10);
 puntos.lineTo(0,10);
+puntos.lineTo(0,0);
 
 var forma= new THREE.LatheGeometry(puntos);
 
