@@ -19,8 +19,9 @@ mallabase.rotateX(Math.PI/6);
 
 //Techo
 var techo= new THREE.CylinderGeometry(15,15,5,10);
-techo.position.set(0,30);
+
 var mallatecho= new THREE.Mesh(techo,material);
+mallatecho.position.set(0,30);
 mallatecho.rotateX(Math.PI/6);
 
 var escena= new THREE.Scene();
