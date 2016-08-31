@@ -17,9 +17,14 @@ var base= new THREE.CylinderGeometry(10,10,5,10);
 var mallabase= new THREE.Mesh(base,material);
 mallabase.rotateX(Math.PI/6);
 
+//Techo
+var techo= new THREE.CylinderGeometry(15,15,5,10);
+techo.moveTo(0,30);
+var mallatecho= new THREE.Mesh(techo,material);
+mallatecho.rotateX(Math.PI/6);
 
 var escena= new THREE.Scene();
-escena.add(malla,mallabase);
+escena.add(malla,mallabase,mallatecho);
 
 var camara= new THREE.PerspectiveCamera();
 camara.position.z=100;
