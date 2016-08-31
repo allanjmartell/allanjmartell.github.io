@@ -18,7 +18,7 @@ var mallabase= new THREE.Mesh(base,material);
 mallabase.rotateX(Math.PI/6);
 
 //Techo
-var techo= new THREE.CylinderGeometry(15,15,5,10);
+var techo= new THREE.CylinderGeometry(13,13,5,10);
 
 var mallatecho= new THREE.Mesh(techo,material);
 mallatecho.translateY(30);
