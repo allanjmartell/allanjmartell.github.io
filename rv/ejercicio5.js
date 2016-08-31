@@ -45,7 +45,7 @@ estrella.lineTo(-10,20);
 
 var forma2= new THREE.ExtrudeGeometry(estrella,{amount:10});
 var mallaestrella= new THREE.Mesh(forma2,material);
-mallaestrella.translateY(300);
+mallaestrella.translateY(315);
 mallaestrella.rotateX(Math.PI/2);
 
 var escena= new THREE.Scene();
@@ -53,7 +53,7 @@ escena.add(malla,mallabase,mallatecho,mallatecho2,mallatecho3,mallaestrella);
 
 var camara= new THREE.PerspectiveCamera();
 camara.position.z=800;
-camara.position.y=100;
+camara.position.y=400;
 
 var renderizador= new THREE.WebGLRenderer();
 renderizador.setSize(window.innerHeight*.95,window.innerHeight*.95);
