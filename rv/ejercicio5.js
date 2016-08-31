@@ -19,7 +19,8 @@ mallabase.rotateX(Math.Pi/6);
 
 
 var escena= new THREE.Scene();
-escena.add(malla,mallabase);
+escena.add(malla);
+escena.add(mallabase);
 
 var camara= new THREE.PerspectiveCamera();
 camara.position.z=40;
