@@ -14,8 +14,8 @@ var mallabase= new THREE.Mesh(base,material);
 
 //Techo
 var techo= new THREE.CylinderGeometry(100,100,25,10);
-var techo2= new THREE.CylinderGeometry(50,50,40,10);
-var techo3= new THREE.CylinderGeometry(30,30,55,10);
+var techo2= new THREE.CylinderGeometry(50,50,50,10);
+var techo3= new THREE.CylinderGeometry(30,30,65,10);
 var mallatecho= new THREE.Mesh(techo,material);
 var mallatecho2= new THREE.Mesh(techo2,material);
 var mallatecho3= new THREE.Mesh(techo3,material);
@@ -53,7 +53,7 @@ escena.add(malla,mallabase,mallatecho,mallatecho2,mallatecho3,mallaestrella);
 
 var camara= new THREE.PerspectiveCamera();
 camara.position.z=800;
-camara.position.y=300;
+camara.position.y=350;
 
 var renderizador= new THREE.WebGLRenderer();
 renderizador.setSize(window.innerHeight*.95,window.innerHeight*.95);
