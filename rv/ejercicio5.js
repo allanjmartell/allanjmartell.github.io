@@ -1,7 +1,7 @@
 var torre= [];
 
 //Torre
-for (var i=0;i<20;i++){
+for (var i=0;i<50;i++){
   torre.push(new THREE.Vector2(5,i));
 }
 var formatorre= new THREE.LatheGeometry(torre);
@@ -15,15 +15,14 @@ malla.rotateX(Math.PI/6);
 var base= new THREE.CylinderGeometry(15,15,5,10);
 
 var mallabase= new THREE.Mesh(base,material);
-mallabase.rotateX(Math.Pi/6);
+mallabase.rotateX(Math.PI/6);
 
 
 var escena= new THREE.Scene();
-escena.add(malla);
-escena.add(mallabase);
+escena.add(malla,mallabase);
 
 var camara= new THREE.PerspectiveCamera();
-camara.position.z=40;
+camara.position.z=100;
 
 var renderizador= new THREE.WebGLRenderer();
 renderizador.setSize(window.innerHeight*.95,window.innerHeight*.95);
