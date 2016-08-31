@@ -14,8 +14,8 @@ var mallabase= new THREE.Mesh(base,material);
 
 //Techo
 var techo= new THREE.CylinderGeometry(100,100,35,10);
-var techo2= new THREE.CylinderGeometry(50,50,60,10);
-var techo3= new THREE.CylinderGeometry(30,30,75,10);
+var techo2= new THREE.CylinderGeometry(50,50,100,10);
+var techo3= new THREE.CylinderGeometry(30,30,135,10);
 var mallatecho= new THREE.Mesh(techo,material);
 var mallatecho2= new THREE.Mesh(techo2,material);
 var mallatecho3= new THREE.Mesh(techo3,material);
