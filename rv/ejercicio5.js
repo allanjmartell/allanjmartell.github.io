@@ -26,7 +26,6 @@ mallatecho3.translateY(30);
 //Decoración
 var estrella= new THREE.Shape();
 
-estrella.moveTo(-10,0,20);
 estrella.lineTo(-50,0,50);
 estrella.lineTo(-20,0,10);
 estrella.lineTo(-70,0,0);
