@@ -2,7 +2,7 @@ var torre= [];
 
 //Torre
 for (var i=0;i<30;i++){
-  torre.push(new THREE.Vector2(5,i));
+  torre.push(new THREE.Vector2(7,i));
 }
 var formatorre= new THREE.LatheGeometry(torre);
 
