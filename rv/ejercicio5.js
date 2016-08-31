@@ -23,6 +23,30 @@ mallatecho.translateY(30);
 mallatecho2.translateY(30);
 mallatecho3.translateY(30);
 
+//Decoración
+var estrella= new THREE.Shape();
+
+estrella.moveTo(-10,0,20);
+estrella.lineTo(-50,0,50);
+estrella.lineTo(-20,0,10);
+estrella.lineTo(-70,0,0);
+estrella.lineTo(-20,0,-10);
+estrella.lineTo(-50,0,-50);
+estrella.lineTo(-10,0,-20);
+estrella.lineTo(0,0,-70);
+estrella.lineTo(10,0,-20);
+estrella.lineTo(50,0,-50);
+estrella.lineTo(20,0,-10);
+estrella.lineTo(70,0,0);
+estrella.lineTo(20,0,10);
+estrella.lineTo(50,0,50);
+estrella.lineTo(10,0,20);
+estrella.lineTo(0,0,70);
+estrella.lineTo(-10,0,20);
+
+var forma2= new THREE.ShapeGeometry(estrella);
+var malla= new THREE.Mesh(forma2);
+
 var escena= new THREE.Scene();
 escena.add(malla,mallabase,mallatecho,mallatecho2,mallatecho3);
 
