@@ -22,7 +22,7 @@ var techo= new THREE.CylinderGeometry(13,13,5,10);
 
 var mallatecho= new THREE.Mesh(techo,material);
 mallatecho.translateY(30);
-mallatecho.translateZ(16);
+mallatecho.translateZ(20);
 mallatecho.rotateX(Math.PI/6);
 
 var escena= new THREE.Scene();
