@@ -45,7 +45,7 @@ estrella.lineTo(-10,20);
 
 var forma2= new THREE.ExtrudeGeometry(estrella,{amount:10});
 var mallaestrella= new THREE.Mesh(forma2,material);
-mallaestrella.translate(30)
+mallaestrella.translateY(100);
 mallaestrella.rotateX(Math.PI/2);
 
 var escena= new THREE.Scene();
