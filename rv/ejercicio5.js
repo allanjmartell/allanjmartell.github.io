@@ -1,6 +1,6 @@
 var puntos= [];
 
-for (var i=0;i<30;i++){
+for (var i=0;i<10;i++){
   puntos.push(new THREE.Vector2(5,i));
 }
 
