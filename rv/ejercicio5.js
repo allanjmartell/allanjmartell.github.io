@@ -9,21 +9,16 @@ var formatorre= new THREE.LatheGeometry(torre);
 var material= new THREE.MeshNormalMaterial();
 
 var malla= new THREE.Mesh(formatorre,material);
-malla.rotateX(Math.PI/6);
 
 //Base
 var base= new THREE.CylinderGeometry(13,13,5,10);
 
 var mallabase= new THREE.Mesh(base,material);
-mallabase.rotateX(Math.PI/6);
 
 //Techo
 var techo= new THREE.CylinderGeometry(15,15,5,10);
-
 var mallatecho= new THREE.Mesh(techo,material);
 mallatecho.translateY(30);
-mallatecho.translateZ(13);
-mallatecho.rotateX(Math.PI/6);
 
 var escena= new THREE.Scene();
 escena.add(malla,mallabase,mallatecho);
