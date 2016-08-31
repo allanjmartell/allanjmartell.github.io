@@ -2,7 +2,7 @@ var torre= [];
 
 //Torre
 for (var i=0;i<30;i++){
-  torre.push(new THREE.Vector2(7,i));
+  torre.push(new THREE.Vector2(10,i));
 }
 var formatorre= new THREE.LatheGeometry(torre);
 
@@ -12,17 +12,17 @@ var malla= new THREE.Mesh(formatorre,material);
 malla.rotateX(Math.PI/6);
 
 //Base
-var base= new THREE.CylinderGeometry(10,10,5,10);
+var base= new THREE.CylinderGeometry(13,13,5,10);
 
 var mallabase= new THREE.Mesh(base,material);
 mallabase.rotateX(Math.PI/6);
 
 //Techo
-var techo= new THREE.CylinderGeometry(13,13,5,10);
+var techo= new THREE.CylinderGeometry(15,15,5,10);
 
 var mallatecho= new THREE.Mesh(techo,material);
 mallatecho.translateY(30);
-mallatecho.translateZ(20);
+mallatecho.translateZ(5);
 mallatecho.rotateX(Math.PI/6);
 
 var escena= new THREE.Scene();
