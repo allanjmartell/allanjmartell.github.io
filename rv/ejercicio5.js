@@ -45,7 +45,7 @@ estrella.lineTo(0,0,70);
 estrella.lineTo(-10,0,20);
 
 var forma2= new THREE.ShapeGeometry(estrella);
-var mallaestrella= new THREE.Mesh(forma2,material);
+var mallaestrella= new THREE.Mesh(forma2);
 
 var escena= new THREE.Scene();
 escena.add(malla,mallabase,mallatecho,mallatecho2,mallatecho3,mallaestrella);
