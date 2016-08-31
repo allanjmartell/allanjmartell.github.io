@@ -52,7 +52,7 @@ var escena= new THREE.Scene();
 escena.add(malla,mallabase,mallatecho,mallatecho2,mallatecho3,mallaestrella);
 
 var camara= new THREE.PerspectiveCamera();
-camara.position.z=1000;
+camara.position.z=100;
 camara.position.y=400;
 
 var renderizador= new THREE.WebGLRenderer();
