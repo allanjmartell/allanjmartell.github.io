@@ -1,7 +1,7 @@
 var torre= [];
 
 //Torre
-for (var i=0;i<100;i++){
+for (var i=0;i<300;i++){
   torre.push(new THREE.Vector2(50,i));
 }
 var formatorre= new THREE.LatheGeometry(torre);
@@ -19,9 +19,9 @@ var techo3= new THREE.CylinderGeometry(30,30,45,10);
 var mallatecho= new THREE.Mesh(techo,material);
 var mallatecho2= new THREE.Mesh(techo2,material);
 var mallatecho3= new THREE.Mesh(techo3,material);
-mallatecho.translateY(100);
-mallatecho2.translateY(100);
-mallatecho3.translateY(100);
+mallatecho.translateY(300);
+mallatecho2.translateY(300);
+mallatecho3.translateY(300);
 
 //Decoración
 var estrella=new THREE.Shape();
@@ -45,7 +45,7 @@ estrella.lineTo(-10,20);
 
 var forma2= new THREE.ExtrudeGeometry(estrella,{amount:10});
 var mallaestrella= new THREE.Mesh(forma2,material);
-mallaestrella.translateY(100);
+mallaestrella.translateY(300);
 mallaestrella.rotateX(Math.PI/2);
 
 var escena= new THREE.Scene();
