@@ -26,7 +26,6 @@ mallatecho3.translateY(30);
 //Decoración
 var estrella=new THREE.Shape();
 
-estrella.moveTo(-10,20);
 estrella.lineTo(-50,50);
 estrella.lineTo(-20,10);
 estrella.lineTo(-70,0);
@@ -44,9 +43,7 @@ estrella.lineTo(10,20);
 estrella.lineTo(0,70);
 estrella.lineTo(-10,20);
 
-var forma= new THREE.ShapeGeometry(estrella);
-var extrudeSettings={amount:10};
-var forma2= new THREE.ExtrudeGeometry(forma,extrudeSettings);
+var forma2= new THREE.ExtrudeGeometry(estrella,{amount:10});
 var mallaestrella= new THREE.Mesh(forma2,material);
 
 var escena= new THREE.Scene();
