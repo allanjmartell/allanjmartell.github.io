@@ -42,7 +42,7 @@ estrella.vertices.push(
 	new THREE.Vector3(50,0,50),
 	new THREE.Vector3(10,0,20),
 	new THREE.Vector3(0,0,70),
-	new THREE.Vector3(-10,0,20),
+	new THREE.Vector3(-10,0,20)
 );
 estrella.faces.push( new THREE.Face3( 0, 1, 2 ) );
 estrella.computeBoundingSphere();
