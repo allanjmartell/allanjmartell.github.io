@@ -16,9 +16,9 @@ var techo= new THREE.CylinderGeometry(100,100,35,10);
 var techo2= new THREE.CylinderGeometry(50,50,100,10);
 var techo3= new THREE.CylinderGeometry(30,30,135,10);
 
-techo.translateY(300);
-techo2.translateY(300);
-techo3.translateY(300);
+techo.translate(0,300,0);
+techo2.translate(0,300,0);
+techo3.translate(0,300,0);
 
 //Decoración
 var estrella=new THREE.Shape();
