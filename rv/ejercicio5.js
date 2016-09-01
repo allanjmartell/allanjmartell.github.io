@@ -50,7 +50,7 @@ mallaestrella.rotateX(Math.PI/2);
 
 var escena= new THREE.Scene();
 escena.add(malla,mallabase,mallatecho,mallatecho2,mallatecho3,mallaestrella);
-escena.position.y=-200;
+escena.position.y=-50;
 
 var camara= new THREE.PerspectiveCamera();
 camara.position.z=800;
