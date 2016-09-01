@@ -40,7 +40,7 @@ estrella.lineTo(10,20);
 estrella.lineTo(0,70);
 estrella.lineTo(-10,20);
 
-estrella.translateY(300);
+estrella.translateY(0,300,0);
 estrella.rotateX(Math.PI/2);
 
 var forma2= new THREE.ExtrudeGeometry(estrella,{amount:20});
