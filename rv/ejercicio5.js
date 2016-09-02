@@ -43,7 +43,7 @@ estrella.lineTo(-10,20);
 
 var forma2= new THREE.ExtrudeGeometry(estrella,{amount:20});
 forma2.rotateX(Math.PI/2);
-forma2.translate(0,300,0);
+forma2.translate(0,350,0);
 
 var malla= new THREE.Mesh(formatorre);//1
 var mallabase= new THREE.Mesh(base);//2
