@@ -23,7 +23,6 @@ techo3.translate(0,300,0);
 //Decoración
 var estrella=new THREE.Shape();
 
-estrella.moveTo(-10,20);
 estrella.lineTo(-50,50);
 estrella.lineTo(-20,10);
 estrella.lineTo(-70,0);
