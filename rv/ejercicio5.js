@@ -49,7 +49,7 @@ var mallatecho2= new THREE.Mesh(techo2);//4
 var mallatecho3= new THREE.Mesh(techo3);//5
 var mallaestrella= new THREE.Mesh(forma2);//6
 
-mallaestrella.translateY(300);
+mallaestrella.translateY(250);
 mallaestrella.rotateX(Math.PI/2);
 //Cuerpo completo
 var torrefinal= new THREE.Geometry();
