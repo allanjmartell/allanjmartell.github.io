@@ -47,7 +47,7 @@ forma2.translate(0,340,0);
 
 //pico
 var pico= new THREE.TetrahedronGeometry(35,0);
-pico.translate(0,400,0);
+pico.translate(0,375,0);
 
 var malla= new THREE.Mesh(formatorre);//1
 var mallabase= new THREE.Mesh(base);//2
