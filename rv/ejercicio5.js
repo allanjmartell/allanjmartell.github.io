@@ -46,8 +46,8 @@ forma2.rotateX(Math.PI/2);
 forma2.translate(0,340,0);
 
 //pico
-var pico= new THREE.ConeGeometry(35,40,10);
-pico.translate(0,375,0);
+var pico= new THREE.ConeGeometry(30,40,10);
+pico.translate(0,400,0);
 
 var malla= new THREE.Mesh(formatorre);//1
 var mallabase= new THREE.Mesh(base);//2
