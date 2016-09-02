@@ -84,9 +84,12 @@ var torrefinal5= new THREE.Geometry();
 torrefinal5.merge(mallatorrefinal3.geometry,mallatorrefinal3.matrix);
 torrefinal5.merge(mallatorrefinal4.geometry,mallatorrefinal4.matrix);
 
+var mallatorrefinal5= new THREE.Mesh(torrefinal5);
+
 var torrefinal6= new THREE.Geometry();
 torrefinal6.merge(mallatorrefinal5.geometry,mallatorrefinal5.matrix);
 torrefinal6.merge(mallapico.geometry,mallapico.matrix);
+
 var Torrefinal= new THREE.Mesh(torrefinal6,material);
 
 var escena= new THREE.Scene();
