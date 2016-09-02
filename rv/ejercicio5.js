@@ -23,7 +23,7 @@ techo3.translate(0,300,0);
 //Decoración
 var estrella=new THREE.Shape();
 
-//estrella.moveTo(-10,20);
+estrella.moveTo(-10,20);
 estrella.lineTo(-50,50);
 estrella.lineTo(-20,10);
 estrella.lineTo(-70,0);
@@ -42,6 +42,7 @@ estrella.lineTo(0,70);
 estrella.lineTo(-10,20);
 
 var forma2= new THREE.ExtrudeGeometry(estrella,{amount:20});
+forma2.translate(0,-100,0);
 
 var malla= new THREE.Mesh(formatorre);//1
 var mallabase= new THREE.Mesh(base);//2
