@@ -46,7 +46,7 @@ forma2.rotateX(Math.PI/2);
 forma2.translate(0,340,0);
 
 //pico
-var pico= new THREE.TetrahedronGeometry(35,0);
+var pico= new THREE.ConeGeometry(35,20,32);
 pico.translate(0,375,0);
 
 var malla= new THREE.Mesh(formatorre);//1
