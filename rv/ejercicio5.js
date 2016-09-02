@@ -45,13 +45,17 @@ var forma2= new THREE.ExtrudeGeometry(estrella,{amount:20});
 forma2.rotateX(Math.PI/2);
 forma2.translate(0,340,0);
 
+//pico
+var pico= new THREE.TetrehedronGeometry(35,0);
+pico.translate(0,400,0);
+
 var malla= new THREE.Mesh(formatorre);//1
 var mallabase= new THREE.Mesh(base);//2
 var mallatecho= new THREE.Mesh(techo);//3
 var mallatecho2= new THREE.Mesh(techo2);//4
 var mallatecho3= new THREE.Mesh(techo3);//5
-var mallapico= new THREE.Mesh(forma2);//6
-
+var mallaestrella= new THREE.Mesh(forma2);//6
+var mallapico= new THREE.Mesh(pico);
 
 //Cuerpo completo
 var torrefinal= new THREE.Geometry();
@@ -64,7 +68,7 @@ torrefinal2.merge(mallatecho2.geometry,mallatecho2.matrix);
 
 var torrefinal3= new THREE.Geometry();
 torrefinal3.merge(mallatecho3.geometry,mallatecho3.matrix);
-torrefinal3.merge(mallapico.geometry,mallapico.matrix);
+torrefinal3.merge(mallaestrella.geometry,mallaestrella.matrix);
 
 var mallatorrefinal= new THREE.Mesh(torrefinal);
 var mallatorrefinal2= new THREE.Mesh(torrefinal2);
@@ -80,7 +84,10 @@ var torrefinal5= new THREE.Geometry();
 torrefinal5.merge(mallatorrefinal3.geometry,mallatorrefinal3.matrix);
 torrefinal5.merge(mallatorrefinal4.geometry,mallatorrefinal4.matrix);
 
-var Torrefinal= new THREE.Mesh(torrefinal5,material);
+var torrefinal6= new THREE.Geometry();
+torrefinal6.merge(mallatorrefinal5.geometry,mallatorrefinal5.matrix);
+torrefinal6.merge(mallapico.geometry,mallapico.matrix);
+var Torrefinal= new THREE.Mesh(torrefinal6,material);
 
 var escena= new THREE.Scene();
 escena.add(Torrefinal);
