@@ -46,8 +46,8 @@ forma2.rotateX(Math.PI/2);
 forma2.translate(0,340,0);
 
 //pico
-var pico= new THREE.ConeGeometry(35,20,32);
-pico.translate(0,375,0);
+var pico= new THREE.ConeGeometry(30,20,32);
+pico.translate(0,350,0);
 
 var malla= new THREE.Mesh(formatorre);//1
 var mallabase= new THREE.Mesh(base);//2
@@ -91,14 +91,13 @@ torrefinal6.merge(mallatorrefinal5.geometry,mallatorrefinal5.matrix);
 torrefinal6.merge(mallapico.geometry,mallapico.matrix);
 
 var Torrefinal= new THREE.Mesh(torrefinal6,material);
-Torrefinal.rotateX(Math.PI/4);
+Torrefinal.rotateX(Math.PI/6);
 
 var escena= new THREE.Scene();
 escena.add(Torrefinal);
 
 var camara= new THREE.PerspectiveCamera();
-camara.position.z=900;
-camara.position.y=300;
+camara.position.z=500;
 
 var renderizador= new THREE.WebGLRenderer();
 renderizador.setSize(window.innerHeight*.95,window.innerHeight*.95);
