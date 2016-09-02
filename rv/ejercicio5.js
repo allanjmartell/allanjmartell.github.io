@@ -85,7 +85,7 @@ var escena= new THREE.Scene();
 escena.add(Torrefinal);
 
 var camara= new THREE.PerspectiveCamera();
-camara.position.z=900;
+camara.position.z=1000;
 camara.position.y=200;
 
 var renderizador= new THREE.WebGLRenderer();
