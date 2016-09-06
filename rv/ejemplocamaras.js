@@ -17,8 +17,8 @@ esfera1.position.x=5;
 
 var esfera2= new THREE.Mesh(new THREE.SphereGeometry(1), new THREE.MeshNormalMaterial());
 
-esfera2.position.x=-10;
-esfera2.position.z=-15;
+esfera2.position.x=-0;
+esfera2.position.z=-0;
 
 var escena= new THREE.Scene();
 
