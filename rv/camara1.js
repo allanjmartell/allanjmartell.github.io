@@ -9,19 +9,21 @@ var negro= new THREE.MeshBasicMaterial(g);
 
 for (var j=1;j<=8;j++){
    //Creación de geometria
-   cubos.push(new THREE.BoxGeometry(10,10,10));
-   //cubo.translate(j*10,0,0);
+   cubos[j]=new THREE.BoxGeometry(10,10,10);
+   //cubos[j].translate(j*10,0,0);
    var m=j%2;
    //Creación de mallas
-   if (m==0){
-      mallacubo[j]= new THREE.Mesh(cubos[j],blanco);
-   }
-   else{
-      mallacubo[j]= new THREE.Mesh(cubos[j],negro);}
+   //if (m==0){
+   //   mallacubo[j]= new THREE.Mesh(cubos[j],blanco);
+   //}
+   //else{
+   //   mallacubo[j]= new THREE.Mesh(cubos[j],negro);}
 }
 
+var malla=new THREE.Mesh(cubos,blanco);
+
 var escena=new THREE.Scene();
-escena.add(mallacubo);
+escena.add(malla);
 
 var camara=new THREE.PerspectiveCamera();
 
