@@ -1,9 +1,9 @@
 var cubos=[];
 var mallacubo=[];
-var n= new THREE.Color("rgb(0,0,0)");
-var b= new THREE.Color("rgb(130,130,130)");
+var b= new THREE.Color("rgb(255,255,255)");
+var g= new THREE.Color("rgb(130,130,130)");
 var blanco= new THREE.MeshBasicMaterial(b);
-var negro= new THREE.MeshBasicMaterial(n);
+var negro= new THREE.MeshBasicMaterial(g);
 
 
 for (var j=1;j<=8;j++){
