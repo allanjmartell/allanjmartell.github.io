@@ -11,9 +11,9 @@ for (var j=1;j<=8;j++){
    //cubos[j].translate(j,0,0);
    var m=j%2;
   if (m==0){
-  mallacubo[j]= new THREE.Mesh(geometry,blanco);}
+  mallacubo[j]= new THREE.Mesh(cubo[j],blanco);}
   else{
-  mallacubo[j]= new THREE.Mesh(geometry,negro);}  
+  mallacubo[j]= new THREE.Mesh(cubo[j],negro);}  
 }
 
 var escena=new THREE.Scene();
