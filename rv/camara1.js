@@ -8,7 +8,7 @@ var negro= new THREE.MeshBasicMaterial(g);
 
 for (var j=1;j<=8;j++){
    //Creación de geometria
-   var cubo= new THREE.BoxGeometry(10,10,10));
+   var cubo= new THREE.BoxGeometry(10,10,10);
    cubo.translate(j*10,0,0);
    var m=j%2;
    //Creación de mallas
