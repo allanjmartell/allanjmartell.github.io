@@ -8,7 +8,7 @@ var negro= new THREE.MeshBasicMaterial(g);
 
 for (var j=1;j<=8;j++){
    cubos.push(new THREE.BoxGeometry(10,10,10));
-   //cubos[j].translate(j,0,0);
+   cubos[j].translate(j,0,0);
    var m=j%2;
   if (m==0){
   mallacubo[j]= new THREE.Mesh(cubos[j],blanco);}
