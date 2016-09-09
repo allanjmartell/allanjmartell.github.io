@@ -7,13 +7,19 @@ var renderizador=new THREE.WebGLRenderer();
 renderizador.setSize(window.innerHeight*.95,window.innerHeight*.95);
 document.body.appendChild(renderizador.domElement);
 
-var forma=[];
-
+var cubo=[];
 for (var i=0;i<2;i++){
-forma.faces.push(new THREE.BoxGeometry(10,10,10));}
+var forma= new THREE.Shape();
+forma.moveTo(i*10,0);
+forma.lineTo((i+1)*10,0);
+forma.lineTo((i+1)*10,10);
+forma.lineTo(i*10,10);
+forma.lineTo(i*10,0);
+cubo.push(new THREE.ShapeGeometry(forma));
+}
 
 var material= new THREE.MeshNormalMaterial();
-var cubo=new THREE.Mesh(forma,material);
+var cubo=new THREE.Mesh(cubo,material);
 cubo.rotateX(Math.PI/4);
 cubo.rotateY(Math.PI/4);
 
