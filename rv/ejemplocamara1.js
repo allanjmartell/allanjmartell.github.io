@@ -10,7 +10,7 @@ document.body.appendChild(renderizador.domElement);
 var forma=[];
 
 for (var i=0;i<2;i++){
-forma.push(new THREE.BoxGeometry(10,10,10));}
+forma.faces.push(new THREE.BoxGeometry(10,10,10));}
 
 var material= new THREE.MeshNormalMaterial();
 var cubo=new THREE.Mesh(forma,material);
