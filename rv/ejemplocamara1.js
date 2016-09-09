@@ -1,11 +1,12 @@
-var cubos=[];
+var cubo=new THREE.BoxGeometry();
 var material= new THREE.MeshNormalMaterial();
 
 for (var j=1;j<=8;j++){
-   cubos[j]=new THREE.BoxGeometry(10,10,10);
+   cubo.clone();
+   cubo.translate(j*10,0,0);
 }
 
-var malla=new THREE.Mesh(cubos,material);
+var malla=new THREE.Mesh(cubo,material);
 
 var escena=new THREE.Scene();
 escena.add(malla);
