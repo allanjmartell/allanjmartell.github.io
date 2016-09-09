@@ -9,13 +9,8 @@ document.body.appendChild(renderizador.domElement);
 
 var cubo=[];
 for (var i=0;i<2;i++){
-var forma= new THREE.Shape();
-forma.moveTo(i*10,0);
-forma.lineTo((i+1)*10,0);
-forma.lineTo((i+1)*10,10);
-forma.lineTo(i*10,10);
-forma.lineTo(i*10,0);
-cubo.push(new THREE.ShapeGeometry(forma));
+cubo[i]= new THREE.BoxGeometry();
+cubo[i].translate(i*10,0,0);
 }
 
 var material= new THREE.MeshNormalMaterial();
