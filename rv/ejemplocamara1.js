@@ -2,7 +2,7 @@ var cubos=[];
 var material= new THREE.MeshNormalMaterial();
 
 for (var j=1;j<=8;j++){
-   cubos.push(new THREE.BoxGeometry(10,10,10));
+   cubos[j]=new THREE.BoxGeometry(10,10,10));
 }
 
 var malla=new THREE.Mesh(cubos,material);
