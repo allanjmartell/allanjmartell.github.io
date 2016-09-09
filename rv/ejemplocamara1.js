@@ -9,8 +9,8 @@ document.body.appendChild(renderizador.domElement);
 
 var cubo=[];
 for (var i=0;i<2;i++){
-cubo[i]= new THREE.BoxGeometry();
-cubo[i].translate(i*10,0,0);
+cubo[[i]]= new THREE.BoxGeometry();
+cubo[[i]].translate(i*10,0,0);
 }
 
 var material= new THREE.MeshNormalMaterial();
