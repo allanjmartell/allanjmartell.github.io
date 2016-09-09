@@ -1,20 +1,16 @@
-var cubo=new THREE.BoxGeometry();
-var material= new THREE.MeshNormalMaterial();
-
-//for (var j=1;j<=8;j++){
-//   cubo.clone();
-//   cubo.translate(j*10,0,0);
-//}
-
-var malla=new THREE.Mesh(cubo,material);
-
 var escena=new THREE.Scene();
-escena.add(malla);
 
 var camara=new THREE.PerspectiveCamera();
-camara.position.z=30;
+camara.position.z=5;
 
 var renderizador=new THREE.WebGLRenderer();
 renderizador.setSize(window.innerHeight*.95,window.innerHeight*.95);
 document.body.appendChild(renderizador.domElement);
+
+var forma= new THREE.BoxGeometry(10,10,10);
+var material= new THREE.MeshNormalMaterial();
+var cubo= new THREE.Mesh(forma,material);
+
+
+escena.add(cubo);
 renderizador.render(escena,camara);
