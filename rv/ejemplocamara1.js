@@ -9,14 +9,13 @@ document.body.appendChild(renderizador.domElement);
 
 var cubo=[];
 for (var i=0;i<2;i++){
-cubo[[i]]= new THREE.BoxGeometry();
-cubo[[i]].translate(i*10,0,0);
+cubo.push(new THREE.BoxGeometry());
 }
 
 var material= new THREE.MeshNormalMaterial();
-var cubo=new THREE.Mesh(cubo,material);
-cubo.rotateX(Math.PI/4);
-cubo.rotateY(Math.PI/4);
+//var cubo=new THREE.Mesh(cubo,material);
+//cubo.rotateX(Math.PI/4);
+//cubo.rotateY(Math.PI/4);
 
-escena.add(cubo);
+//escena.add(cubo);
 renderizador.render(escena,camara);
