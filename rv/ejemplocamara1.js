@@ -11,20 +11,24 @@ var mblanco= new THREE.MeshBasicMaterial({color: 0xffffff});
 var mnegro= new THREE.MeshBasicMaterial({color: 0x686868});
 var cubo=new THREE.BoxGeometry(10,10,10);
 var grupo= new THREE.Group();
-
+var k=0;
 
 for (var i=0;i<8;i++){
-  
-if(i%2==0){var malla= new THREE.Mesh(cubo,mnegro);}
-else{var malla= new THREE.Mesh(cubo,mblanco);}
+  for(var j=0;j<8;j++){
+    
+  if(k%2==0){var malla= new THREE.Mesh(cubo,mnegro);}
+  else{var malla= new THREE.Mesh(cubo,mblanco);}
 
-malla.position.x=i*10;
+  malla.position.x=j*10;
+  malla.position.z=-i*10;
 
-malla.matrixAutoUpdate = false;
-malla.updateMatrix();
+  malla.matrixAutoUpdate = false;
+  malla.updateMatrix();
 
-grupo.add(malla);
-}
+  grupo.add(malla);
+  k++;
+}}
+
 grupo.rotateX(Math.PI/4);
 grupo.rotateY(Math.PI/4);
 
