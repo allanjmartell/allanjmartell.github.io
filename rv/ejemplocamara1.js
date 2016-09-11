@@ -7,12 +7,17 @@ var renderizador=new THREE.WebGLRenderer();
 renderizador.setSize(window.innerHeight*.95,window.innerHeight*.95);
 document.body.appendChild(renderizador.domElement);
 
-var material= new THREE.MeshNormalMaterial();
+var mblanco= new THREE.MeshBasicMaterial({color: 0xffffff});
+var mnegro= new THREE.MeshBasicMaterial({color: 0x686868})
 var cubo=new THREE.BoxGeometry(10,10,10);
 var grupo= new THREE.Group();
 
+
 for (var i=0;i<8;i++){
-var malla= new THREE.Mesh(cubo,material);
+  
+if(i%2==0){var malla= new THREE.Mesh(cubo,mnegro);}
+else{var malla= new THREE.Mesh(cubo,mblanco);}
+
 malla.position.x=i*10;
 
 malla.matrixAutoUpdate = false;
