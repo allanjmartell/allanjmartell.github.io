@@ -27,7 +27,9 @@ for (var i=0;i<8;i++){
 
   grupo.add(malla);
   k++;
-}}
+}
+  k++;
+}
 
 grupo.rotateX(Math.PI/4);
 grupo.rotateY(Math.PI/4);
