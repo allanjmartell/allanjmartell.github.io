@@ -8,12 +8,12 @@ var renderizador=new THREE.WebGLRenderer();
 renderizador.setSize(window.innerHeight*.95,window.innerHeight*.95);
 document.body.appendChild(renderizador.domElement);
 
-var textura = new THREE.TextureLoader().load( 'textures/land_ocean_ice_cloud_2048.jpg' );
+var textura = new THREE.CubeReflectionMapping
 var cubo=new THREE.BoxGeometry(10,10,10);
 
 var mblanco= new THREE.MeshBasicMaterial({color: 0xffffff});
 var mnegro= new THREE.MeshBasicMaterial({color: 0x686868});
-var mcafe= new THREE.MeshBasicMaterial({ map: textura });
+var mcafe= new THREE.MeshBasicMaterial({color: 0x714523});
 
 //Grupo1
 var grupo= new THREE.Group();
