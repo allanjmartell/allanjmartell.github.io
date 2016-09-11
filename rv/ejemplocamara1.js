@@ -9,6 +9,7 @@ document.body.appendChild(renderizador.domElement);
 
 var mblanco= new THREE.MeshBasicMaterial({color: 0xffffff});
 var mnegro= new THREE.MeshBasicMaterial({color: 0x686868});
+var mcafe= new THREE.MeshBasicMaterial({color: 0x90642B});
 var cubo=new THREE.BoxGeometry(10,10,10);
 var grupo= new THREE.Group();
 var k=0;
