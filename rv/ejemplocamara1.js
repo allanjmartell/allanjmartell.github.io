@@ -37,9 +37,9 @@ grupo.rotateY(Math.PI/4);
 
 var grupo2= new THREE.Group();
 
-for(var i=0;i<=10;i++){
+for(var l=0;l<=10;l++){
   var malla2= new THREE.Mesh(cubo,mcafe);
-  malla2.position.x=(j*10);
+  malla2.position.x=(l*10);
   malla2.matrixAutoUpdate = false;
   malla2.updateMatrix();
   grupo2.add(malla2);
