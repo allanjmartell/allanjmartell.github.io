@@ -13,9 +13,9 @@ cubo.push(new THREE.BoxGeometry());
 }
 
 var material= new THREE.MeshNormalMaterial();
-var cubo=new THREE.Mesh(cubo[1],material);
+var figura=new THREE.Mesh(cubo,material);
 //cubo.rotateX(Math.PI/4);
 //cubo.rotateY(Math.PI/4);
 
-escena.add(cubo[1]);
+escena.add(figura);
 renderizador.render(escena,camara);
