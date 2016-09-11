@@ -13,7 +13,7 @@ cubo.push(new THREE.BoxGeometry());
 }
 
 var material= new THREE.MeshNormalMaterial();
-var figura=new THREE.Mesh(cubo,material);
+var figura=new THREE.Mesh(cubo[1],material);
 //cubo.rotateX(Math.PI/4);
 //cubo.rotateY(Math.PI/4);
 
