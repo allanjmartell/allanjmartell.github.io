@@ -68,5 +68,5 @@ for(var l=1;l<9;l++){
 grupo3.rotateX(Math.PI/4);
 grupo3.rotateY(Math.PI/4);
 
-escena.add(grupo,grupo2);
+escena.add(grupo,grupo2,grupo3);
 renderizador.render(escena,camara);
