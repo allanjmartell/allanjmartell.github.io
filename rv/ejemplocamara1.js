@@ -26,7 +26,7 @@ malla.updateMatrix();
 grupo.add(malla);
 }
 grupo.rotateX(Math.PI/4);
-//figura.rotateY(Math.PI/4);
+grupo.rotateY(Math.PI/4);
 
 escena.add(grupo);
 renderizador.render(escena,camara);
