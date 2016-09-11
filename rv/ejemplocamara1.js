@@ -8,7 +8,7 @@ var renderizador=new THREE.WebGLRenderer();
 renderizador.setSize(window.innerHeight*.95,window.innerHeight*.95);
 document.body.appendChild(renderizador.domElement);
 
-var textura = new THREE.TextureLoader().load( 'textures/crate.gif' );
+var textura = new THREE.TextureLoader().load( 'madera.jpg' );
 var cubo=new THREE.BoxGeometry(10,10,10);
 
 var mblanco= new THREE.MeshBasicMaterial({color: 0xffffff});
