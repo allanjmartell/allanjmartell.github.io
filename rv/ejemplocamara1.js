@@ -8,13 +8,16 @@ var renderizador=new THREE.WebGLRenderer();
 renderizador.setSize(window.innerHeight*.95,window.innerHeight*.95);
 document.body.appendChild(renderizador.domElement);
 
+var textura = new THREE.TextureLoader().load( 'textures/crate.gif' );
+var cubo=new THREE.BoxGeometry(10,10,10);
+
 var mblanco= new THREE.MeshBasicMaterial({color: 0xffffff});
 var mnegro= new THREE.MeshBasicMaterial({color: 0x686868});
-var mcafe= new THREE.MeshBasicMaterial({color: 0x90642B});
-var cubo=new THREE.BoxGeometry(10,10,10);
+var mcafe= new THREE.MeshBasicMaterial({ map: textura });
+
+//Grupo1
 var grupo= new THREE.Group();
 var k=0;
-
 for (var i=0;i<8;i++){
   for(var j=0;j<8;j++){
     
