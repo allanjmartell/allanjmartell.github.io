@@ -15,8 +15,8 @@ cubo.push(new THREE.BoxGeometry());
 figura.push(new THREE.Mesh(cubo[i],material));
 }
 
-figura.rotateX(Math.PI/4);
-figura.rotateY(Math.PI/4);
+//figura.rotateX(Math.PI/4);
+//figura.rotateY(Math.PI/4);
 
 escena.add(figura);
 renderizador.render(escena,camara);
