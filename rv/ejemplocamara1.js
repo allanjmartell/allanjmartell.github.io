@@ -12,7 +12,7 @@ var cubo=[];
 var figura=[];
 for (var i=0;i<2;i++){
 cubo.push(new THREE.BoxGeometry());
-figura.push(new THREE.Mesh(cubo[i],material);
+figura.push(new THREE.Mesh(cubo[i],material));
 }
 
 figura.rotateX(Math.PI/4);
