@@ -37,13 +37,15 @@ grupo.rotateY(Math.PI/4);
 
 var grupo2= new THREE.Group();
 
-for(var l=0;l<=10;l++){
+for(var l=0;l<10;l++){
+  for(var m=0;m<2;m++){
   var malla2= new THREE.Mesh(cubo,mcafe);
+  if(m==1){malla2.position.z=(-100);}
   malla2.position.x=(l*10);
   malla2.matrixAutoUpdate = false;
   malla2.updateMatrix();
   grupo2.add(malla2);
-}
+}}
 
 grupo2.rotateX(Math.PI/4);
 grupo2.rotateY(Math.PI/4);
