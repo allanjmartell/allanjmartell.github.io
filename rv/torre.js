@@ -21,27 +21,9 @@ techo2.translate(0,30,0);
 techo3.translate(0,30,0);
 
 //Decoración
-var estrella=new THREE.Shape();
+var aro = new THREE.RingGeometry( 8, 12, 6 );
 
-estrella.moveTo(-1,2);
-estrella.lineTo(-5,5);
-estrella.lineTo(-2,1);
-estrella.lineTo(-7,0);
-estrella.lineTo(-2,-1);
-estrella.lineTo(-5,-5);
-estrella.lineTo(-1,-2);
-estrella.lineTo(0,-7);
-estrella.lineTo(1,-2);
-estrella.lineTo(5,-5);
-estrella.lineTo(2,-1);
-estrella.lineTo(7,0);
-estrella.lineTo(2,1);
-estrella.lineTo(5,5);
-estrella.lineTo(1,2);
-estrella.lineTo(0,7);
-estrella.lineTo(-1,2);
-
-var forma2= new THREE.ExtrudeGeometry(estrella,{amount:1});
+var forma2= new THREE.ExtrudeGeometry(aro,{amount:1});
 forma2.rotateX(Math.PI/2);
 forma2.translate(0,50,0);
 
@@ -54,7 +36,7 @@ var mallabase= new THREE.Mesh(base);//2
 var mallatecho= new THREE.Mesh(techo);//3
 var mallatecho2= new THREE.Mesh(techo2);//4
 var mallatecho3= new THREE.Mesh(techo3);//5
-var mallaestrella= new THREE.Mesh(forma2);//6
+var mallaaro= new THREE.Mesh(forma2);//6
 var mallapico= new THREE.Mesh(pico);
 
 //Cuerpo completo
@@ -68,7 +50,7 @@ torrefinal2.merge(mallatecho2.geometry,mallatecho2.matrix);
 
 var torrefinal3= new THREE.Geometry();
 torrefinal3.merge(mallatecho3.geometry,mallatecho3.matrix);
-torrefinal3.merge(mallaestrella.geometry,mallaestrella.matrix);
+torrefinal3.merge(mallaaro.geometry,mallaaro.matrix);
 
 var mallatorrefinal= new THREE.Mesh(torrefinal);
 var mallatorrefinal2= new THREE.Mesh(torrefinal2);
