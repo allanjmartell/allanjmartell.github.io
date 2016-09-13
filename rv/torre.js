@@ -43,7 +43,7 @@ estrella.lineTo(-1,2);
 
 var forma2= new THREE.ExtrudeGeometry(estrella,{amount:0.1});
 forma2.rotateX(Math.PI/2);
-forma2.translate(0,34,0);
+forma2.translate(0,50,0);
 
 //pico
 var pico= new THREE.ConeGeometry(3,4,10);
