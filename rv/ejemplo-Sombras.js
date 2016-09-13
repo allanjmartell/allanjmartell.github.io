@@ -17,8 +17,14 @@ var camara= new THREE.PerspectiveCamera();
 camara.position.z=15;
 camara.position.y=5;
 
-var lienzo= document.getElementById("luzSinSombras");
+var lienzo= document.getElementById("luzConSombras");
 var renderizador= new THREE.WebGLRenderer({canvas:lienzo,antialias:true});
 
 renderizador.setSize(600,600);
+
+renderizador.shadowMapEnabled=true;
+malla.castShadow= true;
+base.receiveShadow= true
+iluminacion.castShadow= true;
+
 renderizador.render(escena,camara);
