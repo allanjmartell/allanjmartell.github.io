@@ -11,7 +11,7 @@ var base= new THREE.Mesh(new THREE.BoxGeometry(5,.1,5),new THREE.MeshLambertMate
 var escena= new THREE.Scene();
 escena.add(malla);
 escena.add(base);
-escena.add(iluminación);
+escena.add(iluminacion);
 
 var camara= new THREE.PerspectiveCamera();
 camara.position.z=15;
