@@ -9,12 +9,12 @@ var formatorre= new THREE.LatheGeometry(torre);
 var material= new THREE.MeshNormalMaterial();
 
 //Base
-var base= new THREE.CylinderGeometry(10,10,5,1);
+var base= new THREE.CylinderGeometry(10,10,5,10);
 
 //Techo
-var techo= new THREE.CylinderGeometry(10,10,3.5,1);
-var techo2= new THREE.CylinderGeometry(5,5,10,1);
-var techo3= new THREE.CylinderGeometry(3,3,13.5,1);
+var techo= new THREE.CylinderGeometry(10,10,3.5,10);
+var techo2= new THREE.CylinderGeometry(5,5,10,10);
+var techo3= new THREE.CylinderGeometry(3,3,13.5,10);
 
 techo.translate(0,30,0);
 techo2.translate(0,30,0);
