@@ -23,7 +23,7 @@ techo3.translate(0,30,0);
 //Decoración
 var aro = new THREE.RingGeometry( 8, 12, 6 );
 
-var forma2= new THREE.ExtrudeGeometry(aro,{amount:1});
+var forma2= new THREE.ExtrudeGeometry(aro,{amount:3});
 forma2.rotateX(Math.PI/2);
 forma2.translate(0,50,0);
 
