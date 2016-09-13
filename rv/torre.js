@@ -41,7 +41,7 @@ estrella.lineTo(1,2);
 estrella.lineTo(0,7);
 estrella.lineTo(-1,2);
 
-var forma2= new THREE.ExtrudeGeometry(estrella);
+var forma2= new THREE.ExtrudeGeometry(estrella,{amount:1});
 forma2.rotateX(Math.PI/2);
 forma2.translate(0,50,0);
 
