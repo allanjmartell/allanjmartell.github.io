@@ -13,17 +13,22 @@ var base= new THREE.CylinderGeometry(10,10,5,10);
 
 //Techo
 var techo= new THREE.CylinderGeometry(10,10,3.5,6);
-var techo2= new THREE.CylinderGeometry(5,5,10,8);
+var techo2= new THREE.CylinderGeometry(4,4,10,8);
 var techo3= new THREE.CylinderGeometry(3,3,13.5,10);
 
 techo.translate(0,30,0);
 techo2.translate(0,30,0);
 techo3.translate(0,30,0);
 
+var grupo= new THREE.Group();
 //Decoración
 var cubito= new THREE.BoxGeometry(3,4,8.5);
 cubito.translate(-11,40,5);
 
+var cubito2= new THREE.BoxGeometry(3,4,8.5);
+cubito2.translate(11,40,5);
+
+grupo.add(cubito,cubito2);
 //pico
 var pico= new THREE.ConeGeometry(3,4,10);
 pico.translate(0,38.7,0);
@@ -33,7 +38,7 @@ var mallabase= new THREE.Mesh(base);//2
 var mallatecho= new THREE.Mesh(techo);//3
 var mallatecho2= new THREE.Mesh(techo2);//4
 var mallatecho3= new THREE.Mesh(techo3);//5
-var mallaanillo= new THREE.Mesh(cubito);//6
+var mallaanillo= new THREE.Mesh(grupo);//6
 var mallapico= new THREE.Mesh(pico);
 
 //Cuerpo completo
