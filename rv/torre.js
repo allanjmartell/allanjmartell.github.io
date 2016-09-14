@@ -21,19 +21,9 @@ techo2.translate(0,30,0);
 techo3.translate(0,30,0);
 
 //Decoración
-var anillo = new THREE.Shape();
-
-anillo.moveTo(0,8);
-anillo.lineTo(-7,4);
-anillo.lineTo(-7,-4);
-anillo.lineTo(0,-8);
-anillo.lineTo(7,-4);
-anillo.lineTo(7,4);
-anillo.lineTo(0,8);
-
-var forma2= new THREE.ExtrudeGeometry(anillo,{curveSegments:1,amount:2});
-forma2.rotateX(Math.PI/2);
-forma2.translate(0,50,0);
+var cubito= new THREE.BoxGeometry(2,1,1);
+cubito.rotateX(Math.PI/2);
+cubito.translate(0,34,0);
 
 //pico
 var pico= new THREE.ConeGeometry(3,4,10);
@@ -44,7 +34,7 @@ var mallabase= new THREE.Mesh(base);//2
 var mallatecho= new THREE.Mesh(techo);//3
 var mallatecho2= new THREE.Mesh(techo2);//4
 var mallatecho3= new THREE.Mesh(techo3);//5
-var mallaanillo= new THREE.Mesh(forma2);//6
+var mallaanillo= new THREE.Mesh(cubito);//6
 var mallapico= new THREE.Mesh(pico);
 
 //Cuerpo completo
