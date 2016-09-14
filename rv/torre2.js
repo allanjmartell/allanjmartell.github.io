@@ -30,7 +30,7 @@ cubito2.translate(3.5,33.5,6);
 
 var cubito3= new THREE.BoxGeometry(3,4,9.5);
 cubito3.rotateY(Math.PI/3);
-cubito3.translate(-3.5,33.5,6);
+cubito3.translate(3.5,33.5,-6);
 
 //pico
 var pico= new THREE.ConeGeometry(3,4,10);
