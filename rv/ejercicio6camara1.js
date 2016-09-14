@@ -73,7 +73,8 @@ grupo3.rotateY(Math.PI/4);
 
 Torrefinal.rotateX(Math.PI/4);
 Torrefinal.rotateY(Math.PI/4);
-Torrefinal.position.y=20;
+Torrefinal.position.y=10;
+Torrefinal.position.z=-10;
 
 escena.add(grupo,grupo2,grupo3,Torrefinal);
 renderizador.render(escena,camara);
