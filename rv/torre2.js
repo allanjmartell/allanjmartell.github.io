@@ -82,14 +82,14 @@ torrefinal7.merge(mallacubito2.geometry,mallacubito2.matrix);
 
 var Torrefinal= new THREE.Mesh(torrefinal7,material);
 
-Torrefinal.rotateX(Math.PI/-2);
+//Torrefinal.rotateX(Math.PI/-2);
 
 var escena= new THREE.Scene();
 escena.add(Torrefinal);
 
 var camara= new THREE.PerspectiveCamera();
-//camara.position.z=50;
-camara.position.y=50;
+camara.position.z=50;
+camara.position.y=30;
 
 var renderizador= new THREE.WebGLRenderer();
 renderizador.setSize(window.innerHeight*.95,window.innerHeight*.95);
