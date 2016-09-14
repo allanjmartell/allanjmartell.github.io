@@ -4,7 +4,6 @@ var escena= new THREE.Scene();
 var camara= new THREE.PerspectiveCamera();
 camara.position.z=50;
 camara.position.y=40;
-camara.rotateX(Math.PI/6);
 
 var torre= [];
 
@@ -89,6 +88,8 @@ torrefinal7.merge(mallatorrefinal6.geometry,mallatorrefinal6.matrix);
 torrefinal7.merge(mallacubito2.geometry,mallacubito2.matrix);
 
 var Torrefinal= new THREE.Mesh(torrefinal7,material);
+
+Torrefinal.rotateX(Math.PI/2);
 
 escena.add(Torrefinal);
 
