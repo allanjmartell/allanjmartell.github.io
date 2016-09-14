@@ -21,9 +21,17 @@ techo2.translate(0,30,0);
 techo3.translate(0,30,0);
 
 //Decoración
-var anillo = new THREE.RingGeometry(8,12,6);
+var anillo = new THREE.Shape();
 
-var forma2= new THREE.ExtrudeGeometry(anillo,{amount:3});
+anillo.moveTo(0,8);
+anillo.lineTo(-7,4);
+anillo.lineTo(-7,-4);
+anillo.lineTo(0,-8);
+anillo.lineTo(7,-4);
+anillo.lineTo(7,4);
+anillo.lineTo(0,8);
+
+var forma2= new THREE.ExtrudeGeometry(anillo,{amount:2});
 forma2.rotateX(Math.PI/2);
 forma2.translate(0,50,0);
 
