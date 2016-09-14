@@ -93,7 +93,7 @@ torrefinal8.merge(mallacubito3.geometry,mallacubito3.matrix);
 
 var Torrefinal= new THREE.Mesh(torrefinal8,material);
 
-Torrefinal.rotateX(Math.PI/2);
+Torrefinal.rotateX(Math.PI/3);
 
 var escena= new THREE.Scene();
 escena.add(Torrefinal);
