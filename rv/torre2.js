@@ -7,6 +7,7 @@ for (var i=0;i<30;i++){
 
 var formatorre= new THREE.LatheGeometry(torre);
 var material= new THREE.MeshNormalMaterial();
+var material2= new THREE.MeshBasicMaterial({color: 0xFF00FF});
 
 //Base
 var base= new THREE.CylinderGeometry(10,10,5,10);
@@ -37,8 +38,8 @@ var mallabase= new THREE.Mesh(base);//2
 var mallatecho= new THREE.Mesh(techo);//3
 var mallatecho2= new THREE.Mesh(techo2);//4
 var mallatecho3= new THREE.Mesh(techo3);//5
-var mallaanillo= new THREE.Mesh(cubito);//6
-var mallacubito2= new THREE.Mesh(cubito2);
+var mallaanillo= new THREE.Mesh(cubito,material2);//6
+var mallacubito2= new THREE.Mesh(cubito2,material2);
 var mallapico= new THREE.Mesh(pico);
 
 //Cuerpo completo
