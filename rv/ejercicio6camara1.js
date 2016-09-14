@@ -1,5 +1,5 @@
 var escena=new THREE.Scene();
-escena.rotateX(Math.PI/-4);
+escena.rotateX(Math.PI/12);
 
 var camara=new THREE.PerspectiveCamera();
 camara.position.z=150;
