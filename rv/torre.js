@@ -21,8 +21,8 @@ techo2.translate(0,30,0);
 techo3.translate(0,30,0);
 
 //Decoración
-var cubito= new THREE.BoxGeometry(4,3,3);
-cubito.translate(-10,40,10);
+var cubito= new THREE.BoxGeometry(3,6,5);
+cubito.translate(-10,40,0);
 
 //pico
 var pico= new THREE.ConeGeometry(3,4,10);
