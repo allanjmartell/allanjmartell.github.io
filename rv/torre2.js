@@ -25,7 +25,7 @@ var cubito= new THREE.BoxGeometry(3,4,8.5);
 cubito.translate(-7,34,2);
 
 var cubito2= new THREE.BoxGeometry(3,4,8.5);
-cubito2.rotateY(Math.PI/-4);
+cubito2.rotateY(Math.PI/-3);
 cubito2.translate(3,34,5);
 
 //pico
