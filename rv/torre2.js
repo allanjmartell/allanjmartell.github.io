@@ -4,7 +4,7 @@ var escena= new THREE.Scene();
 var camara= new THREE.PerspectiveCamera();
 camara.position.z=50;
 camara.position.y=40;
-camara.rotateX(Math.PI/2);
+camara.rotateX(Math.PI/6);
 
 var torre= [];
 
