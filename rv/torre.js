@@ -31,7 +31,7 @@ anillo.lineTo(7,-4);
 anillo.lineTo(7,4);
 anillo.lineTo(0,8);
 
-var forma2= new THREE.ExtrudeGeometry(anillo,{amount:2});
+var forma2= new THREE.ExtrudeGeometry(anillo,{curveSegments:1,amount:2});
 forma2.rotateX(Math.PI/2);
 forma2.translate(0,50,0);
 
