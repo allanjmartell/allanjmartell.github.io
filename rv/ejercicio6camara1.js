@@ -2,7 +2,7 @@ var escena=new THREE.Scene();
 escena.rotateX(Math.PI/4);
 
 var camara=new THREE.PerspectiveCamera();
-camara.position.z=150;
+camara.position.z=500;
 //camara.position.y=20;
 
 var renderizador=new THREE.WebGLRenderer();
@@ -74,7 +74,7 @@ grupo3.rotateY(Math.PI/4);
 Torrefinal.rotateX(Math.PI/4);
 Torrefinal.rotateY(Math.PI/4);
 Torrefinal.position.y=50;
-Torrefinal.position.z=-10;
+Torrefinal.position.z=0;
 
 escena.add(grupo,grupo2,grupo3,Torrefinal);
 renderizador.render(escena,camara);
