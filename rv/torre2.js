@@ -22,7 +22,7 @@ techo3.translate(0,30,0);
 
 //Decoración
 var cubito= new THREE.BoxGeometry(3,4,9.5);
-cubito.translate(-6,33.5,1);
+cubito.translate(-7,33.5,0);
 
 var cubito2= new THREE.BoxGeometry(3,4,9.5);
 cubito2.rotateY(Math.PI/-3);
