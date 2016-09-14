@@ -9,7 +9,7 @@ var renderizador=new THREE.WebGLRenderer();
 renderizador.setSize(window.innerHeight*.95,window.innerHeight*.95);
 document.body.appendChild(renderizador.domElement);
 
-var cubo=new THREE.BoxGeometry(10,10,10);
+var cubo=new THREE.BoxGeometry(20,20,20);
 
 var mblanco= new THREE.MeshBasicMaterial({color: 0xffffff});
 var mnegro= new THREE.MeshBasicMaterial({color: 0x686868});
@@ -24,8 +24,8 @@ for (var i=0;i<8;i++){
   if(k%2==0){var malla= new THREE.Mesh(cubo,mnegro);}
   else{var malla= new THREE.Mesh(cubo,mblanco);}
 
-  malla.position.x=(j+1)*10;
-  malla.position.z=(-i-1)*10;
+  malla.position.x=(j+1)*20;
+  malla.position.z=(-i-1)*20;
 
   malla.matrixAutoUpdate = false;
   malla.updateMatrix();
@@ -45,8 +45,8 @@ var grupo2= new THREE.Group();
 for(var l=0;l<10;l++){
   for(var m=0;m<2;m++){
   var malla2= new THREE.Mesh(cubo,mcafe);
-  if(m==1){malla2.position.z=(-90);}
-  malla2.position.x=(l*10);
+  if(m==1){malla2.position.z=(-180);}
+  malla2.position.x=(l*20);
   malla2.matrixAutoUpdate = false;
   malla2.updateMatrix();
   grupo2.add(malla2);
@@ -61,8 +61,8 @@ var grupo3= new THREE.Group();
 for(var l=1;l<9;l++){
   for(var m=0;m<2;m++){
   var malla3= new THREE.Mesh(cubo,mcafe);
-  if(m==1){malla3.position.x=(90);}
-  malla3.position.z=(-l*10);
+  if(m==1){malla3.position.x=(180);}
+  malla3.position.z=(-l*20);
   malla3.matrixAutoUpdate = false;
   malla3.updateMatrix();
   grupo3.add(malla3);
@@ -73,7 +73,7 @@ grupo3.rotateY(Math.PI/4);
 
 Torrefinal.rotateX(Math.PI/4);
 Torrefinal.rotateY(Math.PI/4);
-Torrefinal.position.y=10;
+Torrefinal.position.y=20;
 
 escena.add(grupo,grupo2,grupo3,Torrefinal);
 renderizador.render(escena,camara);
