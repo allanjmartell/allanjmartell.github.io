@@ -12,8 +12,8 @@ var material= new THREE.MeshNormalMaterial();
 var base= new THREE.CylinderGeometry(10,10,5,10);
 
 //Techo
-var techo= new THREE.CylinderGeometry(10,10,3.5,10);
-var techo2= new THREE.CylinderGeometry(5,5,10,10);
+var techo= new THREE.CylinderGeometry(10,10,3.5,6);
+var techo2= new THREE.CylinderGeometry(5,5,10,8);
 var techo3= new THREE.CylinderGeometry(3,3,13.5,10);
 
 techo.translate(0,30,0);
