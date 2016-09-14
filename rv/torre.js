@@ -20,7 +20,6 @@ techo.translate(0,30,0);
 techo2.translate(0,30,0);
 techo3.translate(0,30,0);
 
-var grupo= new THREE.Group();
 //Decoración
 var cubito= new THREE.BoxGeometry(3,4,8.5);
 cubito.translate(-11,40,5);
@@ -28,7 +27,6 @@ cubito.translate(-11,40,5);
 var cubito2= new THREE.BoxGeometry(3,4,8.5);
 cubito2.translate(11,40,5);
 
-grupo.add(cubito,cubito2);
 //pico
 var pico= new THREE.ConeGeometry(3,4,10);
 pico.translate(0,38.7,0);
@@ -38,7 +36,8 @@ var mallabase= new THREE.Mesh(base);//2
 var mallatecho= new THREE.Mesh(techo);//3
 var mallatecho2= new THREE.Mesh(techo2);//4
 var mallatecho3= new THREE.Mesh(techo3);//5
-var mallaanillo= new THREE.Mesh(grupo);//6
+var mallaanillo= new THREE.Mesh(cubito);//6
+var mallacubito2= new THREE.Mesh(cubito2);
 var mallapico= new THREE.Mesh(pico);
 
 //Cuerpo completo
@@ -74,4 +73,10 @@ var torrefinal6= new THREE.Geometry();
 torrefinal6.merge(mallatorrefinal5.geometry,mallatorrefinal5.matrix);
 torrefinal6.merge(mallapico.geometry,mallapico.matrix);
 
-var Torrefinal= new THREE.Mesh(torrefinal6,material);
+var mallatorrefinal6= new THREE.Mesh(torrefinal6);
+
+var torrefinal7= new THREE.Geometry();
+torrefinal7.merge(mallatorrefinal6.geometry,mallatorrefinal6.matrix);
+torrefinal7.merge(mallacubito2.geometry,mallacubito2.matrix);
+
+var Torrefinal= new THREE.Mesh(torrefinal7,material);
