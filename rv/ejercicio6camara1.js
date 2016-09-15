@@ -65,19 +65,19 @@ var pblanco= new THREE.MeshBasicMaterial({color: 0xEEEED8});//Pieza blanca
 var pnegro= new THREE.MeshBasicMaterial({color: 0x171714});//Pieza negra
 
 var Torre1= Torrefinal.clone();var meshtorre1= new THREE.Mesh(Torre1,pblanco);
-Torre1.position.y=5;
-Torre1.position.z=-10;
-Torre1.position.x=10;
+meshtorre1.position.y=5;
+meshtorre1.position.z=-10;
+meshtorre1.position.x=10;
 
 var Torre2= Torrefinal.clone();var meshtorre2= new THREE.Mesh(Torre2,pblanco);
-Torre2.position.y=5;
-Torre2.position.z=-80;
-Torre2.position.x=10;
+meshtorre2.position.y=5;
+meshtorre2.position.z=-80;
+meshtorre2.position.x=10;
 
 var Torre3= Torrefinal.clone();var meshtorre3= new THREE.Mesh(Torre3,pnegro);
-Torre3.position.y=5;
-Torre3.position.z=-80;
-Torre3.position.x=80;
+meshtorre3.position.y=5;
+meshtorre3.position.z=-80;
+meshtorre3.position.x=80;
 
 var Torre4= Torrefinal.clone();var meshtorre4= new THREE.Mesh(Torre4,pnegro);
 meshtorre4.position.y=5;
