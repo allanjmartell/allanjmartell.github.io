@@ -61,7 +61,7 @@ for(var l=1;l<9;l++){
   grupo3.add(malla3);
 }}
 
-var Torre1= new Torrefinal.clone();
+var Torre1= Torrefinal.clone();
 Torre1.position.y=5;
 Torre1.position.z=-10;
 Torre1.position.x=10;
