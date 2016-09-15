@@ -1,5 +1,5 @@
 var escena=new THREE.Scene();
-escena.rotateX(Math.PI/8);
+escena.rotateX(Math.PI/4);
 
 var camara=new THREE.PerspectiveCamera();
 camara.position.z=100;
@@ -74,7 +74,7 @@ grupo3.rotateY(Math.PI/4);
 Torrefinal.rotateX(Math.PI/4);
 Torrefinal.rotateY(Math.PI/4);
 Torrefinal.position.y=20;
-Torrefinal.position.z=5;
+Torrefinal.position.z=0;
 
 escena.add(grupo,grupo2,grupo3,Torrefinal);
 renderizador.render(escena,camara);
