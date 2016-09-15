@@ -1,5 +1,5 @@
 var escena=new THREE.Scene();
-escena.rotateX(Math.PI/4);
+escena.rotateX(Math.PI/2);
 
 var camara=new THREE.PerspectiveCamera();
 camara.position.z=100;
@@ -36,9 +36,6 @@ for (var i=0;i<8;i++){
   k++;
 }
 
-grupo.rotateX(Math.PI/4);
-grupo.rotateY(Math.PI/4);
-
 //grupo2
 var grupo2= new THREE.Group();
 
@@ -51,9 +48,6 @@ for(var l=0;l<10;l++){
   malla2.updateMatrix();
   grupo2.add(malla2);
 }}
-
-grupo2.rotateX(Math.PI/4);
-grupo2.rotateY(Math.PI/4);
 
 //grupo3
 var grupo3= new THREE.Group();
@@ -68,11 +62,15 @@ for(var l=1;l<9;l++){
   grupo3.add(malla3);
 }}
 
-grupo3.rotateX(Math.PI/4);
-grupo3.rotateY(Math.PI/4);
+//grupo.rotateX(Math.PI/4);
+//grupo.rotateY(Math.PI/4);
+//grupo2.rotateX(Math.PI/4);
+//grupo2.rotateY(Math.PI/4);
+//grupo3.rotateX(Math.PI/4);
+//grupo3.rotateY(Math.PI/4);
 
-Torrefinal.rotateX(Math.PI/4);
-Torrefinal.rotateY(Math.PI/4);
+//Torrefinal.rotateX(Math.PI/4);
+//Torrefinal.rotateY(Math.PI/4);
 Torrefinal.position.y=20;
 Torrefinal.position.z=0;
 
