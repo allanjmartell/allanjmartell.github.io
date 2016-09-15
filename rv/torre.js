@@ -22,22 +22,22 @@ techo3.translate(0,15,0);
 
 //Decoración
 var cubito= new THREE.BoxGeometry(1.5,2,4.75);
-cubito.translate(-3.5,16.75,0);
+cubito.translate(-1.75,16.25,0);
 
 var cubito2= new THREE.BoxGeometry(1.5,2,4.75);
 cubito2.rotateY(Math.PI/-3);
-cubito2.translate(1.75,16.75,3);
+cubito2.translate(1.75,16.25,3);
 
 var cubito3= new THREE.BoxGeometry(1.5,2,4.75);
 cubito3.rotateY(Math.PI/3);
-cubito3.translate(1.75,16.75,-3);
+cubito3.translate(1.75,16.25,-3);
 
 var cubito1= new THREE.BoxGeometry(1.5,2,4.75);
-cubito1.translate(3.5,16.75,0);
+cubito1.translate(1.75,16.25,0);
 
 var cubito22= new THREE.BoxGeometry(3,2,9.5);
 cubito22.rotateY(Math.PI/-3);
-cubito22.translate(-1.75,16.75,-3);
+cubito22.translate(-1.75,16.25,-3);
 
 var cubito33= new THREE.BoxGeometry(3,2,9.5);
 cubito33.rotateY(Math.PI/3);
