@@ -66,7 +66,20 @@ Torre1.position.y=5;
 Torre1.position.z=-10;
 Torre1.position.x=10;
 
+var Torre2= Torrefinal.clone();
+Torre2.position.y=5;
+Torre2.position.z=-80;
+Torre2.position.x=10;
 
+var Torre3= Torrefinal.clone();
+Torre3.position.y=5;
+Torre3.position.z=-80;
+Torre3.position.x=80;
 
-escena.add(grupo,grupo2,grupo3,Torre1);
+var Torre4= Torrefinal.clone();
+Torre4.position.y=5;
+Torre4.position.z=-10;
+Torre4.position.x=80;
+
+escena.add(grupo,grupo2,grupo3,Torre1,Torre2,Torre3,Torre4);
 renderizador.render(escena,camara);
