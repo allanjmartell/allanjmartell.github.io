@@ -61,29 +61,25 @@ for(var l=1;l<9;l++){
   grupo3.add(malla3);
 }}
 
-var pblanco= new THREE.MeshBasicMaterial({color: 0xEEEED8});//Pieza blanca
-var pnegro= new THREE.MeshBasicMaterial({color: 0x171714});//Pieza negra
+var torre1= Torreblanca.clone();
+torre1.position.y=5;
+torre1.position.z=-10;
+torre1.position.x=10;
 
-var Torre1= Torrefinal.clone();var meshtorre1= new THREE.Mesh(Torre1,pblanco);
-meshtorre1.position.y=5;
-meshtorre1.position.z=-10;
-meshtorre1.position.x=10;
+var torre2= Torrenegra.clone();
+torre2.position.y=5;
+torre2.position.z=-80;
+torre2.position.x=10;
 
-var Torre2= Torrefinal.clone();var meshtorre2= new THREE.Mesh(Torre2,pblanco);
-meshtorre2.position.y=5;
-meshtorre2.position.z=-80;
-meshtorre2.position.x=10;
+var torre3= Torrenegra.clone();
+torre3.position.y=5;
+torre3.position.z=-80;
+torre3.position.x=80;
 
-var Torre3= Torrefinal.clone();var meshtorre3= new THREE.Mesh(Torre3,pnegro);
-meshtorre3.position.y=5;
-meshtorre3.position.z=-80;
-meshtorre3.position.x=80;
+var torre4= Torreblanca.clone();
+torre4.position.y=5;
+torre4.position.z=-10;
+torre4.position.x=80;
 
-var Torre4= Torrefinal.clone();var meshtorre4= new THREE.Mesh(Torre4,pnegro);
-meshtorre4.position.y=5;
-meshtorre4.position.z=-10;
-meshtorre4.position.x=80;
-
-
-escena.add(grupo,grupo2,grupo3,meshtorre1,meshtorre2,meshtorre3,meshtorre4);
+escena.add(grupo,grupo2,grupo3,torre1,torre2,torre3,torre4);
 renderizador.render(escena,camara);
