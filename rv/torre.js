@@ -1,51 +1,51 @@
 var torre= [];
 
 //Torre
-for (var i=0;i<30;i++){
-  torre.push(new THREE.Vector2(8,i));
+for (var i=0;i<15;i++){
+  torre.push(new THREE.Vector2(4,i));
 }
 
 var formatorre= new THREE.LatheGeometry(torre);
 var material= new THREE.MeshNormalMaterial();
 
 //Base
-var base= new THREE.CylinderGeometry(10,10,5,10);
+var base= new THREE.CylinderGeometry(5,5,2.5,10);
 
 //Techo
-var techo= new THREE.CylinderGeometry(9.7,9.7,3.5,6);
-var techo2= new THREE.CylinderGeometry(4,4,10,8);
-var techo3= new THREE.CylinderGeometry(3,3,13.5,10);
+var techo= new THREE.CylinderGeometry(4.85,4.85,1.75,6);
+var techo2= new THREE.CylinderGeometry(2,2,5,8);
+var techo3= new THREE.CylinderGeometry(1.5,1.5,6.75,10);
 
-techo.translate(0,30,0);
-techo2.translate(0,30,0);
-techo3.translate(0,30,0);
+techo.translate(0,15,0);
+techo2.translate(0,15,0);
+techo3.translate(0,15,0);
 
 //Decoración
-var cubito= new THREE.BoxGeometry(3,4,9.5);
-cubito.translate(-7,33.5,0);
+var cubito= new THREE.BoxGeometry(1.5,2,4.75);
+cubito.translate(-3.5,16.75,0);
 
-var cubito2= new THREE.BoxGeometry(3,4,9.5);
+var cubito2= new THREE.BoxGeometry(1.5,2,4.75);
 cubito2.rotateY(Math.PI/-3);
-cubito2.translate(3.5,33.5,6);
+cubito2.translate(1.75,16.75,3);
 
-var cubito3= new THREE.BoxGeometry(3,4,9.5);
+var cubito3= new THREE.BoxGeometry(1.5,2,4.75);
 cubito3.rotateY(Math.PI/3);
-cubito3.translate(3.5,33.5,-6);
+cubito3.translate(1.75,16.75,-3);
 
-var cubito1= new THREE.BoxGeometry(3,2,9.5);
-cubito1.translate(7,32.5,0);
+var cubito1= new THREE.BoxGeometry(1.5,2,4.75);
+cubito1.translate(3.5,16.75,0);
 
 var cubito22= new THREE.BoxGeometry(3,2,9.5);
 cubito22.rotateY(Math.PI/-3);
-cubito22.translate(-3.5,32.5,-6);
+cubito22.translate(-1.75,16.75,-3);
 
 var cubito33= new THREE.BoxGeometry(3,2,9.5);
 cubito33.rotateY(Math.PI/3);
-cubito33.translate(-3.5,32.5,6);
+cubito33.translate(-1.75,16.25,3);
 
 //pico
-var pico= new THREE.ConeGeometry(3,4,10);
-pico.translate(0,38.7,0);
+var pico= new THREE.ConeGeometry(1.5,2,10);
+pico.translate(0,14.35,0);
 
 var malla= new THREE.Mesh(formatorre);//1
 var mallabase= new THREE.Mesh(base);//2
