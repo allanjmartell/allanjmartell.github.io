@@ -124,4 +124,4 @@ var torrefinal11= new THREE.Geometry();
 torrefinal11.merge(mallatorrefinal10.geometry,mallatorrefinal10.matrix);
 torrefinal11.merge(mallacubito33.geometry,mallacubito33.matrix);
 
-var Torrefinal= new THREE.Mesh(torrefinal11,pblanco);
+var Torreblanca= new THREE.Mesh(torrefinal11,pblanco);
