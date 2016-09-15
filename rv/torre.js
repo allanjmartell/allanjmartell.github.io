@@ -24,7 +24,7 @@ techo3.translate(0,15,0);
 var cubito= new THREE.BoxGeometry(1.5,1,4.75);
 cubito.translate(-3.5,16.75,0);
 
-var cubito2= new THREE.BoxGeometry(1.5,2,4.75);
+var cubito2= new THREE.BoxGeometry(1.5,1,4.75);
 cubito2.rotateY(Math.PI/-3);
 cubito2.translate(1.75,16.75,3);
 
@@ -35,7 +35,7 @@ cubito3.translate(1.75,16.75,-3);
 var cubito1= new THREE.BoxGeometry(1.5,2,4.75);
 cubito1.translate(3.5,16.75,0);
 
-var cubito22= new THREE.BoxGeometry(1.5,1,4.75);
+var cubito22= new THREE.BoxGeometry(1.5,2,4.75);
 cubito22.rotateY(Math.PI/-3);
 cubito22.translate(-1.75,16.75,-3);
 
