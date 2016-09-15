@@ -3,7 +3,6 @@ escena.rotateX(Math.PI/2);
 
 var camara=new THREE.PerspectiveCamera();
 camara.position.z=200;
-//camara.position.y=20;
 
 var renderizador=new THREE.WebGLRenderer();
 renderizador.setSize(window.innerHeight*.95,window.innerHeight*.95);
@@ -62,18 +61,12 @@ for(var l=1;l<9;l++){
   grupo3.add(malla3);
 }}
 
-//grupo.rotateX(Math.PI/4);
-//grupo.rotateY(Math.PI/4);
-//grupo2.rotateX(Math.PI/4);
-//grupo2.rotateY(Math.PI/4);
-//grupo3.rotateX(Math.PI/4);
-//grupo3.rotateY(Math.PI/4);
+var Torre1= new Torrefinal.clone();
+Torre1.position.y=5;
+Torre1.position.z=-10;
+Torre1.position.x=10;
 
-//Torrefinal.rotateX(Math.PI/4);
-//Torrefinal.rotateY(Math.PI/4);
-Torrefinal.position.y=5;
-Torrefinal.position.z=-10;
-Torrefinal.position.x=10;
 
-escena.add(grupo,grupo2,grupo3,Torrefinal);
+
+escena.add(grupo,grupo2,grupo3,Torre1);
 renderizador.render(escena,camara);
