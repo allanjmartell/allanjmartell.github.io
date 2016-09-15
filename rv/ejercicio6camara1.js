@@ -61,6 +61,9 @@ for(var l=1;l<9;l++){
   grupo3.add(malla3);
 }}
 
+var pblanco= new THREE.MeshBasicMaterial({color: 0xEEEED8});//Pieza blanca
+var pnegro= new THREE.MeshBasicMaterial({color: 0x171714});//Pieza negra
+
 var Torre1= Torrefinal.clone();
 Torre1.position.y=5;
 Torre1.position.z=-10;
@@ -81,5 +84,10 @@ Torre4.position.y=5;
 Torre4.position.z=-10;
 Torre4.position.x=80;
 
-escena.add(grupo,grupo2,grupo3,Torre1,Torre2,Torre3,Torre4);
+var meshtorre1= new THREE.Mesh(Torre1,pblanco);
+var meshtorre2= new THREE.Mesh(Torre2,pblanco);
+var meshtorre3= new THREE.Mesh(Torre3,pnegro);
+var meshtorre4= new THREE.Mesh(Torre4,pnegro);
+
+escena.add(grupo,grupo2,grupo3,meshtorre1,meshtorre2,meshtorre3,meshtorre4);
 renderizador.render(escena,camara);
