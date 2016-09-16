@@ -7,7 +7,7 @@ camara.left= window.innerHeight/-2;
 camara.right= window.innerHeight/2;
 camara.top= window.innerHeight/2;
 camara.bottom= window.innerHeight/-2;
-camara.near= 0.3;
+camara.near= 0.6;
 camara.far= 50;
 camara.updateProjectionMatrix();
 
