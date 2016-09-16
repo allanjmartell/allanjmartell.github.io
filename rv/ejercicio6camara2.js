@@ -3,12 +3,12 @@ escena.rotateX(Math.PI/4);
 
 var camara= new THREE.OrthographicCamera();
 
-camara.left= window.innerHeight/-2;
-camara.right= window.innerHeight/2;
-camara.top= window.innerHeight/2;
-camara.bottom= window.innerHeight/-2;
+camara.left= window.innerHeight/-1;
+camara.right= window.innerHeight/1;
+camara.top= window.innerHeight/1;
+camara.bottom= window.innerHeight/-1;
 camara.near= 5;
-camara.far= 100;
+camara.far= 50;
 camara.updateProjectionMatrix();
 
 var renderizador=new THREE.WebGLRenderer();
