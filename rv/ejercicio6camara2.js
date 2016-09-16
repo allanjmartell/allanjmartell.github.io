@@ -7,8 +7,8 @@ camara.left= window.innerWidth/-2;
 camara.right= window.innerWidth/2;
 camara.top= window.innerHeight/2;
 camara.bottom= window.innerHeight/-2;
-camara.near= .1;
-camara.far= 400;
+camara.near= -500;
+camara.far= 1000;
 camara.updateProjectionMatrix();
 
 var renderizador=new THREE.WebGLRenderer();
