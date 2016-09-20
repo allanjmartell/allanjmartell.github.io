@@ -9,6 +9,8 @@ var luzama= new THREE.PointLight(0xFFFF00);
 var luzcyan=new THREE.PointLight(0x00FFFF);
 var luzmag= new THREE.PointLight(0xFF00FF);
 
+luzama.position.y=40;
+
 var renderizador=new THREE.WebGLRenderer();
 renderizador.setSize(window.innerHeight*.95,window.innerHeight*.95);
 document.body.appendChild(renderizador.domElement);
@@ -98,6 +100,9 @@ torre4.position.x=80;
 torre4.transparent=true;
 torre4.opacity=.25;
 
+//Objetos
 escena.add(grupo,grupo2,grupo3,torre1,torre2,torre3,torre4);
+//Luces
+escena.add(luzama);
 
 renderizador.render(escena,camara);
