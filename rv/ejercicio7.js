@@ -75,18 +75,24 @@ var torre2= Torrenegra2.clone();
 torre2.position.y=5;
 torre2.position.z=-80;
 torre2.position.x=10;
+torre2.transparent=true;
+torre2.opacity=1;
 
 //Opacidad 75
 var torre3= Torrenegra2.clone();
 torre3.position.y=5;
 torre3.position.z=-80;
 torre3.position.x=80;
+torre3.transparent=true;
+torre3.opacity=.75;
 
 //Opacidad 25
 var torre4= Torreblanca2.clone();
 torre4.position.y=5;
 torre4.position.z=-10;
 torre4.position.x=80;
+torre4.transparent=true;
+torre4.opacity=.25;
 
 escena.add(grupo,grupo2,grupo3,torre1,torre2,torre3,torre4);
 renderizador.render(escena,camara);
