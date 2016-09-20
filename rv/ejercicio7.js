@@ -71,7 +71,7 @@ for(var l=1;l<9;l++){
 }}
 
 //Sombras
-renderizador.shadowMapEnabled=true;
+renderizador.shadowMap.enabled=true;
 grupo.receiveShadow= true;
 grupo2.receiveShadow= true;
 grupo3.receiveShadow= true;
