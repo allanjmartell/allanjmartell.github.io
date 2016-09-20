@@ -8,7 +8,8 @@ for (var i=0;i<15;i++){
 var formatorre= new THREE.LatheGeometry(torre);
 //var material= new THREE.MeshNormalMaterial();
 var pnegro= new THREE.MeshBasicMaterial({color: 0x525252});//Pieza negra
-var pnegro2= new THREE.MeshLambertMaterial({color: 0x525252});
+var pnegro2= new THREE.MeshLambertMaterial({color: 0x525252,transparent=true,opacity=1});
+var pnegro3= new THREE.MeshLambertMaterial({color: 0x525252,transparent=true,opacity=.75});
 
 //Base
 var base= new THREE.CylinderGeometry(5,5,2.5,10);
@@ -127,3 +128,4 @@ torrefinal11.merge(mallacubito33.geometry,mallacubito33.matrix);
 
 var Torrenegra= new THREE.Mesh(torrefinal11,pnegro);
 var Torrenegra2= new THREE.Mesh(torrefinal11,pnegro2);
+var Torrenegra3= new THREE.Mesh(torrefinal11,pnegro3);
