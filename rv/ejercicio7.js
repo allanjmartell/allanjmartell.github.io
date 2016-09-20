@@ -118,6 +118,6 @@ torre4.opacity=.25;
 //Objetos
 escena.add(grupo,grupo2,grupo3,torre1,torre2,torre3,torre4);
 //Luces
-escena.add(luzcyan,luzama,luzmag);
+escena.add(luzcyan,luzama);
 
 renderizador.render(escena,camara);
