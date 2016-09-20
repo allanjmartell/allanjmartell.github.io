@@ -117,6 +117,6 @@ luzmag.castShadow= true;
 //Objetos
 escena.add(grupo,grupo2,grupo3,torre1,torre2,torre3,torre4);
 //Luces
-escena.add(luzcyan,luzama);
+escena.add(luzcyan,luzama,luzmag);
 
 renderizador.render(escena,camara);
