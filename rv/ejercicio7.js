@@ -62,22 +62,22 @@ for(var l=1;l<9;l++){
   grupo3.add(malla3);
 }}
 
-var torre1= Torreblanca.clone();
+var torre1= Torreblanca2.clone();
 torre1.position.y=5;
 torre1.position.z=-10;
 torre1.position.x=10;
 
-var torre2= Torrenegra.clone();
+var torre2= Torrenegra2.clone();
 torre2.position.y=5;
 torre2.position.z=-80;
 torre2.position.x=10;
 
-var torre3= Torrenegra.clone();
+var torre3= Torrenegra2.clone();
 torre3.position.y=5;
 torre3.position.z=-80;
 torre3.position.x=80;
 
-var torre4= Torreblanca.clone();
+var torre4= Torreblanca2.clone();
 torre4.position.y=5;
 torre4.position.z=-10;
 torre4.position.x=80;
