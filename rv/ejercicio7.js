@@ -9,9 +9,9 @@ var luzama= new THREE.PointLight(0xFFFF00);
 var luzcyan=new THREE.PointLight(0x00FFFF);
 var luzmag= new THREE.PointLight(0xFF00FF);
 
-luzcyan.position.y=40; luzcyan.position.z=50; luzcyan.position.x=-50;
-luzama.position.y=40;  luzama.position.z=-150; luzama.position.x=50;
-luzmag.position.y=40;  luzmag.position.z=50;  luzmag.position.x=150
+luzcyan.position.y=90; luzcyan.position.z=50; luzcyan.position.x=-50;
+luzama.position.y=90;  luzama.position.z=-150; luzama.position.x=50;
+luzmag.position.y=90;  luzmag.position.z=50;  luzmag.position.x=150
 
 var renderizador=new THREE.WebGLRenderer();
 renderizador.setSize(window.innerHeight*.95,window.innerHeight*.95);
