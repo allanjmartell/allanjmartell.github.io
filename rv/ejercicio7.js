@@ -5,15 +5,19 @@ var camara=new THREE.PerspectiveCamera();
 camara.position.z=130;
 camara.position.x=50;
 
+var luzama= new THREE.PointLight(0xFFFF00);
+var luzcyan=new THREE.PointLight(0x00FFFF);
+var luzmag= new THREE.PointLight(0xFF00FF);
+
 var renderizador=new THREE.WebGLRenderer();
 renderizador.setSize(window.innerHeight*.95,window.innerHeight*.95);
 document.body.appendChild(renderizador.domElement);
 
 var cubo=new THREE.BoxGeometry(10,10,10);
 
-var mblanco= new THREE.MeshBasicMaterial({color: 0xffffff});
-var mnegro= new THREE.MeshBasicMaterial({color: 0x686868});
-var mcafe= new THREE.MeshBasicMaterial({color: 0x714523});
+var mblanco= new THREE.MeshLambertMaterial({color: 0xffffff});
+var mnegro= new THREE.MeshLambertMaterial({color: 0x686868});
+var mcafe= new THREE.MeshLambertMaterial({color: 0x714523});
 
 //Grupo1
 var grupo= new THREE.Group();
@@ -62,6 +66,14 @@ for(var l=1;l<9;l++){
   grupo3.add(malla3);
 }}
 
+var grupo4= new THREE.Geometry();
+grupo4.merge(grupo1.geometry,grupo1.matrix);
+grupo4.merge(grupo2.geometry,grupo2.matrix);
+
+var tablero= new THREE.Geometry();
+tablero.merge(grupo3.geometry,grupo3.matrix);
+tablero.merge(grupo4.geometry,grupo4.matrix);
+
 //Opacidad 50
 var torre1= Torreblanca2.clone();
 torre1.position.y=5;
@@ -94,5 +106,7 @@ torre4.position.x=80;
 torre4.transparent=true;
 torre4.opacity=.25;
 
-escena.add(grupo,grupo2,grupo3,torre1,torre2,torre3,torre4);
+//escena.add(grupo,grupo2,grupo3,torre1,torre2,torre3,torre4);
+escena.add(tablero,torre1,torre2,torre3,torre4);
+
 renderizador.render(escena,camara);
