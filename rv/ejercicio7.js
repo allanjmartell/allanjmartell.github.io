@@ -62,21 +62,27 @@ for(var l=1;l<9;l++){
   grupo3.add(malla3);
 }}
 
+//Opacidad 50
 var torre1= Torreblanca2.clone();
 torre1.position.y=5;
 torre1.position.z=-10;
 torre1.position.x=10;
+torre1.transparent:true;
+torre1.opacity:.5;
 
+//Opacidad 100
 var torre2= Torrenegra2.clone();
 torre2.position.y=5;
 torre2.position.z=-80;
 torre2.position.x=10;
 
+//Opacidad 75
 var torre3= Torrenegra2.clone();
 torre3.position.y=5;
 torre3.position.z=-80;
 torre3.position.x=80;
 
+//Opacidad 25
 var torre4= Torreblanca2.clone();
 torre4.position.y=5;
 torre4.position.z=-10;
