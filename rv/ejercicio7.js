@@ -9,9 +9,9 @@ var luzama= new THREE.PointLight(0xFFFF00);
 var luzcyan=new THREE.PointLight(0x00FFFF);
 var luzmag= new THREE.PointLight(0xFF00FF);
 
-luzcyan.position.y=90; luzcyan.position.z=50; luzcyan.position.x=-50;
-luzama.position.y=90;  luzama.position.z=-150; luzama.position.x=50;
-luzmag.position.y=90;  luzmag.position.z=50;  luzmag.position.x=150
+luzcyan.position.y=80; luzcyan.position.z=50; luzcyan.position.x=-50;
+luzama.position.y=80;  luzama.position.z=-150; luzama.position.x=50;
+luzmag.position.y=80;  luzmag.position.z=50;  luzmag.position.x=150
 
 var renderizador=new THREE.WebGLRenderer();
 renderizador.setSize(window.innerHeight*.95,window.innerHeight*.95);
@@ -81,28 +81,22 @@ torre1.position.z=-10;
 torre1.position.x=10;
 
 //Opacidad 100
-var torre2= Torrenegra2.clone();
+var torre2= Torrenegra2.clone({transparent:true,opacity:1});
 torre2.position.y=5;
 torre2.position.z=-80;
 torre2.position.x=10;
-torre2.transparent=true;
-torre2.opacity=1;
 
 //Opacidad 75
-var torre3= Torrenegra2.clone();
+var torre3= Torrenegra2.clone({transparent:true,opacity:.75});
 torre3.position.y=5;
 torre3.position.z=-80;
 torre3.position.x=80;
-torre3.transparent=true;
-torre3.opacity=.75;
 
 //Opacidad 25
-var torre4= Torreblanca2.clone();
+var torre4= Torreblanca2.clone({transparent:true,opacity:.25});
 torre4.position.y=5;
 torre4.position.z=-10;
 torre4.position.x=80;
-torre4.transparent=true;
-torre4.opacity=.25;
 
 //Sombras
 renderizador.shadowMap.enabled=true;
