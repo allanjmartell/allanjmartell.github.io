@@ -70,11 +70,22 @@ for(var l=1;l<9;l++){
   grupo3.add(malla3);
 }}
 
+//Sombras
+renderizador.shadowMapEnabled=true;
+grupo.receiveShadow= true;
+grupo2.receiveShadow= true;
+grupo3.receiveShadow= true;
+
 //Opacidad 50
 var torre1= Torreblanca2.clone({transparent:true,opacity:.5});
 torre1.position.y=5;
 torre1.position.z=-10;
 torre1.position.x=10;
+
+torre1.castShadow= true;
+luzama.castShadow= true;
+luzcyan.castShadow= true;
+luzmag.castShadow= true;
 
 //Opacidad 100
 var torre2= Torrenegra2.clone();
