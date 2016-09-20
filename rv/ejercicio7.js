@@ -66,14 +66,6 @@ for(var l=1;l<9;l++){
   grupo3.add(malla3);
 }}
 
-var grupo4= new THREE.Geometry();
-grupo4.merge(grupo.geometry,grupo.matrix);
-grupo4.merge(grupo2.geometry,grupo2.matrix);
-
-var tablero= new THREE.Geometry();
-tablero.merge(grupo3.geometry,grupo3.matrix);
-tablero.merge(grupo4.geometry,grupo4.matrix);
-
 //Opacidad 50
 var torre1= Torreblanca2.clone();
 torre1.position.y=5;
@@ -106,7 +98,6 @@ torre4.position.x=80;
 torre4.transparent=true;
 torre4.opacity=.25;
 
-//escena.add(grupo,grupo2,grupo3,torre1,torre2,torre3,torre4);
-escena.add(tablero,torre1,torre2,torre3,torre4);
+escena.add(grupo,grupo2,grupo3,torre1,torre2,torre3,torre4);
 
 renderizador.render(escena,camara);
