@@ -34,7 +34,9 @@ for (var i=0;i<8;i++){
 
   malla.position.x=(j+1)*10;
   malla.position.z=(-i-1)*10;
-
+  
+  malla.receiveShadow=true;
+  
   malla.matrixAutoUpdate = false;
   malla.updateMatrix();
 
@@ -52,6 +54,7 @@ for(var l=0;l<10;l++){
   var malla2= new THREE.Mesh(cubo,mcafe);
   if(m==1){malla2.position.z=(-90);}
   malla2.position.x=(l*10);
+  malla2.receiveShadow=true;
   malla2.matrixAutoUpdate = false;
   malla2.updateMatrix();
   grupo2.add(malla2);
@@ -65,6 +68,7 @@ for(var l=1;l<9;l++){
   var malla3= new THREE.Mesh(cubo,mcafe);
   if(m==1){malla3.position.x=(90);}
   malla3.position.z=(-l*10);
+  malla3.receiveShadow=true;
   malla3.matrixAutoUpdate = false;
   malla3.updateMatrix();
   grupo3.add(malla3);
@@ -72,9 +76,9 @@ for(var l=1;l<9;l++){
 
 //Sombras
 renderizador.shadowMap.enabled=true;
-grupo.receiveShadow= true;
-grupo2.receiveShadow= true;
-grupo3.receiveShadow= true;
+//grupo.receiveShadow= true;
+//grupo2.receiveShadow= true;
+//grupo3.receiveShadow= true;
 
 //Opacidad 50
 var torre1= Torreblanca2.clone({transparent:true,opacity:.5});
