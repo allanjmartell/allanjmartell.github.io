@@ -74,22 +74,11 @@ for(var l=1;l<9;l++){
   grupo3.add(malla3);
 }}
 
-//Sombras
-renderizador.shadowMap.enabled=true;
-//grupo.receiveShadow= true;
-//grupo2.receiveShadow= true;
-//grupo3.receiveShadow= true;
-
 //Opacidad 50
 var torre1= Torreblanca2.clone({transparent:true,opacity:.5});
 torre1.position.y=5;
 torre1.position.z=-10;
 torre1.position.x=10;
-
-torre1.castShadow= true;
-luzama.castShadow= true;
-luzcyan.castShadow= true;
-luzmag.castShadow= true;
 
 //Opacidad 100
 var torre2= Torrenegra2.clone();
@@ -114,6 +103,16 @@ torre4.position.z=-10;
 torre4.position.x=80;
 torre4.transparent=true;
 torre4.opacity=.25;
+
+//Sombras
+renderizador.shadowMap.enabled=true;
+torre1.castShadow= true;
+torre2.castShadow= true;
+torre3.castShadow= true;
+torre4.castShadow= true;
+luzama.castShadow= true;
+luzcyan.castShadow= true;
+luzmag.castShadow= true;
 
 //Objetos
 escena.add(grupo,grupo2,grupo3,torre1,torre2,torre3,torre4);
