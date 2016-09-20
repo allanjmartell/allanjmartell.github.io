@@ -9,8 +9,8 @@ var luzama= new THREE.PointLight(0xFFFF00);
 var luzcyan=new THREE.PointLight(0x00FFFF);
 var luzmag= new THREE.PointLight(0xFF00FF);
 
-luzama.position.y=40;
-luzcyan.position.y=40;luzcyan.position.z=-20;
+luzcyan.position.y=40;
+luzama.position.y=40;luzama.position.z=-20;
 luzmag.position.y=40;luzmag.position.x=30;
 
 var renderizador=new THREE.WebGLRenderer();
