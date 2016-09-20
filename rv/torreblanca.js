@@ -7,7 +7,7 @@ for (var i=0;i<15;i++){
 
 var formatorre= new THREE.LatheGeometry(torre);
 //var material= new THREE.MeshNormalMaterial();
-var pblanco= new THREE.MeshPhongMaterial({color: 0xEEEED8});//Pieza blanca
+var pblanco= new THREE.MeshBasicMaterial({color: 0xEEEED8});//Pieza blanca
 
 //Base
 var base= new THREE.CylinderGeometry(5,5,2.5,10);
