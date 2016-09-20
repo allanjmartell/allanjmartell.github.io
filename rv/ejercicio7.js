@@ -67,7 +67,7 @@ for(var l=1;l<9;l++){
 }}
 
 var grupo4= new THREE.Geometry();
-grupo4.merge(grupo1.geometry,grupo1.matrix);
+grupo4.merge(grupo.geometry,grupo.matrix);
 grupo4.merge(grupo2.geometry,grupo2.matrix);
 
 var tablero= new THREE.Geometry();
