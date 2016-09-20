@@ -68,7 +68,7 @@ torre1.position.y=5;
 torre1.position.z=-10;
 torre1.position.x=10;
 torre1.transparent(true);
-torre1.opacity:.5;
+torre1.opacity=.5;
 
 //Opacidad 100
 var torre2= Torrenegra2.clone();
