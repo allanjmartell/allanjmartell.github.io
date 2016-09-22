@@ -14,15 +14,16 @@ function init(p){
 }
 
 var a=0;
+var b=0;
 
 var loop= function(){ 
   //p(1);**
   requestAnimationFrame(loop);
   renderizador.render(escena,camara);
   
-  if(a<=10){
-  a=a++;
-  malla.position.x=a;}
+  if(a==0){
+    b=b++;
+  malla.position.x=b;}
 }
   
 var escena,camara,renderizador,malla;
