@@ -21,7 +21,7 @@ var loop= function(){
   renderizador.render(escena,camara);
   
   if(a<=10){
-  a=(1+p);
+  a=a++;
   malla.position.x=a;}
 }
   
