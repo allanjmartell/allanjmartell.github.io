@@ -20,11 +20,8 @@ var loop= function(){
   requestAnimationFrame(loop);
   renderizador.render(escena,camara);
   
-  if(a==0){
-  a=(1+p)*.01;
-  malla.position.x=a;}
-  if(a==10){
-  a=(1-p)*.01;
+  if(a<=10){
+  a=(1+p);
   malla.position.x=a;}
 }
   
