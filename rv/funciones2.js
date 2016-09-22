@@ -13,20 +13,17 @@ function init(p){
   renderizador.setSize(700,700);
 }
 
-var a=0;
-var b=0;
-
 var loop= function(){ 
   //p(1);**
   requestAnimationFrame(loop);
   renderizador.render(escena,camara);
   
-  if(a==0){
-    b=b++;
-  malla.position.x=b;}
+  if(Math.abs(malla.position.x)>5){
+    step=-step;
+    malla.position.+x=step;}
 }
   
-var escena,camara,renderizador,malla;
+var escena,camara,renderizador,malla,step;
 
 init(1);
 loop();
