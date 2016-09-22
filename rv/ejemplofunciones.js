@@ -14,10 +14,13 @@ function init(p){
 }
 
 var main= function(p){  // Una función es un valor, por lo tanto,puede asignarse a una variable
+  p(1);
   renderizador.render(escena,camara);
 }
   
 var escena,camara,renderizador;
 
-init(1);
-main();
+//init(1);
+//main();
+
+main(init);
