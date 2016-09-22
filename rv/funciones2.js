@@ -21,9 +21,11 @@ var loop= function(){
   renderizador.render(escena,camara);
   
   if(a==0){
-  malla.position.x=1+p;}
+  a=(1+p)*.01;
+  malla.position.x=a;}
   if(a==10){
-  malla.position.x=1-p;}
+  a=(1-p)*.01;
+  malla.position.x=a;}
 }
   
 var escena,camara,renderizador,malla;
