@@ -11,6 +11,7 @@ function init(p){
   document.body.appendChild(renderizador.domElement);
   
   renderizador.setSize(700,700);
+  step=0.01;
 }
 
 var loop= function(){ 
