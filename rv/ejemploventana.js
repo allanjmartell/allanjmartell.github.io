@@ -25,7 +25,7 @@ VENTANA.setup = function(){
   requestAnimationFrame(VENTANA.loop);
   VENTANA.malla.rotateX(0.01);
   VENTANA.malla.rotateY(0.01);
-  VENTANA.renderizador.render(VENTANA.escena,VENTANA.malla);
+  VENTANA.renderizador.render(VENTANA.escena,VENTANA.camara);
  }
  
   VENTANA.setup();
