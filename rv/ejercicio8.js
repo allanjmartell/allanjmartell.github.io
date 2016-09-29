@@ -35,7 +35,7 @@ TEXTURA.setup = function(){
   cargador1.load("marmolblanco.jpg",TEXTURA.retrollamada);
   cargador1.load("marmolnegro.jpg",TEXTURA.retrollamada2);
   
-  TEXTURA.camara = new THREE.PerspectiveCamera(75,window.innerWidth/window.innerHeight,0.1,1000);
+  TEXTURA.camara = new THREE.PerspectiveCamera();
   TEXTURA.camara.position.z=130;
   TEXTURA.camara.position.x=50;
   
