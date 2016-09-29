@@ -33,7 +33,8 @@ TEXTURA.setup = function(){
   TEXTURA.escena = new THREE.Scene();
   var cargador1 = new THREE.TextureLoader();
   cargador1.load("marmolblanco.jpg",TEXTURA.retrollamada);
-  cargador1.load("marmolnegro.jpg",TEXTURA.retrollamada2);
+  var cargador2 = new THREE.TextureLoader();
+  cargador2.load("marmolnegro.jpg",TEXTURA.retrollamada2);
   
   TEXTURA.camara = new THREE.PerspectiveCamera();
   TEXTURA.camara.position.z=130;
