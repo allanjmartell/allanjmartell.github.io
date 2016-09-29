@@ -75,7 +75,7 @@ for(var l=1;l<9;l++){
   grupo3.add(malla3);
 }}
 
-var torre1= Torreblancamarmol.clone();
+var torre1= Tblancamarmol.clone();
 torre1.position.y=5;
 torre1.position.z=-10;
 torre1.position.x=10;
@@ -90,7 +90,7 @@ torre3.position.y=5;
 torre3.position.z=-80;
 torre3.position.x=80;
 
-var torre4= Torreblancamarmol.clone();
+var torre4= Tblancamarmol.clone();
 torre4.position.y=5;
 torre4.position.z=-10;
 torre4.position.x=80;
