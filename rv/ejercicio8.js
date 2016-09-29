@@ -4,7 +4,7 @@ var TEXTURA = new Object();
 TEXTURA.retrollamada = function(textura){
   var marmolblanco = new THREE.MeshBasicMaterial({map:textura});
   //Torre1
-  TEXTURA.malla = new THREE.Mesh(torrefinal11,marmolblanco);
+  TEXTURA.malla = new THREE.Mesh(new THREE.BoxGeometry(1,1,1),marmolblanco);
   TEXTURA.malla.position.y=5;
   TEXTURA.malla.position.z=-10;
   TEXTURA.malla.position.x=10;
