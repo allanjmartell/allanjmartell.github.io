@@ -126,6 +126,22 @@ var torrefinal11= new THREE.Geometry();
 torrefinal11.merge(mallatorrefinal10.geometry,mallatorrefinal10.matrix);
 torrefinal11.merge(mallacubito33.geometry,mallacubito33.matrix);
 
+//Textura de marmol
+
+var TEXTORREBLANCA = new Object();
+
+  TEXTORREBLANCA.retrollamada = function(textura){
+  var materialmarmol = new THREE.MeshBasicMaterial({map:textura});
+  var Tblancamarmol = new THREE.Mesh(torrefinal11,materialmarmol);
+}
+
+  TEXTORREBLANCA.setup = function(){
+  var cargador = new THREE.TextureLoader();
+  cargador.load("marmolblanco.jpg",TEXTORREBLANCA.retrollamada);
+}
+
 var Torreblanca= new THREE.Mesh(torrefinal11,pblanco);
 var Torreblanca2=new THREE.Mesh(torrefinal11,pblanco2);
 var Torreblanca3=new THREE.Mesh(torrefinal11,pblanco3);
+
+TEXTORREBLANCA.setup();
