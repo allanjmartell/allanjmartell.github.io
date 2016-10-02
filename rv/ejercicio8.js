@@ -1,5 +1,5 @@
 var camara,escena,renderizador;
-var torre1,torre2;
+var torre1,torre2,torre3,torre4,malla,malla2,malla3;
 
 init();
 loop();
@@ -16,8 +16,14 @@ function init() {
   //Textura
   var textura1 = new THREE.TextureLoader().load('marmolblanco.jpg');
   var textura2 = new THREE.TextureLoader().load('marmolnegro.jpg');
+  var textura3 = new THREE.TextureLoader().load('cerablanca.jpg');
+  var textura4 = new THREE.TextureLoader().load('ceranegra.jpg');
+  var textura5 = new THREE.TextureLoader().load('madera.jpg');
   var marmolblanco = new THREE.MeshBasicMaterial({map:textura1});
   var marmolnegro = new THREE.MeshBasicMaterial({map:textura2});
+  var cerablanco = new THREE.MeshBasicMaterial({map:textura3});
+  var ceranegro = new THREE.MeshBasicMaterial({map:textura4});
+  var madera = new THREE.MeshBasicMaterial({map:textura5});
   //Torre1
   torre1 = new THREE.Mesh(torrefinal11,marmolblanco);
   torre1.position.y=5;
@@ -31,14 +37,64 @@ function init() {
   //Torre3
   torre3 = new THREE.Mesh(torrefinal11,marmolnegro);
   torre3.position.y=5;
-  torre3.z=-80;
+  torre3.position.z=-80;
   torre3.position.x=80;
-  //torre4
+  //Torre4
   torre4 = new THREE.Mesh(torrefinal11,marmolnegro);
   torre4.position.y=5;
   torre4.position.z=-10;
   torre4.position.x=80;
-  escena.add(torre1,torre2,torre3,torre4);
+  
+  //Tablero
+  var cubo=new THREE.BoxGeometry(10,10,10);
+  var grupo= new THREE.Group();
+  var k=0;
+  
+  for (var i=0;i<8;i++){
+    for(var j=0;j<8;j++){
+
+    if(k%2==0){malla= new THREE.Mesh(cubo,ceranegro);}
+    else{malla= new THREE.Mesh(cubo,cerablanco);}
+
+    malla.position.x=(j+1)*10;
+    malla.position.z=(-i-1)*10;
+
+    malla.matrixAutoUpdate = false;
+    malla.updateMatrix();
+
+    grupo.add(malla);
+    k++;
+  }
+    k++;
+  }
+
+  //grupo2
+  var grupo2= new THREE.Group();
+
+  for(var l=0;l<10;l++){
+    for(var m=0;m<2;m++){
+    malla2= new THREE.Mesh(cubo,madera);
+    if(m==1){malla2.position.z=(-90);}
+    malla2.position.x=(l*10);
+    malla2.matrixAutoUpdate = false;
+    malla2.updateMatrix();
+    grupo2.add(malla2);
+  }}
+
+  //grupo3
+  var grupo3= new THREE.Group();
+
+  for(var l=1;l<9;l++){
+    for(var m=0;m<2;m++){
+    malla3= new THREE.Mesh(cubo,madera);
+    if(m==1){malla3.position.x=(90);}
+    malla3.position.z=(-l*10);
+    malla3.matrixAutoUpdate = false;
+    malla3.updateMatrix();
+    grupo3.add(malla3);
+  }}
+
+  escena.add(torre1,torre2,torre3,torre4,malla,malla2,malla3);
   
   renderizador = new THREE.WebGLRenderer();
   renderizador.setPixelRatio( window.devicePixelRatio );
