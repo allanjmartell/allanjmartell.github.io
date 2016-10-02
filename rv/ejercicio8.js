@@ -51,6 +51,6 @@ function init(){
 
 function loop(){
   requestAnimationFrame(loop);
-  //if(TEXTURA.malla !==undefined){TEXTURA.setup();}
+  if(malla1 !==undefined){init();}
   renderizador.render(escena,camara);
 } 
