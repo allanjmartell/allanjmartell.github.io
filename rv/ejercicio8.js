@@ -32,7 +32,7 @@ function init(){
   
   renderizador = new THREE.WebGLRenderer();
   renderizador.setSize(window.innerHeight*.95,window.innerHeight*.95);
-  document.body.appendChild(TEXTURA.renderizador.domElement);
+  document.body.appendChild(renderizador.domElement);
 }
 
 //TEXTURA.retrollamada2 = function(textura2){
