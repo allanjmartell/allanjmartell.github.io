@@ -4,7 +4,7 @@ var torre1,torre2;
 init();
 loop();
 
-function init(){
+function init() {
   camara = new THREE.PerspectiveCamera();
   camara.position.z=130;
   camara.position.x=50; 
@@ -12,7 +12,7 @@ function init(){
   escena = new THREE.Scene();
   
   var textura1 = new THREE.TextureLoader();
-  textura1.load("marmolblanco.jpg");
+  textura1.load('marmolblanco.jpg');
   //var cargador2 = new THREE.TextureLoader();
   //cargador2.load("marmolnegro.jpg",TEXTURA.retrollamada2);
   var marmolblanco = new THREE.MeshBasicMaterial({map:textura1});
@@ -49,8 +49,7 @@ function init(){
   //TEXTURA.malla4.position.x=80;
 //}
 
-function loop(){
+function loop() {
   requestAnimationFrame(loop);
-  if(torre1 !==undefined){init();}
   renderizador.render(escena,camara);
 } 
