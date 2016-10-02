@@ -51,6 +51,6 @@ function init(){
 
 function loop(){
   requestAnimationFrame(loop);
-  if(malla1 !==undefined){init();}
+  if(torre1 !==undefined){init();}
   renderizador.render(escena,camara);
 } 
