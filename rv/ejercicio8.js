@@ -17,7 +17,7 @@ function init() {
   var marmolblanco = new THREE.MeshBasicMaterial({map:textura1});
   
   //Torre1
-  torre1 = new THREE.Mesh(new THREE.BoxGeometry(1,1,1),marmolblanco);
+  torre1 = new THREE.Mesh(new THREE.BoxGeometry(50,50,50),marmolblanco);
   torre1.position.y=5;
   torre1.position.z=-10;
   torre1.position.x=10;
