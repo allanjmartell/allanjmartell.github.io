@@ -5,16 +5,17 @@ init();
 loop();
 
 function init() {
-  camara = new THREE.PerspectiveCamera(70, window.innerWidth / window.innerHeight, 1, 1000 );
+  //Camara
+  camara = new THREE.PerspectiveCamera();
   camara.position.z=130;
   camara.position.x=50; 
-  
+  //Escena
   escena = new THREE.Scene();
+  escena.rotateX(Math.PI/4);
   
+  //Textura
   var textura1 = new THREE.TextureLoader().load('marmolblanco.jpg');
-  //cargador2.load("marmolnegro.jpg",TEXTURA.retrollamada2);
   var marmolblanco = new THREE.MeshBasicMaterial({map:textura1});
-  
   //Torre1
   torre1 = new THREE.Mesh(torrefinal11,marmolblanco);
   torre1.position.y=5;
