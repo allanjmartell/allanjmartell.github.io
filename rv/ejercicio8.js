@@ -1,5 +1,5 @@
 var camara,escena,renderizador;
-var torre1,torre2,torre3,torre4,malla,malla2,malla3;
+var torre1,torre2,torre3,torre4,malla,malla2,malla3,grupo,grupo2,grupo3;
 
 init();
 loop();
@@ -47,7 +47,7 @@ function init() {
   
   //Tablero
   var cubo=new THREE.BoxGeometry(10,10,10);
-  var grupo= new THREE.Group();
+  grupo= new THREE.Group();
   var k=0;
   
   for (var i=0;i<8;i++){
@@ -69,7 +69,7 @@ function init() {
   }
 
   //grupo2
-  var grupo2= new THREE.Group();
+  grupo2= new THREE.Group();
 
   for(var l=0;l<10;l++){
     for(var m=0;m<2;m++){
@@ -82,7 +82,7 @@ function init() {
   }}
 
   //grupo3
-  var grupo3= new THREE.Group();
+  grupo3= new THREE.Group();
 
   for(var l=1;l<9;l++){
     for(var m=0;m<2;m++){
@@ -94,7 +94,7 @@ function init() {
     grupo3.add(malla3);
   }}
 
-  escena.add(torre1,torre2,torre3,torre4,malla,malla2,malla3);
+  escena.add(torre1,torre2,torre3,torre4,grupo,grupo2,grupo3);
   
   renderizador = new THREE.WebGLRenderer();
   renderizador.setPixelRatio( window.devicePixelRatio );
