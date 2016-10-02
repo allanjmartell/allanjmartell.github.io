@@ -12,7 +12,6 @@ function init() {
   escena = new THREE.Scene();
   
   var textura1 = new THREE.TextureLoader().load('marmolblanco.jpg');
-  //var cargador2 = new THREE.TextureLoader();
   //cargador2.load("marmolnegro.jpg",TEXTURA.retrollamada2);
   var marmolblanco = new THREE.MeshBasicMaterial({map:textura1});
   
@@ -22,16 +21,16 @@ function init() {
   torre1.position.z=-10;
   torre1.position.x=10;
   //Torre2
-  //torre2 = new THREE.Mesh(torrefinal11,marmolblanco);
-  //torre2.position.y=5;
-  //torre2.position.z=-80;
-  //torre2.position.x=10;
+  torre2 = new THREE.Mesh(torrefinal11,marmolblanco);
+  torre2.position.y=5;
+  torre2.position.z=-80;
+  torre2.position.x=10;
   
   escena.add(torre1);
   
   renderizador = new THREE.WebGLRenderer();
   renderizador.setPixelRatio( window.devicePixelRatio );
-	renderizador.setSize( window.innerWidth, window.innerHeight );
+  renderizador.setSize( window.innerWidth, window.innerHeight );
   document.body.appendChild(renderizador.domElement);
 }
 
