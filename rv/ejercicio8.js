@@ -5,33 +5,33 @@ init();
 loop();
 
 function init() {
-  camara = new THREE.PerspectiveCamera();
+  camara = new THREE.PerspectiveCamera(70, window.innerWidth / window.innerHeight, 1, 1000 );
   camara.position.z=130;
   camara.position.x=50; 
   
   escena = new THREE.Scene();
   
-  var textura1 = new THREE.TextureLoader();
-  textura1.load('marmolblanco.jpg');
+  var textura1 = new THREE.TextureLoader().load('marmolblanco.jpg');
   //var cargador2 = new THREE.TextureLoader();
   //cargador2.load("marmolnegro.jpg",TEXTURA.retrollamada2);
   var marmolblanco = new THREE.MeshBasicMaterial({map:textura1});
   
   //Torre1
-  torre1 = new THREE.Mesh(torrefinal11,marmolblanco);
+  torre1 = new THREE.Mesh(new THREE.BoxGeometry(1,1,1),marmolblanco);
   torre1.position.y=5;
   torre1.position.z=-10;
   torre1.position.x=10;
   //Torre2
-  torre2 = new THREE.Mesh(torrefinal11,marmolblanco);
-  torre2.position.y=5;
-  torre2.position.z=-80;
-  torre2.position.x=10;
+  //torre2 = new THREE.Mesh(torrefinal11,marmolblanco);
+  //torre2.position.y=5;
+  //torre2.position.z=-80;
+  //torre2.position.x=10;
   
-  escena.add(torre1,torre2);
+  escena.add(torre1);
   
   renderizador = new THREE.WebGLRenderer();
-  renderizador.setSize(window.innerHeight*.95,window.innerHeight*.95);
+  renderizador.setPixelRatio( window.devicePixelRatio );
+	renderizador.setSize( window.innerWidth, window.innerHeight );
   document.body.appendChild(renderizador.domElement);
 }
 
