@@ -27,7 +27,7 @@ function init() {
   torre2.position.z=-80;
   torre2.position.x=10;
   
-  escena.add(torre1);
+  escena.add(torre1,torre2);
   
   renderizador = new THREE.WebGLRenderer();
   renderizador.setPixelRatio( window.devicePixelRatio );
