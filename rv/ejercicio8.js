@@ -47,10 +47,10 @@ TEXTURA.setup = function(){
   
 TEXTURA.loop = function(){
   requestAnimationFrame(TEXTURA.loop);
+  if(TEXTURA.malla !==undefined){TEXTURA.setup();}
   TEXTURA.renderizador.render(TEXTURA.escena,TEXTURA.camara);
 } 
 
-TEXTURA.setup();
 TEXTURA.loop();
 
 
