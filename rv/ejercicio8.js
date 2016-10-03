@@ -97,8 +97,8 @@ function init() {
   escena.add(torre1,torre2,torre3,torre4,grupo,grupo2,grupo3);
   
   renderizador = new THREE.WebGLRenderer();
-  renderizador.setPixelRatio( window.devicePixelRatio );
-  renderizador.setSize( window.innerWidth, window.innerHeight );
+  //renderizador.setPixelRatio( window.devicePixelRatio );
+  renderizador.setSize( window.innerWidth*.95, window.innerHeight*.95 );
   document.body.appendChild(renderizador.domElement);
 }
 
