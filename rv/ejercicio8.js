@@ -5,13 +5,13 @@ init();
 loop();
 
 function init() {
+  //Escena
+  escena = new THREE.Scene();
+  escena.rotateX(Math.PI/4);
   //Camara
   camara = new THREE.PerspectiveCamera();
   camara.position.z=130;
   camara.position.x=50; 
-  //Escena
-  escena = new THREE.Scene();
-  escena.rotateX(Math.PI/4);
   
   //Textura
   var textura1 = new THREE.TextureLoader().load('marmolblanco.jpg');
@@ -98,7 +98,7 @@ function init() {
   
   renderizador = new THREE.WebGLRenderer();
   //renderizador.setPixelRatio( window.devicePixelRatio );
-  renderizador.setSize( window.innerWidth*.95, window.innerHeight*.95 );
+  renderizador.setSize( window.innerHeight*.95, window.innerHeight*.95 );
   document.body.appendChild(renderizador.domElement);
 }
 
