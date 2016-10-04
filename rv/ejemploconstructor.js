@@ -38,7 +38,7 @@ CONSTRUCTOR.setup = function(){
 
 CONSTRUCTOR.loop = function(){
   requestAnimationFrame(CONSTRUCTOR.loop);
-  CONSTRUCTOR.renderizador.render(CONSTRCUTOR.escena,CONSTRUCTOR.camara);
+  CONSTRUCTOR.renderizador.render(CONSTRUCTOR.escena,CONSTRUCTOR.camara);
 }
 
 CONSTRUCTOR.setup();
