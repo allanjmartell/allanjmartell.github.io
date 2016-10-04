@@ -27,7 +27,7 @@ CONSTRUCTOR.setup = function(){
   CONSTRUCTOR.camara.position.z = 20;
   
   var lienzo = document.getElementById("ejemploconstructor");
-  CONSTRUCTOR.renderizador = new WebGLRenderer({canvas:lienzo,antialias:true});
+  CONSTRUCTOR.renderizador = new THREE.WebGLRenderer({canvas:lienzo,antialias:true});
   
   CONSTRUCTOR.renderizador.setSize(600,600);
   
