@@ -11,7 +11,7 @@ function Arbol(){
   arbolForma.merge(esferaMalla.geometry,esferaMalla.matrix);
   
   var material = new THREE.MeshNormalMaterial();
-  this.malla = new THREE.(arbolForma,material);//this para recobrar el valor de la variable Arbol en el constructor
+  this.malla = new THREE.Mesh(arbolForma,material);//this para recobrar el valor de la variable Arbol en el constructor
 }
 
 var CONSTRUCTOR =  new Object();
