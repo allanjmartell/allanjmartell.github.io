@@ -1,5 +1,5 @@
 var camara,escena,renderizador;
-var torre1,torre2,torre3,torre4;
+var torre1,torre2,torre3,torre4,malla,malla2,malla3,grupo,grupo2,grupo3;
 var prototipo = new Object();
 
 prototipo.TorreGeometry= function() {
@@ -129,7 +129,12 @@ prototipo.TorreGeometry= function() {
   this.merge(mallacubito33.geometry,mallacubito33.matrix);
 }
 
+prototipo.TableroGeometry1 = function(){
+  THREE.Geometry.call(this);
+  this = new THREE.BoxGeometry(10,10,10);
+}
 prototipo.TorreGeometry.prototype = new THREE.Geometry();
+prototipo.TableroGeometry1.prototype = new THREE.Geometry();
 
 prototipo.setup = function(){
   //Escena
@@ -143,8 +148,14 @@ prototipo.setup = function(){
   //Textura
   var textura1 = new THREE.TextureLoader().load('marmolblanco.jpg');
   var textura2 = new THREE.TextureLoader().load('marmolnegro.jpg');
+  var textura3 = new THREE.TextureLoader().load('cerablanca.jpg');
+  var textura4 = new THREE.TextureLoader().load('ceranegra.jpg');
+  var textura5 = new THREE.TextureLoader().load('madera.jpg');
   var marmolblanco = new THREE.MeshBasicMaterial({map:textura1});
   var marmolnegro = new THREE.MeshBasicMaterial({map:textura2});
+  var cerablanco = new THREE.MeshBasicMaterial({map:textura3});
+  var ceranegro = new THREE.MeshBasicMaterial({map:textura4});
+  var madera = new THREE.MeshBasicMaterial({map:textura5});
   
   //Figuras
   torre1 = new THREE.Mesh(new prototipo.TorreGeometry(),marmolblanco);
@@ -166,8 +177,30 @@ prototipo.setup = function(){
   torre4.position.y=5;
   torre4.position.z=-10;
   torre4.position.x=80;
+  //Tablero
+  grupo= new THREE.Group();
+  var k=0;
   
-  escena.add(torre1,torre2,torre3,torre4);
+  for (var i=0;i<8;i++){
+    for(var j=0;j<8;j++){
+
+    if(k%2==0){malla= new THREE.Mesh(prototipo.TableroGeometry1(),ceranegro);}
+    else{malla= new THREE.Mesh(prototipo.TableroGeometry1(),cerablanco);}
+
+    malla.position.x=(j+1)*10;
+    malla.position.z=(-i-1)*10;
+
+    malla.matrixAutoUpdate = false;
+    malla.updateMatrix();
+
+    grupo.add(malla);
+    k++;
+  }
+    k++;
+  }
+  
+  
+  escena.add(torre1,torre2,torre3,torre4,grupo);
   
   renderizador = new THREE.WebGLRenderer();
   //renderizador.setPixelRatio( window.devicePixelRatio );
