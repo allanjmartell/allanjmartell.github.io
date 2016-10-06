@@ -3,7 +3,7 @@ var torre1,torre2,torre3,torre4;
 
 PROTOTIPO.TorreGeometry();
 
-function PROTOTIPO.TorreGeometry(){
+function TorreGeometry(){
   THREE.Geometry.call(this);
   
   var torre= [];
