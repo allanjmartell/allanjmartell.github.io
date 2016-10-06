@@ -2,7 +2,7 @@ var camara,escena,renderizador;
 var torre1,torre2,torre3,torre4;
 var prototipo = new Object();
 
-prototipo.TorreGeometry() = function{
+prototipo.TorreGeometry= function() {
   THREE.Geometry.call(this);
   
   var torre= [];
