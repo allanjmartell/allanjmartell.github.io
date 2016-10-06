@@ -147,22 +147,22 @@ prototipo.setup = function(){
   var marmolnegro = new THREE.MeshBasicMaterial({map:textura2});
   
   //Figuras
-  torre1 = new THREE.Mesh(new TorreGeometry(),marmolblanco);
+  torre1 = new THREE.Mesh(new prototipo.TorreGeometry(),marmolblanco);
   torre1.position.y=5;
   torre1.position.z=-10;
   torre1.position.x=10;
   //Torre2
-  torre2 = new THREE.Mesh(new TorreGeometry(),marmolblanco);
+  torre2 = new THREE.Mesh(new prototipo.TorreGeometry(),marmolblanco);
   torre2.position.y=5;
   torre2.position.z=-80;
   torre2.position.x=10;
   //Torre3
-  torre3 = new THREE.Mesh(new TorreGeometry(),marmolnegro);
+  torre3 = new THREE.Mesh(new prototipo.TorreGeometry(),marmolnegro);
   torre3.position.y=5;
   torre3.position.z=-80;
   torre3.position.x=80;
   //Torre4
-  torre4 = new THREE.Mesh(new TorreGeometry(),marmolnegro);
+  torre4 = new THREE.Mesh(new prototipo.TorreGeometry(),marmolnegro);
   torre4.position.y=5;
   torre4.position.z=-10;
   torre4.position.x=80;
