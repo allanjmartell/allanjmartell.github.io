@@ -1,6 +1,6 @@
+var PROTOTITPO = new Object();
 var camara,escena,renderizador;
 var torre1,torre2,torre3,torre4;
-var PROTOTITPO = new Object();
 
 PROTOTIPO.TorreGeometry = function(){
   THREE.Geometry.call(this);
