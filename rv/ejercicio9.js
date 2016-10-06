@@ -180,3 +180,5 @@ prototipo.loop = function(){
   renderizador.render(escena,camara);
 }
 
+prototipo.setup();
+prototipo.loop();
