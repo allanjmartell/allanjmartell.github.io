@@ -2,9 +2,6 @@ var camara,escena,renderizador;
 var torre1,torre2,torre3,torre4;
 var PROTOTITPO = new Object();
 
-PROTOTIPO.setup();
-PROTOTIPO.loop();
-
 PROTOTIPO.TorreGeometry = function(){
   THREE.Geometry.call(this);
   
@@ -182,3 +179,6 @@ PROTOTIPO.loop = function(){
   requestAnimationFrame(PROTOTIPO.loop);
   renderizador.render(escena,camara);
 }
+
+PROTOTIPO.setup();
+PROTOTIPO.loop();
