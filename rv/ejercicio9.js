@@ -1,9 +1,8 @@
 var camara,escena,renderizador;
 var torre1,torre2,torre3,torre4;
+var prototipo = new Object();
 
-TorreGeometry();
-
-function TorreGeometry(){
+prototipo.TorreGeometry() = function{
   THREE.Geometry.call(this);
   
   var torre= [];
@@ -130,9 +129,9 @@ function TorreGeometry(){
   this.merge(mallacubito33.geometry,mallacubito33.matrix);
 }
 
-TorreGeometry.prototype = new THREE.Geometry();
+prototipo.TorreGeometry.prototype = new THREE.Geometry();
 
-TorreGeometry.setup = function(){
+prototipo.setup = function(){
   //Escena
   escena = new THREE.Scene();
   escena.rotateX(Math.PI/4);
@@ -176,8 +175,8 @@ TorreGeometry.setup = function(){
   document.body.appendChild(renderizador.domElement);
 }
   
-PROTOTIPO.loop = function(){
-  requestAnimationFrame(PROTOTIPO.loop);
+prototipo.loop = function(){
+  requestAnimationFrame(prototipo.loop);
   renderizador.render(escena,camara);
 }
 
