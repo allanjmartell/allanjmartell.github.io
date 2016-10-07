@@ -138,70 +138,80 @@ prototipo.TorreGeometry= function() {
   this.merge(mallacubito33.geometry,mallacubito33.matrix);
 }
 
+prototipo.TableroGeometry = function(){
+  Object.call(this);
+  this.cubo = new THREE.BoxGeometry(10,10,10);
+}
+
+prototipo.TableroGeometry.prototype = new Object();
 prototipo.TorreGeometry.prototype = new THREE.Geometry();
 
 prototipo.setup = function(){
   //Textura
-  var textura1 = new THREE.TextureLoader().load('marmolblanco.jpg');
-  var textura2 = new THREE.TextureLoader().load('marmolnegro.jpg');
-  
-  var marmolblanco = new THREE.MeshBasicMaterial({map:textura1});
-  var marmolnegro = new THREE.MeshBasicMaterial({map:textura2});
+    var textura1 = new THREE.TextureLoader().load('marmolblanco.jpg');
+    var textura2 = new THREE.TextureLoader().load('marmolnegro.jpg');
+
+    var marmolblanco = new THREE.MeshBasicMaterial({map:textura1});
+    var marmolnegro = new THREE.MeshBasicMaterial({map:textura2});
   
   //Figuras
-  torre1 = new THREE.Mesh(new prototipo.TorreGeometry(),marmolblanco);
-  torre1.position.y=5;
-  torre1.position.z=-10;
-  torre1.position.x=10;
+    torre1 = new THREE.Mesh(new prototipo.TorreGeometry(),marmolblanco);
+    torre1.position.y=5;
+    torre1.position.z=-10;
+    torre1.position.x=10;
   //Torre2
-  torre2 = new THREE.Mesh(new prototipo.TorreGeometry(),marmolblanco);
-  torre2.position.y=5;
-  torre2.position.z=-80;
-  torre2.position.x=10;
+    torre2 = new THREE.Mesh(new prototipo.TorreGeometry(),marmolblanco);
+    torre2.position.y=5;
+    torre2.position.z=-80;
+    torre2.position.x=10;
   //Torre3
-  torre3 = new THREE.Mesh(new prototipo.TorreGeometry(),marmolnegro);
-  torre3.position.y=5;
-  torre3.position.z=-80;
-  torre3.position.x=80;
+    torre3 = new THREE.Mesh(new prototipo.TorreGeometry(),marmolnegro);
+    torre3.position.y=5;
+    torre3.position.z=-80;
+    torre3.position.x=80;
   //Torre4
-  torre4 = new THREE.Mesh(new prototipo.TorreGeometry(),marmolnegro);
-  torre4.position.y=5;
-  torre4.position.z=-10;
-  torre4.position.x=80;
+    torre4 = new THREE.Mesh(new prototipo.TorreGeometry(),marmolnegro);
+    torre4.position.y=5;
+    torre4.position.z=-10;
+    torre4.position.x=80;
   
+  //Tablero
+    var textura3 = new THREE.TextureLoader().load('cerablanca.jpg');
+    var textura4 = new THREE.TextureLoader().load('ceranegra.jpg');
+    var textura5 = new THREE.TextureLoader().load('madera.jpg');
+
+    var cerablanco = new THREE.MeshBasicMaterial({map:textura3});
+    var ceranegro = new THREE.MeshBasicMaterial({map:textura4});
+    var madera = new THREE.MeshBasicMaterial({map:textura5});
+
+    grupo= new THREE.Group();
+    var k=0;
+
+    for (var i=0;i<8;i++){
+      for(var j=0;j<8;j++){
+
+      if(k%2==0){malla1= new THREE.Mesh(new prototipo.TableroGeometry.cubo,ceranegro);}
+      else{malla1= new THREE.Mesh(new prototipo.TableroGeometry.cubo,cerablanco);}
+
+      malla1.position.x=(j+1)*10;
+      malla1.position.z=(-i-1)*10;
+
+      malla1.matrixAutoUpdate = false;
+      malla1.updateMatrix();
+
+      grupo.add(malla1);
+      k++;
+    }
+      k++;
+    }
+
+  escena.add(grupo);
   escena.add(torre1,torre2,torre3,torre4);
+
+  
 }
 
-  var textura3 = new THREE.TextureLoader().load('cerablanca.jpg');
-  var textura4 = new THREE.TextureLoader().load('ceranegra.jpg');
-  var textura5 = new THREE.TextureLoader().load('madera.jpg');
   
-  var cerablanco = new THREE.MeshBasicMaterial({map:textura3});
-  var ceranegro = new THREE.MeshBasicMaterial({map:textura4});
-  var madera = new THREE.MeshBasicMaterial({map:textura5});
-  
-  grupo= new THREE.Group();
-  var k=0;
-  
-  for (var i=0;i<8;i++){
-    for(var j=0;j<8;j++){
-
-    if(k%2==0){malla1= new THREE.Mesh(new THREE.BoxGeometry(10,10,10),ceranegro);}
-    else{malla1= new THREE.Mesh(new THREE.BoxGeometry(10,10,10),cerablanco);}
-
-    malla1.position.x=(j+1)*10;
-    malla1.position.z=(-i-1)*10;
-
-    malla1.matrixAutoUpdate = false;
-    malla1.updateMatrix();
-
-    grupo.add(malla1);
-    k++;
-  }
-    k++;
-  }
-
-escena.add(grupo);
 
 renderizador = new THREE.WebGLRenderer();
   //renderizador.setPixelRatio( window.devicePixelRatio );
