@@ -1,7 +1,6 @@
 var camara,escena,renderizador;
 var torre1,torre2,torre3,torre4,malla1,malla2,malla3,grupo,grupo2,grupo3;
 var prototipo = new Object();
-var prototipo2 = new Object();
 
 prototipo.TorreGeometry= function() {
   THREE.Geometry.call(this);
@@ -130,15 +129,7 @@ prototipo.TorreGeometry= function() {
   this.merge(mallacubito33.geometry,mallacubito33.matrix);
 }
 
-prototipo2.TableroGeometry = function(){
-  THREE.BoxGeometry.call(this);
-  this.width= 10;
-  this.height=10;
-  this.depth= 10;
-}
-
 prototipo.TorreGeometry.prototype = new THREE.Geometry();
-prototipo2.TableroGeometry.prototype = new THREE.BoxGeometry();
 
 prototipo.setup = function(){
   //Escena
@@ -179,8 +170,6 @@ prototipo.setup = function(){
   
   escena.add(torre1,torre2,torre3,torre4);
 }
-
-prototipo2.setup = function(){
   var textura3 = new THREE.TextureLoader().load('cerablanca.jpg');
   var textura4 = new THREE.TextureLoader().load('ceranegra.jpg');
   var textura5 = new THREE.TextureLoader().load('madera.jpg');
@@ -211,7 +200,6 @@ prototipo2.setup = function(){
   }
   
   escena.add(grupo);
-}
 
 renderizador = new THREE.WebGLRenderer();
   //renderizador.setPixelRatio( window.devicePixelRatio );
@@ -224,5 +212,4 @@ prototipo.loop = function(){
 }
 
 prototipo.setup();
-prototipo2.setup();
 prototipo.loop();
