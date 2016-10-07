@@ -132,11 +132,13 @@ prototipo.TorreGeometry= function() {
 
 prototipo2.TableroGeometry1 = function(){
   THREE.BoxGeometry.call(this);
-  this.parameters.widthSegments= 2;
+  this.width= 10;
+  this.height=10;
+  this.depth= 10;
 }
 
 prototipo.TorreGeometry.prototype = new THREE.Geometry();
-prototipo2.TableroGeometry1.prototype = new THREE.BoxGeometry(10,10,10);
+prototipo2.TableroGeometry.prototype = new THREE.BoxGeometry();
 
 prototipo.setup = function(){
   //Escena
@@ -193,8 +195,8 @@ prototipo2.setup = function(){
   for (var i=0;i<8;i++){
     for(var j=0;j<8;j++){
 
-    if(k%2==0){malla1= new THREE.Mesh(new prototipo2.TableroGeometry1(),ceranegro);}
-    else{malla1= new THREE.Mesh(new prototipo2.TableroGeometry1(),cerablanco);}
+    if(k%2==0){malla1= new THREE.Mesh(new prototipo2.TableroGeometry(),ceranegro);}
+    else{malla1= new THREE.Mesh(new prototipo2.TableroGeometry(),cerablanco);}
 
     malla1.position.x=(j+1)*10;
     malla1.position.z=(-i-1)*10;
