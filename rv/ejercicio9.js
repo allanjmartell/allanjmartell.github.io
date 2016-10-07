@@ -130,9 +130,10 @@ prototipo.TorreGeometry= function() {
 }
 
 prototipo.TableroGeometry1 = function(){
-  Three.BoxGeometry.call(this);
+  THREE.BoxGeometry.call(this);
   this.parameters.widthSegments= 2;
 }
+
 prototipo.TorreGeometry.prototype = new THREE.Geometry();
 prototipo.TableroGeometry1.prototype = new THREE.BoxGeometry(10,10,10);
 
