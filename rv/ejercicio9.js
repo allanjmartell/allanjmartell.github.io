@@ -130,11 +130,11 @@ prototipo.TorreGeometry= function() {
 }
 
 prototipo.TableroGeometry1 = function(){
-  THREE.Geometry.call(this);
-  this= new THREE.BoxGeometry(10,10,10);
+  THREE.Object.call(this);
+  this.cubo= new THREE.BoxGeometry(10,10,10);
 }
 prototipo.TorreGeometry.prototype = new THREE.Geometry();
-prototipo.TableroGeometry1.prototype = new THREE.Geometry();
+prototipo.TableroGeometry1.prototype = new THREE.Object();
 
 prototipo.setup = function(){
   //Escena
