@@ -210,12 +210,14 @@ prototipo2.setup = function(){
   
   escena.add(grupo);
 }
-prototipo.loop = function(){
-  requestAnimationFrame(prototipo.loop);
-  renderizador = new THREE.WebGLRenderer();
+
+renderizador = new THREE.WebGLRenderer();
   //renderizador.setPixelRatio( window.devicePixelRatio );
   renderizador.setSize( window.innerHeight*.95, window.innerHeight*.95 );
   document.body.appendChild(renderizador.domElement);
+
+prototipo.loop = function(){
+  requestAnimationFrame(prototipo.loop);
   renderizador.render(escena,camara);
 }
 
