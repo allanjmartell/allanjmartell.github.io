@@ -141,11 +141,37 @@ prototipo.TorreGeometry= function() {
 }
 
 prototipo.TableroGeometry = function(){
-  Object.call(this);
-  this.cubo = new THREE.BoxGeometry(10,10,10);
+  THREE.Group.call(this);
+    var textura3 = new THREE.TextureLoader().load('cerablanca.jpg');
+    var textura4 = new THREE.TextureLoader().load('ceranegra.jpg');
+    var textura5 = new THREE.TextureLoader().load('madera.jpg');
+
+    var cerablanco = new THREE.MeshBasicMaterial({map:textura3});
+    var ceranegro = new THREE.MeshBasicMaterial({map:textura4});
+    var madera = new THREE.MeshBasicMaterial({map:textura5});
+    
+    //grupo= new THREE.Group();
+
+    for (var i=0;i<8;i++){
+      for(var j=0;j<8;j++){
+
+      if(k%2==0){malla1= new THREE.Mesh(new THREE.BoxGeometry(10,10,10),ceranegro);}
+      else{malla1= new THREE.Mesh(new THREE.BoxGeometry(10,10,10),cerablanco);}
+
+      malla1.position.x=(j+1)*10;
+      malla1.position.z=(-i-1)*10;
+
+      malla1.matrixAutoUpdate = false;
+      malla1.updateMatrix();
+
+      this.add(malla1);
+      k++;
+    }
+      k++;
+    }
 }
 
-prototipo.TableroGeometry.prototype = new Object();
+prototipo.TableroGeometry.prototype = new THREE.Group();
 prototipo.TorreGeometry.prototype = new THREE.Geometry();
 
 prototipo.setup = function(){
@@ -177,35 +203,7 @@ prototipo.setup = function(){
     torre4.position.z=-10;
     torre4.position.x=80;
   
-  //Tablero
-    var textura3 = new THREE.TextureLoader().load('cerablanca.jpg');
-    var textura4 = new THREE.TextureLoader().load('ceranegra.jpg');
-    var textura5 = new THREE.TextureLoader().load('madera.jpg');
-
-    var cerablanco = new THREE.MeshBasicMaterial({map:textura3});
-    var ceranegro = new THREE.MeshBasicMaterial({map:textura4});
-    var madera = new THREE.MeshBasicMaterial({map:textura5});
-
-    grupo= new THREE.Group();
-
-    for (var i=0;i<8;i++){
-      for(var j=0;j<8;j++){
-
-      if(k%2==0){malla1= new THREE.Mesh(new THREE.BoxGeometry(10,10,10),ceranegro);}
-      else{malla1= new THREE.Mesh(new THREE.BoxGeometry(10,10,10),cerablanco);}
-
-      malla1.position.x=(j+1)*10;
-      malla1.position.z=(-i-1)*10;
-
-      malla1.matrixAutoUpdate = false;
-      malla1.updateMatrix();
-
-      grupo.add(malla1);
-      k++;
-    }
-      k++;
-    }
-  escena.add(torre1,torre2,torre3,torre4,grupo);
+  escena.add(torre1,torre2,torre3,torre4,new prototipo.TableroGeometry());
 
   renderizador = new THREE.WebGLRenderer();
   renderizador.setSize( window.innerHeight*.95, window.innerHeight*.95 );
