@@ -130,7 +130,7 @@ prototipo.TorreGeometry= function() {
   this.merge(mallacubito33.geometry,mallacubito33.matrix);
 }
 
-prototipo2.TableroGeometry1 = function(){
+prototipo2.TableroGeometry = function(){
   THREE.BoxGeometry.call(this);
   this.width= 10;
   this.height=10;
