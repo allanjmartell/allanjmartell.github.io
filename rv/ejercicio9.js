@@ -1,6 +1,7 @@
 var camara,escena,renderizador;
-var torre1,torre2,torre3,torre4,malla,malla2,malla3,grupo,grupo2,grupo3;
+var torre1,torre2,torre3,torre4,malla1,malla2,malla3,grupo,grupo2,grupo3;
 var prototipo = new Object();
+//var prototipo2= new Object();
 
 prototipo.TorreGeometry= function() {
   THREE.Geometry.call(this);
@@ -184,16 +185,16 @@ prototipo.setup = function(){
   for (var i=0;i<8;i++){
     for(var j=0;j<8;j++){
 
-    if(k%2==0){malla= new THREE.Mesh(prototipo.TableroGeometry1(),ceranegro);}
-    else{malla= new THREE.Mesh(prototipo.TableroGeometry1(),cerablanco);}
+    if(k%2==0){malla1= new THREE.Mesh(prototipo.TableroGeometry1(),ceranegro);}
+    else{malla1= new THREE.Mesh(prototipo.TableroGeometry1(),cerablanco);}
 
-    malla.position.x=(j+1)*10;
-    malla.position.z=(-i-1)*10;
+    malla1.position.x=(j+1)*10;
+    malla1.position.z=(-i-1)*10;
 
-    malla.matrixAutoUpdate = false;
-    malla.updateMatrix();
+    malla1.matrixAutoUpdate = false;
+    malla1.updateMatrix();
 
-    grupo.add(malla);
+    grupo.add(malla1);
     k++;
   }
     k++;
