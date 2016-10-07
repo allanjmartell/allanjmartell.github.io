@@ -1,8 +1,9 @@
 var camara,escena,renderizador;
 var torre1,torre2,torre3,torre4;//Torres
 var malla1,malla2,malla3,grupo,grupo2,grupo3;//Tablero
-var prototipo = new Object();
 
+var prototipo = new Object();
+var k=0;
 //Escena
 escena = new THREE.Scene();
 escena.rotateX(Math.PI/4);
@@ -185,7 +186,6 @@ prototipo.setup = function(){
     var madera = new THREE.MeshBasicMaterial({map:textura5});
 
     grupo= new THREE.Group();
-    var k=0;
 
     for (var i=0;i<8;i++){
       for(var j=0;j<8;j++){
@@ -205,18 +205,13 @@ prototipo.setup = function(){
       k++;
     }
 
-  escena.add(grupo);
+  escena.add(malla1);
   escena.add(torre1,torre2,torre3,torre4);
 
-  
-}
-
-  
-
-renderizador = new THREE.WebGLRenderer();
-  //renderizador.setPixelRatio( window.devicePixelRatio );
+  renderizador = new THREE.WebGLRenderer();
   renderizador.setSize( window.innerHeight*.95, window.innerHeight*.95 );
   document.body.appendChild(renderizador.domElement);
+}
 
 prototipo.loop = function(){
   requestAnimationFrame(prototipo.loop);
