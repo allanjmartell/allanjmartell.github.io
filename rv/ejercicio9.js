@@ -5,6 +5,14 @@ var malla1,malla2,malla3,grupo,grupo2,grupo3;//Tablero
 var prototipo = new Object();
 var k=0;
 
+//Escena
+  escena = new THREE.Scene();
+  escena.rotateX(Math.PI/4);
+  //Camara
+  camara = new THREE.PerspectiveCamera();
+  camara.position.z=130;
+  camara.position.x=50; 
+
 prototipo.TorreGeometry= function() {
   THREE.Geometry.call(this);
   
@@ -197,15 +205,6 @@ prototipo.setup = function(){
     }
       k++;
     }
-  
-  //Escena
-  escena = new THREE.Scene();
-  escena.rotateX(Math.PI/4);
-  //Camara
-  camara = new THREE.PerspectiveCamera();
-  camara.position.z=130;
-  camara.position.x=50; 
-
   escena.add(torre1,torre2,torre3,torre4,malla1);
 
   renderizador = new THREE.WebGLRenderer();
