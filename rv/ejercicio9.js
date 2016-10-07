@@ -184,8 +184,8 @@ prototipo.setup = function(){
   for (var i=0;i<8;i++){
     for(var j=0;j<8;j++){
 
-    if(k%2==0){malla1= new THREE.Mesh(new prototipo2.TableroGeometry(),ceranegro);}
-    else{malla1= new THREE.Mesh(new prototipo2.TableroGeometry(),cerablanco);}
+    if(k%2==0){malla1= new THREE.Mesh(new THREE.BoxGeometry(10,10,10),ceranegro);}
+    else{malla1= new THREE.Mesh(new THREE.BoxGeometry(10,10,10),cerablanco);}
 
     malla1.position.x=(j+1)*10;
     malla1.position.z=(-i-1)*10;
