@@ -190,8 +190,8 @@ prototipo.setup = function(){
     for (var i=0;i<8;i++){
       for(var j=0;j<8;j++){
 
-      if(k%2==0){malla1= new THREE.Mesh(new prototipo.TableroGeometry.cubo,ceranegro);}
-      else{malla1= new THREE.Mesh(new prototipo.TableroGeometry.cubo,cerablanco);}
+      if(k%2==0){malla1= new THREE.Mesh(new prototipo.TableroGeometry.cubo(),ceranegro);}
+      else{malla1= new THREE.Mesh(new prototipo.TableroGeometry.cubo(),cerablanco);}
 
       malla1.position.x=(j+1)*10;
       malla1.position.z=(-i-1)*10;
