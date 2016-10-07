@@ -1,6 +1,6 @@
 var camara,escena,renderizador;
 var torre1,torre2,torre3,torre4;//Torres
-var malla1,malla2,malla3,grupo,grupo2,grupo3;//Tablero
+var malla1,malla2,malla3;//Tablero
 
 var prototipo = new Object();
 var k=0;
@@ -144,11 +144,9 @@ prototipo.TableroGeometry = function(){
   THREE.Group.call(this);
     var textura3 = new THREE.TextureLoader().load('cerablanca.jpg');
     var textura4 = new THREE.TextureLoader().load('ceranegra.jpg');
-    var textura5 = new THREE.TextureLoader().load('madera.jpg');
 
     var cerablanco = new THREE.MeshBasicMaterial({map:textura3});
     var ceranegro = new THREE.MeshBasicMaterial({map:textura4});
-    var madera = new THREE.MeshBasicMaterial({map:textura5});
     
     //grupo= new THREE.Group();
 
@@ -171,7 +169,37 @@ prototipo.TableroGeometry = function(){
     }
 }
 
+prototipo.TableroGeometry1 = function(){
+  THREE.Group.call(this);
+  var textura5 = new THREE.TextureLoader().load('madera.jpg');
+  var madera = new THREE.MeshBasicMaterial({map:textura5});
+    for(var l=0;l<10;l++){
+    for(var m=0;m<2;m++){
+    malla2= new THREE.Mesh(cubo,madera);
+    if(m==1){malla2.position.z=(-90);}
+    malla2.position.x=(l*10);
+    malla2.matrixAutoUpdate = false;
+    malla2.updateMatrix();
+    this.add(malla2);
+  }}
+  
+prototipo.TableroGeometry2 = function(){
+  THREE.Group.call(this);
+  var textura5 = new THREE.TextureLoader().load('madera.jpg');
+  var madera = new THREE.MeshBasicMaterial({map:textura5});
+  for(var l=1;l<9;l++){
+    for(var m=0;m<2;m++){
+    malla3= new THREE.Mesh(cubo,madera);
+    if(m==1){malla3.position.x=(90);}
+    malla3.position.z=(-l*10);
+    malla3.matrixAutoUpdate = false;
+    malla3.updateMatrix();
+    this.add(malla3);
+  }}
+  
 prototipo.TableroGeometry.prototype = new THREE.Group();
+prototipo.TableroGeometry1.prototype = new THREE.Group();
+prototipo.TableroGeometry2.prototype = new THREE.Group();
 prototipo.TorreGeometry.prototype = new THREE.Geometry();
 
 prototipo.setup = function(){
@@ -203,7 +231,7 @@ prototipo.setup = function(){
     torre4.position.z=-10;
     torre4.position.x=80;
   
-  escena.add(torre1,torre2,torre3,torre4,new prototipo.TableroGeometry());
+  escena.add(torre1,torre2,torre3,torre4,new prototipo.TableroGeometry(),new prototipo.TableroGeometry1(),new prototipo.TableroGeometry2());
 
   renderizador = new THREE.WebGLRenderer();
   renderizador.setSize( window.innerHeight*.95, window.innerHeight*.95 );
