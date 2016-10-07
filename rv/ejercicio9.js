@@ -4,13 +4,6 @@ var malla1,malla2,malla3,grupo,grupo2,grupo3;//Tablero
 
 var prototipo = new Object();
 var k=0;
-//Escena
-escena = new THREE.Scene();
-escena.rotateX(Math.PI/4);
-//Camara
-camara = new THREE.PerspectiveCamera();
-camara.position.z=130;
-camara.position.x=50; 
 
 prototipo.TorreGeometry= function() {
   THREE.Geometry.call(this);
@@ -190,8 +183,8 @@ prototipo.setup = function(){
     for (var i=0;i<8;i++){
       for(var j=0;j<8;j++){
 
-      if(k%2==0){malla1= new THREE.Mesh(new prototipo.TableroGeometry(),ceranegro);}
-      else{malla1= new THREE.Mesh(new prototipo.TableroGeometry(),cerablanco);}
+      if(k%2==0){malla1= new THREE.Mesh(prototipo.TableroGeometry(),ceranegro);}
+      else{malla1= new THREE.Mesh(prototipo.TableroGeometry(),cerablanco);}
 
       malla1.position.x=(j+1)*10;
       malla1.position.z=(-i-1)*10;
@@ -204,9 +197,16 @@ prototipo.setup = function(){
     }
       k++;
     }
+  
+  //Escena
+  escena = new THREE.Scene();
+  escena.rotateX(Math.PI/4);
+  //Camara
+  camara = new THREE.PerspectiveCamera();
+  camara.position.z=130;
+  camara.position.x=50; 
 
-  escena.add(malla1);
-  escena.add(torre1,torre2,torre3,torre4);
+  escena.add(torre1,torre2,torre3,torre4,malla1);
 
   renderizador = new THREE.WebGLRenderer();
   renderizador.setSize( window.innerHeight*.95, window.innerHeight*.95 );
