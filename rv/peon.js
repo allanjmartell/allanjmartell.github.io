@@ -2,7 +2,7 @@
 var basepeon = new THREE.CylinderGeometry(5,5,2,20);//Altura = 2
 var basepeon2= new THREE.TorusGeometry(3,1.5,20,100);//Altura = 4
 basepeon2.rotateX(Math.PI/2);
-basepeon2.translate(0,2,0);
+basepeon2.translate(0,1,0);
 var columna = new THREE.CylinderGeometry(3.5,3.5,8,10);
 columna.translate(0,6,0);
 var techopeon= new THREE.CylinderGeometry(4,4,1,20);//Altura = 9
