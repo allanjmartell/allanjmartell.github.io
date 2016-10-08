@@ -198,7 +198,7 @@ prototipo.TableroGeometry2 = function(){
   }}
 }
 
-prototipo.PeonGeometry = function{
+prototipo.PeonGeometry = function(){
   THREE.Group.call(this);
   //Geometrias
   var basepeon = new THREE.CylinderGeometry(5,5,2,20);//Altura = 2
