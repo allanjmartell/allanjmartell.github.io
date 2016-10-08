@@ -9,7 +9,7 @@ camara.position.z=20;
 //Geometrias
 var basepeon = new THREE.CylinderGeometry(5,5,2,10);
 var basepeon2= new THREE.TorusGeometry(5,1);
-basepeon2.position.y=2;
+basepeon2.translate(0,2,0);
 
 //Mesh
 var mbasepeon = new THREE.Mesh(basepeon);
