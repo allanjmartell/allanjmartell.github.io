@@ -4,7 +4,7 @@ var basepeon2= new THREE.TorusGeometry(3,2,20,100);//Altura = 4
 basepeon2.rotateX(Math.PI/2);
 basepeon2.translate(0,2,0);
 var columna = new THREE.CylinderGeometry(3.5,3.5,8,10);
-columna.translate(0,2,0);
+columna.translate(0,6,0);
 
 //Mesh
 var mbasepeon = new THREE.Mesh(basepeon);
