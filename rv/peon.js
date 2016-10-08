@@ -42,7 +42,7 @@ var peon= new THREE.Mesh(peonfinal4,material);
 
 var escena,camara,renderizador;
 escena = new THREE.Scene();
-//escena.rotateX(Math.PI/4);
+escena.rotateX(Math.PI/4);
 //Camara
 camara = new THREE.PerspectiveCamera();
 camara.position.z=30;
