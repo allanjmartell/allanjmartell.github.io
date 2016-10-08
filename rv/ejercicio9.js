@@ -173,7 +173,7 @@ prototipo.TableroGeometry1 = function(){
   var madera = new THREE.MeshBasicMaterial({map:textura5});
     for(var l=0;l<10;l++){
     for(var m=0;m<2;m++){
-    malla2= new THREE.Mesh(cubo,madera);
+    malla2= new THREE.Mesh(new THREE.BoxGeometry(10,10,10),madera);
     if(m==1){malla2.position.z=(-90);}
     malla2.position.x=(l*10);
     malla2.matrixAutoUpdate = false;
@@ -188,7 +188,7 @@ prototipo.TableroGeometry2 = function(){
   var madera = new THREE.MeshBasicMaterial({map:textura5});
   for(var l=1;l<9;l++){
     for(var m=0;m<2;m++){
-    malla3= new THREE.Mesh(cubo,madera);
+    malla3= new THREE.Mesh(new THREE.BoxGeometry(10,10,10),madera);
     if(m==1){malla3.position.x=(90);}
     malla3.position.z=(-l*10);
     malla3.matrixAutoUpdate = false;
