@@ -147,8 +147,6 @@ prototipo.TableroGeometry = function(){
 
     var cerablanco = new THREE.MeshBasicMaterial({map:textura3});
     var ceranegro = new THREE.MeshBasicMaterial({map:textura4});
-    
-    //grupo= new THREE.Group();
 
     for (var i=0;i<8;i++){
       for(var j=0;j<8;j++){
@@ -182,6 +180,7 @@ prototipo.TableroGeometry1 = function(){
     malla2.updateMatrix();
     this.add(malla2);
   }}
+}
   
 prototipo.TableroGeometry2 = function(){
   THREE.Group.call(this);
@@ -196,7 +195,8 @@ prototipo.TableroGeometry2 = function(){
     malla3.updateMatrix();
     this.add(malla3);
   }}
-  
+}
+
 prototipo.TableroGeometry.prototype = new THREE.Group();
 prototipo.TableroGeometry1.prototype = new THREE.Group();
 prototipo.TableroGeometry2.prototype = new THREE.Group();
@@ -209,7 +209,6 @@ prototipo.setup = function(){
 
     var marmolblanco = new THREE.MeshBasicMaterial({map:textura1});
     var marmolnegro = new THREE.MeshBasicMaterial({map:textura2});
-  
   //Figuras
     torre1 = new THREE.Mesh(new prototipo.TorreGeometry(),marmolblanco);
     torre1.position.y=5;
