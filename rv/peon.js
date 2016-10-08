@@ -25,8 +25,8 @@ peonfinal2.merge(mpeonfinal.geometry,mpeonfinal.matrix);
 var mpeonfinal2= new THREE.Mesh(peonfinal2);
 
 var peonfinal3 = new THREE.Geometry();
-peonfinal2.merge(mtechopeon.geometry,mtechopeon.matrix);
-peonfinal2.merge(mpeonfinal2.geometry,mpeonfinal2.matrix);
+peonfinal3.merge(mtechopeon.geometry,mtechopeon.matrix);
+peonfinal3.merge(mpeonfinal2.geometry,mpeonfinal2.matrix);
 
 //Material
 var material= new THREE.MeshNormalMaterial();
