@@ -1,14 +1,7 @@
-var escena,camara,renderizador;
-escena = new THREE.Scene();
-escena.rotateX(Math.PI/4);
-//Camara
-camara = new THREE.PerspectiveCamera();
-camara.position.z=20;
- 
-
 //Geometrias
 var basepeon = new THREE.CylinderGeometry(5,5,2,10);
-var basepeon2= new THREE.TorusGeometry(5,1);
+var basepeon2= new THREE.TorusGeometry(5,1,8,100);
+basepeon2.rotateX(Math.PI/2);
 basepeon2.translate(0,2,0);
 
 //Mesh
@@ -25,6 +18,13 @@ peonfinal.merge(mbasepeon2.geometry,mbasepeon2.matrix);
 var material= new THREE.MeshNormalMaterial();
 var peon= new THREE.Mesh(peonfinal,material);
 
+var escena,camara,renderizador;
+escena = new THREE.Scene();
+escena.rotateX(Math.PI/4);
+//Camara
+camara = new THREE.PerspectiveCamera();
+camara.position.z=20;
+ 
 escena.add(peon);
   
 renderizador = new THREE.WebGLRenderer();
