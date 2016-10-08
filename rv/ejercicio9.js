@@ -1,6 +1,7 @@
 var camara,escena,renderizador;
 var torre1,torre2,torre3,torre4;//Torres
 var peonn1,peonn2,peonn3,peonn4,peonn5,peonn6,peonn7,peonn8;//Peonesnegros
+var peonb1,peonb2,peonb3,peonb4,peonb5,peonb6,peonb7,peonb8;//Peonesblancos
 var malla1,malla2,malla3;//Tablero
 
 var prototipo = new Object();
@@ -310,9 +311,50 @@ prototipo.setup = function(){
     peonn8.position.y=5;
     peonn8.position.z=-80;
     peonn8.position.x=70;  
-  
-  escena.add(torre1,torre2,torre3,torre4,new prototipo.TableroGeometry(),new prototipo.TableroGeometry1(),new prototipo.TableroGeometry2());
+  //Peonblanco1
+    peonb1 = new THREE.Mesh(new prototipo.PeonGeometry(),marmolblanco);
+    peonb1.position.y=5;
+    peonb1.position.z=-10;
+    peonb1.position.x=20;
+  //Peonblanco2
+    peonb2 = new THREE.Mesh(new prototipo.PeonGeometry(),marmolblanco);
+    peonb2.position.y=5;
+    peonb2.position.z=-20;
+    peonb2.position.x=20;
+  //Peonblanco3
+    peonb3 = new THREE.Mesh(new prototipo.PeonGeometry(),marmolblanco);
+    peonb3.position.y=5;
+    peonb3.position.z=-30;
+    peonb3.position.x=20;
+  //Peonblanco4
+    peonb4 = new THREE.Mesh(new prototipo.PeonGeometry(),marmolblanco);
+    peonb4.position.y=5;
+    peonb4.position.z=-40;
+    peonb4.position.x=20;
+  //Peonblanco5
+    peonb5 = new THREE.Mesh(new prototipo.PeonGeometry(),marmolblanco);
+    peonb5.position.y=5;
+    peonb5.position.z=-50;
+    peonb5.position.x=20;
+  //Peonblanco6
+    peonb6 = new THREE.Mesh(new prototipo.PeonGeometry(),marmolblanco);
+    peonb6.position.y=5;
+    peonb6.position.z=-60;
+    peonb6.position.x=20;
+  //Peonblanco7
+    peonb7 = new THREE.Mesh(new prototipo.PeonGeometry(),marmolblanco);
+    peonb7.position.y=5;
+    peonb7.position.z=-70;
+    peonb7.position.x=20;
+  //Peonblanco8
+    peonb8 = new THREE.Mesh(new prototipo.PeonGeometry(),marmolblanco);
+    peonb8.position.y=5;
+    peonb8.position.z=-80;
+    peonb8.position.x=20;  
+  escena.add(torre1,torre2,torre3,torre4);
+  escena.add(new prototipo.TableroGeometry(),new prototipo.TableroGeometry1(),new prototipo.TableroGeometry2());
   escena.add(peonn1,peonn2,peonn3,peonn4,peonn5,peonn6,peonn7,peonn8);
+  escena.add(peonb1,peonb2,peonb3,peonb4,peonb5,peonb6,peonb7,peonb8);
   renderizador = new THREE.WebGLRenderer();
   renderizador.setSize( window.innerHeight*.95, window.innerHeight*.95 );
   document.body.appendChild(renderizador.domElement);
