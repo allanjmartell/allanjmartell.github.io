@@ -1,9 +1,9 @@
 var camara,escena,renderizador;
 var torre1,torre2,torre3,torre4;//Torres
+var peonn1,peonn2,peonn3,peonn4,peonn5,peonn6,peonn7,peonn8;//Peonesnegros
 var malla1,malla2,malla3;//Tablero
 
 var prototipo = new Object();
-var k=0;
 
 //Escena
   escena = new THREE.Scene();
@@ -147,7 +147,8 @@ prototipo.TableroGeometry = function(){
 
     var cerablanco = new THREE.MeshBasicMaterial({map:textura3});
     var ceranegro = new THREE.MeshBasicMaterial({map:textura4});
-
+    
+    var k=0;
     for (var i=0;i<8;i++){
       for(var j=0;j<8;j++){
 
@@ -197,6 +198,46 @@ prototipo.TableroGeometry2 = function(){
   }}
 }
 
+prototipo.PeonGeometry = function{
+  THREE.Group.call(this);
+  //Geometrias
+  var basepeon = new THREE.CylinderGeometry(5,5,2,20);//Altura = 2
+  var basepeon2= new THREE.TorusGeometry(3,1.5,20,100);//Altura = 4
+  basepeon2.rotateX(Math.PI/2);
+  basepeon2.translate(0,1,0);
+  var columna = new THREE.CylinderGeometry(3.5,3.5,8,10);
+  columna.translate(0,6,0);
+  var techopeon= new THREE.CylinderGeometry(4,4,1,20);//Altura = 9
+  techopeon.translate(0,10,0);
+  var techopeon2=new THREE.SphereGeometry(3.5,20,20);
+  techopeon2.translate(0,12,0);
+  //Mesh
+  var mbasepeon = new THREE.Mesh(basepeon);
+  var mbasepeon2= new THREE.Mesh(basepeon2);
+  var mcolumna = new THREE.Mesh(columna);
+  var mtechopeon= new THREE.Mesh(techopeon);
+  var mtechopeon2=new THREE.Mesh(techopeon2);
+
+  //Acoplamiento
+  var peonfinal = new THREE.Geometry();
+  peonfinal.merge(mbasepeon.geometry,mbasepeon.matrix);
+  peonfinal.merge(mbasepeon2.geometry,mbasepeon2.matrix);
+  var mpeonfinal = new THREE.Mesh(peonfinal);
+
+  var peonfinal2 = new THREE.Geometry();
+  peonfinal2.merge(mcolumna.geometry,mcolumna.matrix);
+  peonfinal2.merge(mpeonfinal.geometry,mpeonfinal.matrix);
+  var mpeonfinal2= new THREE.Mesh(peonfinal2);
+
+  var peonfinal3 = new THREE.Geometry();
+  peonfinal3.merge(mtechopeon.geometry,mtechopeon.matrix);
+  peonfinal3.merge(mpeonfinal2.geometry,mpeonfinal2.matrix);
+  var mpeonfinal3= new THREE.Mesh(peonfinal3);
+
+  this.merge(mtechopeon2.geometry,mtechopeon2.matrix);
+  this.merge(mpeonfinal3.geometry,mpeonfinal3.matrix);
+}
+prototipo.PeonGeometry.prototype = new THREE.Geometry();
 prototipo.TableroGeometry.prototype = new THREE.Group();
 prototipo.TableroGeometry1.prototype = new THREE.Group();
 prototipo.TableroGeometry2.prototype = new THREE.Group();
@@ -229,9 +270,49 @@ prototipo.setup = function(){
     torre4.position.y=5;
     torre4.position.z=-10;
     torre4.position.x=80;
+  //Peonnegro1
+    peonn1 = new THREE.Mesh(new prototipo.PeonGeometry(),marmolnegro);
+    peonn1.position.y=5;
+    peonn1.position.z=-10;
+    peonn1.position.x=70;
+  //Peonnegro2
+    peonn2 = new THREE.Mesh(new prototipo.PeonGeometry(),marmolnegro);
+    peonn2.position.y=5;
+    peonn2.position.z=-20;
+    peonn2.position.x=70;
+  //Peonnegro3
+    peonn3 = new THREE.Mesh(new prototipo.PeonGeometry(),marmolnegro);
+    peonn3.position.y=5;
+    peonn3.position.z=-30;
+    peonn3.position.x=70;
+  //Peonnegro4
+    peonn4 = new THREE.Mesh(new prototipo.PeonGeometry(),marmolnegro);
+    peonn4.position.y=5;
+    peonn4.position.z=-40;
+    peonn4.position.x=70;
+  //Peonnegro5
+    peonn5 = new THREE.Mesh(new prototipo.PeonGeometry(),marmolnegro);
+    peonn5.position.y=5;
+    peonn5.position.z=-50;
+    peonn5.position.x=70;
+  //Peonnegro6
+    peonn6 = new THREE.Mesh(new prototipo.PeonGeometry(),marmolnegro);
+    peonn6.position.y=5;
+    peonn6.position.z=-60;
+    peonn6.position.x=70;
+  //Peonnegro7
+    peonn7 = new THREE.Mesh(new prototipo.PeonGeometry(),marmolnegro);
+    peonn7.position.y=5;
+    peonn7.position.z=-70;
+    peonn7.position.x=70;
+  //Peonnegro8
+    peonn8 = new THREE.Mesh(new prototipo.PeonGeometry(),marmolnegro);
+    peonn8.position.y=5;
+    peonn8.position.z=-80;
+    peonn8.position.x=70;  
   
   escena.add(torre1,torre2,torre3,torre4,new prototipo.TableroGeometry(),new prototipo.TableroGeometry1(),new prototipo.TableroGeometry2());
-
+  escena.add(peonn1,peonn2,peonn3,peonn4,peonn5,peonn6,peonn7,peonn8);
   renderizador = new THREE.WebGLRenderer();
   renderizador.setSize( window.innerHeight*.95, window.innerHeight*.95 );
   document.body.appendChild(renderizador.domElement);
