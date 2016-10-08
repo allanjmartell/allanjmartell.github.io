@@ -15,10 +15,11 @@ var mcolumna = new THREE.Mesh(columna);
 var peonfinal = new THREE.Geometry();
 peonfinal.merge(mbasepeon.geometry,mbasepeon.matrix);
 peonfinal.merge(mbasepeon2.geometry,mbasepeon2.matrix);
+var mpeonfinal = new THREE.Mesh(peonfinal);
 
 var peonfinal2 = new THREE.Geometry();
 peonfinal2.merge(mcolumna.geometry,mcolumna.matrix);
-peonfinal2.merge(peonfinal.geometry,peonfinal.matrix);
+peonfinal2.merge(mpeonfinal.geometry,mpeonfinal.matrix);
 
 //Material
 var material= new THREE.MeshNormalMaterial();
