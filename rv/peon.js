@@ -7,8 +7,8 @@ var columna = new THREE.CylinderGeometry(3.5,3.5,8,10);
 columna.translate(0,6,0);
 var techopeon= new THREE.CylinderGeometry(4,4,1,10);//Altura = 9
 techopeon.translate(0,10,0);
-var techopeon2=new THREE.SphereGeometry(4,20,20);
-techopeon2.translate(0,10,0);
+var techopeon2=new THREE.SphereGeometry(3.5,20,20);
+techopeon2.translate(0,11,0);
 //Mesh
 var mbasepeon = new THREE.Mesh(basepeon);
 var mbasepeon2= new THREE.Mesh(basepeon2);
