@@ -18,7 +18,7 @@ var mbasepeon2= new THREE.Mesh(basepeon2);
 //Acoplamiento
 var peonfinal = new THREE.Geometry();
 peonfinal.merge(mbasepeon.geometry,mbasepeon.matrix);
-peonfinal.merge(mbasepeon2.geometry,mabsepeon2.matrix);
+peonfinal.merge(mbasepeon2.geometry,mbasepeon2.matrix);
 
 
 //Material
