@@ -1,6 +1,6 @@
 //Geometrias
 var basepeon = new THREE.CylinderGeometry(5,5,2,10);//Altura = 2
-var basepeon2= new THREE.TorusGeometry(4,2,8,100);//Altura = 4
+var basepeon2= new THREE.TorusGeometry(3,2,8,100);//Altura = 4
 basepeon2.rotateX(Math.PI/2);
 basepeon2.translate(0,2,0);
 
