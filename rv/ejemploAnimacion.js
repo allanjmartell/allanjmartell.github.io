@@ -29,7 +29,9 @@ function setup(){
 
 function loop(){
   requestAnimationFrame(loop); 
-  pieza.piernaIzq.rotateZ(0.1);
+   if(Math.abs(pieza.pierna.rotateZ)>1)
+    step=-step;
+  pieza.piernaIzq.rotateZ+(step);
   pieza.piernaDer.rotateZ(0.1);
   renderizador.render(escena,camara);
 }
