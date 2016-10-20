@@ -21,7 +21,8 @@ function setup(){
   escena.add(pieza);
   escena.rotateY(Math.PI/4);
   camara= new THREE.PerspectiveCamera();
-  camara.position.z=20;
+  camara.position.z=30;
+  camara.position.y=20;
   renderizador = new THREE.WebGLRenderer();
   renderizador.setSize( window.innerHeight*.95, window.innerHeight*.95 );
   document.body.appendChild(renderizador.domElement);
