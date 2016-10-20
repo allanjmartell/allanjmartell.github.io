@@ -20,7 +20,6 @@ function setup(){
   escena = new THREE.Scene();
   escena.add(pieza);
   escena.rotateY(Math.PI/4);
-  escena.rotateX(Math.PI/2);
   camara= new THREE.PerspectiveCamera();
   camara.position.z=30;
   camara.position.y=5;
