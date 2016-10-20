@@ -19,6 +19,7 @@ function setup(){
   pieza = new Pieza();
   escena = new THREE.Scene();
   escena.add(pieza);
+  escena.rotateY(Math.PI/4);
   camara= new THREE.PerspectiveCamera();
   camara.position.z=20;
   renderizador = new THREE.WebGLRenderer();
