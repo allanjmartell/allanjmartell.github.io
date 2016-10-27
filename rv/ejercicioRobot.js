@@ -84,7 +84,7 @@ Robot.prototype.act = function(environment){
   if(command === undefined)
   console.log('Undefined command');
   else if(command in this.operations)
-  this.operation[command](this);
+  this.operations[command](this);
   else
   console.log('Unknown command');
 }
