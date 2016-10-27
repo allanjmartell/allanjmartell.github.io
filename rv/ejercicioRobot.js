@@ -1,3 +1,5 @@
+var environment, camera, renderer;
+
 function Agent(x=0,y=0){
   THREE.Object3D.call(this);
   this.position.x=x;
@@ -183,6 +185,6 @@ function loop(){
   renderer(environment,camera);
 }
 
-var environment, camera, renderer;
+
 setup();
 loop();
