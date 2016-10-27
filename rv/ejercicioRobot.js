@@ -117,7 +117,7 @@ Robot.prototype.operations.rotateCCW = function(robot,angle){
   robot.rotation.z += angle;
 }
 
-wall.prototype = new THREE.Mesh();
+Wall.prototype = new THREE.Mesh();
 
 Environment.prototype.setMap = function(map){
   var _offset = Math.floor(map.length/2);
