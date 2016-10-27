@@ -133,7 +133,7 @@ Environment.prototype.setMap = function(map){
 }
 
 function setup(){
-  var mapa[0] = new Array();
+  var mapa = new Array();
   mapa[0] = "xxxxxxxxxxxxxxxxxxxxxxxxx";
   mapa[1] = "xr               r      x";
   mapa[2] = "x                       x";
