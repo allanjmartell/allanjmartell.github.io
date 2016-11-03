@@ -1,0 +1,36 @@
+
+Para leer las teclas presionadas hay tener en cuenta que existen tres eventos distintos relacionados con ello. Cuando pulsamos una tecla se
+producen tres eventos, que enunciados por orden son: keydown, keypress, keyup. Los eventos keydown y keyup podemos traducirlos como 
+“la tecla baja” y “la tecla sube”, mientras que keypress sería “la tecla es pulsada”.
+
+Hay dos tipos de códigos diferentes: los códigos de teclado (que representan la tecla del teclado que ha sido pulsada, tecla física) y los 
+códigos de caracteres (número asociado a cada carácter, según el juego de caracteres Unicode). Tener en cuenta que desde el punto de vista 
+de qué tecla física ha sido pulsada es lo mismo escribir una a que una A, ya que en ambos casos pulsamos la misma tecla en el teclado. 
+En cambio desde el punto de vista del carácter, a es un carácter y A es otro carácter diferente (y cada uno tiene su código numérico 
+diferente).
+
+Las propiedades y métodos del objeto Event relacionados con el teclado se resumen en la siguiente tabla.
+
+Tipo                                     |      Nombre       |                                     Descripción 
+------------------------------------------------------------------------------------------------------------------------------------------
+                                         |      altKey       | Contiene el valor booleano true si la tecla ALT estaba pulsada cuando se 
+                                         |                   | produjo el evento, o false en caso contrario.
+                                         -------------------------------------------------------------------------------------------------
+                                         |      ctrlKey      | Contiene el valor booleano true si la tecla CTRL estaba pulsada cuando se 
+                                         |                   | produjo el evento, o false en caso contrario.
+                                         -------------------------------------------------------------------------------------------------
+                                         |      shiftKey     | Contiene el valor booleano true si la tecla SHIFT estaba pulsada cuando se 
+                                         |                   | produjo el evento, o false en caso contrario.
+Propiedades relacionadas con el teclado  -------------------------------------------------------------------------------------------------
+                                         |      charCode     | Devuelve el código del carácter unicode generado por el evento keypress. 
+                                         |                   | Se recomienda usar wich en lugar de charCode.
+                                         -------------------------------------------------------------------------------------------------
+                                         |      keyCode      | Devuelve el código de tecla pulsada para eventos keydown y keyup
+                                         --------------------------------------------------------------------------------------------------
+                                         |      wich         | Devuelve el código del carácter unicode generado por el evento keypress.
+                                         --------------------------------------------------------------------------------------------------
+                                         | Otras propiedades | data, metakey
+                                         -------------------------------------------------------------------------------------------------
+                                         | Otras propiedades | altLeft, ctrlLeft, shiftLeft, isChar
+                                         | no estandarizadas | 
+-------------------------------------------------------------------------------------------------------------------------------------------
