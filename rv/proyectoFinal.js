@@ -13,13 +13,13 @@ function init() {
   camara.position.z=130;
   camara.position.x=50; 
   //Luces
-  var luzama= new THREE.PointLight(0xFFFFFF);
-  var luzcyan=new THREE.PointLight(0xFFFFFF);
-  var luzmag= new THREE.PointLight(0xFFFFFF);
+  var luzblan= new THREE.PointLight(0xFFFFFF);
+  var luzblan2=new THREE.PointLight(0xFFFFFF);
+  var luzblan3= new THREE.PointLight(0xFFFFFF);
   
-  luzcyan.position.y=80; luzcyan.position.z=50; luzcyan.position.x=-50;
-  luzama.position.y=80;  luzama.position.z=-150; luzama.position.x=50;
-  luzmag.position.y=80;  luzmag.position.z=50;  luzmag.position.x=150
+  luzblan.position.y=150; luzblan.position.z=50; luzblan.position.x=-50;
+  luzblan2.position.y=150;  luzblan2.position.z=-150; luzblan2.position.x=50;
+  luzblan3.position.y=150;  luzblan3.position.z=50;  luzblan3.position.x=150
   //Textura
   var textura1 = new THREE.TextureLoader().load('marmolblanco.jpg');
   var textura2 = new THREE.TextureLoader().load('marmolnegro.jpg');
@@ -115,12 +115,12 @@ function init() {
   torre2.castShadow= true;
   torre3.castShadow= true;
   torre4.castShadow= true;
-  luzama.castShadow= true;
-  luzcyan.castShadow= true;
-  luzmag.castShadow= true;
+  luzblan.castShadow= true;
+  luzblan2.castShadow= true;
+  luzblan3.castShadow= true;
   escena.add(torre1,torre2,torre3,torre4,grupo,grupo2,grupo3);
   //Luces
-  escena.add(luzcyan,luzama,luzmag);
+  escena.add(luzblan,luzblan2,luzblan3);
 }
 
 function loop() {
