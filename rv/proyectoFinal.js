@@ -13,9 +13,9 @@ function init() {
   camara.position.z=130;
   camara.position.x=50; 
   //Luces
-  var luzama= new THREE.PointLight(0xFFFF00);
-  var luzcyan=new THREE.PointLight(0x00FFFF);
-  var luzmag= new THREE.PointLight(0xFF00FF);
+  var luzama= new THREE.PointLight(0xFFFFFF);
+  var luzcyan=new THREE.PointLight(0xFFFFFF);
+  var luzmag= new THREE.PointLight(0xFFFFFF);
   
   luzcyan.position.y=80; luzcyan.position.z=50; luzcyan.position.x=-50;
   luzama.position.y=80;  luzama.position.z=-150; luzama.position.x=50;
