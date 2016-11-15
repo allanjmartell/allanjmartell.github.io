@@ -51,7 +51,7 @@ loop();
 
 function init() {
   //Escena
-  escena = new THREE.Scene();
+  escena = new Environment();
   escena.rotateX(Math.PI/4);
   //Camara
   camara = new THREE.PerspectiveCamera();
@@ -163,6 +163,7 @@ function init() {
   luzblan.castShadow= true;
   luzblan2.castShadow= true;
   luzblan3.castShadow= true;
+  
   escena.add(torre1,torre2,torre3,torre4,grupo,grupo2,grupo3);
   //Luces
   escena.add(luzblan,luzblan2,luzblan3);
