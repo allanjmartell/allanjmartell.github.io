@@ -3,6 +3,7 @@ function Agent(x=0,y=0,z=0){
   this.position.x=x;
   this.position.y=y;
   this.position.z=z;
+  this.castShadow=true;
 }
 
 Agent.prototype = new THREE.Object3D();
