@@ -46,6 +46,7 @@ Environment.prototype.act = function(){
 
 var camara,escena,renderizador;
 var malla,malla2,malla3,grupo,grupo2,grupo3;
+var torre1,torre2,torre3,torre4;
 
 ///////////////////////////////////Torres////////////////////////////////////////////////////////////////////////////////////
 function TorreBlanca(x=0,y=0,z=0){
