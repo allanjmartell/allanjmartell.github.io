@@ -90,19 +90,18 @@ function loop() {
     var tecla = objeto.which;
         switch (tecla){
             case 37 :   
-                torreMalla.translateX(10);
+                torre1.translateX(10);
                 break;
             case 38 : 
-                torreMalla.translateZ(-10);
+                torre1.translateZ(-10);
                 break;
             case 39 :  
-                torreMalla.translateZ(10);
-              
+                torre1.translateZ(10);
                 break;
             case 40 : 
-                torreMalla.translateX(-10);
+                torre1.translateX(-10);
                 break;
-        default :alert("Se ha equivocado, debe pulsar las flechas del teclado");
+        default :alert("Pulsar las flechas del teclado");
         }
     }
   requestAnimationFrame(loop);
