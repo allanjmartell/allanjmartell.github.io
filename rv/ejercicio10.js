@@ -1,119 +1,110 @@
-function Agent(x=0,y=0){
-  THREE.Object3D.call(this);
-  this.position.x=x;
-  this.position.y=y;
-}
+var camara,escena,renderizador;
+var torre1,malla,malla2,malla3,grupo,grupo2,grupo3;
 
-Agent.prototype = new THREE.Object3D();
-
-//Las tres primitivas esenciales de un agente:
-Agent.prototype.sense = function(environment) {}; //Percibir
-Agent.prototype.plan = function(environment) {}; //Planificar
-Agent.prototype.act = function(environment) {}; //Actuar
-
-//Un Agente opera sobre un entorno
-function Environment(){
-  THREE.Scene.call(this);
-}
-
-Environment.prototype = new THREE.Scene();
-
-//Preguntar a todos los agentes si sienten
-Environment.prototype.sense = function(){ 
-  for(var i=0; i<this.children.length; i++){
-    if(this.children[i].sense!==undefined)
-      this.children[i].sense(this);
-  }
-}
-
-//Preguntar a todos los agentes si planean
-Environment.prototype.plan = function(){
-  for(var i=0; i<this.children.length; i++){
-    if(this.children[i].plan !== undefined)
-      this.children[i].plan(this);
-  }
-}
-
-//Preguntar a todos los agentes si actuan
-Environment.prototype.act = function(){
-  for(var i=0; i<this.children.length; i++){
-    if(this.children[i].act !== undefined)
-      this.children[i].act(this);
-  }
-}
-
-function Pelota(r,x=0,y=0){
-  Agent.call(this,x,y);
-  this.add(new THREE.Mesh( new THREE.SphereGeometry(r),
-                           new THREE.MeshNormalMaterial()));
-  this.step = 0.1;
-  this.colision = 0;
-  this.radius = r;
-  this.sensor = new THREE.Raycaster(this.position,new THREE.Vector3(1,0,0));
-}
-
-//El prototipo de Pelota es un agente
-Pelota.prototype = new Agent();
-
-//Se redefinen los métodos sense() y act(); ya que la pelota no planifica, no se redefine plan()
-Pelota.prototype.sense = function(environment){
-  this.sensor.set(this.position, new THREE.Vector3(1,0,0));
-  var obstaculo1= this.sensor.intersectObjects(environment.children,true);
-  
-  this.sensor.set(this.position, new THREE.Vector3(-1,0,0));
-  var obstaculo2= this.sensor.intersectObjects(environment.children,true);
-  
-  if((obstaculo1.length > 0 && (obstaculo1[0].distance <= this.radius))||
-     (obstaculo2.length > 0 && (obstaculo2[0].distance <= this.radius)))
-      this.colision = 1;
-  else
-      this.colision = 0;
-}
-
-Pelota.prototype.act = function(environment){
-  if(this.colision ===1)
-      this.step = -this.step;
-    this.position.x += this.step;
-}
-
-function Pared(size,x=0,y=0){
-  THREE.Object3D.call(this,x,y);
-  this.add(new THREE.Mesh(new THREE.BoxGeometry(size,size,size),new THREE.MeshNormalMaterial()));
-  this.size = size;
-  this.position.x = x;
-  this.position.y = y;
-}
-
-Pared.prototype = new THREE.Object3D();
-
-function setup(){
-  entorno = new Environment();
-  camara = new THREE.PerspectiveCamera();
-  camara.position.z=30;
-  
-  entorno.add(new Pared(1,7,0));
-  entorno.add(new Pared(1,-7,0));
-  entorno.add(new Pared(1,7,1));
-  entorno.add(new Pared(1,-7,1));
-  entorno.add(new Pared(1,7,-1));
-  entorno.add(new Pared(1,-7,-1));
-  entorno.add(new Pelota(0.5));
-  entorno.add(new Pelota(1));
-  entorno.add(camara);
-  
-  renderer = new THREE.WebGLRenderer();
-  renderer.setSize(window.innerHeight*.95,window.innerHeight*.95);
-  document.body.appendChild(renderer.domElement);
-}
-
-function loop(){
-  requestAnimationFrame(loop);
-  
-  entorno.sense();
-  entorno.plan();
-  entorno.act();
-  renderer.render(entorno,camara);
-}
-
-setup();
+init();
 loop();
+
+function init() {
+  //Escena
+  escena = new THREE.Scene();
+  escena.rotateX(Math.PI/4);
+  //Camara
+  camara = new THREE.PerspectiveCamera();
+  camara.position.z=130;
+  camara.position.x=50; 
+  
+  //Textura
+  var textura1 = new THREE.TextureLoader().load('marmolblanco.jpg');
+  var textura3 = new THREE.TextureLoader().load('cerablanca.jpg');
+  var textura4 = new THREE.TextureLoader().load('ceranegra.jpg');
+  var textura5 = new THREE.TextureLoader().load('madera.jpg');
+  var marmolblanco = new THREE.MeshBasicMaterial({map:textura1});
+  var cerablanco = new THREE.MeshBasicMaterial({map:textura3});
+  var ceranegro = new THREE.MeshBasicMaterial({map:textura4});
+  var madera = new THREE.MeshBasicMaterial({map:textura5});
+  //Torre1
+  torre1 = new THREE.Mesh(torrefinal11,marmolblanco);
+  torre1.position.y=5;
+  torre1.position.z=-10;
+  torre1.position.x=10;
+  
+  //Tablero
+  var cubo=new THREE.BoxGeometry(10,10,10);
+  grupo= new THREE.Group();
+  var k=0;
+  
+  for (var i=0;i<8;i++){
+    for(var j=0;j<8;j++){
+
+    if(k%2==0){malla= new THREE.Mesh(cubo,ceranegro);}
+    else{malla= new THREE.Mesh(cubo,cerablanco);}
+
+    malla.position.x=(j+1)*10;
+    malla.position.z=(-i-1)*10;
+
+    malla.matrixAutoUpdate = false;
+    malla.updateMatrix();
+
+    grupo.add(malla);
+    k++;
+  }
+    k++;
+  }
+
+  //grupo2
+  grupo2= new THREE.Group();
+
+  for(var l=0;l<10;l++){
+    for(var m=0;m<2;m++){
+    malla2= new THREE.Mesh(cubo,madera);
+    if(m==1){malla2.position.z=(-90);}
+    malla2.position.x=(l*10);
+    malla2.matrixAutoUpdate = false;
+    malla2.updateMatrix();
+    grupo2.add(malla2);
+  }}
+
+  //grupo3
+  grupo3= new THREE.Group();
+
+  for(var l=1;l<9;l++){
+    for(var m=0;m<2;m++){
+    malla3= new THREE.Mesh(cubo,madera);
+    if(m==1){malla3.position.x=(90);}
+    malla3.position.z=(-l*10);
+    malla3.matrixAutoUpdate = false;
+    malla3.updateMatrix();
+    grupo3.add(malla3);
+  }}
+
+  escena.add(torre1,grupo,grupo2,grupo3);
+  
+  renderizador = new THREE.WebGLRenderer();
+  renderizador.setSize( window.innerHeight*.95, window.innerHeight*.95 );
+  document.body.appendChild(renderizador.domElement);
+}
+
+function loop() {
+    window.onload=function(){document.onkeydown=desplazar};
+    function desplazar(objeto){
+    var tecla = objeto.which;
+        switch (tecla){
+            case 37 :   
+                torreMalla.translateX(10);
+                break;
+            case 38 : 
+                torreMalla.translateZ(-10);
+                break;
+            case 39 :  
+                torreMalla.translateZ(10);
+              
+                break;
+            case 40 : 
+                torreMalla.translateX(-10);
+                break;
+        default :alert("Se ha equivocado, debe pulsar las flechas del teclado");
+        }
+    }
+  requestAnimationFrame(loop);
+  renderizador.render(escena,camara);
+} 
