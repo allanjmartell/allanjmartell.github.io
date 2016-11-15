@@ -89,16 +89,16 @@ function loop() {
     function desplazar(objeto){
     var tecla = objeto.which;
         switch (tecla){
-            case 37 :   
+            case 39 :  //Derecha 
                 torre1.translateX(10);
                 break;
-            case 38 : 
+            case 38 :  //Arriba
                 torre1.translateZ(-10);
                 break;
-            case 39 :  
+            case 40 :  //Abajo
                 torre1.translateZ(10);
                 break;
-            case 40 : 
+            case 37 : //Izquierda
                 torre1.translateX(-10);
                 break;
         default :alert("Pulsar las flechas del teclado");
