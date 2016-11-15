@@ -69,9 +69,9 @@ function TorreNegra(x=0,y=0,z=0){
   var textura2 = new THREE.TextureLoader().load('marmolnegro.jpg');
   var marmolnegro = new THREE.MeshLambertMaterial({map:textura2});
   this.add(new THREE.Mesh(torrefinal11,marmolnegro));
-  this.position.y=y;//5;
-  this.position.z=z;//-10;
-  this.position.x=x;//10;
+  this.position.y=y;
+  this.position.z=z;
+  this.position.x=x;
   //this.step = 0.1;
   //this.colision = 0;
   //this.radius = r;
@@ -97,9 +97,9 @@ function init() {
   var luzblan2=new THREE.PointLight(0xFFFFFF);
   var luzblan3= new THREE.PointLight(0xFFFFFF);
   
-  luzblan.position.y=300; luzblan.position.z=50; luzblan.position.x=-50;
-  luzblan2.position.y=300;  luzblan2.position.z=-150; luzblan2.position.x=50;
-  luzblan3.position.y=300;  luzblan3.position.z=50;  luzblan3.position.x=150
+  luzblan.position.y=100; luzblan.position.z=50; luzblan.position.x=-50;
+  luzblan2.position.y=100;  luzblan2.position.z=-150; luzblan2.position.x=50;
+  luzblan3.position.y=100;  luzblan3.position.z=50;  luzblan3.position.x=150
   ///////////////////////////////////////////////Textura/////////////////////////////////////////////////////////////////////////////
 
   var textura3 = new THREE.TextureLoader().load('cerablanca.jpg');
