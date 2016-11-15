@@ -62,9 +62,9 @@ function init() {
   var luzblan2=new THREE.PointLight(0xFFFFFF);
   var luzblan3= new THREE.PointLight(0xFFFFFF);
   
-  luzblan.position.y=200; luzblan.position.z=50; luzblan.position.x=-50;
-  luzblan2.position.y=200;  luzblan2.position.z=-150; luzblan2.position.x=50;
-  luzblan3.position.y=200;  luzblan3.position.z=50;  luzblan3.position.x=150
+  luzblan.position.y=300; luzblan.position.z=50; luzblan.position.x=-50;
+  luzblan2.position.y=300;  luzblan2.position.z=-150; luzblan2.position.x=50;
+  luzblan3.position.y=300;  luzblan3.position.z=50;  luzblan3.position.x=150
   //Textura
   var textura1 = new THREE.TextureLoader().load('marmolblanco.jpg');
   var textura2 = new THREE.TextureLoader().load('marmolnegro.jpg');
