@@ -57,7 +57,6 @@ function TorreBlanca(x=0,y=0,z=0){
   this.position.y=y;//5;
   this.position.z=z;//-10;
   this.position.x=x;//10;
-  this.castShadow= true;
   //this.step = 0.1;
   //this.colision = 0;
   //this.radius = r;
@@ -73,7 +72,6 @@ function TorreNegra(x=0,y=0,z=0){
   this.position.y=y;//5;
   this.position.z=z;//-10;
   this.position.x=x;//10;
-  this.castShadow= true;
   //this.step = 0.1;
   //this.colision = 0;
   //this.radius = r;
@@ -103,33 +101,13 @@ function init() {
   luzblan2.position.y=300;  luzblan2.position.z=-150; luzblan2.position.x=50;
   luzblan3.position.y=300;  luzblan3.position.z=50;  luzblan3.position.x=150
   ///////////////////////////////////////////////Textura/////////////////////////////////////////////////////////////////////////////
-  
-  //var textura1 = new THREE.TextureLoader().load('marmolblanco.jpg');
-  //var textura2 = new THREE.TextureLoader().load('marmolnegro.jpg');
+
   var textura3 = new THREE.TextureLoader().load('cerablanca.jpg');
   var textura4 = new THREE.TextureLoader().load('ceranegra.jpg');
   var textura5 = new THREE.TextureLoader().load('madera.jpg');
-  //var marmolblanco = new THREE.MeshLambertMaterial({map:textura1});
-  //var marmolnegro = new THREE.MeshLambertMaterial({map:textura2});
   var cerablanco = new THREE.MeshLambertMaterial({map:textura3});
   var ceranegro = new THREE.MeshLambertMaterial({map:textura4});
   var madera = new THREE.MeshLambertMaterial({map:textura5});
-
-  //Torre2
-  //torre2 = new THREE.Mesh(torrefinal11,marmolblanco);
-  //torre2.position.y=5;
-  //torre2.position.z=-80;
-  //torre2.position.x=10;
-  //Torre3
-  //torre3 = new THREE.Mesh(torrefinal11,marmolnegro);
-  //torre3.position.y=5;
-  //torre3.position.z=-80;
-  //torre3.position.x=80;
-  //Torre4
-  //torre4 = new THREE.Mesh(torrefinal11,marmolnegro);
-  //torre4.position.y=5;
-  //torre4.position.z=-10;
-  //torre4.position.x=80;
   
   ////////////////////////////////////////////////////Tablero/////////////////////////////////////////////////////////////////////
                                   var cubo=new THREE.BoxGeometry(10,10,10);
@@ -181,24 +159,28 @@ function init() {
                                     malla3.updateMatrix();
                                     grupo3.add(malla3);
                                   }}
+  ///////////////////////////////////////////Torres////////////////////////////////////////////////////////////////
+  torre1 = new TorreBlanca(10,5,-10);
+  torre2 = new TorreBlanca(10,5,-80);
+  torre3 = new TorreNegra(80,5,-10);
+  torre4 = new TorreNegra(80,5,-80);
   ///////////////////////////////////////////Renderizador///////////////////////////////////////////////////////////
   renderizador = new THREE.WebGLRenderer();
-  //renderizador.setPixelRatio( window.devicePixelRatio );
   renderizador.setSize( window.innerHeight*.95, window.innerHeight*.95 );
   document.body.appendChild(renderizador.domElement);
   
-  
   //Sombras
   renderizador.shadowMap.enabled=true;
-  luzblan.castShadow= true;
-  luzblan2.castShadow= true;
-  luzblan3.castShadow= true;
+  torre1.castShadow = true;
+  torre2.castShadow = true;
+  torre3.castShadow = true;
+  torre4.castShadow = true;
+  luzblan.castShadow = true;
+  luzblan2.castShadow = true;
+  luzblan3.castShadow = true;
   
   escena.add(grupo,grupo2,grupo3);
-  escena.add(new TorreBlanca(10,5,-10));
-  escena.add(new TorreBlanca(10,5,-80));
-  escena.add(new TorreNegra(80,5,-10));
-  escena.add(new TorreNegra(80,5,-80));
+  escena.add(torre1,torre2,torre3,torre4);
   //Luces
   escena.add(luzblan,luzblan2,luzblan3);
 }
