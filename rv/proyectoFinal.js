@@ -88,21 +88,26 @@ init();
 loop();
 
 function init() {
-  //Escena
+  ////////////////////////////////////////////Escena//////////////////////////////////////////////////////////////////////////////
   escena = new Environment();
   escena.rotateX(Math.PI/4);
-  //Camara
+  //////////////////////////////////////////////////Camara///////////////////////////////////////////////////////////////////////
   camara = new THREE.PerspectiveCamera();
   camara.position.z=130;
   camara.position.x=50; 
+  ///////////////////////////////////////////Renderizador//////////////////////////////////////////////////////////////////////////
+  renderizador = new THREE.WebGLRenderer();
+  renderizador.setSize( window.innerHeight*.95, window.innerHeight*.95 );
+  document.body.appendChild(renderizador.domElement);
+  
   /////////////////////////////////////////////////////Luces/////////////////////////////////////////////////////////////////////
   var luzblan= new THREE.PointLight(0xFFFFFF);
   var luzblan2=new THREE.PointLight(0xFFFFFF);
   var luzblan3= new THREE.PointLight(0xFFFFFF);
   
-  luzblan.position.y=100; luzblan.position.z=50; luzblan.position.x=-50;
-  luzblan2.position.y=100;  luzblan2.position.z=-150; luzblan2.position.x=50;
-  luzblan3.position.y=100;  luzblan3.position.z=50;  luzblan3.position.x=150
+  luzblan.position.y=300; luzblan.position.z=50; luzblan.position.x=-50;
+  luzblan2.position.y=300;  luzblan2.position.z=-150; luzblan2.position.x=50;
+  luzblan3.position.y=00;  luzblan3.position.z=50;  luzblan3.position.x=150
   ///////////////////////////////////////////////Textura/////////////////////////////////////////////////////////////////////////////
 
   var textura3 = new THREE.TextureLoader().load('cerablanca.jpg');
@@ -167,12 +172,8 @@ function init() {
   torre2 = new TorreBlanca(10,5,-80);
   torre3 = new TorreNegra(80,5,-10);
   torre4 = new TorreNegra(80,5,-80);
-  ///////////////////////////////////////////Renderizador///////////////////////////////////////////////////////////
-  renderizador = new THREE.WebGLRenderer();
-  renderizador.setSize( window.innerHeight*.95, window.innerHeight*.95 );
-  document.body.appendChild(renderizador.domElement);
   
-  //Sombras
+  ////////////////////////////////////////Sombras//////////////////////////////////////////////////////////////////////
   renderizador.shadowMap.enabled=true;
   luzblan.castShadow = true;
   luzblan2.castShadow = true;
