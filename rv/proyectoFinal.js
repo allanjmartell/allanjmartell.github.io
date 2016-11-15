@@ -58,7 +58,6 @@ function TorreBlanca(x=0,y=0,z=0){
   this.position.y=y;//5;
   this.position.z=z;//-10;
   this.position.x=x;//10;
-  this.castShadow=true;
   //this.step = 0.1;
   //this.colision = 0;
   //this.radius = r;
@@ -74,7 +73,6 @@ function TorreNegra(x=0,y=0,z=0){
   this.position.y=y;
   this.position.z=z;
   this.position.x=x;
-  this.castShadow=true;
   //this.step = 0.1;
   //this.colision = 0;
   //this.radius = r;
@@ -107,7 +105,7 @@ function init() {
   
   luzblan.position.y=300; luzblan.position.z=50; luzblan.position.x=-50;
   luzblan2.position.y=300;  luzblan2.position.z=-150; luzblan2.position.x=50;
-  luzblan3.position.y=00;  luzblan3.position.z=50;  luzblan3.position.x=150
+  luzblan3.position.y=300;  luzblan3.position.z=50;  luzblan3.position.x=150;
   ///////////////////////////////////////////////Textura/////////////////////////////////////////////////////////////////////////////
 
   var textura3 = new THREE.TextureLoader().load('cerablanca.jpg');
@@ -175,6 +173,10 @@ function init() {
   
   ////////////////////////////////////////Sombras//////////////////////////////////////////////////////////////////////
   renderizador.shadowMap.enabled=true;
+  torre1.castShadow=true;
+  torre2.castShadow=true;
+  torre3.castShadow=true;
+  torre4.castShadow=true;
   luzblan.castShadow = true;
   luzblan2.castShadow = true;
   luzblan3.castShadow = true;
