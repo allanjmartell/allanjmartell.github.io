@@ -3,7 +3,6 @@ function Agent(x=0,y=0,z=0){
   this.position.x=x;
   this.position.y=y;
   this.position.z=z;
-  this.castShadow=true;
 }
 
 Agent.prototype = new THREE.Object3D();
@@ -49,7 +48,7 @@ var camara,escena,renderizador;
 var malla,malla2,malla3,grupo,grupo2,grupo3;
 var torre1,torre2,torre3,torre4;
 
-///////////////////////////////////Torres////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////Torres////////////////////////////////////////////////////////////////////////////////////
 function TorreBlanca(x=0,y=0,z=0){
   Agent.call(this,x,y,z);
     //Torre1
@@ -59,6 +58,7 @@ function TorreBlanca(x=0,y=0,z=0){
   this.position.y=y;//5;
   this.position.z=z;//-10;
   this.position.x=x;//10;
+  this.castShadow=true;
   //this.step = 0.1;
   //this.colision = 0;
   //this.radius = r;
@@ -74,6 +74,7 @@ function TorreNegra(x=0,y=0,z=0){
   this.position.y=y;
   this.position.z=z;
   this.position.x=x;
+  this.castShadow=true;
   //this.step = 0.1;
   //this.colision = 0;
   //this.radius = r;
@@ -112,55 +113,55 @@ function init() {
   var madera = new THREE.MeshLambertMaterial({map:textura5});
   
   ////////////////////////////////////////////////////Tablero/////////////////////////////////////////////////////////////////////
-                                  var cubo=new THREE.BoxGeometry(10,10,10);
-                                  grupo= new THREE.Group();
-                                  var k=0;
+  var cubo=new THREE.BoxGeometry(10,10,10);
+  grupo= new THREE.Group();
+  var k=0;
 
-                                  for (var i=0;i<8;i++){
-                                    for(var j=0;j<8;j++){
+  for (var i=0;i<8;i++){
+    for(var j=0;j<8;j++){
 
-                                    if(k%2==0){malla= new THREE.Mesh(cubo,ceranegro);}
-                                    else{malla= new THREE.Mesh(cubo,cerablanco);}
+    if(k%2==0){malla= new THREE.Mesh(cubo,ceranegro);}
+    else{malla= new THREE.Mesh(cubo,cerablanco);}
 
-                                    malla.position.x=(j+1)*10;
-                                    malla.position.z=(-i-1)*10;
-                                    malla.receiveShadow=true; //Sombras
-                                    malla.matrixAutoUpdate = false;
-                                    malla.updateMatrix();
+    malla.position.x=(j+1)*10;
+    malla.position.z=(-i-1)*10;
+    malla.receiveShadow=true; //Sombras
+    malla.matrixAutoUpdate = false;
+    malla.updateMatrix();
 
-                                    grupo.add(malla);
-                                    k++;
-                                  }
-                                    k++;
-                                  }
+    grupo.add(malla);
+    k++;
+  }
+    k++;
+  }
 
-                                  //grupo2
-                                  grupo2= new THREE.Group();
+  //grupo2
+  grupo2= new THREE.Group();
 
-                                  for(var l=0;l<10;l++){
-                                    for(var m=0;m<2;m++){
-                                    malla2= new THREE.Mesh(cubo,madera);
-                                    if(m==1){malla2.position.z=(-90);}
-                                    malla2.position.x=(l*10);
-                                    malla2.receiveShadow=true; //Sombras
-                                    malla2.matrixAutoUpdate = false;
-                                    malla2.updateMatrix();
-                                    grupo2.add(malla2);
-                                  }}
+  for(var l=0;l<10;l++){
+    for(var m=0;m<2;m++){
+    malla2= new THREE.Mesh(cubo,madera);
+    if(m==1){malla2.position.z=(-90);}
+    malla2.position.x=(l*10);
+    malla2.receiveShadow=true; //Sombras
+    malla2.matrixAutoUpdate = false;
+    malla2.updateMatrix();
+    grupo2.add(malla2);
+  }}
 
-                                  //grupo3
-                                  grupo3= new THREE.Group();
+  //grupo3
+  grupo3= new THREE.Group();
 
-                                  for(var l=1;l<9;l++){
-                                    for(var m=0;m<2;m++){
-                                    malla3= new THREE.Mesh(cubo,madera);
-                                    if(m==1){malla3.position.x=(90);}
-                                    malla3.position.z=(-l*10);
-                                    malla3.matrixAutoUpdate = false;
-                                    malla3.receiveShadow=true;
-                                    malla3.updateMatrix();
-                                    grupo3.add(malla3);
-                                  }}
+  for(var l=1;l<9;l++){
+    for(var m=0;m<2;m++){
+    malla3= new THREE.Mesh(cubo,madera);
+    if(m==1){malla3.position.x=(90);}
+    malla3.position.z=(-l*10);
+    malla3.matrixAutoUpdate = false;
+    malla3.receiveShadow=true;
+    malla3.updateMatrix();
+    grupo3.add(malla3);
+  }}
   ///////////////////////////////////////////Torres////////////////////////////////////////////////////////////////
   torre1 = new TorreBlanca(10,5,-10);
   torre2 = new TorreBlanca(10,5,-80);
@@ -173,10 +174,6 @@ function init() {
   
   //Sombras
   renderizador.shadowMap.enabled=true;
-  torre1.castShadow = true;
-  torre2.castShadow = true;
-  torre3.castShadow = true;
-  torre4.castShadow = true;
   luzblan.castShadow = true;
   luzblan2.castShadow = true;
   luzblan3.castShadow = true;
