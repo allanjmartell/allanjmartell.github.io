@@ -58,10 +58,10 @@ function TorreBlanca(x=0,y=0,z=0){
   this.position.y=y;//5;
   this.position.z=z;//-10;
   this.position.x=x;//10;
-  //this.step = 0.1;
-  //this.colision = 0;
-  //this.radius = r;
-  //this.sensor = new THREE.Raycaster(this.position,new THREE.Vector3(1,0,0));
+  this.step = 0.1;
+  this.colision = 0;
+  this.radius = r;
+  this.sensor = new THREE.Raycaster(this.position,new THREE.Vector3(1,0,0));
 }
 
 function TorreNegra(x=0,y=0,z=0){
@@ -81,6 +81,26 @@ function TorreNegra(x=0,y=0,z=0){
 
 TorreBlanca.prototype = new Agent();
 TorreNegra.prototype = new Agent();
+
+TorreBlanca.prototype.sense = function(environment){
+  this.sensor.set(this.position, new THREE.Vector3(1,0,0));
+  var obstaculo1= this.sensor.intersectObjects(environment.children,true);
+  
+  this.sensor.set(this.position, new THREE.Vector3(-1,0,0));
+  var obstaculo2= this.sensor.intersectObjects(environment.children,true);
+  
+  if((obstaculo1.length > 0 && (obstaculo1[0].distance <= this.radius))||
+     (obstaculo2.length > 0 && (obstaculo2[0].distance <= this.radius)))
+      this.colision = 1;
+  else
+      this.colision = 0;
+}
+
+TorreBlanca.prototype.act = function(environment){
+  if(this.colision ===1)
+      this.step = -this.step;
+    this.position.x += this.step;
+}
 
 init();
 loop();
