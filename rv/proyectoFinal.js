@@ -215,16 +215,16 @@ function loop() {
           switch (tecla)
           {
               case 37 : //Izquierda
-                  torre1.translateX(-10);
+                  torre4.translateX(-10);
                   break;
               case 38 :  //Arriba
-                  torre1.translateZ(-10);
+                  torre4.translateZ(-10);
                   break;
               case 39 :  //Derecha 
-                  torre1.translateX(10);
+                  torre4.translateX(10);
                   break;
               case 40 :  //Abajo
-                  torre1.translateZ(10);
+                  torre4.translateZ(10);
                   break;
           default :alert("Pulsar las flechas del teclado");
           }
