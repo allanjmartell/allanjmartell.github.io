@@ -60,7 +60,7 @@ function TorreBlanca(x=0,y=0,z=0){
   this.position.x=x;//10;
   this.step = 0.1;
   this.colision = 0;
-  this.radius = r;
+  this.radius = 10;
   this.sensor = new THREE.Raycaster(this.position,new THREE.Vector3(1,0,0));
 }
 
