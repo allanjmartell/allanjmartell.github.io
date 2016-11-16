@@ -108,7 +108,7 @@ loop();
 function init() {
   ////////////////////////////////////////////Escena//////////////////////////////////////////////////////////////////////////////
   escena = new Environment();
-  escena.rotateX(Math.PI/4);
+  
   //////////////////////////////////////////////////Camara///////////////////////////////////////////////////////////////////////
   camara = new THREE.PerspectiveCamera();
   camara.position.z=130;
@@ -205,6 +205,7 @@ function init() {
   escena.add(torre1,torre2,torre3,torre4);
   //Luces
   escena.add(luzblan,luzblan2,luzblan3);
+  escena.rotateX(Math.PI/4);
 }
 
 function loop() {
