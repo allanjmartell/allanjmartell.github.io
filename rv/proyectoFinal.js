@@ -186,10 +186,10 @@ function init() {
     grupo3.add(malla3);
   }}
   ///////////////////////////////////////////Torres////////////////////////////////////////////////////////////////
-  torre1 = new TorreBlanca(10,10,-10);
-  torre2 = new TorreBlanca(10,10,-80);
-  torre3 = new TorreNegra(80,10,-10);
-  torre4 = new TorreNegra(80,10,-80);
+  torre1 = new TorreBlanca(10,10,-5);
+  torre2 = new TorreBlanca(10,10,-75);
+  torre3 = new TorreNegra(80,10,-5);
+  torre4 = new TorreNegra(80,10,-75);
   
   ////////////////////////////////////////Sombras//////////////////////////////////////////////////////////////////////
   renderizador.shadowMap.enabled=true;
