@@ -51,7 +51,7 @@ var torre1,torre2,torre3,torre4;
 //////////////////////////////////////////////Torres////////////////////////////////////////////////////////////////////////////////////
 function TorreBlanca(x=0,y=0,z=0){
   Agent.call(this,x,y,z);
-    //Torre1
+  //Torre1
   var textura1 = new THREE.TextureLoader().load('marmolblanco.jpg');
   var marmolblanco = new THREE.MeshLambertMaterial({map:textura1});
   this.add(new THREE.Mesh(torrefinal11,marmolblanco));
@@ -60,7 +60,7 @@ function TorreBlanca(x=0,y=0,z=0){
   this.position.x=x;//10;
   this.step = 0.1;
   this.colision = 0;
-  this.radius = 10;
+  this.radius = 1;
   this.sensor = new THREE.Raycaster(this.position,new THREE.Vector3(1,0,0));
 }
 
@@ -186,10 +186,10 @@ function init() {
     grupo3.add(malla3);
   }}
   ///////////////////////////////////////////Torres////////////////////////////////////////////////////////////////
-  torre1 = new TorreBlanca(10,5,-10);
-  torre2 = new TorreBlanca(10,5,-80);
-  torre3 = new TorreNegra(80,5,-10);
-  torre4 = new TorreNegra(80,5,-80);
+  torre1 = new TorreBlanca(10,10,-10);
+  torre2 = new TorreBlanca(10,10,-80);
+  torre3 = new TorreNegra(80,10,-10);
+  torre4 = new TorreNegra(80,10,-80);
   
   ////////////////////////////////////////Sombras//////////////////////////////////////////////////////////////////////
   renderizador.shadowMap.enabled=true;
