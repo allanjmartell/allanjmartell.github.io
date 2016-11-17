@@ -85,14 +85,11 @@ function init() {
 }
 
 function loop() {
-    window.onload=function(){document.onclick=desplazar};
-    function desplazar()
-    {
-      if window.onload=true
+    j=document.onclick;
+      if j==true
       {
-                  torre1.translateX(10);
+      torre1.translateX(10);
       }
-    }
   requestAnimationFrame(loop);
   renderizador.render(escena,camara);
 } 
