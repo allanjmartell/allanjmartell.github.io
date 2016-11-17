@@ -86,7 +86,7 @@ function init() {
 
 function loop() {
   document.onclick=function(){torre1.translateX(10);};
-  document.contextmenu=function(){torre1.translateX(-10);};
+  document.ondblclick=function(){torre1.translateX(-10);};
   requestAnimationFrame(loop);
   renderizador.render(escena,camara);
 } 
