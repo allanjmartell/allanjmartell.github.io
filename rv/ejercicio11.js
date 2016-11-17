@@ -85,11 +85,7 @@ function init() {
 }
 
 function loop() {
-    j=document.onclick;
-      if j==true
-      {
-      torre1.translateX(10);
-      }
+  document.onclick=function(){torre1.translateX(10);};
   requestAnimationFrame(loop);
   renderizador.render(escena,camara);
 } 
