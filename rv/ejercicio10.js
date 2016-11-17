@@ -85,26 +85,11 @@ function init() {
 }
 
 function loop() {
-    window.onload=function(){document.onkeydown=desplazar};
+    window.onload=function(){document.onclic=desplazar};
     function desplazar(pieza)
     {
-      var tecla = pieza.which;
-          switch (tecla)
-          {
-              case 37 : //Izquierda
-                  torre1.translateX(-10);
-                  break;
-              case 38 :  //Arriba
-                  torre1.translateZ(-10);
-                  break;
-              case 39 :  //Derecha 
-                  torre1.translateX(10);
-                  break;
-              case 40 :  //Abajo
-                  torre1.translateZ(10);
-                  break;
-          default :alert("Pulsar las flechas del teclado");
-          }
+      var ubicacionx = ;
+      var ubicacionz = ;
     }
   requestAnimationFrame(loop);
   renderizador.render(escena,camara);
