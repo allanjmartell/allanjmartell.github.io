@@ -232,12 +232,14 @@ function loop() {
     }
     window.onload = function() {document.onmousemove = mostrarPosicionPuntero}
     function mostrarPosicionPuntero(eventoObj){
-	var posicionX = eventoObj.clientX;
-	var posicionY = eventoObj.clientY;
+	//var posicionX = eventoObj.clientX;
+	//var posicionY = eventoObj.clientY;
 	//var nodoCoordenadas = document.getElementById('coordenadas');
 	//nodoCoordenadas.innerHTML = 'Posicion x: ' + posicionX + ' - Posicion y: ' + posicionY; 
-        torre2.translateX(posicionX);
-        torre2.translateZ(posicionY);
+        x = ev.offsetX;
+        y = ev.offsetY;
+	torre2.translateX(x);
+        torre2.translateZ(y);
 	}
   requestAnimationFrame(loop);
   escena.sense();
