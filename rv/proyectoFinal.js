@@ -230,17 +230,12 @@ function loop() {
           default :alert("Pulsar las flechas del teclado");
           }
     }
-    window.onload = function() {document.onmousemove = mostrarPosicionPuntero}
-    function mostrarPosicionPuntero(eventoObj){
-	//var posicionX = eventoObj.clientX;
-	//var posicionY = eventoObj.clientY;
-	//var nodoCoordenadas = document.getElementById('coordenadas');
-	//nodoCoordenadas.innerHTML = 'Posicion x: ' + posicionX + ' - Posicion y: ' + posicionY; 
+    window.onload = function() {document.click(function(ev)){
         x = ev.offsetX;
         y = ev.offsetY;
 	torre2.translateX(x);
         torre2.translateZ(y);
-	}
+	}}
   requestAnimationFrame(loop);
   escena.sense();
   escena.plan();
