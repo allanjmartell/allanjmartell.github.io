@@ -230,12 +230,12 @@ function loop() {
           default :alert("Pulsar las flechas del teclado");
           }
     }
-    window.onload = document.onclick(function(ev){
+    document.onclick=function(ev){
         x = ev.offsetX;
         y = ev.offsetY;
 	torre2.translateX(x);
         torre2.translateZ(y);
-	})
+	};
   requestAnimationFrame(loop);
   escena.sense();
   escena.plan();
