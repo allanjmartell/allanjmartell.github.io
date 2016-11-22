@@ -239,7 +239,6 @@ function loop() {
         torre2.translateX(posicionX);
         torre2.translateZ(posicionY);
 	}
-  }
   requestAnimationFrame(loop);
   escena.sense();
   escena.plan();
