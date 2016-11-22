@@ -230,11 +230,11 @@ function loop() {
           default :alert("Pulsar las flechas del teclado");
           }
     }
-    window.onload = function() {document.getElementById('escena').onmouseover = mostrarPosicionPuntero;}
+    window.onload = function() {document.onmousemove = mostrarPosicionPuntero}
     function mostrarPosicionPuntero(eventoObj){
 	var posicionX = eventoObj.clientX;
 	var posicionY = eventoObj.clientY;
-	var nodoCoordenadas = document.getElementById('coordenadas');
+	//var nodoCoordenadas = document.getElementById('coordenadas');
 	//nodoCoordenadas.innerHTML = 'Posicion x: ' + posicionX + ' - Posicion y: ' + posicionY; 
         torre2.translateX(posicionX);
         torre2.translateZ(posicionY);
