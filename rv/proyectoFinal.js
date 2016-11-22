@@ -230,7 +230,7 @@ function loop() {
           default :alert("Pulsar las flechas del teclado");
           }
     }
-    document.onclick=function(ev){
+    escena.onclick=function(ev){
         x = ev.offsetX;
         y = ev.offsetY;
 	torre2.translateX(x/100);
