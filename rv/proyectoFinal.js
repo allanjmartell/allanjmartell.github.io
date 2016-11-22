@@ -233,8 +233,8 @@ function loop() {
     document.onclick=function(ev){
         x = ev.offsetX;
         y = ev.offsetY;
-	torre2.translateX(x);
-        torre2.translateZ(y);
+	torre2.translateX(x/100);
+        torre2.translateZ(y/100);
 	};
   requestAnimationFrame(loop);
   escena.sense();
