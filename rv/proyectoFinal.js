@@ -225,7 +225,7 @@ function loop() {
     function desplazar(pieza)
     {
       var tecla = pieza.which;
-      if (((bloque.position.x>=10 && bloque.position.x<=80) && bloque.position.z<=-10) && bloque.position.z>=-80)
+      if (((bloque.position.x>=20 && bloque.position.x<=90) && bloque.position.z<=-20) && bloque.position.z>=-90)
       {
           switch (tecla)
           {
