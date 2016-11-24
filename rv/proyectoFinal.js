@@ -232,20 +232,16 @@ function loop() {
           switch (tecla)
           {
               case 37 : //Izquierda
-                  bloque.translateX(-10);
-		  xmin++;
+                  bloque.translateX(-10);xmin--;
                   break;
               case 38 :  //Arriba
-                  bloque.translateZ(-10);
-		  zmin++;
+                  bloque.translateZ(-10);zmin++;
                   break;
               case 39 :  //Derecha 
-                  bloque.translateX(10);		  
-	          xmin--;
+                  bloque.translateX(10);xmin++;
                   break;
               case 40 :  //Abajo
-                  bloque.translateZ(10);
-		  zmin--
+                  bloque.translateZ(10);zmin--;
                   break;
           default :alert("Pulsar las flechas del teclado");
           }
