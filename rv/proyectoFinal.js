@@ -227,7 +227,7 @@ function loop() {
       var tecla = pieza.which;
       var xmin=1;
       var zmin=1;
-      if xmin>=1 && xmin<=8 && zmin>=1 && zmin<=8
+      if (((xmin>=1 && xmin<=8) && zmin>=1) && zmin<=8)
       {
           switch (tecla)
           {
