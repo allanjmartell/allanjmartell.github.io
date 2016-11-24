@@ -79,8 +79,19 @@ function TorreNegra(x=0,y=0,z=0){
   //this.sensor = new THREE.Raycaster(this.position,new THREE.Vector3(1,0,0));
 }
 
+function Bloque(x=0,y=0,z=0){
+  Agent.call(this,x,y,z);
+  var texturaluz = new THREE.TextureLoader().load('luzazul.jpg');
+  var luzazul = new THREE.MeshLambertMaterial({map:texturaluz});
+  this.add(new THREE.Mesh(new THREE.BoxGeometry(10.5,10.5,10.5),luzazul));
+  this.position.y=y;
+  this.position.z=z;
+  this.position.x=x;
+}
+	
 TorreBlanca.prototype = new Agent();
 TorreNegra.prototype = new Agent();
+Bloque.prototype = new Agent();
 
 TorreBlanca.prototype.sense = function(environment){
   this.sensor.set(this.position, new THREE.Vector3(1,0,0));
@@ -186,11 +197,12 @@ function init() {
     grupo3.add(malla3);
   }}
   ///////////////////////////////////////////Torres////////////////////////////////////////////////////////////////
-  torre1 = new TorreBlanca(10,10,-5);
-  torre2 = new TorreBlanca(10,10,-75);
-  torre3 = new TorreNegra(80,10,-5);
-  torre4 = new TorreNegra(80,10,-75);
-  
+  torre1 = new TorreBlanca(10,10,-10);
+  torre2 = new TorreBlanca(10,10,-80);
+  torre3 = new TorreNegra(80,10,-10);
+  torre4 = new TorreNegra(80,10,-80);
+  /////////////////////////////////////////Bloque////////////////////////////////////////////////////////////////////
+  bloque = new Bloque(10,10,-10);
   ////////////////////////////////////////Sombras//////////////////////////////////////////////////////////////////////
   renderizador.shadowMap.enabled=true;
   torre1.castShadow=true;
@@ -216,26 +228,20 @@ function loop() {
           switch (tecla)
           {
               case 37 : //Izquierda
-                  torre2.translateX(-10);
+                  Bloque.translateX(-10);
                   break;
               case 38 :  //Arriba
-                  torre2.translateZ(-10);
+                  Bloque.translateZ(-10);
                   break;
               case 39 :  //Derecha 
-                  torre2.translateX(10);
+                  Bloque.translateX(10);
                   break;
               case 40 :  //Abajo
-                  torre2.translateZ(10);
+                  Bloque.translateZ(10);
                   break;
           default :alert("Pulsar las flechas del teclado");
           }
     }
-    renderizador.onclick=function(ev){
-        x = ev.offsetX;
-        y = ev.offsetY;
-	torre2.translateX(x/100);
-        torre2.translateZ(y/100);
-	};
   requestAnimationFrame(loop);
   escena.sense();
   escena.plan();
