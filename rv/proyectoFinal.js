@@ -213,7 +213,7 @@ function init() {
   luzblan2.castShadow = true;
   luzblan3.castShadow = true;
   
-  escena.add(grupo,grupo2,grupo3);
+  escena.add(grupo,grupo2,grupo3,Bloque);
   escena.add(torre1,torre2,torre3,torre4);
   //Luces
   escena.add(luzblan,luzblan2,luzblan3);
