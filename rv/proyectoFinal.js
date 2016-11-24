@@ -225,10 +225,10 @@ function loop() {
     function desplazar(pieza)
     {
       var tecla = pieza.which;
+      var xmin=1;
+      var zmin=1;
           switch (tecla)
           {
-	  var xmin=1;
-	  var zmin=1;
               case 37 : //Izquierda
 	          if xmin>=1{
                   bloque.translateX(-10);
