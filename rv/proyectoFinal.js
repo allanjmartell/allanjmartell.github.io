@@ -43,9 +43,9 @@ Environment.prototype.act = function(){
   }
 }
 
-
+///////////////////////////////////////////Variables////////////////////////////////////////////////////////////////////////////////////
 var camara,escena,renderizador;
-var malla,malla2,malla3,grupo,grupo2,grupo3;
+var malla,malla2,malla3,grupo,grupo2,grupo3,bloque;
 var torre1,torre2,torre3,torre4;
 
 //////////////////////////////////////////////Torres////////////////////////////////////////////////////////////////////////////////////
@@ -197,10 +197,10 @@ function init() {
     grupo3.add(malla3);
   }}
   ///////////////////////////////////////////Torres////////////////////////////////////////////////////////////////
-  torre1 = new TorreBlanca(10,10,-10);
-  torre2 = new TorreBlanca(10,10,-80);
-  torre3 = new TorreNegra(80,10,-10);
-  torre4 = new TorreNegra(80,10,-80);
+  torre1 = new TorreBlanca(10,5,-10);
+  torre2 = new TorreBlanca(10,5,-80);
+  torre3 = new TorreNegra(80,5,-10);
+  torre4 = new TorreNegra(80,5,-80);
   /////////////////////////////////////////Bloque////////////////////////////////////////////////////////////////////
   bloque = new Bloque(10,10,-10);
   ////////////////////////////////////////Sombras//////////////////////////////////////////////////////////////////////
@@ -213,7 +213,7 @@ function init() {
   luzblan2.castShadow = true;
   luzblan3.castShadow = true;
   
-  escena.add(grupo,grupo2,grupo3,Bloque);
+  escena.add(grupo,grupo2,grupo3,bloque);
   escena.add(torre1,torre2,torre3,torre4);
   //Luces
   escena.add(luzblan,luzblan2,luzblan3);
@@ -228,16 +228,16 @@ function loop() {
           switch (tecla)
           {
               case 37 : //Izquierda
-                  Bloque.translateX(-10);
+                  bloque.translateX(-10);
                   break;
               case 38 :  //Arriba
-                  Bloque.translateZ(-10);
+                  bloque.translateZ(-10);
                   break;
               case 39 :  //Derecha 
-                  Bloque.translateX(10);
+                  bloque.translateX(10);
                   break;
               case 40 :  //Abajo
-                  Bloque.translateZ(10);
+                  bloque.translateZ(10);
                   break;
           default :alert("Pulsar las flechas del teclado");
           }
