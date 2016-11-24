@@ -227,34 +227,29 @@ function loop() {
       var tecla = pieza.which;
       var xmin=1;
       var zmin=1;
+      if xmin>=1 && xmin<=8 && zmin>=1 && zmin<=8
+      {
           switch (tecla)
           {
               case 37 : //Izquierda
-	          if xmin>=1{
                   bloque.translateX(-10);
 		  xmin++;
-		  }
                   break;
               case 38 :  //Arriba
-	          if zmin>=1{
                   bloque.translateZ(-10);
 		  zmin++;
-		  }
                   break;
               case 39 :  //Derecha 
-		  if xmin<=8{
                   bloque.translateX(10);		  
 	          xmin--;
-		  }
                   break;
               case 40 :  //Abajo
-		  if zmin<=8{
                   bloque.translateZ(10);
 		  zmin--
-		  }
                   break;
           default :alert("Pulsar las flechas del teclado");
           }
+      }
     }
   requestAnimationFrame(loop);
   escena.sense();
