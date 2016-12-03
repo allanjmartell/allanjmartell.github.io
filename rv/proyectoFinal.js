@@ -225,25 +225,27 @@ function loop() {
     function desplazar(pieza)
     {
       var tecla = pieza.which;
-      if (((bloque.position.x>=20 && bloque.position.x<=90) && bloque.position.z<=-20) && bloque.position.z>=-90)
-      {
           switch (tecla)
           {
               case 37 : //Izquierda
-                  bloque.translateX(-10);
+		if (bloque.position.x>=20)
+		{bloque.translateX(-10);}
                   break;
               case 38 :  //Arriba
-                  bloque.translateZ(-10);
+		if (bloque.position.z<=-20)
+                  {bloque.translateZ(-10);}
                   break;
               case 39 :  //Derecha 
-                  bloque.translateX(10);
+		if (bloque.position.x<=90)
+		  {bloque.translateX(10);}
                   break;
               case 40 :  //Abajo
-                  bloque.translateZ(10);
+		if (bloque.position.z>=-90)
+		  {bloque.translateZ(10);}
                   break;
           default :alert("Pulsar las flechas del teclado");
           }
-      }
+      
     }
   requestAnimationFrame(loop);
   escena.sense();
