@@ -204,7 +204,7 @@ function init() {
   luzblan2.castShadow = true;
   luzblan3.castShadow = true;
   
-  escena.add(grupo,grupo2,grupo3,bloqueazul,bloquerojo);
+  escena.add(grupo,grupo2,grupo3,bloqueazul);
   escena.add(torre1,torre2,torre3,torre4);
   //Luces
   escena.add(luzblan,luzblan2,luzblan3);
@@ -236,6 +236,7 @@ function loop() {
                   break;
 	      case 13 ://Enter
 		bloquerojo = new BloqueRojo(bloqueazul.position.x,0,bloqueazul.position.z);
+		escena.add(bloquerojo);
 		break;
           //default :alert("Pulsar las flechas del teclado");
           }
