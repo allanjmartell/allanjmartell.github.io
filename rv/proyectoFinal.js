@@ -113,9 +113,9 @@ function BloqueMorado(x=0,y=0,z=0){
 
 function BloqueVerde(x=0,y=0,z=0){
   Agent.call(this,x,y,z);
-  var texturaluz = new THREE.TextureLoader().load('luzmorada.jpeg');
-  var luzmorada = new THREE.MeshLambertMaterial({map:texturaluz});
-  this.add(new THREE.Mesh(new THREE.BoxGeometry(10.2,10.2,10.2),luzmorada));
+  var texturaluz = new THREE.TextureLoader().load('luzverde.jpg');
+  var luzverde = new THREE.MeshLambertMaterial({map:texturaluz});
+  this.add(new THREE.Mesh(new THREE.BoxGeometry(10.2,10.2,10.2),luzverde));
   this.position.y=y;
   this.position.z=z;
   this.position.x=x;
@@ -277,7 +277,9 @@ function loop() {
 	      case 13 :  //Enter
 	        if (bandera===1)
 		{escena.remove(bloquerojo);
-		bloquerojo = new BloqueRojo(bloqueazul.position.x,0,bloqueazul.position.z);
+		 escena.remove(grupomorado);
+		 escena.remove(bloqueverde);
+		 bloquerojo = new BloqueRojo(bloqueazul.position.x,0,bloqueazul.position.z);
 		bandera==0;}
 		bloquerojo = new BloqueRojo(bloqueazul.position.x,0,bloqueazul.position.z);
 		escena.add(bloquerojo);
