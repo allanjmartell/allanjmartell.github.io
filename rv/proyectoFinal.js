@@ -60,7 +60,7 @@ function TorreBlanca(x=0,y=0,z=0){
   this.position.y=y;//5;
   this.position.z=z;//-10;
   this.position.x=x;//10;
-  //this.step = 0.1;
+  this.step = 0.1;
   //this.colision = 0;
   //this.radius = 1;
   //this.sensor = new THREE.Raycaster(this.position,new THREE.Vector3(1,0,0));
@@ -75,7 +75,7 @@ function TorreNegra(x=0,y=0,z=0){
   this.position.y=y;
   this.position.z=z;
   this.position.x=x;
-  //this.step = 0.1;
+  this.step = 0.1;
   //this.colision = 0;
   //this.radius = r;
   //this.sensor = new THREE.Raycaster(this.position,new THREE.Vector3(1,0,0));
@@ -279,7 +279,18 @@ function loop() {
 		{escena.remove(bloquerojo);
 		 escena.remove(grupomorado);
 		 escena.remove(bloqueverde);
-		 bloquerojo = new BloqueRojo(bloqueazul.position.x,0,bloqueazul.position.z);
+		 if (torreblanca1.position.x===bloquerojo.position.x && torreblanca1.position.z===bloquerojo.position.z)
+			{TorreBlanca.prototype.act = function(environment){
+				if(torreblanca1.position.x<bloqueverde.position.x)
+				  {this.position.x += this.step;}
+				else
+				  {this.position.x -= this.step;}
+				if(torreblanca1.position.z<bloqueverde.position.z)
+				  {this.position.z += this.step;}
+				else
+				  {this.position.z -= this.step;}
+				}
+			} 
 		 bandera=0;}
 		else{
 		bloquerojo = new BloqueRojo(bloqueazul.position.x,0,bloqueazul.position.z);
