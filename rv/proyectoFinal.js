@@ -221,25 +221,29 @@ function loop() {
           switch (tecla)
           {
               case 37 : //Izquierda
-	        escena.remove(bloquemorado);
+		for (i=1;i<=16;i++)
+		{escena.remove(bloquemorado);}
 		escena.remove(bloquerojo);
 		if (bloqueazul.position.x>=20)
 		{bloqueazul.translateX(-10);}
                   break;
               case 38 :  //Arriba
-		escena.remove(bloquemorado);
+		for (i=1;i<=16;i++)
+		{escena.remove(bloquemorado);}
 		escena.remove(bloquerojo);
 		if (bloqueazul.position.z>=-70)
                   {bloqueazul.translateZ(-10);}
                   break;
               case 39 :  //Derecha 
-		escena.remove(bloquemorado);
+		for (i=1;i<=16;i++)
+		{escena.remove(bloquemorado);}
 		escena.remove(bloquerojo);
 		if (bloqueazul.position.x<=70)
 		  {bloqueazul.translateX(10);}
                   break;
               case 40 :  //Abajo
-		escena.remove(bloquemorado);
+		for (i=1;i<=16;i++)
+		{escena.remove(bloquemorado);}
 		escena.remove(bloquerojo);
 		if (bloqueazul.position.z<=-20)
 		  {bloqueazul.translateZ(10);}
