@@ -232,15 +232,15 @@ function loop() {
 		{bloque.translateX(-10);}
                   break;
               case 38 :  //Arriba
-		if (bloque.position.z<=-20)
+		if (bloque.position.z>=20)
                   {bloque.translateZ(-10);}
                   break;
               case 39 :  //Derecha 
-		if (bloque.position.x<=90)
+		if (bloque.position.x<=70)
 		  {bloque.translateX(10);}
                   break;
               case 40 :  //Abajo
-		if (bloque.position.z>=-90)
+		if (bloque.position.z<=70)
 		  {bloque.translateZ(10);}
                   break;
           default :alert("Pulsar las flechas del teclado");
