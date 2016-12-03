@@ -101,7 +101,7 @@ function BloqueRojo(x=0,y=0,z=0){
 	
 function BloqueMorado(x=0,y=0,z=0){
   Agent.call(this,x,y,z);
-  var texturaluz = new THREE.TextureLoader().load('luzmorada.jpg');
+  var texturaluz = new THREE.TextureLoader().load('luzmorada2.jpg');
   var luzmorada = new THREE.MeshLambertMaterial({map:texturaluz});
   this.add(new THREE.Mesh(new THREE.BoxGeometry(10.1,10.1,10.1),luzmorada));
   this.position.y=y;
