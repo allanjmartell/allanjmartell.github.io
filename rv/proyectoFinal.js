@@ -256,9 +256,9 @@ function loop() {
 		if (torreblanca1.position.x===bloquerojo.position.x && torreblanca1.position.z===bloquerojo.position.z)
 		{
 		  for (i=1;i<=8;i++)
-		  { bloquemorado = new BloqueMorado(bloquerojo.position.x,0,-i*10);}
+		  { bloquemorado = new BloqueMorado(bloquerojo.position.x,0,-i*10);escena.add(bloquemorado);}
 		  for (i=1;i<=8;i++)
-		  { bloquemorado = new BloqueMorado(i*10,0,bloquerojo.position.z);}
+		  { bloquemorado = new BloqueMorado(i*10,0,bloquerojo.position.z);escena.add(bloquemorado);}
 		}
 		break;
           //default :alert("Pulsar las flechas del teclado");
