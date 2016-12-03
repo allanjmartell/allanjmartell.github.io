@@ -45,7 +45,7 @@ Environment.prototype.act = function(){
 
 ///////////////////////////////////////////Variables////////////////////////////////////////////////////////////////////////////////////
 var camara,escena,renderizador;
-var malla,malla2,malla3,grupo,grupo2,grupo3;
+var malla,malla2,malla3,grupo,grupo2,grupo3,grupomorado;
 var bloquemorado,bloqueazul,bloquerojo;
 var torre1,torre2,torre3,torre4;
 
@@ -221,29 +221,25 @@ function loop() {
           switch (tecla)
           {
               case 37 : //Izquierda
-		for (i=1;i<=16;i++)
-		{escena.remove(bloquemorado);}
+		escena.remove(grupomorado);
 		escena.remove(bloquerojo);
 		if (bloqueazul.position.x>=20)
 		{bloqueazul.translateX(-10);}
                   break;
               case 38 :  //Arriba
-		for (i=1;i<=16;i++)
-		{escena.remove(bloquemorado);}
+		escena.remove(grupomorado);
 		escena.remove(bloquerojo);
 		if (bloqueazul.position.z>=-70)
                   {bloqueazul.translateZ(-10);}
                   break;
               case 39 :  //Derecha 
-		for (i=1;i<=16;i++)
-		{escena.remove(bloquemorado);}
+		escena.remove(grupomorado);
 		escena.remove(bloquerojo);
 		if (bloqueazul.position.x<=70)
 		  {bloqueazul.translateX(10);}
                   break;
               case 40 :  //Abajo
-		for (i=1;i<=16;i++)
-		{escena.remove(bloquemorado);}
+		escena.remove(grupomorado);
 		escena.remove(bloquerojo);
 		if (bloqueazul.position.z<=-20)
 		  {bloqueazul.translateZ(10);}
@@ -258,10 +254,14 @@ function loop() {
 		   (torrenegra1.position.x===bloquerojo.position.x && torrenegra1.position.z===bloquerojo.position.z))||
 		   (torrenegra2.position.x===bloquerojo.position.x && torrenegra2.position.z===bloquerojo.position.z))
 		{
+		  grupomorado = new THREE.Group();
 		  for (i=1;i<=8;i++)
-		  { bloquemorado = new BloqueMorado(bloquerojo.position.x,0,-i*10);escena.add(bloquemorado);}
+		  { bloquemorado = new BloqueMorado(bloquerojo.position.x,0,-i*10);
+		    grupomorado.add(bloquemorado);}
 		  for (i=1;i<=8;i++)
-		  { bloquemorado = new BloqueMorado(i*10,0,bloquerojo.position.z);escena.add(bloquemorado);}
+		  { bloquemorado = new BloqueMorado(i*10,0,bloquerojo.position.z);
+		    grupomorado.add(bloquemorado);}
+		  escena.add(grupomorado);    
 		}
 		break;
           //default :alert("Pulsar las flechas del teclado");
