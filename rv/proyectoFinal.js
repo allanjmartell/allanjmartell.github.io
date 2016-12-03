@@ -45,7 +45,7 @@ Environment.prototype.act = function(){
 
 ///////////////////////////////////////////Variables////////////////////////////////////////////////////////////////////////////////////
 var camara,escena,renderizador;
-var malla,malla2,malla3,grupo,grupo2,grupo3,bloque;
+var malla,malla2,malla3,grupo,grupo2,grupo3,bloqueazul,bloquerojo;
 var torre1,torre2,torre3,torre4;
 
 //////////////////////////////////////////////Torres////////////////////////////////////////////////////////////////////////////////////
@@ -58,10 +58,10 @@ function TorreBlanca(x=0,y=0,z=0){
   this.position.y=y;//5;
   this.position.z=z;//-10;
   this.position.x=x;//10;
-  this.step = 0.1;
-  this.colision = 0;
-  this.radius = 1;
-  this.sensor = new THREE.Raycaster(this.position,new THREE.Vector3(1,0,0));
+  //this.step = 0.1;
+  //this.colision = 0;
+  //this.radius = 1;
+  //this.sensor = new THREE.Raycaster(this.position,new THREE.Vector3(1,0,0));
 }
 
 function TorreNegra(x=0,y=0,z=0){
@@ -79,7 +79,7 @@ function TorreNegra(x=0,y=0,z=0){
   //this.sensor = new THREE.Raycaster(this.position,new THREE.Vector3(1,0,0));
 }
 
-function Bloque(x=0,y=0,z=0){
+function BloqueAzul(x=0,y=0,z=0){
   Agent.call(this,x,y,z);
   var texturaluz = new THREE.TextureLoader().load('luzazul.jpg');
   var luzazul = new THREE.MeshLambertMaterial({map:texturaluz});
@@ -88,30 +88,21 @@ function Bloque(x=0,y=0,z=0){
   this.position.z=z;
   this.position.x=x;
 }
+
+function BloqueRojo(x=0,y=0,z=0){
+  Agent.call(this,x,y,z);
+  var texturaluz = new THREE.TextureLoader().load('luzroja.jpg');
+  var luzroja = new THREE.MeshLambertMaterial({map:texturaluz});
+  this.add(new THREE.Mesh(new THREE.BoxGeometry(10.6,10.6,10.6),luzroja));
+  this.position.y=y;
+  this.position.z=z;
+  this.position.x=x;
+}
 	
 TorreBlanca.prototype = new Agent();
 TorreNegra.prototype = new Agent();
-Bloque.prototype = new Agent();
-
-TorreBlanca.prototype.sense = function(environment){
-  this.sensor.set(this.position, new THREE.Vector3(1,0,0));
-  var obstaculo1= this.sensor.intersectObjects(environment.children,true);
-  
-  this.sensor.set(this.position, new THREE.Vector3(-1,0,0));
-  var obstaculo2= this.sensor.intersectObjects(environment.children,true);
-  
-  if((obstaculo1.length > 0 && (obstaculo1[0].distance <= this.radius))||
-     (obstaculo2.length > 0 && (obstaculo2[0].distance <= this.radius)))
-      this.colision = 1;
-  else
-      this.colision = 0;
-}
-
-TorreBlanca.prototype.act = function(environment){
-  if(this.colision ===1)
-      this.step = -this.step;
-    this.position.x += this.step;
-}
+BloqueAzul.prototype = new Agent();
+BloqueRojo.prototype = new Agent();
 
 init();
 loop();
@@ -201,8 +192,8 @@ function init() {
   torre2 = new TorreBlanca(10,5,-80);
   torre3 = new TorreNegra(80,5,-10);
   torre4 = new TorreNegra(80,5,-80);
-  /////////////////////////////////////////Bloque////////////////////////////////////////////////////////////////////
-  bloque = new Bloque(10,0,-10);
+  /////////////////////////////////////////Bloques////////////////////////////////////////////////////////////////////
+  bloqueazul = new BloqueAzul(10,0,-10);
   ////////////////////////////////////////Sombras//////////////////////////////////////////////////////////////////////
   renderizador.shadowMap.enabled=true;
   torre1.castShadow=true;
@@ -228,21 +219,24 @@ function loop() {
           switch (tecla)
           {
               case 37 : //Izquierda
-		if (bloque.position.x>=20)
-		{bloque.translateX(-10);}
+		if (bloqueazul.position.x>=20)
+		{bloqueazul.translateX(-10);}
                   break;
               case 38 :  //Arriba
-		if (bloque.position.z>=-70)
-                  {bloque.translateZ(-10);}
+		if (bloqueazul.position.z>=-70)
+                  {bloqueazul.translateZ(-10);}
                   break;
               case 39 :  //Derecha 
-		if (bloque.position.x<=70)
-		  {bloque.translateX(10);}
+		if (bloqueazul.position.x<=70)
+		  {bloqueazul.translateX(10);}
                   break;
               case 40 :  //Abajo
-		if (bloque.position.z<=-20)
-		  {bloque.translateZ(10);}
+		if (bloqueazul.position.z<=-20)
+		  {bloqueazul.translateZ(10);}
                   break;
+	      case 13 ://Enter
+		bloquerojo = new BloqueRojo(bloqueazul.position.x,0,bloqueazul.position.z);
+		
           default :alert("Pulsar las flechas del teclado");
           }
       
