@@ -281,6 +281,7 @@ function loop() {
 		 escena.remove(bloqueverde);
 		 bloquerojo = new BloqueRojo(bloqueazul.position.x,0,bloqueazul.position.z);
 		 bandera=0;}
+		else{
 		bloquerojo = new BloqueRojo(bloqueazul.position.x,0,bloqueazul.position.z);
 		escena.add(bloquerojo);
 		//////////////////////////Torres/////////////////////////////////////////////////////////////////////////
@@ -300,9 +301,8 @@ function loop() {
 		  bloqueverde = new BloqueVerde(bloquerojo.position.x,0,bloquerojo.position.z);
 		  escena.add(bloqueverde);
 		  bandera=1;	
-		}
+		}}
 		break;
-          //default :alert("Pulsar las flechas del teclado");
           }
       
     }
