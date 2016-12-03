@@ -219,26 +219,28 @@ function loop() {
           switch (tecla)
           {
               case 37 : //Izquierda
+		escena.remove(bloquerojo);
 		if (bloqueazul.position.x>=20)
 		{bloqueazul.translateX(-10);}
                   break;
               case 38 :  //Arriba
+		escena.remove(bloquerojo);
 		if (bloqueazul.position.z>=-70)
                   {bloqueazul.translateZ(-10);}
                   break;
               case 39 :  //Derecha 
+		escena.remove(bloquerojo);
 		if (bloqueazul.position.x<=70)
 		  {bloqueazul.translateX(10);}
                   break;
               case 40 :  //Abajo
+		escena.remove(bloquerojo);
 		if (bloqueazul.position.z<=-20)
 		  {bloqueazul.translateZ(10);}
                   break;
 	      case 13 ://Enter
 		bloquerojo = new BloqueRojo(bloqueazul.position.x,0,bloqueazul.position.z);
 		escena.add(bloquerojo);
-		if (tecla==37 || tecla==38 || tecla==39 || tecla==40)
-		{escena.remove(bloquerojo);}
 		break;
           //default :alert("Pulsar las flechas del teclado");
           }
