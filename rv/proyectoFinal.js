@@ -204,15 +204,6 @@ function init() {
   torrenegra2 = new TorreNegra(80,5,-80);
   /////////////////////////////////////////Bloques////////////////////////////////////////////////////////////////////
   bloqueazul = new BloqueAzul(10,0,-10);
-  ////////////////////////////////////////Sombras//////////////////////////////////////////////////////////////////////
-  renderizador.shadowMap.enabled=true;
-  torreblanca1.castShadow=true;
-  torreblanca2.castShadow=true;
-  torrenegra1.castShadow=true;
-  torrenegra2.castShadow=true;
-  luzblan.castShadow = true;
-  luzblan2.castShadow = true;
-  luzblan3.castShadow = true;
   
   escena.add(grupo,grupo2,grupo3,bloqueazul);
   escena.add(torreblanca1,torreblanca2,torrenegra1,torrenegra2);
@@ -229,21 +220,25 @@ function loop() {
           switch (tecla)
           {
               case 37 : //Izquierda
+	        escena.remove(bloquemorado);
 		escena.remove(bloquerojo);
 		if (bloqueazul.position.x>=20)
 		{bloqueazul.translateX(-10);}
                   break;
               case 38 :  //Arriba
+		escena.remove(bloquemorado);
 		escena.remove(bloquerojo);
 		if (bloqueazul.position.z>=-70)
                   {bloqueazul.translateZ(-10);}
                   break;
               case 39 :  //Derecha 
+		escena.remove(bloquemorado);
 		escena.remove(bloquerojo);
 		if (bloqueazul.position.x<=70)
 		  {bloqueazul.translateX(10);}
                   break;
               case 40 :  //Abajo
+		escena.remove(bloquemorado);
 		escena.remove(bloquerojo);
 		if (bloqueazul.position.z<=-20)
 		  {bloqueazul.translateZ(10);}
@@ -253,7 +248,10 @@ function loop() {
 		bloquerojo = new BloqueRojo(bloqueazul.position.x,0,bloqueazul.position.z);
 		escena.add(bloquerojo);
 		//////////////////////////Torres/////////////////////////////////////////////////////////////////////////
-		if (torreblanca1.position.x===bloquerojo.position.x && torreblanca1.position.z===bloquerojo.position.z)
+		if ((((torreblanca1.position.x===bloquerojo.position.x && torreblanca1.position.z===bloquerojo.position.z)||
+		   (torreblanca2.position.x===bloquerojo.position.x && torreblanca2.position.z===bloquerojo.position.z))||
+		   (torrenegra1.position.x===bloquerojo.position.x && torrenegra1.position.z===bloquerojo.position.z))||
+		   (torrenegra2.position.x===bloquerojo.position.x && torrenegra2.position.z===bloquerojo.position.z))
 		{
 		  for (i=1;i<=8;i++)
 		  { bloquemorado = new BloqueMorado(bloquerojo.position.x,0,-i*10);escena.add(bloquemorado);}
