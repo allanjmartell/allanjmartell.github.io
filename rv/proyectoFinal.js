@@ -99,11 +99,21 @@ function BloqueRojo(x=0,y=0,z=0){
   this.position.x=x;
 }
 	
+function BloqueMorado(x=0,y=0,z=0){
+  Agent.call(this,x,y,z);
+  var texturaluz = new THREE.TextureLoader().load('luzmorada.png');
+  var luzmorada = new THREE.MeshLambertMaterial({map:texturaluz});
+  this.add(new THREE.Mesh(new THREE.BoxGeometry(10.1,10.1,10.1),luzmorada));
+  this.position.y=y;
+  this.position.z=z;
+  this.position.x=x;
+}
+
 TorreBlanca.prototype = new Agent();
 TorreNegra.prototype = new Agent();
 BloqueAzul.prototype = new Agent();
 BloqueRojo.prototype = new Agent();
-
+BloqueMorado.prototype = new Agent();
 init();
 loop();
 
@@ -188,10 +198,10 @@ function init() {
     grupo3.add(malla3);
   }}
   ///////////////////////////////////////////Torres////////////////////////////////////////////////////////////////
-  torre1 = new TorreBlanca(10,5,-10);
-  torre2 = new TorreBlanca(10,5,-80);
-  torre3 = new TorreNegra(80,5,-10);
-  torre4 = new TorreNegra(80,5,-80);
+  torreblanca1 = new TorreBlanca(10,5,-10);
+  torreblanca2 = new TorreBlanca(10,5,-80);
+  torrenegra1 = new TorreNegra(80,5,-10);
+  torrenegra2 = new TorreNegra(80,5,-80);
   /////////////////////////////////////////Bloques////////////////////////////////////////////////////////////////////
   bloqueazul = new BloqueAzul(10,0,-10);
   ////////////////////////////////////////Sombras//////////////////////////////////////////////////////////////////////
@@ -205,7 +215,7 @@ function init() {
   luzblan3.castShadow = true;
   
   escena.add(grupo,grupo2,grupo3,bloqueazul);
-  escena.add(torre1,torre2,torre3,torre4);
+  escena.add(torreblanca1,torreblanca2,torrenegra1,torrenegra2);
   //Luces
   escena.add(luzblan,luzblan2,luzblan3);
   escena.rotateX(Math.PI/4);
@@ -238,9 +248,21 @@ function loop() {
 		if (bloqueazul.position.z<=-20)
 		  {bloqueazul.translateZ(10);}
                   break;
-	      case 13 ://Enter
+///////////////////////////////////////////Selección de piezas/////////////////////////////////////////////////////////////////////
+	      case 13 :  //Enter
 		bloquerojo = new BloqueRojo(bloqueazul.position.x,0,bloqueazul.position.z);
 		escena.add(bloquerojo);
+		//////////////////////////Torres/////////////////////////////////////////////////////////////////////////
+		if (torreblanca1.position.x==bloquerojo.position.x && torreblanca1.position.z==bloquerojo.position.z)
+		  ||(torreblanca2.position.x==bloquerojo.position.x && torreblanca2.position.z==bloquerojo.position.z)
+		  ||(torrenegra1.position.x==bloquerojo.position.x && torrenegra1.position.z==bloquerojo.position.z)
+		  ||(torrenegra2.position.x==bloquerojo.position.x && torrenegra2.position.z==bloquerojo.position.z)
+		{
+		  for (i=1;i<=8;i++)
+		  { bloquemorado = new BloqueMorado(bloquerojo.position.x,0,i*10);}
+		  for (i=1;i<=8;i++)
+		  { bloquemorado = new BloqueMorado(i*10,0,bloquerojo.position.z);}
+		}
 		break;
           //default :alert("Pulsar las flechas del teclado");
           }
