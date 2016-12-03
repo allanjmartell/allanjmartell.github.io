@@ -46,7 +46,8 @@ Environment.prototype.act = function(){
 ///////////////////////////////////////////Variables////////////////////////////////////////////////////////////////////////////////////
 var camara,escena,renderizador;
 var malla,malla2,malla3,grupo,grupo2,grupo3,grupomorado;
-var bloquemorado,bloqueazul,bloquerojo;
+var bloquemorado,bloqueazul,bloquerojo,bloqueverde;
+var bandera;
 var torre1,torre2,torre3,torre4;
 
 //////////////////////////////////////////////Torres////////////////////////////////////////////////////////////////////////////////////
@@ -110,11 +111,23 @@ function BloqueMorado(x=0,y=0,z=0){
   this.position.x=x;
 }
 
+function BloqueVerde(x=0,y=0,z=0){
+  Agent.call(this,x,y,z);
+  var texturaluz = new THREE.TextureLoader().load('luzmorada.jpeg');
+  var luzmorada = new THREE.MeshLambertMaterial({map:texturaluz});
+  this.add(new THREE.Mesh(new THREE.BoxGeometry(10.2,10.2,10.2),luzmorada));
+  this.position.y=y;
+  this.position.z=z;
+  this.position.x=x;
+}
+
 TorreBlanca.prototype = new Agent();
 TorreNegra.prototype = new Agent();
 BloqueAzul.prototype = new Agent();
 BloqueRojo.prototype = new Agent();
 BloqueMorado.prototype = new Agent();
+BloqueVerde.prototype = new Agent();
+
 init();
 loop();
 
@@ -221,31 +234,51 @@ function loop() {
           switch (tecla)
           {
               case 37 : //Izquierda
+		if bandera==1
+		{if (bloqueverde.position.x>=20)
+		   {bloqueverde.translateX(-10);}}
+		else{
 		escena.remove(grupomorado);
 		escena.remove(bloquerojo);
 		if (bloqueazul.position.x>=20)
-		{bloqueazul.translateX(-10);}
+		{bloqueazul.translateX(-10);}}
                   break;
               case 38 :  //Arriba
+		if bandera==1
+		{if (bloqueverde.position.z>=-70)
+		  {bloqueverde.translateZ(-10);}}
+		else{
 		escena.remove(grupomorado);
 		escena.remove(bloquerojo);
 		if (bloqueazul.position.z>=-70)
-                  {bloqueazul.translateZ(-10);}
+                  {bloqueazul.translateZ(-10);}}
                   break;
               case 39 :  //Derecha 
+		if bandera==1
+		{if (bloqueverde.position.x<=70)
+		  {bloqueverde.translateX(10);}}
+		else{
 		escena.remove(grupomorado);
 		escena.remove(bloquerojo);
 		if (bloqueazul.position.x<=70)
-		  {bloqueazul.translateX(10);}
+		  {bloqueazul.translateX(10);}}
                   break;
               case 40 :  //Abajo
+		if bandera==1
+		{if (bloqueverde.position.z<=-20)
+		  {bloqueverde.translateZ(10);}}
+		else{
 		escena.remove(grupomorado);
 		escena.remove(bloquerojo);
 		if (bloqueazul.position.z<=-20)
-		  {bloqueazul.translateZ(10);}
+		  {bloqueazul.translateZ(10);}}
                   break;
 ///////////////////////////////////////////Selección de piezas/////////////////////////////////////////////////////////////////////
 	      case 13 :  //Enter
+	        if bandera==1
+		{escena.remove(bloquerojo);
+		bloquerojo = new BloqueRojo(bloqueazul.position.x,0,bloqueazul.position.z);
+		bandera==0;}
 		bloquerojo = new BloqueRojo(bloqueazul.position.x,0,bloqueazul.position.z);
 		escena.add(bloquerojo);
 		//////////////////////////Torres/////////////////////////////////////////////////////////////////////////
@@ -261,7 +294,10 @@ function loop() {
 		  for (i=1;i<=8;i++)
 		  { bloquemorado = new BloqueMorado(i*10,0,bloquerojo.position.z);
 		    grupomorado.add(bloquemorado);}
-		  escena.add(grupomorado);    
+		  escena.add(grupomorado);  
+		  bloqueverde = new BloqueVerde(bloquerojo.position.x,0,bloquerojo.position.z);
+		  escena.add(bloqueverde);
+		  bandera=1;	
 		}
 		break;
           //default :alert("Pulsar las flechas del teclado");
