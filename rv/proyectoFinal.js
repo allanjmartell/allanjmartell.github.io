@@ -280,7 +280,7 @@ function loop() {
 		 escena.remove(grupomorado);
 		 escena.remove(bloqueverde);
 		 bloquerojo = new BloqueRojo(bloqueazul.position.x,0,bloqueazul.position.z);
-		bandera==0;}
+		 bandera=0;}
 		bloquerojo = new BloqueRojo(bloqueazul.position.x,0,bloqueazul.position.z);
 		escena.add(bloquerojo);
 		//////////////////////////Torres/////////////////////////////////////////////////////////////////////////
