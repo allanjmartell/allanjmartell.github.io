@@ -199,7 +199,7 @@ function init() {
     grupo3.add(malla3);
   }}
   ///////////////////////////////////////////Torres////////////////////////////////////////////////////////////////
-  torreblanca1 = new TorreBlanca(10,5,-10);
+  torreblanca1 = new TorreBlanca(50,5,-50);
   torreblanca2 = new TorreBlanca(10,5,-80);
   torrenegra1 = new TorreNegra(80,5,-10);
   torrenegra2 = new TorreNegra(80,5,-80);
