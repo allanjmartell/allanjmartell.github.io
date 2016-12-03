@@ -83,7 +83,7 @@ function BloqueAzul(x=0,y=0,z=0){
   Agent.call(this,x,y,z);
   var texturaluz = new THREE.TextureLoader().load('luzazul.jpg');
   var luzazul = new THREE.MeshLambertMaterial({map:texturaluz});
-  this.add(new THREE.Mesh(new THREE.BoxGeometry(10.5,10.5,10.5),luzazul));
+  this.add(new THREE.Mesh(new THREE.BoxGeometry(10.1,10.1,10.1),luzazul));
   this.position.y=y;
   this.position.z=z;
   this.position.x=x;
@@ -93,7 +93,7 @@ function BloqueRojo(x=0,y=0,z=0){
   Agent.call(this,x,y,z);
   var texturaluz = new THREE.TextureLoader().load('luzroja.jpg');
   var luzroja = new THREE.MeshLambertMaterial({map:texturaluz});
-  this.add(new THREE.Mesh(new THREE.BoxGeometry(10.6,10.6,10.6),luzroja));
+  this.add(new THREE.Mesh(new THREE.BoxGeometry(10.2,10.2,10.2),luzroja));
   this.position.y=y;
   this.position.z=z;
   this.position.x=x;
@@ -237,6 +237,8 @@ function loop() {
 	      case 13 ://Enter
 		bloquerojo = new BloqueRojo(bloqueazul.position.x,0,bloqueazul.position.z);
 		escena.add(bloquerojo);
+		if (tecla==37 || tecla==38 || tecla==39 || tecla==40)
+		{escena.remove(bloquerojo);}
 		break;
           //default :alert("Pulsar las flechas del teclado");
           }
