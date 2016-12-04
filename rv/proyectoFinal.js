@@ -238,6 +238,7 @@ function loop() {
 		else{
 		escena.remove(grupomorado);
 		escena.remove(bloquerojo);
+		escena.remove(bloqueverde);
 		if (bloqueazul.position.x>=20)
 		{bloqueazul.translateX(-10);}}
                   break;
@@ -248,6 +249,7 @@ function loop() {
 		else{
 		escena.remove(grupomorado);
 		escena.remove(bloquerojo);
+		escena.remove(bloqueverde);
 		if (bloqueazul.position.z>=-70)
                   {bloqueazul.translateZ(-10);}}
                   break;
@@ -258,6 +260,7 @@ function loop() {
 		else{
 		escena.remove(grupomorado);
 		escena.remove(bloquerojo);
+		escena.remove(bloqueverde);
 		if (bloqueazul.position.x<=70)
 		  {bloqueazul.translateX(10);}}
                   break;
@@ -268,6 +271,7 @@ function loop() {
 		else{
 		escena.remove(grupomorado);
 		escena.remove(bloquerojo);
+		escena.remove(bloqueverde);
 		if (bloqueazul.position.z<=-20)
 		  {bloqueazul.translateZ(10);}}
                   break;
