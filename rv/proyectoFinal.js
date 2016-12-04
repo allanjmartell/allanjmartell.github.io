@@ -280,19 +280,15 @@ function loop() {
 		 if (torreblanca1.position.x===bloquerojo.position.x && torreblanca1.position.z===bloquerojo.position.z)
 			{TorreBlanca.prototype.act = function(environment){
 			 if (torreblanca1.position.x!=bloqueverde.position.x)
-			 	 {this.step=0.2;
-				  if(torreblanca1.position.x<bloqueverde.position.x)
-				  	{this.position.x += this.step;}
+			 	 {if(torreblanca1.position.x<bloqueverde.position.x)
+				  	{this.position.x += 0.2;}
 				   else
-				  	{this.position.x -= this.step;}}//fin if posicion x
+				  	{this.position.x -= 0.2;}}//fin if posicion x
 			 if (torreblanca1.position.z!=bloqueverde.position.z)
-			 	 {this.step=0.2;
-				  if(torreblanca1.position.z<bloqueverde.position.z)
-				  	{this.position.z += this.step;}
+			 	 {if(torreblanca1.position.z<bloqueverde.position.z)
+				  	{this.position.z += 0.2;}
 				   else
-				  	{this.position.z -= this.step;}}//fin if posicion z
-			 if (torreblanca1.position.x===bloqueverde.position.x && torreblanca1.position.z===bloqueverde.position.z)
-			 {this.step=0;}
+				  	{this.position.z -= 0.2;}}//fin if posicion z
 				}//fin prototype act
 			}//fin if posicion igualdad bloque rojo
 		 bandera=0;}//fin if bandera
