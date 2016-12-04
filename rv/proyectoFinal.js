@@ -291,7 +291,9 @@ function loop() {
 				  	{this.position.z += this.step;}
 				   else
 				  	{this.position.z -= this.step;}}//fin if posicion z
-				this.step=0;}//fin prototype act
+			 if (torreblanca1.position.x===bloqueverde.position.x && torreblanca1.position.z===bloqueverde.position.z)
+			 {this.step=0;}
+				}//fin prototype act
 			}//fin if posicion igualdad bloque rojo
 		 bandera=0;}//fin if bandera
 		else{
