@@ -278,7 +278,7 @@ function loop() {
 		 escena.remove(grupomorado);
 		 escena.remove(bloqueverde);
 		 if (torreblanca1.position.x===bloquerojo.position.x && torreblanca1.position.z===bloquerojo.position.z)
-			{TorreBlanca.prototype.act = function(environment){
+			{this.step=0.2;TorreBlanca.prototype.act = function(environment){
 			 if (torreblanca1.position.x!=bloqueverde.position.x)
 			 	 {if(torreblanca1.position.x<bloqueverde.position.x)
 				  	{torreblanca1.position.x += this.step;}
