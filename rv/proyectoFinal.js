@@ -281,14 +281,14 @@ function loop() {
 			{TorreBlanca.prototype.act = function(environment){
 			 if (torreblanca1.position.x!=bloqueverde.position.x)
 			 	 {if(torreblanca1.position.x<bloqueverde.position.x)
-				  	{this.position.x += 0.2;}
+				  	{this.position.x = this.position.x+0.2;}
 				   else
-				  	{this.position.x -= 0.2;}}//fin if posicion x
+				  	{this.position.x = this.position.x-0.2;}}//fin if posicion x
 			 if (torreblanca1.position.z!=bloqueverde.position.z)
 			 	 {if(torreblanca1.position.z<bloqueverde.position.z)
-				  	{this.position.z += 0.2;}
+				  	{this.position.z = this.position.x+0.2;}
 				   else
-				  	{this.position.z -= 0.2;}}//fin if posicion z
+				  	{this.position.z = this.position.x-0.2;}}//fin if posicion z
 				}//fin prototype act
 			}//fin if posicion igualdad bloque rojo
 		 bandera=0;}//fin if bandera
