@@ -238,7 +238,6 @@ function loop() {
 		else{
 		escena.remove(grupomorado);
 		escena.remove(bloquerojo);
-		escena.remove(bloqueverde);
 		if (bloqueazul.position.x>=20)
 		{bloqueazul.translateX(-10);}}
                   break;
@@ -249,7 +248,6 @@ function loop() {
 		else{
 		escena.remove(grupomorado);
 		escena.remove(bloquerojo);
-		escena.remove(bloqueverde);
 		if (bloqueazul.position.z>=-70)
                   {bloqueazul.translateZ(-10);}}
                   break;
@@ -260,7 +258,6 @@ function loop() {
 		else{
 		escena.remove(grupomorado);
 		escena.remove(bloquerojo);
-		escena.remove(bloqueverde);
 		if (bloqueazul.position.x<=70)
 		  {bloqueazul.translateX(10);}}
                   break;
@@ -271,7 +268,6 @@ function loop() {
 		else{
 		escena.remove(grupomorado);
 		escena.remove(bloquerojo);
-		escena.remove(bloqueverde);
 		if (bloqueazul.position.z<=-20)
 		  {bloqueazul.translateZ(10);}}
                   break;
@@ -279,7 +275,8 @@ function loop() {
 	      case 13 :  //Enter
 	        if (bandera===1)
 		{if (torreblanca1.position.x===bloquerojo.position.x && torreblanca1.position.z===bloquerojo.position.z)
-			{this.step=0.2;TorreBlanca.prototype.act = function(environment){
+			{this.step=0.2;
+			 TorreBlanca.prototype.act = function(environment){
 			 if (torreblanca1.position.x!=bloqueverde.position.x)
 			 	 {if(torreblanca1.position.x<bloqueverde.position.x)
 				  	{this.position.x += this.step;}
