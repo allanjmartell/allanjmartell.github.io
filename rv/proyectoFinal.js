@@ -279,8 +279,9 @@ function loop() {
 	      case 13 :  //Enter
 	        if (bandera===1)
 		{if (torreblanca1.position.x===bloquerojo.position.x && torreblanca1.position.z===bloquerojo.position.z)
-			{this.step=0.2;
+			{
 			 TorreBlanca.prototype.act = function(environment){
+			 this.step=0.2;
 			 if (torreblanca1.position.x!=bloqueverde.position.x)
 			 	 {if(torreblanca1.position.x<bloqueverde.position.x)
 				  	{this.position.x += this.step;}
