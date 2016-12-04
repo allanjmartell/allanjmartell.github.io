@@ -284,7 +284,7 @@ function loop() {
 			 	 {if(torreblanca1.position.x<bloqueverde.position.x)
 				  	{torreblanca1.position.x += this.step;}
 				   else
-				  	{torreblanca1position.x -= this.step;}}//fin if posicion x
+				  	{torreblanca1.position.x -= this.step;}}//fin if posicion x
 			 if (torreblanca1.position.z!=bloqueverde.position.z)
 			 	 {if(torreblanca1.position.z<bloqueverde.position.z)
 				  	{torreblanca1.position.z += this.step;}
@@ -293,8 +293,8 @@ function loop() {
 				}//fin prototype act
 			}//fin if posicion igualdad bloque rojo
 		 if (torreblanca1.position.x===bloqueverde.position.x && torreblanca1.position.z===bloqueverde.position.z)
-		 	{this.step=0;}
-		 bandera=0;
+		 	{this.step=0;bandera=0;}
+		 
 		}//fin if bandera
 		else{
 		bloquerojo = new BloqueRojo(bloqueazul.position.x,0,bloqueazul.position.z);
