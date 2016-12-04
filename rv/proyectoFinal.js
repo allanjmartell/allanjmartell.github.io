@@ -285,14 +285,15 @@ function loop() {
 			 	 {if(torreblanca1.position.x<bloqueverde.position.x)
 				  	{this.position.x += this.step;}
 				   else
-				  	{this.position.x -= this.step;}}
+				  	{this.position.x -= this.step;}}//fin if posicion x
 			 if (torreblanca1.position.z!=bloqueverde.position.z)
 			 	 {if(torreblanca1.position.z<bloqueverde.position.z)
 				  	{this.position.z += this.step;}
 				   else
-				  	{this.position.z -= this.step;}}
-				}}
-		 bandera=0;}
+				  	{this.position.z -= this.step;}}//fin if posicion z
+				this.step=0;}//fin prototype act
+			}//fin if posicion igualdad bloque rojo
+		 bandera=0;}//fin if bandera
 		else{
 		bloquerojo = new BloqueRojo(bloqueazul.position.x,0,bloqueazul.position.z);
 		escena.add(bloquerojo);
@@ -301,23 +302,23 @@ function loop() {
 		   (torreblanca2.position.x===bloquerojo.position.x && torreblanca2.position.z===bloquerojo.position.z))||
 		   (torrenegra1.position.x===bloquerojo.position.x && torrenegra1.position.z===bloquerojo.position.z))||
 		   (torrenegra2.position.x===bloquerojo.position.x && torrenegra2.position.z===bloquerojo.position.z))
-		{
-		  grupomorado = new THREE.Group();
-		  for (i=1;i<=8;i++)
-		  { bloquemorado = new BloqueMorado(bloquerojo.position.x,0,-i*10);
-		    grupomorado.add(bloquemorado);}
-		  for (i=1;i<=8;i++)
-		  { bloquemorado = new BloqueMorado(i*10,0,bloquerojo.position.z);
-		    grupomorado.add(bloquemorado);}
-		  escena.add(grupomorado);  
-		  bloqueverde = new BloqueVerde(bloquerojo.position.x,0,bloquerojo.position.z);
-		  escena.add(bloqueverde);
-		  bandera=1;	
-		}}
+			{
+			  grupomorado = new THREE.Group();
+			  for (i=1;i<=8;i++)
+			  { bloquemorado = new BloqueMorado(bloquerojo.position.x,0,-i*10);
+			    grupomorado.add(bloquemorado);}
+			  for (i=1;i<=8;i++)
+			  { bloquemorado = new BloqueMorado(i*10,0,bloquerojo.position.z);
+			    grupomorado.add(bloquemorado);}
+			  escena.add(grupomorado);  
+			  bloqueverde = new BloqueVerde(bloquerojo.position.x,0,bloquerojo.position.z);
+			  escena.add(bloqueverde);
+			  bandera=1;	
+			}//fin if Torres
+		}//fin else principal
 		break;
-          }
-      
-    }
+          }//fin switch(pieza)
+    }//fin function tecla
   requestAnimationFrame(loop);
   escena.sense();
   escena.plan();
