@@ -278,8 +278,7 @@ function loop() {
 		 escena.remove(grupomorado);
 		 escena.remove(bloqueverde);
 		 if (torreblanca1.position.x===bloquerojo.position.x && torreblanca1.position.z===bloquerojo.position.z)
-			{this.step=0.2;
-			TorreBlanca.prototype.act = function(environment){
+			{TorreBlanca.prototype.act = function(environment){
 			 if (torreblanca1.position.x!=bloqueverde.position.x)
 			 	 {if(torreblanca1.position.x<bloqueverde.position.x)
 				  	{torreblanca1.position.x += this.step;}
@@ -292,10 +291,7 @@ function loop() {
 				  	{torreblanca1.position.z -= this.step;}}//fin if posicion z
 				}//fin prototype act
 			}//fin if posicion igualdad bloque rojo
-		 if (torreblanca1.position.x===bloqueverde.position.x && torreblanca1.position.z===bloqueverde.position.z)
-		 	{this.step=0;bandera=0;}
-		 
-		}//fin if bandera
+                bandera=0;}//fin if bandera
 		else{
 		bloquerojo = new BloqueRojo(bloqueazul.position.x,0,bloqueazul.position.z);
 		escena.add(bloquerojo);
