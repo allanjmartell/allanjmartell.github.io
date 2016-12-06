@@ -315,13 +315,13 @@ BloqueAzul.prototype.act = function(environment){
 		
 		    PeonBlanco.prototype.act = function(environment){ 	
 		      if (this.colision!=1){
-			if(peonblanco1.position.x<bvtb1.position.x)
+			if(peonblanco1.position.x<bvpb1.position.x)
 			  peonblanco1.position.x += this.step;
 			else
 			  peonblanco1.position.x -= this.step;
 		      }//fin if posicion x
 		      if (this.colision!=1){
-			if(peonblanco1.position.z<bvtb1.position.z)
+			if(peonblanco1.position.z<bvpb1.position.z)
 			  peonblanco1.position.z += this.step;
 			else
 			  peonblanco1.position.z -= this.step;
