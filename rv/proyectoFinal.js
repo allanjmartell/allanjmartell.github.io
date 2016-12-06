@@ -160,23 +160,32 @@ function BloqueMorado(x=0,y=0,z=0){
 BloqueMorado.prototype = new Agent();
 
 BloqueMorado.prototype.act = function(environment){
-  if ((((torreblanca1.position.x===bloquerojo.position.x && torreblanca1.position.z===bloquerojo.position.z)||
-	(torreblanca2.position.x===bloquerojo.position.x && torreblanca2.position.z===bloquerojo.position.z))||
-	(torrenegra1.position.x===bloquerojo.position.x && torrenegra1.position.z===bloquerojo.position.z))||
-	(torrenegra2.position.x===bloquerojo.position.x && torrenegra2.position.z===bloquerojo.position.z)){
-     grupomorado = new THREE.Group();
-     for (i=1;i<=8;i++){ 
-       bloquemorado = new BloqueMorado(bloquerojo.position.x,0,-i*10);
-       grupomorado.add(bloquemorado);
-     }
-     for (i=1;i<=8;i++){ 
-       bloquemorado = new BloqueMorado(i*10,0,bloquerojo.position.z);
-       grupomorado.add(bloquemorado);
-     }
-     escena.add(grupomorado);  
-     bloqueverde = new BloqueVerde(bloquerojo.position.x,0,bloquerojo.position.z);
-     escena.add(bloqueverde);
-  }
+  window.onload=function(){document.onkeydown=desplazar};
+    function desplazar(pieza){
+      var tecla = pieza.which;
+        switch (tecla){
+          case 13 : //Enter
+  		if ((((torreblanca1.position.x===bloquerojo.position.x && torreblanca1.position.z===bloquerojo.position.z)||
+		      (torreblanca2.position.x===bloquerojo.position.x && torreblanca2.position.z===bloquerojo.position.z))||
+		      (torrenegra1.position.x===bloquerojo.position.x && torrenegra1.position.z===bloquerojo.position.z))||
+	 	      (torrenegra2.position.x===bloquerojo.position.x && torrenegra2.position.z===bloquerojo.position.z)){
+     		grupomorado = new THREE.Group();
+     		for (i=1;i<=8;i++){ 
+     		  bloquemorado = new BloqueMorado(bloquerojo.position.x,0,-i*10);
+     		  grupomorado.add(bloquemorado);
+     		}
+     		for (i=1;i<=8;i++){ 
+     		  bloquemorado = new BloqueMorado(i*10,0,bloquerojo.position.z);
+     		  grupomorado.add(bloquemorado);
+     		}
+     		escena.add(grupomorado);  
+		escena.remove(bloquerojo);
+     		bloqueverde = new BloqueVerde(bloquerojo.position.x,0,bloquerojo.position.z);
+     		escena.add(bloqueverde);
+  		}//fin if
+		break;
+	}//fin switch
+    }//fin function desplazar
 }
 
 function BloqueVerde(x=0,y=0,z=0){
