@@ -91,10 +91,10 @@ TorreBlanca.prototype = new Agent();
 TorreNegra.prototype = new Agent();
 ///////////////////////////////////////Peones//////////////////////////////////////////////////////////////////////////////////////////
 function PeonBlanco(x=0,y=0,z=0){
-  Agent.call(this,x,y,z);
   var loader = new THREE.JSONLoader();
   var createMesh = function( geometry )
   {
+		Agent.call(this,x,y,z);
 		var textura1 = new THREE.TextureLoader().load('marmolblanco.jpg');
   	var marmolblanco = new THREE.MeshLambertMaterial({map:textura1});
     var zmesh = new THREE.Mesh( geometry, marmolblanco);
@@ -103,7 +103,9 @@ function PeonBlanco(x=0,y=0,z=0){
     zmesh.position.y=y;
     zmesh.position.z=z;
     escena.add( zmesh );
+		this.actuator= zmesh;
   };
+	
   loader.load( "peon2.js", createMesh );
 }
 
@@ -457,10 +459,8 @@ function init() {
   peonblanco1 = new PeonBlanco(20,5,-10);
   /////////////////////////////////////////Bloques////////////////////////////////////////////////////////////////////
   bloqueazul = new BloqueAzul(10,0,-10);
-  
   escena.add(grupo,grupo2,grupo3,bloqueazul);
   escena.add(torreblanca1,torreblanca2,torrenegra1,torrenegra2);
-  //escena.add(peonblanco1);
   //Luces
   escena.add(luzblan,luzblan2,luzblan3);
   escena.rotateX(Math.PI/4);
