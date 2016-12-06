@@ -51,6 +51,8 @@ var malla,malla2,malla3,grupo,grupo2,grupo3,grupomorado;
 var bloquemorado,bloqueazul,bloquerojo,bloqueverde;
 var bandera=0;
 var torreblanca1,torreblanca2,torrenegra1,torrenegra2;
+var peonblanco1,peonblanco2,peonblanco3,peonblanco4,peonblanco5,peonblanco6,peonblanco7,peonblanco8;
+var peonnegro1,peonnegro2,peonnegro3,peonnegro4,peonnegro5,peonnegro6,peonnegro7,peonnegro8;
 //////////////////////////////////////////Sensor/////////////////////////////////////////////////////////////////////////////////
 function Sensor(position,direction){ 
   THREE.Raycaster.call(this,position,direction);
@@ -87,6 +89,28 @@ function TorreNegra(x=0,y=0,z=0){
 
 TorreBlanca.prototype = new Agent();
 TorreNegra.prototype = new Agent();
+///////////////////////////////////////Peones//////////////////////////////////////////////////////////////////////////////////////////
+function PeonBlanco(x=0,y=0,z=0){
+  Agent.call(this,x,y,z);
+  var loader = new THREE.JSONLoader();
+  var Malla = function( geometry )
+  {
+    var textura1 = new THREE.TextureLoader().load('marmolblanco.jpg');
+    var marmolblanco = new THREE.MeshLambertMaterial({map:textura1});
+    var zmesh = new THREE.Mesh( geometry, marmolblanco );
+    zmesh.overdraw = true;
+    escena.add( zmesh );
+  };
+  this.actuator = loader.load("peon2.js",Malla);
+  this.actuator.commands = [];
+  this.add(this.actuator);
+  this.position.y=y;//5;
+  this.position.z=z;//-10;
+  this.position.x=x;//10;
+  this.sensor = new Sensor();
+}
+
+PeonBlanco.prototype = new Agent();
 ///////////////////////////////////////Bloque Azul////////////////////////////////////////////////////////////////////////////////////
 function BloqueAzul(x=0,y=0,z=0){
   Agent.call(this,x,y,z);
@@ -432,11 +456,14 @@ function init() {
   torreblanca2 = new TorreBlanca(10,5,-80);
   torrenegra1 = new TorreNegra(80,5,-10);
   torrenegra2 = new TorreNegra(80,5,-80);
+  /////////////////////////////////////////Peones/////////////////////////////////////////////////////////////////
+  peonblanco1 = new PeonBlanco(20,5,-10);
   /////////////////////////////////////////Bloques////////////////////////////////////////////////////////////////////
   bloqueazul = new BloqueAzul(10,0,-10);
   
   escena.add(grupo,grupo2,grupo3,bloqueazul);
   escena.add(torreblanca1,torreblanca2,torrenegra1,torrenegra2);
+  escena.add(peonblanco1);
   //Luces
   escena.add(luzblan,luzblan2,luzblan3);
   escena.rotateX(Math.PI/4);
