@@ -123,8 +123,8 @@ BloqueAzul.prototype.act = function(environment){
                 break;
           case 38 :  //Arriba
 		if (bandera===1){
-		  if (bloqueverde.position.x>=20){
-		    bloqueverde.translateX(-10);
+		  if (bloqueverde.position.z>=-70){
+		    bloqueverde.translateZ(-10);
 		  }
 		}
 		else{
@@ -138,8 +138,8 @@ BloqueAzul.prototype.act = function(environment){
                 break;
           case 39 :  //Derecha 
 		if (bandera===1){
-		  if (bloqueverde.position.x>=20){
-		    bloqueverde.translateX(-10);
+		  if (bloqueverde.position.x<=70){
+		    bloqueverde.translateX(10);
 		  }
 		}
 		else{
@@ -153,8 +153,8 @@ BloqueAzul.prototype.act = function(environment){
                 break;
           case 40 :  //Abajo
 		if (bandera===1){
-		  if (bloqueverde.position.x>=20){
-		    bloqueverde.translateX(-10);
+		  if (bloqueverde.position.z<=-20){
+		    bloqueverde.translateZ(10);
 		  }
 		}
 		else{
