@@ -172,7 +172,7 @@ BloqueAzul.prototype.act = function(environment){
 		      this.sensor.set(this.position,new THREE.Vector3(0,-1,0));
 		      var obstaculo = this.sensor.intersectObjects(bloqueverde,true);
 		      if(obstaculo.length > 0)
-		        {this.colision = 1;this.step=0;}
+		        {this.colision = 1;this.step=0;bandera=0;}
  		      else
 		        {this.colision = 0;this.step=0.25;}
 		    }
@@ -197,7 +197,7 @@ BloqueAzul.prototype.act = function(environment){
 		      this.sensor.set(this.position,new THREE.Vector3(0,-1,0));
 		      var obstaculo = this.sensor.intersectObjects(bloqueverde,true);
 		      if(obstaculo.length > 0)
-		        {this.colision = 1;this.step=0;}
+		        {this.colision = 1;this.step=0;bandera=0;}
  		      else
 		        {this.colision = 0;this.step=0.25;}
 		    }
@@ -217,7 +217,7 @@ BloqueAzul.prototype.act = function(environment){
 		      }//fin if posicion z
 		    }//fin prototype act
 		  }//fin if torreblanca2
-                bandera=0;
+                //bandera=0;
 		}//fin if bandera
 		else{
 		   bloquerojo = new BloqueRojo(bloqueazul.position.x,0,bloqueazul.position.z);
