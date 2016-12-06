@@ -168,8 +168,8 @@ BloqueAzul.prototype.act = function(environment){
                 break;
 	  case 13 :  //Enter
 	        if (bandera===1){
-		  if (torreblanca1.position.x===bloquerojo.position.x && torreblanca1.position.z===bloquerojo.position.z){
-		    TorreBlanca.prototype.act = function(environment){
+		  TorreBlanca.prototype.act = function(environment){
+		    if (torreblanca1.position.x===bloquerojo.position.x && torreblanca1.position.z===bloquerojo.position.z){
 		      if (torreblanca1.position.x===bloqueverde.position.x && torreblanca1.position.z===bloqueverde.position.z)
 			 	{this.step=0;}
 			 else
