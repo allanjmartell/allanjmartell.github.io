@@ -191,7 +191,32 @@ BloqueAzul.prototype.act = function(environment){
 			  torreblanca1.position.z -= this.step;
 		      }//fin if posicion z
 		    }//fin prototype act
-		  }//fin if posicion igualdad bloque rojo
+		  }//fin if torreblanca1
+		  if (torreblanca2.position.x===bloquerojo.position.x && torreblanca2.position.z===bloquerojo.position.z){
+		    TorreBlanca.prototype.sense = function(environment){
+		      this.sensor.set(this.position,new THREE.Vector3(0,-1,0));
+		      var obstaculo = this.sensor.intersectObjects(bloqueverde,true);
+		      if(obstaculo.length > 0)
+		        {this.colision = 1;this.step=0;}
+ 		      else
+		        {this.colision = 0;this.step=0.25;}
+		    }
+		
+		    TorreBlanca.prototype.act = function(environment){ 	
+		      if (this.colision!=1){
+			if(torreblanca2.position.x<bloqueverde.position.x)
+			  torreblanca2.position.x += this.step;
+			else
+			  torreblanca2.position.x -= this.step;
+		      }//fin if posicion x
+		      if (this.colision!=1){
+			if(torreblanca2.position.z<bloqueverde.position.z)
+			  torreblanca2.position.z += this.step;
+			else
+			  torreblanca2.position.z -= this.step;
+		      }//fin if posicion z
+		    }//fin prototype act
+		  }//fin if torreblanca2
                 bandera=0;
 		}//fin if bandera
 		else{
