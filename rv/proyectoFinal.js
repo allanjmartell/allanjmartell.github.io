@@ -451,13 +451,13 @@ function init() {
   torrenegra1 = new TorreNegra(80,5,-10);
   torrenegra2 = new TorreNegra(80,5,-80);
   /////////////////////////////////////////Peones/////////////////////////////////////////////////////////////////
-  peonblanco1 = new PeonBlanco(20,5,-10);
+  //peonblanco1 = new PeonBlanco(20,5,-10);
   /////////////////////////////////////////Bloques////////////////////////////////////////////////////////////////////
   bloqueazul = new BloqueAzul(10,0,-10);
   
   escena.add(grupo,grupo2,grupo3,bloqueazul);
   escena.add(torreblanca1,torreblanca2,torrenegra1,torrenegra2);
-  escena.add(peonblanco1);
+  //escena.add(peonblanco1);
   //Luces
   escena.add(luzblan,luzblan2,luzblan3);
   escena.rotateX(Math.PI/4);
