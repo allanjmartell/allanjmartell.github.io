@@ -50,7 +50,7 @@ var camara,escena,renderizador;
 var malla,malla2,malla3,grupo,grupo2,grupo3,grupomorado;
 var bloquemorado,bloqueazul,bloquerojo,bloqueverde;
 var bandera=0;
-var torre1,torre2,torre3,torre4;
+var torreblanca1,torreblanca2,torrenegra1,torrenegra2;
 //////////////////////////////////////////Sensor/////////////////////////////////////////////////////////////////////////////////
 function Sensor(position,direction){ 
   THREE.Raycaster.call(this,position,direction);
@@ -290,7 +290,7 @@ BloqueAzul.prototype.act = function(environment){
 		         (torreblanca2.position.x===bloquerojo.position.x && torreblanca2.position.z===bloquerojo.position.z))||
 		         (torrenegra1.position.x===bloquerojo.position.x && torrenegra1.position.z===bloquerojo.position.z))||
 		         (torrenegra2.position.x===bloquerojo.position.x && torrenegra2.position.z===bloquerojo.position.z)){
-		     grupomorado = new THREE.Group();
+		     grupomorado = new THREE.Array();
 		     for (i=1;i<=8;i++){ 
 		       bloquemorado = new BloqueMorado(bloquerojo.position.x,0,-i*10);
 		       grupomorado.add(bloquemorado);
