@@ -178,13 +178,13 @@ BloqueAzul.prototype.act = function(environment){
 		    }
 		
 		    TorreBlanca.prototype.act = function(environment){ 	
-		      if (this.colision!=1){
+		      if (this.colision!=0){
 			if(torreblanca1.position.x<bloqueverde.position.x)
 			  torreblanca1.position.x += this.step;
 			else
 			  torreblanca1.position.x -= this.step;
 		      }//fin if posicion x
-		      if (this.colision!=1){
+		      if (this.colision!=0){
 			if(torreblanca1.position.z<bloqueverde.position.z)
 			  torreblanca1.position.z += this.step;
 			else
@@ -203,13 +203,13 @@ BloqueAzul.prototype.act = function(environment){
 		    }
 		
 		    TorreNegra.prototype.act = function(environment){ 	
-		      if (this.colision!=1){
+		      if (this.colision!=0){
 			if(torrenegra2.position.x<bloqueverde.position.x)
 			  torrenegra2.position.x += this.step;
 			else
 			  torrenegra2.position.x -= this.step;
 		      }//fin if posicion x
-		      if (this.colision!=1){
+		      if (this.colision!=0){
 			if(torrenegra2.position.z<bloqueverde.position.z)
 			  torrenegra2.position.z += this.step;
 			else
