@@ -79,6 +79,7 @@ function TorreNegra(x=0,y=0,z=0){
   var textura2 = new THREE.TextureLoader().load('marmolnegro.jpg');
   var marmolnegro = new THREE.MeshLambertMaterial({map:textura2});
   this.actuator = new THREE.Mesh(torrefinal11,marmolnegro);
+  this.actuator.commands = [];
   this.add(this.actuator);
   this.position.y=y;
   this.position.z=z;
@@ -168,29 +169,36 @@ BloqueAzul.prototype.act = function(environment){
                 break;
 	  case 13 :  //Enter
 	        if (bandera===1){
-		  TorreBlanca.prototype.act = function(environment){
-		    if (torreblanca1.position.x===bloquerojo.position.x && torreblanca1.position.z===bloquerojo.position.z){
-		      var banderatorreblanca1=1;
-		    }//fin if bloquerojo position
-		    if (banderatorreblanca1==1){
-		      if (torreblanca1.position.x===bloqueverde.position.x && torreblanca1.position.z===bloqueverde.position.z)
-			 	{this.step=0;banderatorreblanca1=0;bandera=0;}
+		  if (torreblanca1.position.x===bloquerojo.position.x && torreblanca1.position.z===bloquerojo.position.z){
+		    TorreBlanca.prototype.sense = function(environment){
+		      this.sensor.set(this.position,new THREE.Vector3(0,-1,0);
+		      var obstaculo = this.sensor.intersectObjects(bloqueverde,true);
+		      if(obstaculo1.length > 0)
+		        this.colision = 1;
+ 		      else
+     		        this.colision = 0;
+		    }
+		
+		    TorreBlanca.prototype.act = function(environment){
+		      if (this.colision === 1)
+			 	this.step=0;
 		      else
-			 	{this.step=0.5;}
+			 	this.step=0.5;
 		      if (torreblanca1.position.x!=bloqueverde.position.x){
 			if(torreblanca1.position.x<bloqueverde.position.x)
-			  {torreblanca1.position.x += this.step;}
-		        else
-			  {torreblanca1.position.x -= this.step;}
+			  torreblanca1.position.x += this.step;
+			else
+			  torreblanca1.position.x -= this.step;
 		      }//fin if posicion x
 		      if (torreblanca1.position.z!=bloqueverde.position.z){
 			if(torreblanca1.position.z<bloqueverde.position.z)
-			  {torreblanca1.position.z += this.step;}
+			  torreblanca1.position.z += this.step;
 			else
-			  {torreblanca1.position.z -= this.step;}
+			  torreblanca1.position.z -= this.step;
 		      }//fin if posicion z
-		    }//fin banderatorre
-		  }//fin act
+		    }//fin prototype act
+		  }//fin if posicion igualdad bloque rojo
+                bandera=0;
 		}//fin if bandera
 		else{
 		   bloquerojo = new BloqueRojo(bloqueazul.position.x,0,bloqueazul.position.z);
