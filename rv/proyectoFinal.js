@@ -102,7 +102,7 @@ function PeonBlanco(x=0,y=0,z=0){
     return zmesh;
   };	
   loader.load( "peon2.js", createMesh );
-  this.actuator=zmesh;
+  this.actuator=createMesh();
   this.actuator.commands = [];
   this.actuator.position.x=x;
   this.actuator.position.y=y;
