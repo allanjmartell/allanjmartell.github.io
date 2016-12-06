@@ -170,9 +170,12 @@ BloqueAzul.prototype.act = function(environment){
 	        if (bandera===1){
 		  TorreBlanca.prototype.act = function(environment){
 		    if (torreblanca1.position.x===bloquerojo.position.x && torreblanca1.position.z===bloquerojo.position.z){
+		      var banderatorreblanca1=1;
+		    }//fin if bloquerojo position
+		    if (banderatorreblanca1==1){
 		      if (torreblanca1.position.x===bloqueverde.position.x && torreblanca1.position.z===bloqueverde.position.z)
-			 	{this.step=0;}
-			 else
+			 	{this.step=0;banderatorreblanca1=0;}
+		      else
 			 	{this.step=0.5;}
 		      if (torreblanca1.position.x!=bloqueverde.position.x){
 			if(torreblanca1.position.x<bloqueverde.position.x)
@@ -186,8 +189,8 @@ BloqueAzul.prototype.act = function(environment){
 			else
 			  {torreblanca1.position.z -= this.step;}
 		      }//fin if posicion z
-		    }//fin prototype act
-		  }//fin if posicion igualdad bloque rojo
+		    }//fin banderatorre
+		  }//fin act
                 bandera=0;
 		}//fin if bandera
 		else{
@@ -211,7 +214,7 @@ BloqueAzul.prototype.act = function(environment){
 		     escena.add(bloqueverde);
 		     bandera=1;	
 		   }//fin if Torres
-		}
+		}//fin else
         break;
 	}//fin switch
     }//fin function desplazar
