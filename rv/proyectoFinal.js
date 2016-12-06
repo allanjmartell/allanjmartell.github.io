@@ -300,8 +300,6 @@ BloqueAzul.prototype.act = function(environment){
 		      }//fin if posicion z
 		    }//fin prototype act
 		  }//fin if torreblanca2
-                bandera=0;
-		}//fin if bandera
 //////////////////////////////////////////////////////Peones///////////////////////////////////////////////////////////////////////////
 	          ///////////////////////////////////Peon blanco 1//////////////////////////////////////////////////////////////////
 		  if (peonblanco1.position.x===bloquerojo.position.x && peonblanco1.position.z===bloquerojo.position.z){
@@ -330,6 +328,8 @@ BloqueAzul.prototype.act = function(environment){
 		      }//fin if posicion z
 		    }//fin prototype act
 		  }//fin if peonblanco1
+                bandera=0;
+		}//fin if bandera
 ////////////////////////////////////////Movimientos de piezas/////////////////////////////////////////////////////////////////////////
 		else{
 		   bloquerojo = new BloqueRojo(bloqueazul.position.x,0,bloqueazul.position.z);
