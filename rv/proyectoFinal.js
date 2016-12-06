@@ -61,7 +61,6 @@ Sensor.prototype = new THREE.Raycaster();
 //////////////////////////////////////////////Torres////////////////////////////////////////////////////////////////////////////////////
 function TorreBlanca(x=0,y=0,z=0){
   Agent.call(this,x,y,z);
-  //Torre1
   var textura1 = new THREE.TextureLoader().load('marmolblanco.jpg');
   var marmolblanco = new THREE.MeshLambertMaterial({map:textura1});
   this.actuator = new THREE.Mesh(torrefinal11,marmolblanco);
@@ -75,7 +74,6 @@ function TorreBlanca(x=0,y=0,z=0){
 
 function TorreNegra(x=0,y=0,z=0){
   Agent.call(this,x,y,z);
-  //Torre1
   var textura2 = new THREE.TextureLoader().load('marmolnegro.jpg');
   var marmolnegro = new THREE.MeshLambertMaterial({map:textura2});
   this.actuator = new THREE.Mesh(torrefinal11,marmolnegro);
@@ -173,7 +171,7 @@ BloqueAzul.prototype.act = function(environment){
 		    TorreBlanca.prototype.sense = function(environment){
 		      this.sensor.set(this.position,new THREE.Vector3(0,-1,0));
 		      var obstaculo = this.sensor.intersectObjects(bloqueverde,true);
-		      if(obstaculo1.length > 0)
+		      if(obstaculo.length > 0)
 		        this.colision = 1;
  		      else
      		        this.colision = 0;
