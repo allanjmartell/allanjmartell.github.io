@@ -97,16 +97,18 @@ function PeonBlanco(x=0,y=0,z=0){
   {
     var textura1 = new THREE.TextureLoader().load('marmolblanco.jpg');
     var marmolblanco = new THREE.MeshLambertMaterial({map:textura1});
-    this.actuator = new THREE.Mesh( geometry, marmolblanco);
-    this.actuator.overdraw = true;
-    this.actuator.commands = [];
-    this.actuator.position.x=x;
-    this.actuator.position.y=y;
-    this.actuator.position.z=z;
-    escena.add( this.actuator );
-  };
-	
+    zmesh = new THREE.Mesh( geometry, marmolblanco);
+    zmesh.overdraw = true;
+    return zmesh;
+  };	
   loader.load( "peon2.js", createMesh );
+  this.actuator=zmesh;
+  this.actuator.commands = [];
+  this.actuator.position.x=x;
+  this.actuator.position.y=y;
+  this.actuator.position.z=z;
+  this.add( this.actuator );
+  this.sensor = new Sensor();
 }
 
 PeonBlanco.prototype = new Agent();
