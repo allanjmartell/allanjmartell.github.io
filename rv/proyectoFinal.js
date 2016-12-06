@@ -168,9 +168,10 @@ BloqueAzul.prototype.act = function(environment){
 	  case 13 :  //Enter
 	        if (bandera===1){
 		  if (torreblanca1.position.x===bloquerojo.position.x && torreblanca1.position.z===bloquerojo.position.z){
+		    var bvtb1=bloqueverde;//Bloqueverdetorreblanca1
 		    TorreBlanca.prototype.sense = function(environment){
 		      this.sensor.set(this.position,new THREE.Vector3(0,-1,0));
-		      var obstaculo = this.sensor.intersectObjects(bloqueverde,true);
+		      var obstaculo = this.sensor.intersectObjects(bvtb1,true);
 		      if(obstaculo.length >0)
 			{this.colision = 1;this.step=0;}
  		      else
@@ -179,24 +180,25 @@ BloqueAzul.prototype.act = function(environment){
 		
 		    TorreBlanca.prototype.act = function(environment){ 	
 		      if (this.colision!=1){
-			if(torreblanca1.position.x<bloqueverde.position.x)
+			if(torreblanca1.position.x<bvtb1.position.x)
 			  torreblanca1.position.x += this.step;
 			else
 			  torreblanca1.position.x -= this.step;
 		      }//fin if posicion x
 		      if (this.colision!=1){
-			if(torreblanca1.position.z<bloqueverde.position.z)
+			if(torreblanca1.position.z<bvtb1.position.z)
 			  torreblanca1.position.z += this.step;
 			else
 			  torreblanca1.position.z -= this.step;
 		      }//fin if posicion z
 		    }//fin prototype act
 		  }//fin if torreblanca1
-		    
+		  ////////////////////////////Torre negra///////////////////////////////////////////////////////////////////  
 		  if (torrenegra2.position.x===bloquerojo.position.x && torrenegra2.position.z===bloquerojo.position.z){
+		    var bvtn2 = bloqueverde;
 		    TorreNegra.prototype.sense = function(environment){
 		      this.sensor.set(this.position,new THREE.Vector3(0,-1,0));
-		      var obstaculo2 = this.sensor.intersectObjects(bloqueverde,true);
+		      var obstaculo2 = this.sensor.intersectObjects(bvtn2,true);
 		      if(obstaculo2.length > 0)
 		        {this.colision = 1;this.step=0;}
  		      else
@@ -205,13 +207,13 @@ BloqueAzul.prototype.act = function(environment){
 		
 		    TorreNegra.prototype.act = function(environment){ 	
 		      if (this.colision!=1){
-			if(torrenegra2.position.x<bloqueverde.position.x)
+			if(torrenegra2.position.x<bvtn2.position.x)
 			  torrenegra2.position.x += this.step;
 			else
 			  torrenegra2.position.x -= this.step;
 		      }//fin if posicion x
 		      if (this.colision!=1){
-			if(torrenegra2.position.z<bloqueverde.position.z)
+			if(torrenegra2.position.z<bvtn2.position.z)
 			  torrenegra2.position.z += this.step;
 			else
 			  torrenegra2.position.z -= this.step;
