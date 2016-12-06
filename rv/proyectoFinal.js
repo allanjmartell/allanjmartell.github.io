@@ -1,3 +1,4 @@
+///////////////////////////////////////Agente//////////////////////////////////////////////////////////////////////////////7
 function Agent(x=0,y=0,z=0){
   THREE.Object3D.call(this);
   this.position.x=x;
@@ -12,6 +13,7 @@ Agent.prototype.sense = function(environment) {}; //Percibir
 Agent.prototype.plan = function(environment) {}; //Planificar
 Agent.prototype.act = function(environment) {}; //Actuar
 
+////////////////////////////////////////////////////Environment/////////////////////////////////////////////////////////////
 //Un Agente opera sobre un entorno
 function Environment(){
   THREE.Scene.call(this);
@@ -84,6 +86,8 @@ function TorreNegra(x=0,y=0,z=0){
   this.sensor = new Sensor();
 }
 
+TorreBlanca.prototype = new Agent();
+TorreNegra.prototype = new Agent();
 ///////////////////////////////////////Bloque Azul////////////////////////////////////////////////////////////////////////////////////
 function BloqueAzul(x=0,y=0,z=0){
   Agent.call(this,x,y,z);
@@ -142,7 +146,7 @@ function BloqueRojo(x=0,y=0,z=0){
 }
 	    
 BloqueRojo.prototype = new Agent();
-	    
+///////////////////////////////////Bloque Morado//////////////////////////////////////////////////////////////////////////////////////	    
 function BloqueMorado(x=0,y=0,z=0){
   Agent.call(this,x,y,z);
   var texturaluz = new THREE.TextureLoader().load('luzmorada.jpeg');
@@ -151,6 +155,28 @@ function BloqueMorado(x=0,y=0,z=0){
   this.position.y=y;
   this.position.z=z;
   this.position.x=x;
+}
+
+BloqueMorado.prototype = new Agent();
+
+BloqueMorado.prototype.act = function(environment){
+  if ((((torreblanca1.position.x===bloquerojo.position.x && torreblanca1.position.z===bloquerojo.position.z)||
+	(torreblanca2.position.x===bloquerojo.position.x && torreblanca2.position.z===bloquerojo.position.z))||
+	(torrenegra1.position.x===bloquerojo.position.x && torrenegra1.position.z===bloquerojo.position.z))||
+	(torrenegra2.position.x===bloquerojo.position.x && torrenegra2.position.z===bloquerojo.position.z)){
+     grupomorado = new THREE.Group();
+     for (i=1;i<=8;i++){ 
+       bloquemorado = new BloqueMorado(bloquerojo.position.x,0,-i*10);
+       grupomorado.add(bloquemorado);
+     }
+     for (i=1;i<=8;i++){ 
+       bloquemorado = new BloqueMorado(i*10,0,bloquerojo.position.z);
+       grupomorado.add(bloquemorado);
+     }
+     escena.add(grupomorado);  
+     bloqueverde = new BloqueVerde(bloquerojo.position.x,0,bloquerojo.position.z);
+     escena.add(bloqueverde);
+  }
 }
 
 function BloqueVerde(x=0,y=0,z=0){
@@ -163,11 +189,8 @@ function BloqueVerde(x=0,y=0,z=0){
   this.position.x=x;
 }
 
-TorreBlanca.prototype = new Agent();
-TorreNegra.prototype = new Agent();
+BloqueVerde.prototype = new Agent();
 
-//BloqueMorado.prototype = new Agent();
-//BloqueVerde.prototype = new Agent();
 
 init();
 loop();
