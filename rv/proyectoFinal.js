@@ -167,6 +167,8 @@ BloqueAzul.prototype.act = function(environment){
                 break;
 	  case 13 :  //Enter
 	        if (bandera===1){
+//////////////////////////////////////////////////////Torres///////////////////////////////////////////////////////////////////////////
+	          ///////////////////////////////////Torre blanca 1//////////////////////////////////////////////////////////////////
 		  if (torreblanca1.position.x===bloquerojo.position.x && torreblanca1.position.z===bloquerojo.position.z){
 		    var bvtb1=bloqueverde;//Bloqueverdetorreblanca1
 		    TorreBlanca.prototype.sense = function(environment){
@@ -176,7 +178,7 @@ BloqueAzul.prototype.act = function(environment){
 			{this.colision = 1;this.step=0;}
  		      else
 		        {this.colision = 0;this.step=0.25;}
-		    }
+		    }//fin prototype sense
 		
 		    TorreBlanca.prototype.act = function(environment){ 	
 		      if (this.colision!=1){
@@ -193,7 +195,61 @@ BloqueAzul.prototype.act = function(environment){
 		      }//fin if posicion z
 		    }//fin prototype act
 		  }//fin if torreblanca1
-		  ////////////////////////////Torre negra///////////////////////////////////////////////////////////////////  
+	          /////////////////////////////////Torre blanca 2//////////////////////////////////////////////////////////////////
+		  if (torreblanca1.position.x===bloquerojo.position.x && torreblanca1.position.z===bloquerojo.position.z){
+		    var bvtb2=bloqueverde;//Bloqueverdetorreblanca1
+		    TorreBlanca.prototype.sense = function(environment){
+		      this.sensor.set(this.position,new THREE.Vector3(0,-1,0));
+		      var obstaculo = this.sensor.intersectObjects(bvtb2,true);
+		      if(obstaculo.length >0)
+			{this.colision = 1;this.step=0;}
+ 		      else
+		        {this.colision = 0;this.step=0.25;}
+		    }//fin prototype sense
+		
+		    TorreBlanca.prototype.act = function(environment){ 	
+		      if (this.colision!=1){
+			if(torreblanca1.position.x<bvtb2.position.x)
+			  torreblanca1.position.x += this.step;
+			else
+			  torreblanca1.position.x -= this.step;
+		      }//fin if posicion x
+		      if (this.colision!=1){
+			if(torreblanca1.position.z<bvtb2.position.z)
+			  torreblanca1.position.z += this.step;
+			else
+			  torreblanca1.position.z -= this.step;
+		      }//fin if posicion z
+		    }//fin prototype act
+		  }//fin if torreblanca2
+	          /////////////////////////////////Torre negra 1///////////////////////////////////////////////////////////////////
+		  if (torrenegra2.position.x===bloquerojo.position.x && torrenegra2.position.z===bloquerojo.position.z){
+		    var bvtn1 = bloqueverde;
+		    TorreNegra.prototype.sense = function(environment){
+		      this.sensor.set(this.position,new THREE.Vector3(0,-1,0));
+		      var obstaculo2 = this.sensor.intersectObjects(bvtn1,true);
+		      if(obstaculo2.length > 0)
+		        {this.colision = 1;this.step=0;}
+ 		      else
+		        {this.colision = 0;this.step=0.25;}
+		    }//fin prototype sense
+		
+		    TorreNegra.prototype.act = function(environment){ 	
+		      if (this.colision!=1){
+			if(torrenegra2.position.x<bvtn1.position.x)
+			  torrenegra2.position.x += this.step;
+			else
+			  torrenegra2.position.x -= this.step;
+		      }//fin if posicion x
+		      if (this.colision!=1){
+			if(torrenegra2.position.z<bvtn1.position.z)
+			  torrenegra2.position.z += this.step;
+			else
+			  torrenegra2.position.z -= this.step;
+		      }//fin if posicion z
+		    }//fin prototype act
+		  }//fin if torreblanca2
+		  ////////////////////////////Torre negra 2///////////////////////////////////////////////////////////////////  
 		  if (torrenegra2.position.x===bloquerojo.position.x && torrenegra2.position.z===bloquerojo.position.z){
 		    var bvtn2 = bloqueverde;
 		    TorreNegra.prototype.sense = function(environment){
@@ -203,7 +259,7 @@ BloqueAzul.prototype.act = function(environment){
 		        {this.colision = 1;this.step=0;}
  		      else
 		        {this.colision = 0;this.step=0.25;}
-		    }
+		    }//fin prototype sense
 		
 		    TorreNegra.prototype.act = function(environment){ 	
 		      if (this.colision!=1){
@@ -222,6 +278,7 @@ BloqueAzul.prototype.act = function(environment){
 		  }//fin if torreblanca2
                 bandera=0;
 		}//fin if bandera
+////////////////////////////////////////Movimientos de piezas/////////////////////////////////////////////////////////////////////////
 		else{
 		   bloquerojo = new BloqueRojo(bloqueazul.position.x,0,bloqueazul.position.z);
 		   escena.add(bloquerojo);
@@ -273,7 +330,7 @@ function BloqueMorado(x=0,y=0,z=0){
 }
 
 BloqueMorado.prototype = new Agent();
-
+///////////////////////////////////////Bloque verde//////////////////////////////////////////////////////////////////////////////
 function BloqueVerde(x=0,y=0,z=0){
   Agent.call(this,x,y,z);
   var texturaluz = new THREE.TextureLoader().load('luzverde.jpg');
@@ -285,7 +342,7 @@ function BloqueVerde(x=0,y=0,z=0){
 }
 
 BloqueVerde.prototype = new Agent();
-
+//////////////////////////////////////Init y loop/////////////////////////////////////////////////////////////////////////////////////
 
 init();
 loop();
@@ -371,7 +428,7 @@ function init() {
     grupo3.add(malla3);
   }}
   ///////////////////////////////////////////Torres////////////////////////////////////////////////////////////////
-  torreblanca1 = new TorreBlanca(50,5,-50);
+  torreblanca1 = new TorreBlanca(10,5,-10);
   torreblanca2 = new TorreBlanca(10,5,-80);
   torrenegra1 = new TorreNegra(80,5,-10);
   torrenegra2 = new TorreNegra(80,5,-80);
