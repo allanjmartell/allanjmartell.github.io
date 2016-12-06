@@ -1,4 +1,4 @@
-///////////////////////////////////////Agente//////////////////////////////////////////////////////////////////////////////7
+///////////////////////////////////////Agente//////////////////////////////////////////////////////////////////////////////
 function Agent(x=0,y=0,z=0){
   THREE.Object3D.call(this);
   this.position.x=x;
@@ -99,9 +99,9 @@ function PeonBlanco(x=0,y=0,z=0){
     //zmesh.position.set( 0, 0, 0 );
     //zmesh.scale.set( 1,1, 1 );
     zmesh.overdraw = true;
-    this.position.x=0;
-    this.position.y=0;
-    this.position.z=0;
+    zmesh.position.x=x;
+    zmesh.position.y=y;
+    zmesh.position.z=z;
     escena.add( zmesh );
   };
   loader.load( "peon2.js", createMesh );
