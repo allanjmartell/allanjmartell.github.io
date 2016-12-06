@@ -101,7 +101,7 @@ function PeonBlanco(x=0,y=0,z=0){
     zmesh.overdraw = true;
     escena.add( zmesh );
   };
-  this.actuator = loader.load("https://github.com/ReneDelaRosa/ReneDelaRosa.github.io/blob/master/RV/importacion/peon2.js",Malla);
+  this.actuator = loader.load("proyectopeon.js",Malla);
   this.actuator.commands = [];
   this.add(this.actuator);
   this.position.y=y;//5;
