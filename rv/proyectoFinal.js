@@ -49,21 +49,57 @@ var malla,malla2,malla3,grupo,grupo2,grupo3,grupomorado;
 var bloquemorado,bloqueazul,bloquerojo,bloqueverde;
 var bandera=0;
 var torre1,torre2,torre3,torre4;
+//////////////////////////////////////////Sensor/////////////////////////////////////////////////////////////////////////////////
+function Sensor(position,direction){ 
+  THREE.Raycaster.call(this,position,direction);
+  this.colision = false;
+}
 
+Sensor.prototype = new THREE.Raycaster();
 //////////////////////////////////////////////Torres////////////////////////////////////////////////////////////////////////////////////
 function TorreBlanca(x=0,y=0,z=0){
   Agent.call(this,x,y,z);
   //Torre1
   var textura1 = new THREE.TextureLoader().load('marmolblanco.jpg');
   var marmolblanco = new THREE.MeshLambertMaterial({map:textura1});
-  this.add(new THREE.Mesh(torrefinal11,marmolblanco));
+  this.actuator = new THREE.Mesh(torrefinal11,marmolblanco);
+  this.actuator.commands = [];
+  this.add(this.actuator);
   this.position.y=y;//5;
   this.position.z=z;//-10;
   this.position.x=x;//10;
-  //this.colision = 0;
+  this.sensor = new Sensor();
   //this.radius = 1;
   //this.sensor = new THREE.Raycaster(this.position,new THREE.Vector3(1,0,0));
 }
+TorreBlanca.prototype.act = function(environment)
+	{window.onload=function(){document.onkeydown=desplazar};
+    		function desplazar(pieza)
+    		{
+     		var tecla = pieza.which;
+          	switch (tecla)
+          	{
+		case 13 :  //Enter
+			if (torreblanca1.position.x===bloquerojo.position.x && torreblanca1.position.z===bloquerojo.position.z)
+			{if (torreblanca1.position.x===bloqueverde.position.x && torreblanca1.position.z===bloqueverde.position.z)
+			 	{this.step=0;}
+			 else
+			 	{this.step=0.5;}
+			 if (torreblanca1.position.x!=bloqueverde.position.x)
+			 	 {if(torreblanca1.position.x<bloqueverde.position.x)
+				  	{torreblanca1.position.x += this.step;}
+				   else
+				  	{torreblanca1.position.x -= this.step;}}//fin if posicion x
+			 if (torreblanca1.position.z!=bloqueverde.position.z)
+			 	 {if(torreblanca1.position.z<bloqueverde.position.z)
+				  	{torreblanca1.position.z += this.step;}
+				   else
+				  	{torreblanca1.position.z -= this.step;}}//fin if posicion z
+			}//fin posicion bloque rojo
+			break;
+		}//fin switch
+		}//fin function desplazar 
+	}//fin prototype
 
 function TorreNegra(x=0,y=0,z=0){
   Agent.call(this,x,y,z);
@@ -277,27 +313,6 @@ function loop() {
                   break;
 ///////////////////////////////////////////Selección de piezas/////////////////////////////////////////////////////////////////////
 	      case 13 :  //Enter
-	        if (bandera===1)
-		{if (torreblanca1.position.x===bloquerojo.position.x && torreblanca1.position.z===bloquerojo.position.z)
-			{TorreBlanca.prototype.act = function(environment)
-			{if (torreblanca1.position.x===bloqueverde.position.x && torreblanca1.position.z===bloqueverde.position.z)
-			 	{this.step=0;}
-			 else
-			 	{this.step=0.5;}
-			 if (torreblanca1.position.x!=bloqueverde.position.x)
-			 	 {if(torreblanca1.position.x<bloqueverde.position.x)
-				  	{torreblanca1.position.x += this.step;}
-				   else
-				  	{torreblanca1.position.x -= this.step;}}//fin if posicion x
-			 if (torreblanca1.position.z!=bloqueverde.position.z)
-			 	 {if(torreblanca1.position.z<bloqueverde.position.z)
-				  	{torreblanca1.position.z += this.step;}
-				   else
-				  	{torreblanca1.position.z -= this.step;}}//fin if posicion z
-				}//fin prototype act
-			}//fin if posicion igualdad bloque rojo
-                bandera=0;}//fin if bandera
-		else{
 		bloquerojo = new BloqueRojo(bloqueazul.position.x,0,bloqueazul.position.z);
 		escena.add(bloquerojo);
 		//////////////////////////Torres/////////////////////////////////////////////////////////////////////////
@@ -318,7 +333,6 @@ function loop() {
 			  escena.add(bloqueverde);
 			  bandera=1;	
 			}//fin if Torres
-		}//fin else principal
 		break;
           }//fin switch(pieza)
     }//fin function tecla
