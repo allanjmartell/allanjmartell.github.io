@@ -99,14 +99,13 @@ function PeonBlanco(x=0,y=0,z=0){
     var marmolblanco = new THREE.MeshLambertMaterial({map:textura1});
     zmesh = new THREE.Mesh( geometry, marmolblanco);
     zmesh.overdraw = true;
-    return zmesh;
   };	
-  loader.load( "peon2.js", createMesh );
-  this.actuator=createMesh();
+  //loader.load( "peon2.js", createMesh );
+  this.actuator=loader.load( "peon2.js", createMesh );
   this.actuator.commands = [];
-  this.actuator.position.x=x;
-  this.actuator.position.y=y;
-  this.actuator.position.z=z;
+  this.position.x=x;
+  this.position.y=y;
+  this.position.z=z;
   this.add( this.actuator );
   this.sensor = new Sensor();
 }
