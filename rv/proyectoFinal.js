@@ -69,52 +69,22 @@ function TorreBlanca(x=0,y=0,z=0){
   this.position.z=z;//-10;
   this.position.x=x;//10;
   this.sensor = new Sensor();
-  //this.radius = 1;
-  //this.sensor = new THREE.Raycaster(this.position,new THREE.Vector3(1,0,0));
 }
-TorreBlanca.prototype.act = function(environment)
-	{window.onload=function(){document.onkeydown=desplazar};
-    		function desplazar(pieza)
-    		{
-     		var tecla = pieza.which;
-          	switch (tecla)
-          	{
-		case 13 :  //Enter
-			if (torreblanca1.position.x===bloquerojo.position.x && torreblanca1.position.z===bloquerojo.position.z)
-			{if (torreblanca1.position.x===bloqueverde.position.x && torreblanca1.position.z===bloqueverde.position.z)
-			 	{this.step=0;}
-			 else
-			 	{this.step=0.5;}
-			 if (torreblanca1.position.x!=bloqueverde.position.x)
-			 	 {if(torreblanca1.position.x<bloqueverde.position.x)
-				  	{torreblanca1.position.x += this.step;}
-				   else
-				  	{torreblanca1.position.x -= this.step;}}//fin if posicion x
-			 if (torreblanca1.position.z!=bloqueverde.position.z)
-			 	 {if(torreblanca1.position.z<bloqueverde.position.z)
-				  	{torreblanca1.position.z += this.step;}
-				   else
-				  	{torreblanca1.position.z -= this.step;}}//fin if posicion z
-			}//fin posicion bloque rojo
-			break;
-		}//fin switch
-		}//fin function desplazar 
-	}//fin prototype
 
 function TorreNegra(x=0,y=0,z=0){
   Agent.call(this,x,y,z);
-    //Torre1
+  //Torre1
   var textura2 = new THREE.TextureLoader().load('marmolnegro.jpg');
   var marmolnegro = new THREE.MeshLambertMaterial({map:textura2});
-  this.add(new THREE.Mesh(torrefinal11,marmolnegro));
+  this.actuator = new THREE.Mesh(torrefinal11,marmolnegro);
+  this.add(this.actuator);
   this.position.y=y;
   this.position.z=z;
   this.position.x=x;
-  //this.colision = 0;
-  //this.radius = r;
-  //this.sensor = new THREE.Raycaster(this.position,new THREE.Vector3(1,0,0));
+  this.sensor = new Sensor();
 }
 
+///////////////////////////////////////Bloque Azul////////////////////////////////////////////////////////////////////////////////////
 function BloqueAzul(x=0,y=0,z=0){
   Agent.call(this,x,y,z);
   var texturaluz = new THREE.TextureLoader().load('luzazul.jpg');
@@ -125,6 +95,42 @@ function BloqueAzul(x=0,y=0,z=0){
   this.position.x=x;
 }
 
+BloqueAzul.prototype = new Agent();
+
+BloqueAzul.prototype.act = function(environment){
+  window.onload=function(){document.onkeydown=desplazar};
+    function desplazar(pieza){
+      var tecla = pieza.which;
+        switch (tecla){
+          case 37 : //Izquierda
+		   if (bloqueazul.position.x>=20){
+		     bloqueazul.translateX(-10);
+		   }
+                   break;
+          case 38 :  //Arriba
+		   if (bloqueazul.position.z>=-70){
+	             bloqueazul.translateZ(-10);
+		   }
+                   break;
+          case 39 :  //Derecha 
+		   if (bloqueazul.position.x<=70){
+		     bloqueazul.translateX(10);
+		   }
+                   break;
+          case 40 :  //Abajo
+		   if (bloqueazul.position.z<=-20){
+		     bloqueazul.translateZ(10);
+		   }
+                   break;
+	  case 13 :  //Enter
+		   bloquerojo = new BloqueRojo(bloqueazul.position.x,0,bloqueazul.position.z);
+		   escena.add(bloquerojo);
+		   break;
+	}
+    }
+}
+
+////////////////////////////////////Bloque Rojo///////////////////////////////////////////////////////////////////////////////////////
 function BloqueRojo(x=0,y=0,z=0){
   Agent.call(this,x,y,z);
   var texturaluz = new THREE.TextureLoader().load('luzroja.jpg');
@@ -134,7 +140,9 @@ function BloqueRojo(x=0,y=0,z=0){
   this.position.z=z;
   this.position.x=x;
 }
-	
+	    
+BloqueRojo.prototype = new Agent();
+	    
 function BloqueMorado(x=0,y=0,z=0){
   Agent.call(this,x,y,z);
   var texturaluz = new THREE.TextureLoader().load('luzmorada.jpeg');
@@ -157,10 +165,9 @@ function BloqueVerde(x=0,y=0,z=0){
 
 TorreBlanca.prototype = new Agent();
 TorreNegra.prototype = new Agent();
-BloqueAzul.prototype = new Agent();
-BloqueRojo.prototype = new Agent();
-BloqueMorado.prototype = new Agent();
-BloqueVerde.prototype = new Agent();
+
+//BloqueMorado.prototype = new Agent();
+//BloqueVerde.prototype = new Agent();
 
 init();
 loop();
@@ -261,81 +268,6 @@ function init() {
 }
 
 function loop() {
-    window.onload=function(){document.onkeydown=desplazar};
-    function desplazar(pieza)
-    {
-      var tecla = pieza.which;
-          switch (tecla)
-          {
-              case 37 : //Izquierda
-		if (bandera===1)
-		{if (bloqueverde.position.x>=20)
-		   {bloqueverde.translateX(-10);}}
-		else{
-		escena.remove(grupomorado);
-		escena.remove(bloquerojo);
-		escena.remove(bloqueverde);
-		if (bloqueazul.position.x>=20)
-		{bloqueazul.translateX(-10);}}
-                  break;
-              case 38 :  //Arriba
-		if (bandera===1)
-		{if (bloqueverde.position.z>=-70)
-		  {bloqueverde.translateZ(-10);}}
-		else{
-		escena.remove(grupomorado);
-		escena.remove(bloquerojo);
-		escena.remove(bloqueverde);
-		if (bloqueazul.position.z>=-70)
-                  {bloqueazul.translateZ(-10);}}
-                  break;
-              case 39 :  //Derecha 
-		if (bandera===1)
-		{if (bloqueverde.position.x<=70)
-		  {bloqueverde.translateX(10);}}
-		else{
-		escena.remove(grupomorado);
-		escena.remove(bloquerojo);
-		escena.remove(bloqueverde);
-		if (bloqueazul.position.x<=70)
-		  {bloqueazul.translateX(10);}}
-                  break;
-              case 40 :  //Abajo
-		if (bandera===1)
-		{if (bloqueverde.position.z<=-20)
-		  {bloqueverde.translateZ(10);}}
-		else{
-		escena.remove(grupomorado);
-		escena.remove(bloquerojo);
-		escena.remove(bloqueverde);
-		if (bloqueazul.position.z<=-20)
-		  {bloqueazul.translateZ(10);}}
-                  break;
-///////////////////////////////////////////Selección de piezas/////////////////////////////////////////////////////////////////////
-	      case 13 :  //Enter
-		bloquerojo = new BloqueRojo(bloqueazul.position.x,0,bloqueazul.position.z);
-		escena.add(bloquerojo);
-		//////////////////////////Torres/////////////////////////////////////////////////////////////////////////
-		if ((((torreblanca1.position.x===bloquerojo.position.x && torreblanca1.position.z===bloquerojo.position.z)||
-		   (torreblanca2.position.x===bloquerojo.position.x && torreblanca2.position.z===bloquerojo.position.z))||
-		   (torrenegra1.position.x===bloquerojo.position.x && torrenegra1.position.z===bloquerojo.position.z))||
-		   (torrenegra2.position.x===bloquerojo.position.x && torrenegra2.position.z===bloquerojo.position.z))
-			{
-			  grupomorado = new THREE.Group();
-			  for (i=1;i<=8;i++)
-			  { bloquemorado = new BloqueMorado(bloquerojo.position.x,0,-i*10);
-			    grupomorado.add(bloquemorado);}
-			  for (i=1;i<=8;i++)
-			  { bloquemorado = new BloqueMorado(i*10,0,bloquerojo.position.z);
-			    grupomorado.add(bloquemorado);}
-			  escena.add(grupomorado);  
-			  bloqueverde = new BloqueVerde(bloquerojo.position.x,0,bloquerojo.position.z);
-			  escena.add(bloqueverde);
-			  bandera=1;	
-			}//fin if Torres
-		break;
-          }//fin switch(pieza)
-    }//fin function tecla
   requestAnimationFrame(loop);
   escena.sense();
   escena.plan();
