@@ -106,6 +106,8 @@ function PeonBlanco(x=0,y=0,z=0){
   };
   loader.load( "peon2.js", createMesh );
 }
+
+PeonBlanco.prototype = new Agent();
 ///////////////////////////////////////Bloque Azul////////////////////////////////////////////////////////////////////////////////////
 function BloqueAzul(x=0,y=0,z=0){
   Agent.call(this,x,y,z);
