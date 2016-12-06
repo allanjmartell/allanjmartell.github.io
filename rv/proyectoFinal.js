@@ -167,10 +167,6 @@ BloqueAzul.prototype.act = function(environment){
                 break;
 	  case 13 :  //Enter
 	        if (bandera===1){
-		for (i=0;i<=15;i++){
-	          if (bloqueverde.position.x!=grupomorado[i].position.x && bloqueverde.position.z===grupomorado[i].position.z){
-		    alert("Enter sobre casillas moradas");
-		}}
 //////////////////////////////////////////////////////Torres///////////////////////////////////////////////////////////////////////////
 	          ///////////////////////////////////Torre blanca 1//////////////////////////////////////////////////////////////////
 		  if (torreblanca1.position.x===bloquerojo.position.x && torreblanca1.position.z===bloquerojo.position.z){
@@ -290,7 +286,7 @@ BloqueAzul.prototype.act = function(environment){
 		         (torreblanca2.position.x===bloquerojo.position.x && torreblanca2.position.z===bloquerojo.position.z))||
 		         (torrenegra1.position.x===bloquerojo.position.x && torrenegra1.position.z===bloquerojo.position.z))||
 		         (torrenegra2.position.x===bloquerojo.position.x && torrenegra2.position.z===bloquerojo.position.z)){
-		     grupomorado = new THREE.Array();
+		     grupomorado = new THREE.Group();
 		     for (i=1;i<=8;i++){ 
 		       bloquemorado = new BloqueMorado(bloquerojo.position.x,0,-i*10);
 		       grupomorado.add(bloquemorado);
