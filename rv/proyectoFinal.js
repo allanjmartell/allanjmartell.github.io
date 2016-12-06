@@ -103,7 +103,7 @@ function PeonBlanco(x=0,y=0,z=0){
     this.position.x=x;
     this.position.y=y;
     this.position.z=z;
-    this.add( this.actuator );
+    escena.add( this.actuator );
   };
 	
   loader.load( "peon2.js", createMesh );
@@ -456,7 +456,7 @@ function init() {
   torrenegra1 = new TorreNegra(80,5,-10);
   torrenegra2 = new TorreNegra(80,5,-80);
   /////////////////////////////////////////Peones/////////////////////////////////////////////////////////////////
-  peonblanco1 = new PeonBlanco(20,5,-10);
+  peonblanco1 = new PeonBlanco(20,4.5,-10);
   /////////////////////////////////////////Bloques////////////////////////////////////////////////////////////////////
   bloqueazul = new BloqueAzul(10,0,-10);
   escena.add(grupo,grupo2,grupo3,bloqueazul);
