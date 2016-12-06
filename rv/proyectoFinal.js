@@ -167,6 +167,30 @@ BloqueAzul.prototype.act = function(environment){
 		}
                 break;
 	  case 13 :  //Enter
+	        if (bandera===1){
+		  if (torreblanca1.position.x===bloquerojo.position.x && torreblanca1.position.z===bloquerojo.position.z){
+		    TorreBlanca.prototype.act = function(environment){
+		      if (torreblanca1.position.x===bloqueverde.position.x && torreblanca1.position.z===bloqueverde.position.z)
+			 	{this.step=0;}
+			 else
+			 	{this.step=0.5;}
+		      if (torreblanca1.position.x!=bloqueverde.position.x){
+			if(torreblanca1.position.x<bloqueverde.position.x)
+			  {torreblanca1.position.x += this.step;}
+		        else
+			  {torreblanca1.position.x -= this.step;}
+		      }//fin if posicion x
+		      if (torreblanca1.position.z!=bloqueverde.position.z){
+			if(torreblanca1.position.z<bloqueverde.position.z)
+			  {torreblanca1.position.z += this.step;}
+			else
+			  {torreblanca1.position.z -= this.step;}
+		      }//fin if posicion z
+		    }//fin prototype act
+		  }//fin if posicion igualdad bloque rojo
+                bandera=0;
+		}//fin if bandera
+		else{
 		   bloquerojo = new BloqueRojo(bloqueazul.position.x,0,bloqueazul.position.z);
 		   escena.add(bloquerojo);
 		   if ((((torreblanca1.position.x===bloquerojo.position.x && torreblanca1.position.z===bloquerojo.position.z)||
@@ -187,9 +211,10 @@ BloqueAzul.prototype.act = function(environment){
 		     escena.add(bloqueverde);
 		     bandera=1;	
 		   }//fin if Torres
-		   break;
-	}
-    }
+		}
+        break;
+	}//fin switch
+    }//fin function desplazar
 }
 
 ////////////////////////////////////Bloque Rojo///////////////////////////////////////////////////////////////////////////////////////
