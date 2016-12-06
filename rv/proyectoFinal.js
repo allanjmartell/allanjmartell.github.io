@@ -217,7 +217,7 @@ BloqueAzul.prototype.act = function(environment){
 		      }//fin if posicion z
 		    }//fin prototype act
 		  }//fin if torreblanca2
-                //bandera=0;
+                bandera=0;
 		}//fin if bandera
 		else{
 		   bloquerojo = new BloqueRojo(bloqueazul.position.x,0,bloqueazul.position.z);
