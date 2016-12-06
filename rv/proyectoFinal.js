@@ -95,9 +95,9 @@ function PeonBlanco(x=0,y=0,z=0){
   var loader = new THREE.JSONLoader();
   var createMesh = function( geometry )
   {
-    var zmesh = new THREE.Mesh( geometry, new THREE.MeshNormalMaterial() );
-    //zmesh.position.set( 0, 0, 0 );
-    //zmesh.scale.set( 1,1, 1 );
+		var textura1 = new THREE.TextureLoader().load('marmolblanco.jpg');
+  	var marmolblanco = new THREE.MeshLambertMaterial({map:textura1});
+    var zmesh = new THREE.Mesh( geometry, marmolblanco);
     zmesh.overdraw = true;
     zmesh.position.x=x;
     zmesh.position.y=y;
