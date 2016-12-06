@@ -197,7 +197,7 @@ BloqueAzul.prototype.act = function(environment){
 		      this.sensor.set(this.position,new THREE.Vector3(0,-1,0));
 		      var obstaculo2 = this.sensor.intersectObjects(bloqueverde,true);
 		      if(obstaculo2.length > 0)
-		        {this.colision = 1;this.step=0;bandera=0;}
+		        {this.colision = 1;this.step=0;bandera=0;escena.remove(TorreNegra.prototype.act());}
  		      else
 		        {this.colision = 0;this.step=0.25;}
 		    }
