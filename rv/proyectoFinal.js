@@ -174,7 +174,7 @@ BloqueAzul.prototype.act = function(environment){
 		    }//fin if bloquerojo position
 		    if (banderatorreblanca1==1){
 		      if (torreblanca1.position.x===bloqueverde.position.x && torreblanca1.position.z===bloqueverde.position.z)
-			 	{this.step=0;banderatorreblanca1=0;}
+			 	{this.step=0;banderatorreblanca1=0;bandera=0;}
 		      else
 			 	{this.step=0.5;}
 		      if (torreblanca1.position.x!=bloqueverde.position.x){
@@ -191,7 +191,6 @@ BloqueAzul.prototype.act = function(environment){
 		      }//fin if posicion z
 		    }//fin banderatorre
 		  }//fin act
-                bandera=0;
 		}//fin if bandera
 		else{
 		   bloquerojo = new BloqueRojo(bloqueazul.position.x,0,bloqueazul.position.z);
