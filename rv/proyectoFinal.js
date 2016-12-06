@@ -91,20 +91,22 @@ TorreBlanca.prototype = new Agent();
 TorreNegra.prototype = new Agent();
 ///////////////////////////////////////Peones//////////////////////////////////////////////////////////////////////////////////////////
 var loader = new THREE.JSONLoader();
-var createMesh = function( geometry )
-{
-    var zmesh = new THREE.Mesh( geometry, new THREE.MeshNormalMaterial() );
-    zmesh.position.set( 0, 0, 0 );
-    zmesh.scale.set( 1,1, 1 );
-    zmesh.overdraw = true;
-    zmesh.position.x=0;
-    zmesh.position.y=0;
-    zmesh.position.z=0;
+//var createMesh = function( geometry )
+//{
+//    var zmesh = new THREE.Mesh( geometry, new THREE.MeshNormalMaterial() );
+//    zmesh.position.set( 0, 0, 0 );
+//    zmesh.scale.set( 1,1, 1 );
+//    zmesh.overdraw = true;
+//    zmesh.position.x=0;
+//    zmesh.position.y=0;
+//    zmesh.position.z=0;
     //zmesh.rotation.y=-Math.PI/4;
     //zmesh.rotation.x=Math.PI/8;
-    escena.add( zmesh );
-};
-loader.load( "peon2.js", createMesh );
+    //escena.add( zmesh );
+//};
+//loader.load( "peon2.js", createMesh );
+escena.add(loader.load("peon2.js",new THREE.MeshNormalMaterial()));
+
 ///////////////////////////////////////Bloque Azul////////////////////////////////////////////////////////////////////////////////////
 function BloqueAzul(x=0,y=0,z=0){
   Agent.call(this,x,y,z);
