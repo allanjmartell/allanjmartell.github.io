@@ -171,7 +171,7 @@ BloqueAzul.prototype.act = function(environment){
 	        if (bandera===1){
 		  if (torreblanca1.position.x===bloquerojo.position.x && torreblanca1.position.z===bloquerojo.position.z){
 		    TorreBlanca.prototype.sense = function(environment){
-		      this.sensor.set(this.position,new THREE.Vector3(0,-1,0);
+		      this.sensor.set(this.position,new THREE.Vector3(0,-1,0));
 		      var obstaculo = this.sensor.intersectObjects(bloqueverde,true);
 		      if(obstaculo1.length > 0)
 		        this.colision = 1;
