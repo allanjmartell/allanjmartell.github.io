@@ -172,23 +172,19 @@ BloqueAzul.prototype.act = function(environment){
 		      this.sensor.set(this.position,new THREE.Vector3(0,-1,0));
 		      var obstaculo = this.sensor.intersectObjects(bloqueverde,true);
 		      if(obstaculo.length > 0)
-		        this.colision = 1;
+		        {this.colision = 1;this.step=0;}
  		      else
-     		        this.colision = 0;
+		        {this.colision = 0;this.step=0.25;}
 		    }
 		
-		    TorreBlanca.prototype.act = function(environment){
-		      if (this.colision === 1)
-			 	this.step=0;
-		      else
-			 	this.step=0.5;
-		      if (torreblanca1.position.x!=bloqueverde.position.x){
+		    TorreBlanca.prototype.act = function(environment){ 	
+		      if (this.colision!=1){
 			if(torreblanca1.position.x<bloqueverde.position.x)
 			  torreblanca1.position.x += this.step;
 			else
 			  torreblanca1.position.x -= this.step;
 		      }//fin if posicion x
-		      if (torreblanca1.position.z!=bloqueverde.position.z){
+		      if (this.colision!=1){
 			if(torreblanca1.position.z<bloqueverde.position.z)
 			  torreblanca1.position.z += this.step;
 			else
