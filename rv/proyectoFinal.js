@@ -106,6 +106,9 @@ BloqueAzul.prototype.act = function(environment){
     function desplazar(pieza){
       var tecla = pieza.which;
         switch (tecla){
+	  escena.remove(grupomorado);
+	  escena.remove(bloquerojo);
+	  escena.remove(bloqueverde);
           case 37 : //Izquierda
 		   if (bloqueazul.position.x>=20){
 		     bloqueazul.translateX(-10);
