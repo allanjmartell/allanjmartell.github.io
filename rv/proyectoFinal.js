@@ -302,14 +302,43 @@ BloqueAzul.prototype.act = function(environment){
 		  }//fin if torreblanca2
                 bandera=0;
 		}//fin if bandera
+//////////////////////////////////////////////////////Peones///////////////////////////////////////////////////////////////////////////
+	          ///////////////////////////////////Peon blanco 1//////////////////////////////////////////////////////////////////
+		  if (peonblanco1.position.x===bloquerojo.position.x && peonblanco1.position.z===bloquerojo.position.z){
+		    var bvpb1=bloqueverde;//Bloqueverdetorreblanca1
+		    PeonBlanco.prototype.sense = function(environment){
+		      this.sensor.set(this.position,new THREE.Vector3(0,-1,0));
+		      var obstaculo = this.sensor.intersectObjects(bvpb1,true);
+		      if(obstaculo.length >0)
+			{this.colision = 1;this.step=0;}
+ 		      else
+		        {this.colision = 0;this.step=0.25;}
+		    }//fin prototype sense
+		
+		    PeonBlanco.prototype.act = function(environment){ 	
+		      if (this.colision!=1){
+			if(peonblanco1.position.x<bvtb1.position.x)
+			  peonblanco1.position.x += this.step;
+			else
+			  peonblanco1.position.x -= this.step;
+		      }//fin if posicion x
+		      if (this.colision!=1){
+			if(peonblanco1.position.z<bvtb1.position.z)
+			  peonblanco1.position.z += this.step;
+			else
+			  peonblanco1.position.z -= this.step;
+		      }//fin if posicion z
+		    }//fin prototype act
+		  }//fin if peonblanco1
 ////////////////////////////////////////Movimientos de piezas/////////////////////////////////////////////////////////////////////////
 		else{
 		   bloquerojo = new BloqueRojo(bloqueazul.position.x,0,bloqueazul.position.z);
 		   escena.add(bloquerojo);
-		   if ((((torreblanca1.position.x===bloquerojo.position.x && torreblanca1.position.z===bloquerojo.position.z)||
+		   if (((((torreblanca1.position.x===bloquerojo.position.x && torreblanca1.position.z===bloquerojo.position.z)||
 		         (torreblanca2.position.x===bloquerojo.position.x && torreblanca2.position.z===bloquerojo.position.z))||
 		         (torrenegra1.position.x===bloquerojo.position.x && torrenegra1.position.z===bloquerojo.position.z))||
-		         (torrenegra2.position.x===bloquerojo.position.x && torrenegra2.position.z===bloquerojo.position.z)){
+		         (torrenegra2.position.x===bloquerojo.position.x && torrenegra2.position.z===bloquerojo.position.z))||
+		         (peonblanco1.position.x===bloquerojo.position.x && peonblanco1.position.z===bloquerojo.position.z)){
 		     grupomorado = new THREE.Group();
 		     for (i=1;i<=8;i++){ 
 		       bloquemorado = new BloqueMorado(bloquerojo.position.x,0,-i*10);
