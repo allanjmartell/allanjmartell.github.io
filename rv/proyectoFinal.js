@@ -202,7 +202,7 @@ BloqueAzul.prototype.act = function(environment){
 		        {this.colision = 0;this.step=0.25;}
 		    }
 		
-		    TorreBlanca.prototype.act = function(environment){ 	
+		    TorreNegra.prototype.act = function(environment){ 	
 		      if (this.colision!=1){
 			if(torrenegra2.position.x<bloqueverde.position.x)
 			  torrenegra2.position.x += this.step;
