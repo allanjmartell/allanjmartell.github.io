@@ -107,37 +107,65 @@ BloqueAzul.prototype.act = function(environment){
       var tecla = pieza.which;
         switch (tecla){
           case 37 : //Izquierda
+		if (bandera===1){
+		  if (bloqueverde.position.x>=20){
+		    bloqueverde.translateX(-10);
+		  }
+		}
+		else{
 	  	   escena.remove(grupomorado);
 	           escena.remove(bloquerojo);
 	           escena.remove(bloqueverde);
 		   if (bloqueazul.position.x>=20){
 		     bloqueazul.translateX(-10);
 		   }
-                   break;
+		}
+                break;
           case 38 :  //Arriba
+		if (bandera===1){
+		  if (bloqueverde.position.x>=20){
+		    bloqueverde.translateX(-10);
+		  }
+		}
+		else{
 	  	   escena.remove(grupomorado);
 	           escena.remove(bloquerojo);
 	           escena.remove(bloqueverde);
 		   if (bloqueazul.position.z>=-70){
 	             bloqueazul.translateZ(-10);
 		   }
-                   break;
+		}
+                break;
           case 39 :  //Derecha 
+		if (bandera===1){
+		  if (bloqueverde.position.x>=20){
+		    bloqueverde.translateX(-10);
+		  }
+		}
+		else{
 	  	   escena.remove(grupomorado);
 	           escena.remove(bloquerojo);
 	           escena.remove(bloqueverde);
 		   if (bloqueazul.position.x<=70){
 		     bloqueazul.translateX(10);
 		   }
-                   break;
+		}
+                break;
           case 40 :  //Abajo
+		if (bandera===1){
+		  if (bloqueverde.position.x>=20){
+		    bloqueverde.translateX(-10);
+		  }
+		}
+		else{
 	  	   escena.remove(grupomorado);
 	           escena.remove(bloquerojo);
 	           escena.remove(bloqueverde);
 		   if (bloqueazul.position.z<=-20){
 		     bloqueazul.translateZ(10);
 		   }
-                   break;
+		}
+                break;
 	  case 13 :  //Enter
 		   bloquerojo = new BloqueRojo(bloqueazul.position.x,0,bloqueazul.position.z);
 		   escena.add(bloquerojo);
