@@ -195,8 +195,8 @@ BloqueAzul.prototype.act = function(environment){
 		  if (torrenegra2.position.x===bloquerojo.position.x && torrenegra2.position.z===bloquerojo.position.z){
 		    TorreNegra.prototype.sense = function(environment){
 		      this.sensor.set(this.position,new THREE.Vector3(0,-1,0));
-		      var obstaculo = this.sensor.intersectObjects(bloqueverde,true);
-		      if(obstaculo.length > 0)
+		      var obstaculo2 = this.sensor.intersectObjects(bloqueverde,true);
+		      if(obstaculo2.length > 0)
 		        {this.colision = 1;this.step=0;bandera=0;}
  		      else
 		        {this.colision = 0;this.step=0.25;}
