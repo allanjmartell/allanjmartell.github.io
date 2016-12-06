@@ -93,15 +93,10 @@ TorreNegra.prototype = new Agent();
 function PeonBlanco(x=0,y=0,z=0){
   Agent.call(this,x,y,z);
   var loader = new THREE.JSONLoader();
-  var Malla = function( geometry )
-  {
     var textura1 = new THREE.TextureLoader().load('marmolblanco.jpg');
     var marmolblanco = new THREE.MeshLambertMaterial({map:textura1});
-    var zmesh = new THREE.Mesh( geometry, marmolblanco );
-    zmesh.overdraw = true;
-    escena.add( zmesh );
-  };
-  this.actuator = loader.load("proyectopeon.js",Malla);
+    var zmesh = new THREE.Mesh( loader.load("proyectopeon.js"), marmolblanco );
+  this.actuator = zmesh;
   this.actuator.commands = [];
   this.add(this.actuator);
   this.position.y=y;//5;
