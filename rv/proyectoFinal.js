@@ -167,9 +167,10 @@ BloqueAzul.prototype.act = function(environment){
                 break;
 	  case 13 :  //Enter
 	        if (bandera===1){
-	        if (bloqueverde.position.x!=grupomorado.position.x && bloqueverde.position.z===grupomorado.position.z){
-			alert("Enter sobre casillas moradas");
-		}
+		for (i=0;i<=15;i++){
+	          if (bloqueverde.position.x!=grupomorado[i].position.x && bloqueverde.position.z===grupomorado[i].position.z){
+		    alert("Enter sobre casillas moradas");
+		}}
 //////////////////////////////////////////////////////Torres///////////////////////////////////////////////////////////////////////////
 	          ///////////////////////////////////Torre blanca 1//////////////////////////////////////////////////////////////////
 		  if (torreblanca1.position.x===bloquerojo.position.x && torreblanca1.position.z===bloquerojo.position.z){
