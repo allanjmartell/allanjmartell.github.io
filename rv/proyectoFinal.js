@@ -14,7 +14,7 @@ Agent.prototype.plan = function(environment) {}; //Planificar
 Agent.prototype.act = function(environment) {}; //Actuar
 
 ///////////////////////////////////////Agente Pieza//////////////////////////////////////////////////////////////////////////////////
-function AgentPieza(x=0,y=0,z=0){
+function AgentPieza(){
   THREE.JSONLoader.call(this);
 }
 
@@ -101,20 +101,23 @@ function TorreNegra(x=0,y=0,z=0){
 TorreBlanca.prototype = new Agent();
 TorreNegra.prototype = new Agent();
 ///////////////////////////////////////Peones//////////////////////////////////////////////////////////////////////////////////////////
-function PeonBlanco(x=0,y=0,z=0){
-  AgentPieza.call(this,x,y,z);
+function PeonBlanco(url){
+  AgentPieza.call(this,url);
   this.actuator = new THREE.JSONLoader();
   var createMesh = function( geometry ){
-    var textura1 = new THREE.TextureLoader().load('marmolblanco.jpg');
-    var marmolblanco = new THREE.MeshLambertMaterial({map:textura1});
-    var malla = new THREE.Mesh( geometry, marmolblanco);
-    malla.overdraw = true;
-    malla.position.x = x;
-    malla.position.y = y;
-    malla.position.z = z;
-    escena.add(malla);
+    function MallaPeon(x=0,y=0,z=0){
+      Agent.call(this,x,y,z);
+      var textura1 = new THREE.TextureLoader().load('marmolblanco.jpg');
+      var marmolblanco = new THREE.MeshLambertMaterial({map:textura1});
+      this.malla = new THREE.Mesh( geometry, marmolblanco);
+      this.malla.overdraw = true;
+      this.position.x = x;
+      this.position.y = y;
+      this.position.z = z;
+      this.add(this.malla);
+    }
   };
-  this.actuator.load( "peon2.js", createMesh );
+  this.actuator.load( url, createMesh );
   this.actuator.commands = [];
   this.sensor = new Sensor();
 }
@@ -141,6 +144,9 @@ function PeonNegro(x=0,y=0,z=0){
 }
 
 PeonBlanco.prototype = new AgentPieza();
+MallaPeon.prototype = new Agent();
+mpeonblanco1 = new MallaPeon(20,4.5,-10);
+peonblanco1 = new PeonBlanco("peon2.js");
 PeonNegro.prototype = new Agent();
 ///////////////////////////////////////Alfiles//////////////////////////////////////////////////////////////////////////////////////
 function AlfilBlanco(x=0,y=0,z=0){
@@ -378,7 +384,7 @@ BloqueAzul.prototype.act = function(environment){
 		  }//fin if torreblanca2
 //////////////////////////////////////////////////////Peones///////////////////////////////////////////////////////////////////////////
 	          ///////////////////////////////////Peon blanco 1//////////////////////////////////////////////////////////////////
-		  if (peonblanco1.position.x===bloquerojo.position.x && peonblanco1.position.z===bloquerojo.position.z){
+		  if (mpeonblanco1.position.x===bloquerojo.position.x && mpeonblanco1.position.z===bloquerojo.position.z){
 		    var bvpb1=bloqueverde;//Bloqueverdetorreblanca1
 			  
 		    PeonBlanco.prototype.sense = function(environment){
@@ -392,16 +398,16 @@ BloqueAzul.prototype.act = function(environment){
 		
 		    PeonBlanco.prototype.act = function(environment){ 	
 		      if (this.colision!=1){
-			if(peonblanco1.position.x<bvpb1.position.x)
-			  peonblanco1.position.x += this.step;
+			if(mpeonblanco1.position.x<bvpb1.position.x)
+			  mpeonblanco1.position.x += this.step;
 			else
-			  peonblanco1.position.x -= this.step;
+			  mpeonblanco1.position.x -= this.step;
 		      }//fin if posicion x
 		      if (this.colision!=1){
-			if(peonblanco1.position.z<bvpb1.position.z)
-			  peonblanco1.position.z += this.step;
+			if(mpeonblanco1.position.z<bvpb1.position.z)
+			  mpeonblanco1.position.z += this.step;
 			else
-			  peonblanco1.position.z -= this.step;
+			  mpeonblanco1.position.z -= this.step;
 		      }//fin if posicion z
 		    }//fin prototype act
 		  }//fin if peonblanco1
@@ -427,7 +433,7 @@ BloqueAzul.prototype.act = function(environment){
 		     }	
 		   }//fin if Torres
                    /////////////////////////////////Peones////////////////////////////////////////////////////////////////////////
-		   if ((((((((peonblanco1.position.x===bloquerojo.position.x && peonblanco1.position.z===bloquerojo.position.z)||
+		   if ((((((((mpeonblanco1.position.x===bloquerojo.position.x && mpeonblanco1.position.z===bloquerojo.position.z)||
 			     (peonblanco2.position.x===bloquerojo.position.x && peonblanco2.position.z===bloquerojo.position.z))||
 			     (peonblanco3.position.x===bloquerojo.position.x && peonblanco3.position.z===bloquerojo.position.z))||
 			     (peonblanco4.position.x===bloquerojo.position.x && peonblanco4.position.z===bloquerojo.position.z))||
@@ -603,7 +609,7 @@ function init() {
   torrenegra1 = new TorreNegra(80,5,-10);
   torrenegra2 = new TorreNegra(80,5,-80);
   /////////////////////////////////////////Peones/////////////////////////////////////////////////////////////////
-  peonblanco1 = new PeonBlanco(20,4.5,-10);
+  //peonblanco1 = new PeonBlanco(20,4.5,-10);
   peonblanco2 = new PeonBlanco(20,4.5,-20);
   peonblanco3 = new PeonBlanco(20,4.5,-30);
   peonblanco4 = new PeonBlanco(20,4.5,-40);
@@ -629,7 +635,6 @@ function init() {
   bloqueazul = new BloqueAzul(10,0,-10);
   escena.add(grupo,grupo2,grupo3,bloqueazul);
   escena.add(torreblanca1,torreblanca2,torrenegra1,torrenegra2);
-  escena.add(peonblanco1);
   //Luces
   escena.add(luzblan,luzblan2,luzblan3);
   escena.rotateX(Math.PI/4);
