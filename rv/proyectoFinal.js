@@ -112,10 +112,10 @@ function PeonBlanco(x=0,y=0,z=0){
     malla.position.x = x;
     malla.position.y = y;
     malla.position.z = z;
+    escena.add(malla);
   };
   this.actuator.load( "peon2.js", createMesh );
   this.actuator.commands = [];
-  escena.add(this.actuator);
   this.sensor = new Sensor();
 }
 
