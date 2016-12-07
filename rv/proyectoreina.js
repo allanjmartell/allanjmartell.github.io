@@ -27,7 +27,7 @@ corona1.translate(0,17,0);
 
 var points = [];
 for ( var i = 0; i < 10; i ++ ) {
-	points.push( new THREE.Vector2( Math.sin( i * 0.2 )*10, ( i ) ) );
+	points.push( new THREE.Vector2( Math.sin( i * 0.2 )*4, ( i-3 ) ) );
 }
 var corona2 = new THREE.LatheGeometry(points);
 corona2.translate(0,18.5,0);
