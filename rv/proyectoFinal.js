@@ -101,8 +101,8 @@ function PeonBlanco(x=0,y=0,z=0){
 //    this.actuator.overdraw = true;
 //    this.actuator.commands = [];
     malla.position.x=x;
-    malla.actuator.position.y=y;
-    malla.actuator.position.z=z;
+    malla.position.y=y;
+    malla.position.z=z;
 //    escena.add( this.actuator );
 };
   this.actuator.load( "peon2.js", createMesh );
