@@ -53,6 +53,7 @@ var bandera=0;
 var torreblanca1,torreblanca2,torrenegra1,torrenegra2;
 var peonblanco1,peonblanco2,peonblanco3,peonblanco4,peonblanco5,peonblanco6,peonblanco7,peonblanco8;
 var peonnegro1,peonnegro2,peonnegro3,peonnegro4,peonnegro5,peonnegro6,peonnegro7,peonnegro8;
+var alfilblanco1,alfilblanco2,alfilnegro1,alfilnegro2;
 //////////////////////////////////////////Sensor/////////////////////////////////////////////////////////////////////////////////
 function Sensor(position,direction){ 
   THREE.Raycaster.call(this,position,direction);
@@ -134,6 +135,51 @@ function PeonNegro(x=0,y=0,z=0){
 
 PeonBlanco.prototype = new Agent();
 PeonNegro.prototype = new Agent();
+///////////////////////////////////////Alfiles//////////////////////////////////////////////////////////////////////////////////////
+function AlfilBlanco(x=0,y=0,z=0){
+  Agent.call(this,x,y,z);
+  var textura1 = new THREE.TextureLoader().load('marmolblanco.jpg');
+  var marmolblanco = new THREE.MeshLambertMaterial({map:textura1});
+  var loader = new THREE.JSONLoader();
+  var malla;
+  var createMesh = function( geometry )
+  {
+    malla = new THREE.Mesh( geometry, marmolblanco);
+    malla.overdraw = true;
+    malla.position.x=x;
+    malla.position.y=y;
+    malla.position.z=z;
+    escena.add(malla);
+    malla.commands = [];
+    
+  };
+  loader.load( "Alfil.js", createMesh );
+  this.sensor = new Sensor();
+}
+
+function AlfilNegro(x=0,y=0,z=0){
+  Agent.call(this,x,y,z);
+  var textura2 = new THREE.TextureLoader().load('marmolnegro.jpg');
+  var marmolnegro = new THREE.MeshLambertMaterial({map:textura2});
+  var loader = new THREE.JSONLoader();
+  var malla;
+  var createMesh = function( geometry )
+  {
+    malla = new THREE.Mesh( geometry, marmolnegro);
+    malla.overdraw = true;
+    malla.position.x=x;
+    malla.position.y=y;
+    malla.position.z=z;
+    escena.add(malla);
+    malla.commands = [];
+    
+  };
+  loader.load( "Alfil.js", createMesh );
+  this.sensor = new Sensor();
+}
+
+AlfilBlanco.prototype = new Agent();
+AlfilNegro.prototype = new Agent();
 ///////////////////////////////////////Bloque Azul////////////////////////////////////////////////////////////////////////////////////
 function BloqueAzul(x=0,y=0,z=0){
   Agent.call(this,x,y,z);
@@ -371,11 +417,7 @@ BloqueAzul.prototype.act = function(environment){
 		     for (i=1;i<=8;i++){ 
 		       bloquemorado = new BloqueMorado(i*10,0,bloquerojo.position.z);
 		       grupomorado.add(bloquemorado);
-		     }
-		     //escena.add(grupomorado);  
-		     //bloqueverde = new BloqueVerde(bloquerojo.position.x,0,bloquerojo.position.z);
-		     //escena.add(bloqueverde);
-		     //bandera=1;	
+		     }	
 		   }//fin if Torres
                    /////////////////////////////////Peones////////////////////////////////////////////////////////////////////////
 		   if ((((((((peonblanco1.position.x===bloquerojo.position.x && peonblanco1.position.z===bloquerojo.position.z)||
@@ -401,7 +443,22 @@ BloqueAzul.prototype.act = function(environment){
 		     grupomorado = new THREE.Group();
 		     bloquemorado = new BloqueMorado(bloquerojo.position.x-10,0,bloquerojo.position.z);
 		     grupomorado.add(bloquemorado);
-		   }//fin if Peones blancos
+		   }//fin if Peones negros
+		//////////////////////////////////////////////Alfiles////////////////////////////////////////////////////////////
+		   if ((((alfilblanco1.position.x===bloquerojo.position.x && alfilblanco1.position.z===bloquerojo.position.z)||
+		         (alfilblanco2.position.x===bloquerojo.position.x && alfilblanco2.position.z===bloquerojo.position.z))||
+		         (alfilnegro1.position.x===bloquerojo.position.x && alfilnegro1.position.z===bloquerojo.position.z))||
+		         (alfilnegro2.position.x===bloquerojo.position.x && alfilnegro2.position.z===bloquerojo.position.z)){
+		     grupomorado = new THREE.Group();
+		     for (i=1;i<=8;i++){ 
+		       bloquemorado = new BloqueMorado(bloquerojo.position.x,0,-i*10);
+		       grupomorado.add(bloquemorado);
+		     }
+		     for (i=1;i<=8;i++){ 
+		       bloquemorado = new BloqueMorado(i*10,0,bloquerojo.position.z);
+		       grupomorado.add(bloquemorado);
+		     }
+		   }//fin if Alfiles
 		escena.add(grupomorado);  
 	        bloqueverde = new BloqueVerde(bloquerojo.position.x,0,bloquerojo.position.z);
 		escena.add(bloqueverde);
@@ -556,6 +613,11 @@ function init() {
   peonnegro6 = new PeonNegro(70,4.5,-60);
   peonnegro7 = new PeonNegro(70,4.5,-70);
   peonnegro8 = new PeonNegro(70,4.5,-80);
+  /////////////////////////////////////////Alfiles/////////////////////////////////////////////////////////////////
+  alfilblanco1 = new AlfilBlanco(10,4.5,-30);
+  alfilblanco2 = new AlfilBlanco(10,4.5,-60);
+  alfilnegro1 = new AlfilNegro(80,4.5,-30);
+  alfilnegro2 = new AlfilNegro(80,4.5,-60);
   /////////////////////////////////////////Bloques////////////////////////////////////////////////////////////////////
   bloqueazul = new BloqueAzul(10,0,-10);
   escena.add(grupo,grupo2,grupo3,bloqueazul);
