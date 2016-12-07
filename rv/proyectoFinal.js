@@ -92,6 +92,7 @@ TorreNegra.prototype = new Agent();
 ///////////////////////////////////////Peones//////////////////////////////////////////////////////////////////////////////////////////
 function PeonBlanco(x=0,y=0,z=0){
   Agent.call(this,x,y,z);
+  this=this;
   var textura1 = new THREE.TextureLoader().load('marmolblanco.jpg');
   var marmolblanco = new THREE.MeshLambertMaterial({map:textura1});
   var loader = new THREE.JSONLoader();
