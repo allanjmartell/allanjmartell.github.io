@@ -99,14 +99,14 @@ function PeonBlanco(x=0,y=0,z=0){
   {
     var malla = new THREE.Mesh( geometry, marmolblanco);
     malla.overdraw = true;
-    //escena.add(malla);
+    escena.add(malla);
   };
   this.actuator = loader.load( "peon2.js", createMesh );
   //this.actuator.commands = [];
   this.position.x=x;
   this.position.y=y;
   this.position.z=z;
-  escena.add(this.actuator);
+  
   this.sensor = new Sensor();
 //var loader = new THREE.JSONLoader();
 //var model = loader.load( "scripts/model.json", addModel ); //model is undefined
