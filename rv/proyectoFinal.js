@@ -105,17 +105,19 @@ function PeonBlanco(x=0,y=0,z=0){
 //    this.actuator.position.z=z;
 //    escena.add( this.actuator );};
 //loader.load( "peon2.js", createMesh );
-  var textura1 = new THREE.TextureLoader().load('marmolblanco.jpg');
-  var marmolblanco = new THREE.MeshLambertMaterial({map:textura1}); 
-  var material = new THREE.MeshBasicMaterial();
-  this.actuator = new THREE.Mesh(new THREE.JSONLoader().load("peon2.js",material),marmolblanco);
-  //this.actuator = new THREE.Mesh(geometria,marmolblanco);
-  this.actuator.overdraw = true;
+this.actuator = new THREE.JSONLoader();
+var textura1 = new THREE.TextureLoader().load('marmolblanco.jpg');
+// load a resource
+loader.load("peon2.js",function (geometry, textura1) {
+    var marmolblanco = new THREE.MeshLambertMaterial({map:textura1});
+    var object = new THREE.Mesh(geometry, marmolblanco );
+    //escena.add( object );
+  });
   this.actuator.commands = [];
-  this.add(this.actuator);
   this.actuator.position.x=x;
   this.actuator.position.y=y;
   this.actuator.position.z=z;
+  escena.add(this.actuator);
   this.sensor = new Sensor();
 }
 
