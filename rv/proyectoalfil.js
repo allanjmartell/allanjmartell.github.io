@@ -1,4 +1,5 @@
 var base = new THREE.CylinderGeometry(5,5,2.5,10);
+base.translate(0,0,0);
 var material = new THREE.MeshNormalMaterial();
 
 var columna1 = new THREE.CylinderGeometry(3.5,4,1.5);
