@@ -31,7 +31,7 @@ var alfilfinal3 = new THREE.Geometry();
 alfilfinal3.merge(malfilfinal2.geometry,malfilfinal.matrix);
 alfilfinal3.merge(mtoroide1.geometry,mtoroide1.matrix);
 
-var malfilfinal3 = new THREE.Mesh(alfilfinal3);
+var malfilfinal3 = new THREE.Mesh(alfilfinal3,material);
 
 
 var escena=new THREE.Scene();
