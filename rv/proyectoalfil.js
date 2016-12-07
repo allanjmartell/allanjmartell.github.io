@@ -14,7 +14,7 @@ columna2.translate(0,7.5,0);
 var basetecho = new THREE.CylinderGeometry(2.5,4,2,50);
 basetecho.translate(0,12.5,0);
 
-var bola = new THREE.SphereGeometry(3,10,10,0,180,0,180);
+var bola = new THREE.SphereGeometry(3,10,10);
 bola.translate(0,15,0);
 
 var toroide2 = new THREE.TorusGeometry(2.5,.25,50,50);
