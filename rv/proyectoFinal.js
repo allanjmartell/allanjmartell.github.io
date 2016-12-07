@@ -120,7 +120,34 @@ PeonBlanco.prototype = new Agent();
 PeonNegro.prototype = new Agent();
 
 ///////////////////////////////////////Alfiles//////////////////////////////////////////////////////////////////////////////////////
+function AlfilBlanco(x=0,y=0,z=0){
+  Agent.call(this,x,y,z);
+  var textura1 = new THREE.TextureLoader().load('marmolblanco.jpg');
+  var marmolblanco = new THREE.MeshLambertMaterial({map:textura1});
+  this.actuator = new THREE.Mesh(malfilfinal8,marmolblanco);
+  this.actuator.commands = [];
+  this.add(this.actuator);
+  this.position.y=y;
+  this.position.z=z;
+  this.position.x=x;
+  this.sensor = new Sensor();
+}
 
+function AlfilNegro(x=0,y=0,z=0){
+  Agent.call(this,x,y,z);
+  var textura2 = new THREE.TextureLoader().load('marmolnegro.jpg');
+  var marmolnegro = new THREE.MeshLambertMaterial({map:textura2});
+  this.actuator = new THREE.Mesh(malfilfinal8,marmolnegro);
+  this.actuator.commands = [];
+  this.add(this.actuator);
+  this.position.y=y;
+  this.position.z=z;
+  this.position.x=x;
+  this.sensor = new Sensor();
+}
+
+AlfilBlanco.prototype = new Agent();
+AlfilNegro.prototype = new Agent();
 ///////////////////////////////////////Bloque Azul////////////////////////////////////////////////////////////////////////////////////
 function BloqueAzul(x=0,y=0,z=0){
   Agent.call(this,x,y,z);
@@ -967,10 +994,12 @@ function init() {
   escena.add(peonblanco1,peonblanco2,peonblanco3,peonblanco4,peonblanco5,peonblanco6,peonblanco7,peonblanco8);
   escena.add(peonnegro1,peonnegro2,peonnegro3,peonnegro4,peonnegro5,peonnegro6,peonnegro7,peonnegro8);
   /////////////////////////////////////////Alfiles/////////////////////////////////////////////////////////////////
-  //alfilblanco1 = new AlfilBlanco(10,4.5,-30);
-  //alfilblanco2 = new AlfilBlanco(10,4.5,-60);
-  //alfilnegro1 = new AlfilNegro(80,4.5,-30);
-  //alfilnegro2 = new AlfilNegro(80,4.5,-60);
+  alfilblanco1 = new AlfilBlanco(10,4.5,-30);
+  alfilblanco2 = new AlfilBlanco(10,4.5,-60);
+  alfilnegro1 = new AlfilNegro(80,4.5,-30);
+  alfilnegro2 = new AlfilNegro(80,4.5,-60);
+	
+  escena.add(alfilblanco1,alfilblanco2,alfilnegro1,alfilnegro2);
   /////////////////////////////////////////Bloques////////////////////////////////////////////////////////////////////
   bloqueazul = new BloqueAzul(10,0,-10);
   escena.add(grupo,grupo2,grupo3,bloqueazul);
