@@ -81,7 +81,7 @@ var alfilfinal8 = new THREE.Geometry();
 alfilfinal8.merge(malfilfinal7.geometry,malfilfinal7.matrix);
 alfilfinal8.merge(mbola2.geometry,mbola2.matrix);
 
-var malfilfinal8 = new THREE.Mesh(alfilfinal8,material);
+//var malfilfinal8 = new THREE.Mesh(alfilfinal8,material);
 
 //var escena=new THREE.Scene();
 //escena.add(malfilfinal8);
