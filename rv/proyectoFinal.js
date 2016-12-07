@@ -16,9 +16,6 @@ Agent.prototype.act = function(environment) {}; //Actuar
 ///////////////////////////////////////Agente Pieza//////////////////////////////////////////////////////////////////////////////////
 function AgentPieza(x=0,y=0,z=0){
   THREE.JSONLoader.call(this);
-  this.position.x=x;
-  this.position.y=y;
-  this.position.z=z;
 }
 
 AgentPieza.prototype = new THREE.JSONLoader();
@@ -112,13 +109,13 @@ function PeonBlanco(x=0,y=0,z=0){
     var marmolblanco = new THREE.MeshLambertMaterial({map:textura1});
     var malla = new THREE.Mesh( geometry, marmolblanco);
     malla.overdraw = true;
+    malla.position.x = x;
+    malla.position.y = y;
+    malla.position.z = z;
   };
   this.actuator.load( "peon2.js", createMesh );
   this.actuator.commands = [];
   this.add(this.actuator);
-  this.position.x=x;
-  this.position.y=y;
-  this.position.z=z;
   this.sensor = new Sensor();
 }
 
