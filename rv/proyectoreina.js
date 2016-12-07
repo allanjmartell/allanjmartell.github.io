@@ -29,7 +29,7 @@ var corona2 = new THREE.SphereGeometry(1.8,50,50);
 corona2.translate(0,17.5,0);
 
 var bola = new THREE.SphereGeometry(1,50,50);
-bola.translate(0,18.25,0);
+bola.translate(0,19,0);
 //Mallas
 var mbase = new THREE.Mesh(base);
 var mcolumna1 = new THREE.Mesh(columna1);
