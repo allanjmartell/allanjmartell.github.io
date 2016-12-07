@@ -111,7 +111,29 @@ function PeonBlanco(x=0,y=0,z=0){
   this.sensor = new Sensor();
 }
 
+function PeonNegro(x=0,y=0,z=0){
+  Agent.call(this,x,y,z);
+  var textura2 = new THREE.TextureLoader().load('marmolnegro.jpg');
+  var marmolnegro = new THREE.MeshLambertMaterial({map:textura2});
+  var loader = new THREE.JSONLoader();
+  var malla;
+  var createMesh = function( geometry )
+  {
+    malla = new THREE.Mesh( geometry, marmolnegro);
+    malla.overdraw = true;
+    malla.position.x=x;
+    malla.position.y=y;
+    malla.position.z=z;
+    escena.add(malla);
+    malla.commands = [];
+    
+  };
+  loader.load( "peon2.js", createMesh );
+  this.sensor = new Sensor();
+}
+
 PeonBlanco.prototype = new Agent();
+PeonNegro.prototype = new Agent();
 ///////////////////////////////////////Bloque Azul////////////////////////////////////////////////////////////////////////////////////
 function BloqueAzul(x=0,y=0,z=0){
   Agent.call(this,x,y,z);
@@ -367,7 +389,19 @@ BloqueAzul.prototype.act = function(environment){
 		     grupomorado = new THREE.Group();
 		     bloquemorado = new BloqueMorado(bloquerojo.position.x+10,0,bloquerojo.position.z);
 		     grupomorado.add(bloquemorado);
-		   }//fin if Peones
+		   }//fin if Peones blancos
+		   if ((((((((peonnegro1.position.x===bloquerojo.position.x && peonnegro1.position.z===bloquerojo.position.z)||
+			     (peonnegro2.position.x===bloquerojo.position.x && peonnegro2.position.z===bloquerojo.position.z))||
+			     (peonnegro3.position.x===bloquerojo.position.x && peonnegro3.position.z===bloquerojo.position.z))||
+			     (peonnegro4.position.x===bloquerojo.position.x && peonnegro4.position.z===bloquerojo.position.z))||
+			     (peonnegro5.position.x===bloquerojo.position.x && peonnegro5.position.z===bloquerojo.position.z))||
+			     (peonnegro6.position.x===bloquerojo.position.x && peonnegro6.position.z===bloquerojo.position.z))||
+			     (peonnegro7.position.x===bloquerojo.position.x && peonnegro7.position.z===bloquerojo.position.z))||
+		             (peonnegro8.position.x===bloquerojo.position.x && peonnegro8.position.z===bloquerojo.position.z)){
+		     grupomorado = new THREE.Group();
+		     bloquemorado = new BloqueMorado(bloquerojo.position.x-10,0,bloquerojo.position.z);
+		     grupomorado.add(bloquemorado);
+		   }//fin if Peones blancos
 		escena.add(grupomorado);  
 	        bloqueverde = new BloqueVerde(bloquerojo.position.x,0,bloquerojo.position.z);
 		escena.add(bloqueverde);
@@ -514,6 +548,14 @@ function init() {
   peonblanco7 = new PeonBlanco(20,4.5,-70);
   peonblanco8 = new PeonBlanco(20,4.5,-80);
 	
+  peonnegro1 = new PeonNegro(70,4.5,-10);
+  peonnegro2 = new PeonNegro(70,4.5,-20);
+  peonnegro3 = new PeonNegro(70,4.5,-30);
+  peonnegro4 = new PeonNegro(70,4.5,-40);
+  peonnegro5 = new PeonNegro(70,4.5,-50);
+  peonnegro6 = new PeonNegro(70,4.5,-60);
+  peonnegro7 = new PeonNegro(70,4.5,-70);
+  peonnegro8 = new PeonNegro(70,4.5,-80);
   /////////////////////////////////////////Bloques////////////////////////////////////////////////////////////////////
   bloqueazul = new BloqueAzul(10,0,-10);
   escena.add(grupo,grupo2,grupo3,bloqueazul);
