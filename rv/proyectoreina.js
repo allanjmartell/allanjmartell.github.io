@@ -96,7 +96,7 @@ var alfilfinal9 = new THREE.Geometry();
 alfilfinal9.merge(malfilfinal8.geometry,malfilfinal8.matrix);
 alfilfinal9.merge(mcorona2.geometry,mcorona2.matrix);
 
-var malfilfinal8 = new THREE.Mesh(alfilfinal9,material);
+var malfilfinal9 = new THREE.Mesh(alfilfinal9,material);
 
 var escena=new THREE.Scene();
 escena.add(malfilfinal9);
