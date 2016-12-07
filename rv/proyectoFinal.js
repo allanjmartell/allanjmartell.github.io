@@ -12,17 +12,6 @@ Agent.prototype = new THREE.Object3D();
 Agent.prototype.sense = function(environment) {}; //Percibir
 Agent.prototype.plan = function(environment) {}; //Planificar
 Agent.prototype.act = function(environment) {}; //Actuar
-
-///////////////////////////////////////Agente Pieza//////////////////////////////////////////////////////////////////////////////////
-function AgentPieza(){
-  THREE.JSONLoader.call(this);
-}
-
-AgentPieza.prototype = new THREE.JSONLoader();
-
-AgentPieza.prototype.sense = function(environment) {}; //Percibir
-AgentPieza.prototype.plan = function(environment) {}; //Planificar
-AgentPieza.prototype.act = function(environment) {}; //Actuar
 ////////////////////////////////////////////////////Environment/////////////////////////////////////////////////////////////
 //Un Agente opera sobre un entorno
 function Environment(){
@@ -534,6 +523,8 @@ function init() {
   torreblanca2 = new TorreBlanca(10,5,-80);
   torrenegra1 = new TorreNegra(80,5,-10);
   torrenegra2 = new TorreNegra(80,5,-80);
+	
+  escena.add(torreblanca1,torreblanca2,torrenegra1,torrenegra2);
   /////////////////////////////////////////Peones/////////////////////////////////////////////////////////////////
   peonblanco1 = new PeonBlanco(20,4.5,-10);
   peonblanco2 = new PeonBlanco(20,4.5,-20);
@@ -552,6 +543,9 @@ function init() {
   peonnegro6 = new PeonNegro(70,4.5,-60);
   peonnegro7 = new PeonNegro(70,4.5,-70);
   peonnegro8 = new PeonNegro(70,4.5,-80);
+	
+  escena.add(peonblanco1,peonblanco2,peonblanco3,peonblanco4,peonblanco5,peonblanco6,peonblanco7,peonblanco8);
+  escena.add(peonnegro1,peonnegro2,peonnegro3,peonnegro4,peonnegro5,peonnegro6,peonnegro7,peonnegro8);
   /////////////////////////////////////////Alfiles/////////////////////////////////////////////////////////////////
   //alfilblanco1 = new AlfilBlanco(10,4.5,-30);
   //alfilblanco2 = new AlfilBlanco(10,4.5,-60);
@@ -560,7 +554,6 @@ function init() {
   /////////////////////////////////////////Bloques////////////////////////////////////////////////////////////////////
   bloqueazul = new BloqueAzul(10,0,-10);
   escena.add(grupo,grupo2,grupo3,bloqueazul);
-  escena.add(torreblanca1,torreblanca2,torrenegra1,torrenegra2);
   //Luces
   escena.add(luzblan,luzblan2,luzblan3);
   escena.rotateX(Math.PI/4);
