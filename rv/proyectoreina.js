@@ -12,7 +12,7 @@ var columna2 = new THREE.CylinderGeometry(1.75,3.5,14,50);
 columna2.translate(0,10.5,0);
 
 var btecho = new THREE.CylinderGeometry(2,3,2,50);
-btecho.translate(0,14.5,0);
+btecho.translate(0,16.5,0);
 
 var toroide2 = new THREE.TorusGeometry(2,.35,50,50);
 toroide2.rotateX(Math.PI/2);
