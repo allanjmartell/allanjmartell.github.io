@@ -22,8 +22,8 @@ var toroide3 = new THREE.TorusGeometry(1.75,.35,50,50);
 toroide3.rotateX(Math.PI/2);
 toroide3.translate(0,15.8,0);
 
-var corona1 = new THREE.CylinderGeometry(2,1.25,4,50);
-corona1.translate(0,17.5,0);
+var corona1 = new THREE.CylinderGeometry(2,1.25,3,50);
+corona1.translate(0,17,0);
 
 //Mallas
 var mbase = new THREE.Mesh(base);
@@ -90,7 +90,7 @@ escena.add(malfilfinal8);
 escena.rotateX(Math.PI/6);
 
 var camara=new THREE.PerspectiveCamera();
-camara.position.z=45;
+camara.position.z=50;
 
 var renderizador=new THREE.WebGLRenderer();
 renderizador.setSize(window.innerHeight*.95,window.innerHeight*.95);
