@@ -25,13 +25,8 @@ toroide3.translate(0,15.8,0);
 var corona1 = new THREE.CylinderGeometry(2,1.5,3,50);
 corona1.translate(0,17,0);
 
-var points = [];
-for ( var i = 0; i < 10; i ++ ) {
-	points.push( new THREE.Vector2( Math.sin( i * 0.2 )*4, ( i-3)*4 ) );
-}
-var corona2 = new THREE.LatheGeometry(points);
-corona2.rotateX(Math.PI);
-corona2.translate(0,18.5,0);
+var corona2 = new THREE.SphereGeometry(1.75,50,50);
+corona2.translate(0,17.5,0);
 //Mallas
 var mbase = new THREE.Mesh(base);
 var mcolumna1 = new THREE.Mesh(columna1);
