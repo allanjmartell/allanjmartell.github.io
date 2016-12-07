@@ -339,6 +339,426 @@ BloqueAzul.prototype.act = function(environment){
 		      }//fin if posicion z
 		    }//fin prototype act
 		  }//fin if peonblanco1
+	          ///////////////////////////////////Peon blanco 2//////////////////////////////////////////////////////////////////
+		  if (peonblanco2.position.x===bloquerojo.position.x && peonblanco2.position.z===bloquerojo.position.z){
+		    var bvpb2=bloqueverde;//Bloqueverdetorreblanca1
+			  
+		    PeonBlanco.prototype.sense = function(environment){
+		      this.sensor.set(this.position,new THREE.Vector3(0,-1,0));
+		      var obstaculo = this.sensor.intersectObjects(bvpb2,true);
+		      if(obstaculo.length >0)
+			{this.colision = 1;this.step=0;}
+ 		      else
+		        {this.colision = 0;this.step=0.25;}
+		    }//fin prototype sense
+		
+		    PeonBlanco.prototype.act = function(environment){ 	
+		      if (this.colision!=1){
+			if(peonblanco2.position.x<bvpb2.position.x)
+			  peonblanco2.position.x += this.step;
+			else
+			  peonblanco2.position.x -= this.step;
+		      }//fin if posicion x
+		      if (this.colision!=1){
+			if(peonblanco2.position.z<bvpb2.position.z)
+			  peonblanco2.position.z += this.step;
+			else
+			  peonblanco2.position.z -= this.step;
+		      }//fin if posicion z
+		    }//fin prototype act
+		  }//fin if peonblanco2		
+	          ///////////////////////////////////Peon blanco 3//////////////////////////////////////////////////////////////////
+		  if (peonblanco3.position.x===bloquerojo.position.x && peonblanco3.position.z===bloquerojo.position.z){
+		    var bvpb3=bloqueverde;//Bloqueverdetorreblanca1
+			  
+		    PeonBlanco.prototype.sense = function(environment){
+		      this.sensor.set(this.position,new THREE.Vector3(0,-1,0));
+		      var obstaculo = this.sensor.intersectObjects(bvpb3,true);
+		      if(obstaculo.length >0)
+			{this.colision = 1;this.step=0;}
+ 		      else
+		        {this.colision = 0;this.step=0.25;}
+		    }//fin prototype sense
+		
+		    PeonBlanco.prototype.act = function(environment){ 	
+		      if (this.colision!=1){
+			if(peonblanco3.position.x<bvpb3.position.x)
+			  peonblanco3.position.x += this.step;
+			else
+			  peonblanco3.position.x -= this.step;
+		      }//fin if posicion x
+		      if (this.colision!=1){
+			if(peonblanco3.position.z<bvpb3.position.z)
+			  peonblanco3.position.z += this.step;
+			else
+			  peonblanco3.position.z -= this.step;
+		      }//fin if posicion z
+		    }//fin prototype act
+		  }//fin if peonblanco3
+	          ///////////////////////////////////Peon blanco 4//////////////////////////////////////////////////////////////////
+		  if (peonblanco4.position.x===bloquerojo.position.x && peonblanco4.position.z===bloquerojo.position.z){
+		    var bvpb4=bloqueverde;//Bloqueverdetorreblanca1
+			  
+		    PeonBlanco.prototype.sense = function(environment){
+		      this.sensor.set(this.position,new THREE.Vector3(0,-1,0));
+		      var obstaculo = this.sensor.intersectObjects(bvpb4,true);
+		      if(obstaculo.length >0)
+			{this.colision = 1;this.step=0;}
+ 		      else
+		        {this.colision = 0;this.step=0.25;}
+		    }//fin prototype sense
+		
+		    PeonBlanco.prototype.act = function(environment){ 	
+		      if (this.colision!=1){
+			if(peonblanco4.position.x<bvpb4.position.x)
+			  peonblanco4.position.x += this.step;
+			else
+			  peonblanco4.position.x -= this.step;
+		      }//fin if posicion x
+		      if (this.colision!=1){
+			if(peonblanco4.position.z<bvpb4.position.z)
+			  peonblanco4.position.z += this.step;
+			else
+			  peonblanco4.position.z -= this.step;
+		      }//fin if posicion z
+		    }//fin prototype act
+		  }//fin if peonblanco4
+	          ///////////////////////////////////Peon blanco 5//////////////////////////////////////////////////////////////////
+		  if (peonblanco5.position.x===bloquerojo.position.x && peonblanco5.position.z===bloquerojo.position.z){
+		    var bvpb5=bloqueverde;//Bloqueverdetorreblanca1
+			  
+		    PeonBlanco.prototype.sense = function(environment){
+		      this.sensor.set(this.position,new THREE.Vector3(0,-1,0));
+		      var obstaculo = this.sensor.intersectObjects(bvpb5,true);
+		      if(obstaculo.length >0)
+			{this.colision = 1;this.step=0;}
+ 		      else
+		        {this.colision = 0;this.step=0.25;}
+		    }//fin prototype sense
+		
+		    PeonBlanco.prototype.act = function(environment){ 	
+		      if (this.colision!=1){
+			if(peonblanco5.position.x<bvpb5.position.x)
+			  peonblanco5.position.x += this.step;
+			else
+			  peonblanco5.position.x -= this.step;
+		      }//fin if posicion x
+		      if (this.colision!=1){
+			if(peonblanco5.position.z<bvpb5.position.z)
+			  peonblanco5.position.z += this.step;
+			else
+			  peonblanco5.position.z -= this.step;
+		      }//fin if posicion z
+		    }//fin prototype act
+		  }//fin if peonblanco5
+	          ///////////////////////////////////Peon blanco 6//////////////////////////////////////////////////////////////////
+		  if (peonblanco6.position.x===bloquerojo.position.x && peonblanco6.position.z===bloquerojo.position.z){
+		    var bvpb6=bloqueverde;//Bloqueverdetorreblanca1
+			  
+		    PeonBlanco.prototype.sense = function(environment){
+		      this.sensor.set(this.position,new THREE.Vector3(0,-1,0));
+		      var obstaculo = this.sensor.intersectObjects(bvpb6,true);
+		      if(obstaculo.length >0)
+			{this.colision = 1;this.step=0;}
+ 		      else
+		        {this.colision = 0;this.step=0.25;}
+		    }//fin prototype sense
+		
+		    PeonBlanco.prototype.act = function(environment){ 	
+		      if (this.colision!=1){
+			if(peonblanco6.position.x<bvpb6.position.x)
+			  peonblanco6.position.x += this.step;
+			else
+			  peonblanco6.position.x -= this.step;
+		      }//fin if posicion x
+		      if (this.colision!=1){
+			if(peonblanco6.position.z<bvpb6.position.z)
+			  peonblanco6.position.z += this.step;
+			else
+			  peonblanco6.position.z -= this.step;
+		      }//fin if posicion z
+		    }//fin prototype act
+		  }//fin if peonblanco6
+	          ///////////////////////////////////Peon blanco 7//////////////////////////////////////////////////////////////////
+		  if (peonblanco7.position.x===bloquerojo.position.x && peonblanco7.position.z===bloquerojo.position.z){
+		    var bvpb7=bloqueverde;//Bloqueverdetorreblanca1
+			  
+		    PeonBlanco.prototype.sense = function(environment){
+		      this.sensor.set(this.position,new THREE.Vector3(0,-1,0));
+		      var obstaculo = this.sensor.intersectObjects(bvpb7,true);
+		      if(obstaculo.length >0)
+			{this.colision = 1;this.step=0;}
+ 		      else
+		        {this.colision = 0;this.step=0.25;}
+		    }//fin prototype sense
+		
+		    PeonBlanco.prototype.act = function(environment){ 	
+		      if (this.colision!=1){
+			if(peonblanco7.position.x<bvpb7.position.x)
+			  peonblanco7.position.x += this.step;
+			else
+			  peonblanco7.position.x -= this.step;
+		      }//fin if posicion x
+		      if (this.colision!=1){
+			if(peonblanco7.position.z<bvpb7.position.z)
+			  peonblanco7.position.z += this.step;
+			else
+			  peonblanco7.position.z -= this.step;
+		      }//fin if posicion z
+		    }//fin prototype act
+		  }//fin if peonblanco7
+	          ///////////////////////////////////Peon blanco 8//////////////////////////////////////////////////////////////////
+		  if (peonblanco8.position.x===bloquerojo.position.x && peonblanco8.position.z===bloquerojo.position.z){
+		    var bvpb8=bloqueverde;//Bloqueverdetorreblanca1
+			  
+		    PeonBlanco.prototype.sense = function(environment){
+		      this.sensor.set(this.position,new THREE.Vector3(0,-1,0));
+		      var obstaculo = this.sensor.intersectObjects(bvpb8,true);
+		      if(obstaculo.length >0)
+			{this.colision = 1;this.step=0;}
+ 		      else
+		        {this.colision = 0;this.step=0.25;}
+		    }//fin prototype sense
+		
+		    PeonBlanco.prototype.act = function(environment){ 	
+		      if (this.colision!=1){
+			if(peonblanco8.position.x<bvpb8.position.x)
+			  peonblanco8.position.x += this.step;
+			else
+			  peonblanco8.position.x -= this.step;
+		      }//fin if posicion x
+		      if (this.colision!=1){
+			if(peonblanco8.position.z<bvpb8.position.z)
+			  peonblanco8.position.z += this.step;
+			else
+			  peonblanco8.position.z -= this.step;
+		      }//fin if posicion z
+		    }//fin prototype act
+		  }//fin if peonblanco8
+	          ///////////////////////////////////Peon negro 1//////////////////////////////////////////////////////////////////
+		  if (peonnegro1.position.x===bloquerojo.position.x && peonnegro1.position.z===bloquerojo.position.z){
+		    var bvpn1=bloqueverde;//Bloqueverdetorreblanca1
+			  
+		    PeonNegro.prototype.sense = function(environment){
+		      this.sensor.set(this.position,new THREE.Vector3(0,-1,0));
+		      var obstaculo = this.sensor.intersectObjects(bvpn1,true);
+		      if(obstaculo.length >0)
+			{this.colision = 1;this.step=0;}
+ 		      else
+		        {this.colision = 0;this.step=0.25;}
+		    }//fin prototype sense
+		
+		    PeonNegro.prototype.act = function(environment){ 	
+		      if (this.colision!=1){
+			if(peonnegro1.position.x<bvpn1.position.x)
+			  peonnegro1.position.x += this.step;
+			else
+			  peonnegro1.position.x -= this.step;
+		      }//fin if posicion x
+		      if (this.colision!=1){
+			if(peonnegro1.position.z<bvpn1.position.z)
+			  peonnegro1.position.z += this.step;
+			else
+			  peonnegro1.position.z -= this.step;
+		      }//fin if posicion z
+		    }//fin prototype act
+		  }//fin if peonnegro1
+	          ///////////////////////////////////Peon negro 2//////////////////////////////////////////////////////////////////
+		  if (peonnegro2.position.x===bloquerojo.position.x && peonnegro2.position.z===bloquerojo.position.z){
+		    var bvpn2=bloqueverde;//Bloqueverdetorreblanca1
+			  
+		    PeonNegro.prototype.sense = function(environment){
+		      this.sensor.set(this.position,new THREE.Vector3(0,-1,0));
+		      var obstaculo = this.sensor.intersectObjects(bvpn2,true);
+		      if(obstaculo.length >0)
+			{this.colision = 1;this.step=0;}
+ 		      else
+		        {this.colision = 0;this.step=0.25;}
+		    }//fin prototype sense
+		
+		    PeonNegro.prototype.act = function(environment){ 	
+		      if (this.colision!=1){
+			if(peonnegro2.position.x<bvpn2.position.x)
+			  peonnegro2.position.x += this.step;
+			else
+			  peonnegro2.position.x -= this.step;
+		      }//fin if posicion x
+		      if (this.colision!=1){
+			if(peonnegro2.position.z<bvpn2.position.z)
+			  peonnegro2.position.z += this.step;
+			else
+			  peonnegro2.position.z -= this.step;
+		      }//fin if posicion z
+		    }//fin prototype act
+		  }//fin if peonnegro2
+	          ///////////////////////////////////Peon negro 3//////////////////////////////////////////////////////////////////
+		  if (peonnegro3.position.x===bloquerojo.position.x && peonnegro3.position.z===bloquerojo.position.z){
+		    var bvpn3=bloqueverde;//Bloqueverdetorreblanca1
+			  
+		    PeonNegro.prototype.sense = function(environment){
+		      this.sensor.set(this.position,new THREE.Vector3(0,-1,0));
+		      var obstaculo = this.sensor.intersectObjects(bvpn3,true);
+		      if(obstaculo.length >0)
+			{this.colision = 1;this.step=0;}
+ 		      else
+		        {this.colision = 0;this.step=0.25;}
+		    }//fin prototype sense
+		
+		    PeonNegro.prototype.act = function(environment){ 	
+		      if (this.colision!=1){
+			if(peonnegro3.position.x<bvpn3.position.x)
+			  peonnegro3.position.x += this.step;
+			else
+			  peonnegro3.position.x -= this.step;
+		      }//fin if posicion x
+		      if (this.colision!=1){
+			if(peonnegro3.position.z<bvpn3.position.z)
+			  peonnegro3.position.z += this.step;
+			else
+			  peonnegro3.position.z -= this.step;
+		      }//fin if posicion z
+		    }//fin prototype act
+		  }//fin if peonnegro3
+	          ///////////////////////////////////Peon negro 4//////////////////////////////////////////////////////////////////
+		  if (peonnegro4.position.x===bloquerojo.position.x && peonnegro4.position.z===bloquerojo.position.z){
+		    var bvpn4=bloqueverde;//Bloqueverdetorreblanca1
+			  
+		    PeonNegro.prototype.sense = function(environment){
+		      this.sensor.set(this.position,new THREE.Vector3(0,-1,0));
+		      var obstaculo = this.sensor.intersectObjects(bvpn4,true);
+		      if(obstaculo.length >0)
+			{this.colision = 1;this.step=0;}
+ 		      else
+		        {this.colision = 0;this.step=0.25;}
+		    }//fin prototype sense
+		
+		    PeonNegro.prototype.act = function(environment){ 	
+		      if (this.colision!=1){
+			if(peonnegro4.position.x<bvpn4.position.x)
+			  peonnegro4.position.x += this.step;
+			else
+			  peonnegro4.position.x -= this.step;
+		      }//fin if posicion x
+		      if (this.colision!=1){
+			if(peonnegro4.position.z<bvpn4.position.z)
+			  peonnegro4.position.z += this.step;
+			else
+			  peonnegro4.position.z -= this.step;
+		      }//fin if posicion z
+		    }//fin prototype act
+		  }//fin if peonnegro4
+	          ///////////////////////////////////Peon negro 5//////////////////////////////////////////////////////////////////
+		  if (peonnegro5.position.x===bloquerojo.position.x && peonnegro5.position.z===bloquerojo.position.z){
+		    var bvpn5=bloqueverde;//Bloqueverdetorreblanca1
+			  
+		    PeonNegro.prototype.sense = function(environment){
+		      this.sensor.set(this.position,new THREE.Vector3(0,-1,0));
+		      var obstaculo = this.sensor.intersectObjects(bvpn5,true);
+		      if(obstaculo.length >0)
+			{this.colision = 1;this.step=0;}
+ 		      else
+		        {this.colision = 0;this.step=0.25;}
+		    }//fin prototype sense
+		
+		    PeonNegro.prototype.act = function(environment){ 	
+		      if (this.colision!=1){
+			if(peonnegro5.position.x<bvpn5.position.x)
+			  peonnegro5.position.x += this.step;
+			else
+			  peonnegro5.position.x -= this.step;
+		      }//fin if posicion x
+		      if (this.colision!=1){
+			if(peonnegro5.position.z<bvpn5.position.z)
+			  peonnegro5.position.z += this.step;
+			else
+			  peonnegro5.position.z -= this.step;
+		      }//fin if posicion z
+		    }//fin prototype act
+		  }//fin if peonnegro5
+	          ///////////////////////////////////Peon negro 6//////////////////////////////////////////////////////////////////
+		  if (peonnegro6.position.x===bloquerojo.position.x && peonnegro6.position.z===bloquerojo.position.z){
+		    var bvpn6=bloqueverde;//Bloqueverdetorreblanca1
+			  
+		    PeonNegro.prototype.sense = function(environment){
+		      this.sensor.set(this.position,new THREE.Vector3(0,-1,0));
+		      var obstaculo = this.sensor.intersectObjects(bvpn6,true);
+		      if(obstaculo.length >0)
+			{this.colision = 1;this.step=0;}
+ 		      else
+		        {this.colision = 0;this.step=0.25;}
+		    }//fin prototype sense
+		
+		    PeonNegro.prototype.act = function(environment){ 	
+		      if (this.colision!=1){
+			if(peonnegro6.position.x<bvpn6.position.x)
+			  peonnegro6.position.x += this.step;
+			else
+			  peonnegro6.position.x -= this.step;
+		      }//fin if posicion x
+		      if (this.colision!=1){
+			if(peonnegro6.position.z<bvpn6.position.z)
+			  peonnegro6.position.z += this.step;
+			else
+			  peonnegro6.position.z -= this.step;
+		      }//fin if posicion z
+		    }//fin prototype act
+		  }//fin if peonnegro6
+	          ///////////////////////////////////Peon negro 7/////////////////////////////////////////////////////////////////
+		  if (peonnegro7.position.x===bloquerojo.position.x && peonnegro7.position.z===bloquerojo.position.z){
+		    var bvpn7=bloqueverde;//Bloqueverdetorreblanca1
+			  
+		    PeonNegro.prototype.sense = function(environment){
+		      this.sensor.set(this.position,new THREE.Vector3(0,-1,0));
+		      var obstaculo = this.sensor.intersectObjects(bvpn7,true);
+		      if(obstaculo.length >0)
+			{this.colision = 1;this.step=0;}
+ 		      else
+		        {this.colision = 0;this.step=0.25;}
+		    }//fin prototype sense
+		
+		    PeonNegro.prototype.act = function(environment){ 	
+		      if (this.colision!=1){
+			if(peonnegro7.position.x<bvpn7.position.x)
+			  peonnegro7.position.x += this.step;
+			else
+			  peonnegro7.position.x -= this.step;
+		      }//fin if posicion x
+		      if (this.colision!=1){
+			if(peonnegro7.position.z<bvpn7.position.z)
+			  peonnegro7.position.z += this.step;
+			else
+			  peonnegro7.position.z -= this.step;
+		      }//fin if posicion z
+		    }//fin prototype act
+		  }//fin if peonnegro7
+	          ///////////////////////////////////Peon negro 8//////////////////////////////////////////////////////////////////
+		  if (peonnegro8.position.x===bloquerojo.position.x && peonnegro8.position.z===bloquerojo.position.z){
+		    var bvpn8=bloqueverde;//Bloqueverdetorreblanca1
+			  
+		    PeonNegro.prototype.sense = function(environment){
+		      this.sensor.set(this.position,new THREE.Vector3(0,-1,0));
+		      var obstaculo = this.sensor.intersectObjects(bvpn8,true);
+		      if(obstaculo.length >0)
+			{this.colision = 1;this.step=0;}
+ 		      else
+		        {this.colision = 0;this.step=0.25;}
+		    }//fin prototype sense
+		
+		    PeonNegro.prototype.act = function(environment){ 	
+		      if (this.colision!=1){
+			if(peonnegro8.position.x<bvpn8.position.x)
+			  peonnegro8.position.x += this.step;
+			else
+			  peonnegro8.position.x -= this.step;
+		      }//fin if posicion x
+		      if (this.colision!=1){
+			if(peonnegro8.position.z<bvpn8.position.z)
+			  peonnegro8.position.z += this.step;
+			else
+			  peonnegro8.position.z -= this.step;
+		      }//fin if posicion z
+		    }//fin prototype act
+		  }//fin if peonnegro8
                 bandera=0;
 		}//fin if bandera
 ////////////////////////////////////////Movimientos de piezas/////////////////////////////////////////////////////////////////////////
