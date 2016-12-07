@@ -148,6 +148,35 @@ function AlfilNegro(x=0,y=0,z=0){
 
 AlfilBlanco.prototype = new Agent();
 AlfilNegro.prototype = new Agent();
+//////////////////////////////////////////Reinas//////////////////////////////////////////////////////////////////////////////
+function ReinaBlanca(x=0,y=0,z=0){
+  Agent.call(this,x,y,z);
+  var textura1 = new THREE.TextureLoader().load('marmolblanco.jpg');
+  var marmolblanco = new THREE.MeshLambertMaterial({map:textura1});
+  this.actuator = new THREE.Mesh(reinafinal10,marmolblanco);
+  this.actuator.commands = [];
+  this.add(this.actuator);
+  this.position.y=y;
+  this.position.z=z;
+  this.position.x=x;
+  this.sensor = new Sensor();
+}
+
+function ReinaNegra(x=0,y=0,z=0){
+  Agent.call(this,x,y,z);
+  var textura2 = new THREE.TextureLoader().load('marmolnegro.jpg');
+  var marmolnegro = new THREE.MeshLambertMaterial({map:textura2});
+  this.actuator = new THREE.Mesh(reinafinal10,marmolnegro);
+  this.actuator.commands = [];
+  this.add(this.actuator);
+  this.position.y=y;
+  this.position.z=z;
+  this.position.x=x;
+  this.sensor = new Sensor();
+}
+
+ReinaBlanca.prototype = new Agent();
+ReinaNegra.prototype = new Agent();
 ///////////////////////////////////////Bloque Azul////////////////////////////////////////////////////////////////////////////////////
 function BloqueAzul(x=0,y=0,z=0){
   Agent.call(this,x,y,z);
@@ -1000,6 +1029,11 @@ function init() {
   alfilnegro2 = new AlfilNegro(80,4.5,-60);
 	
   escena.add(alfilblanco1,alfilblanco2,alfilnegro1,alfilnegro2);
+  ////////////////////////////////////////////Reinas/////////////////////////////////////////////////////////////////
+  reinablanca1 = new ReinaBlanca(10,4.5,-40);
+  reinanegra1 = new ReinaNegra(80,4.5,-40);
+	
+  escena.add(reinablanca,reinanegra);
   /////////////////////////////////////////Bloques////////////////////////////////////////////////////////////////////
   bloqueazul = new BloqueAzul(10,0,-10);
   escena.add(grupo,grupo2,grupo3,bloqueazul);
