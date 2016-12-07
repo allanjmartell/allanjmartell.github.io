@@ -64,9 +64,9 @@ Sensor.prototype = new THREE.Raycaster();
 //////////////////////////////////////////////Torres////////////////////////////////////////////////////////////////////////////////////
 function TorreBlanca(x=0,y=0,z=0){
   Agent.call(this,x,y,z);
-  var textura1 = new THREE.TextureLoader().load('marmolblanco.jpg');
-  var marmolblanco = new THREE.MeshLambertMaterial({map:textura1});
-  this.actuator = new THREE.Mesh(torrefinal11,marmolblanco);
+  var textura1 = new THREE.TextureLoader().load('maderablanca.jpg');
+  var maderablanca = new THREE.MeshLambertMaterial({map:textura1});
+  this.actuator = new THREE.Mesh(torrefinal11,maderablanca);
   this.actuator.commands = [];
   this.add(this.actuator);
   this.position.y=y;//5;
@@ -78,8 +78,8 @@ function TorreBlanca(x=0,y=0,z=0){
 function TorreNegra(x=0,y=0,z=0){
   Agent.call(this,x,y,z);
   var textura2 = new THREE.TextureLoader().load('maderanegra.jpg');
-  var marmolnegro = new THREE.MeshLambertMaterial({map:textura2});
-  this.actuator = new THREE.Mesh(torrefinal11,marmolnegro);
+  var maderanegra = new THREE.MeshLambertMaterial({map:textura2});
+  this.actuator = new THREE.Mesh(torrefinal11,maderanegra);
   this.actuator.commands = [];
   this.add(this.actuator);
   this.position.y=y;
@@ -93,9 +93,9 @@ TorreNegra.prototype = new Agent();
 ///////////////////////////////////////Peones//////////////////////////////////////////////////////////////////////////////////////////
 function PeonBlanco(x=0,y=0,z=0){
   Agent.call(this,x,y,z);
-  var textura1 = new THREE.TextureLoader().load('marmolblanco.jpg');
-  var marmolblanco = new THREE.MeshLambertMaterial({map:textura1});
-  this.actuator = new THREE.Mesh(peonfinal4,marmolblanco);
+  var textura1 = new THREE.TextureLoader().load('maderablanca.jpg');
+  var maderablanca = new THREE.MeshLambertMaterial({map:textura1});
+  this.actuator = new THREE.Mesh(peonfinal4,maderablanca);
   this.actuator.commands = [];
   this.add(this.actuator);
   this.position.y=y;
@@ -107,8 +107,8 @@ function PeonBlanco(x=0,y=0,z=0){
 function PeonNegro(x=0,y=0,z=0){
   Agent.call(this,x,y,z);
   var textura2 = new THREE.TextureLoader().load('maderanegra.jpg');
-  var marmolnegro = new THREE.MeshLambertMaterial({map:textura2});
-  this.actuator = new THREE.Mesh(peonfinal4,marmolnegro);
+  var maderanegra = new THREE.MeshLambertMaterial({map:textura2});
+  this.actuator = new THREE.Mesh(peonfinal4,maderanegra);
   this.actuator.commands = [];
   this.add(this.actuator);
   this.position.y=y;
@@ -123,9 +123,9 @@ PeonNegro.prototype = new Agent();
 ///////////////////////////////////////Alfiles//////////////////////////////////////////////////////////////////////////////////////
 function AlfilBlanco(x=0,y=0,z=0){
   Agent.call(this,x,y,z);
-  var textura1 = new THREE.TextureLoader().load('marmolblanco.jpg');
-  var marmolblanco = new THREE.MeshLambertMaterial({map:textura1});
-  this.actuator = new THREE.Mesh(alfilfinal8,marmolblanco);
+  var textura1 = new THREE.TextureLoader().load('maderablanca.jpg');
+  var maderablanca = new THREE.MeshLambertMaterial({map:textura1});
+  this.actuator = new THREE.Mesh(alfilfinal8,maderablanca);
   this.actuator.commands = [];
   this.add(this.actuator);
   this.position.y=y;
@@ -137,8 +137,8 @@ function AlfilBlanco(x=0,y=0,z=0){
 function AlfilNegro(x=0,y=0,z=0){
   Agent.call(this,x,y,z);
   var textura2 = new THREE.TextureLoader().load('maderanegra.jpg');
-  var marmolnegro = new THREE.MeshLambertMaterial({map:textura2});
-  this.actuator = new THREE.Mesh(alfilfinal8,marmolnegro);
+  var maderanegra = new THREE.MeshLambertMaterial({map:textura2});
+  this.actuator = new THREE.Mesh(alfilfinal8,maderanegra);
   this.actuator.commands = [];
   this.add(this.actuator);
   this.position.y=y;
@@ -152,9 +152,9 @@ AlfilNegro.prototype = new Agent();
 //////////////////////////////////////////Reinas//////////////////////////////////////////////////////////////////////////////
 function ReinaBlanca(x=0,y=0,z=0){
   Agent.call(this,x,y,z);
-  var textura1 = new THREE.TextureLoader().load('marmolblanco.jpg');
-  var marmolblanco = new THREE.MeshLambertMaterial({map:textura1});
-  this.actuator = new THREE.Mesh(reinafinal10,marmolblanco);
+  var textura1 = new THREE.TextureLoader().load('maderablanca.jpg');
+  var maderablanca = new THREE.MeshLambertMaterial({map:textura1});
+  this.actuator = new THREE.Mesh(reinafinal10,maderablanca);
   this.actuator.commands = [];
   this.add(this.actuator);
   this.position.y=y;
@@ -166,8 +166,8 @@ function ReinaBlanca(x=0,y=0,z=0){
 function ReinaNegra(x=0,y=0,z=0){
   Agent.call(this,x,y,z);
   var textura2 = new THREE.TextureLoader().load('maderanegra.jpg');
-  var marmolnegro = new THREE.MeshLambertMaterial({map:textura2});
-  this.actuator = new THREE.Mesh(reinafinal10,marmolnegro);
+  var maderanegra = new THREE.MeshLambertMaterial({map:textura2});
+  this.actuator = new THREE.Mesh(reinafinal10,maderanegra);
   this.actuator.commands = [];
   this.add(this.actuator);
   this.position.y=y;
