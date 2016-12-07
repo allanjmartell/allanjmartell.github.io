@@ -107,7 +107,7 @@ function PeonBlanco(x=0,y=0,z=0){
     //malla.commands = [];  
   };
   this.loader.load( "peon2.js", createMesh );
-  this.add(this.loader);
+  escena.add(this.loader);
   this.loader.commands = [];
   this.position.x=x;
   this.position.y=y;
