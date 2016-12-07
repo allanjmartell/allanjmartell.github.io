@@ -40,16 +40,16 @@ peonfinal4.merge(mpeonfinal3.geometry,mpeonfinal3.matrix);
 var material= new THREE.MeshNormalMaterial();
 var peon= new THREE.Mesh(peonfinal4,material);
 
-var escena,camara,renderizador;
-escena = new THREE.Scene();
-escena.rotateX(Math.PI/4);
+//var escena,camara,renderizador;
+//escena = new THREE.Scene();
+//escena.rotateX(Math.PI/4);
 //Camara
-camara = new THREE.PerspectiveCamera();
-camara.position.z=30;
+//camara = new THREE.PerspectiveCamera();
+//camara.position.z=30;
  
-escena.add(peon);
+//escena.add(peon);
   
-renderizador = new THREE.WebGLRenderer();
-renderizador.setSize( window.innerHeight*.95, window.innerHeight*.95 );
-document.body.appendChild(renderizador.domElement);
-renderizador.render(escena,camara);
+//renderizador = new THREE.WebGLRenderer();
+//renderizador.setSize( window.innerHeight*.95, window.innerHeight*.95 );
+//document.body.appendChild(renderizador.domElement);
+//renderizador.render(escena,camara);
