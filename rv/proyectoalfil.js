@@ -1,12 +1,12 @@
-var base = new THREE.CylinderGeometry(5,5,2.5,10);
-base.translate(0,0,0);
+var base = new THREE.CylinderGeometry(5,5,3,10);
 var material = new THREE.MeshNormalMaterial();
 
 var columna1 = new THREE.CylinderGeometry(3.5,4,1.5);
-columna1.translate(0,2.5,0);
+columna1.translate(0,1.5,0);
 
 var toroide1 = new THREE.TorusGeometry(3.5,1,10,10);
 toroide1.translate(0,4,0);
+toroide1.rotateX(Math.PI/2);
 
 
 var mbase = new THREE.Mesh(base);
