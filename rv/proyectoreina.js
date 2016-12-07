@@ -18,7 +18,7 @@ var toroide2 = new THREE.TorusGeometry(2,.35,50,50);
 toroide2.rotateX(Math.PI/2);
 toroide2.translate(0,15.6,0);
 
-var toroide3 = new THREE.TorusGeometry(1.5,.3,50,50);
+var toroide3 = new THREE.TorusGeometry(1.75,.35,50,50);
 toroide3.rotateX(Math.PI/2);
 toroide3.translate(0,15.8,0);
 
