@@ -105,10 +105,10 @@ function PeonBlanco(x=0,y=0,z=0){
     malla.position.z=z;
     escena.add(malla);
     malla.commands = [];
-    this.sensor = new Sensor();
+    
   };
   loader.load( "peon2.js", createMesh );
-
+  this.sensor = new Sensor();
 }
 
 PeonBlanco.prototype = new Agent();
