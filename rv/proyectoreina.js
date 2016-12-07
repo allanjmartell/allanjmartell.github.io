@@ -26,8 +26,8 @@ var corona1 = new THREE.CylinderGeometry(2,1.5,3,50);
 corona1.translate(0,17,0);
 
 var points = [];
-for ( var i = 0; i < 10; i ++ ) {
-	points.push( new THREE.Vector2( Math.sin( i * 0.2 ) * 10 + 5, ( i - 5 ) * 2 ) );
+for ( var i = 0; i < 360; i ++ ) {
+	points.push( new THREE.Vector2( Math.sin( i * 0.2 ), ( i - 5 ) * 2 ) );
 }
 var corona2 = new THREE.LatheGeometry(points,50);
 corona2.translate(0,18.5,0);
