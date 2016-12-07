@@ -4,7 +4,7 @@ var material = new THREE.MeshNormalMaterial();
 var columna1 = new THREE.CylinderGeometry(3.5,4,2,10);
 columna1.translate(0,2.5,0);
 
-var toroide1 = new THREE.TorusGeometry(2,.5,10,10);
+var toroide1 = new THREE.TorusGeometry(4,.5,10,10);
 toroide1.rotateX(Math.PI/2);
 toroide1.translate(0,3.5,0);
 
