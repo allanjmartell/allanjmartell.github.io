@@ -92,7 +92,6 @@ TorreNegra.prototype = new Agent();
 ///////////////////////////////////////Peones//////////////////////////////////////////////////////////////////////////////////////////
 function PeonBlanco(x=0,y=0,z=0){
   Agent.call(this,x,y,z);
-  this=this;
   var textura1 = new THREE.TextureLoader().load('marmolblanco.jpg');
   var marmolblanco = new THREE.MeshLambertMaterial({map:textura1});
   var loader = new THREE.JSONLoader();
@@ -105,19 +104,11 @@ function PeonBlanco(x=0,y=0,z=0){
     malla.position.y=y;
     malla.position.z=z;
     escena.add(malla);
+    malla.commands = [];
+    malla.sensor = new Sensor();
   };
-  this.actuator = loader.load( "peon2.js", createMesh );
-  //this.actuator.commands = [];
-  this.position.x=malla.position.x;
-  this.position.y=malla.position.y;
-  this.position.z=malla.position.z;
-  this.sensor = new Sensor();
-//var loader = new THREE.JSONLoader();
-//var model = loader.load( "scripts/model.json", addModel ); //model is undefined
-//model.position.x = 100;
-//model.position.y = 100;
-//model.position.x = 100;
-//scene.add(model);
+  loader.load( "peon2.js", createMesh );
+
 }
 
 PeonBlanco.prototype = new Agent();
