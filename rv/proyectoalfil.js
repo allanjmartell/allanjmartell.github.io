@@ -1,18 +1,18 @@
-var base = new THREE.CylinderGeometry(5,5,3,10);
+var base = new THREE.CylinderGeometry(5,5,3,50);
 var material = new THREE.MeshNormalMaterial();
 
-var columna1 = new THREE.CylinderGeometry(3.5,4,2,10);
+var columna1 = new THREE.CylinderGeometry(3.5,4,2,50);
 columna1.translate(0,2.5,0);
 
 var toroide1 = new THREE.TorusGeometry(3.5,.5,50,50);
 toroide1.rotateX(Math.PI/2);
 toroide1.translate(0,3.5,0);
 
-var columna2 = new THREE.CylinderGeometry(2.5,3.5,8,10);
+var columna2 = new THREE.CylinderGeometry(2.5,3.5,8,50);
 columna2.translate(0,7.5,0);
 
-var basetecho = new THREE.CylinderGeometry(2.5,4,2,10);
-basetecho.translate(0,8.5,0);
+var basetecho = new THREE.CylinderGeometry(2.5,4,2,50);
+basetecho.translate(0,12.5,0);
 //Mallas
 var mbase = new THREE.Mesh(base);
 var mcolumna1 = new THREE.Mesh(columna1);
