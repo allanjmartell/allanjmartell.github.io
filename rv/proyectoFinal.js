@@ -142,10 +142,11 @@ function PeonNegro(x=0,y=0,z=0){
   loader.load( "peon2.js", createMesh );
   this.sensor = new Sensor();
   MallaPeon.prototype = new Agent();
+  mpeonblanco1 = new MallaPeon(20,4.5,-10);
 }
 
 PeonBlanco.prototype = new AgentPieza();
-mpeonblanco1 = new MallaPeon(20,4.5,-10);
+
 peonblanco1 = new PeonBlanco("peon2.js");
 PeonNegro.prototype = new Agent();
 ///////////////////////////////////////Alfiles//////////////////////////////////////////////////////////////////////////////////////
