@@ -350,10 +350,10 @@ BloqueAzul.prototype.act = function(environment){
 		       bloquemorado = new BloqueMorado(i*10,0,bloquerojo.position.z);
 		       grupomorado.add(bloquemorado);
 		     }
-		     escena.add(grupomorado);  
-		     bloqueverde = new BloqueVerde(bloquerojo.position.x,0,bloquerojo.position.z);
-		     escena.add(bloqueverde);
-		     bandera=1;	
+		     //escena.add(grupomorado);  
+		     //bloqueverde = new BloqueVerde(bloquerojo.position.x,0,bloquerojo.position.z);
+		     //escena.add(bloqueverde);
+		     //bandera=1;	
 		   }//fin if Torres
                    /////////////////////////////////Peones////////////////////////////////////////////////////////////////////////
 		   if (peonblanco1.position.x===bloquerojo.position.x && peonblanco1.position.z===bloquerojo.position.z){
@@ -361,6 +361,10 @@ BloqueAzul.prototype.act = function(environment){
 		     bloquemorado = new BloqueMorado(bloquerojo.position.x+10,0,bloquerojo.position.z);
 		     grupomorado.add(bloquemorado);
 		   }//fin if Peones
+		escena.add(grupomorado);  
+	        bloqueverde = new BloqueVerde(bloquerojo.position.x,0,bloquerojo.position.z);
+		escena.add(bloqueverde);
+		bandera=1;	
 		}//fin else
         break;
 	}//fin switch
