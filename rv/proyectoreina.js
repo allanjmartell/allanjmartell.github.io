@@ -26,10 +26,10 @@ var corona1 = new THREE.CylinderGeometry(2,1.5,3,50);
 corona1.translate(0,17,0);
 
 var points = [];
-for ( var i = 0; i < 4; i ++ ) {
+for ( var i = 0; i < 5; i ++ ) {
 	points.push( new THREE.Vector2( Math.sin( i * 0.2 ), ( i-5  ) ));
 }
-var corona2 = new THREE.LatheGeometry(points,50);
+var corona2 = new THREE.LatheGeometry(points);
 corona2.translate(0,18.5,0);
 //Mallas
 var mbase = new THREE.Mesh(base);
@@ -103,7 +103,7 @@ escena.add(malfilfinal9);
 escena.rotateX(Math.PI/6);
 
 var camara=new THREE.PerspectiveCamera();
-camara.position.z=50;
+camara.position.z=55;
 
 var renderizador=new THREE.WebGLRenderer();
 renderizador.setSize(window.innerHeight*.95,window.innerHeight*.95);
