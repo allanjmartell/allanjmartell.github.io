@@ -124,7 +124,7 @@ function AlfilBlanco(x=0,y=0,z=0){
   Agent.call(this,x,y,z);
   var textura1 = new THREE.TextureLoader().load('marmolblanco.jpg');
   var marmolblanco = new THREE.MeshLambertMaterial({map:textura1});
-  this.actuator = new THREE.Mesh(malfilfinal8,marmolblanco);
+  this.actuator = new THREE.Mesh(alfilfinal8,marmolblanco);
   this.actuator.commands = [];
   this.add(this.actuator);
   this.position.y=y;
@@ -137,7 +137,7 @@ function AlfilNegro(x=0,y=0,z=0){
   Agent.call(this,x,y,z);
   var textura2 = new THREE.TextureLoader().load('marmolnegro.jpg');
   var marmolnegro = new THREE.MeshLambertMaterial({map:textura2});
-  this.actuator = new THREE.Mesh(malfilfinal8,marmolnegro);
+  this.actuator = new THREE.Mesh(alfilfinal8,marmolnegro);
   this.actuator.commands = [];
   this.add(this.actuator);
   this.position.y=y;
