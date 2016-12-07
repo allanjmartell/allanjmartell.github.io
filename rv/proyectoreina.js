@@ -66,7 +66,7 @@ var reinafinal4 = new THREE.Geometry();
 reinafinal4.merge(mreinafinal3.geometry,mreinafinal3.matrix);
 reinafinal4.merge(mcolumna2.geometry,mcolumna2.matrix);
 
-var malfilfinal4 = new THREE.Mesh(reinafinal4);
+var mreinafinal4 = new THREE.Mesh(reinafinal4);
 
 var reinafinal5 = new THREE.Geometry();
 reinafinal5.merge(mreinafinal4.geometry,mreinafinal4.matrix);
