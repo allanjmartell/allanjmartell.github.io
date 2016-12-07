@@ -83,14 +83,14 @@ alfilfinal8.merge(mbola2.geometry,mbola2.matrix);
 
 var malfilfinal8 = new THREE.Mesh(alfilfinal8,material);
 
-var escena=new THREE.Scene();
-escena.add(malfilfinal8);
-escena.rotateX(Math.PI/6);
+//var escena=new THREE.Scene();
+//escena.add(malfilfinal8);
+//escena.rotateX(Math.PI/6);
 
-var camara=new THREE.PerspectiveCamera();
-camara.position.z=45;
+//var camara=new THREE.PerspectiveCamera();
+//camara.position.z=45;
 
-var renderizador=new THREE.WebGLRenderer();
-renderizador.setSize(window.innerHeight*.95,window.innerHeight*.95);
-document.body.appendChild(renderizador.domElement);
-renderizador.render(escena,camara);
+//var renderizador=new THREE.WebGLRenderer();
+//renderizador.setSize(window.innerHeight*.95,window.innerHeight*.95);
+//document.body.appendChild(renderizador.domElement);
+//renderizador.render(escena,camara);
