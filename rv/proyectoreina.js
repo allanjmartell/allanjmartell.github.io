@@ -11,7 +11,7 @@ toroide1.translate(0,3.5,0);
 var columna2 = new THREE.CylinderGeometry(2.5,3.5,10,50);
 columna2.translate(0,8.5,0);
 
-var btecho = new THREE.CylinderGeometry(2,3.5,2,50);
+var btecho = new THREE.CylinderGeometry(2,3,2,50);
 btecho.translate(0,14.5,0);
 
 var toroide2 = new THREE.TorusGeometry(2,.35,50,50);
@@ -22,7 +22,7 @@ var toroide3 = new THREE.TorusGeometry(1.75,.35,50,50);
 toroide3.rotateX(Math.PI/2);
 toroide3.translate(0,15.8,0);
 
-var corona1 = new THREE.CylinderGeometry(2,1.25,4,50);
+var corona1 = new THREE.CylinderGeometry(2,1.5,4,50);
 corona1.translate(0,17.5,0);
 
 //Mallas
