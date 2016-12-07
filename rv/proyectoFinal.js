@@ -92,21 +92,29 @@ TorreNegra.prototype = new Agent();
 ///////////////////////////////////////Peones//////////////////////////////////////////////////////////////////////////////////////////
 function PeonBlanco(x=0,y=0,z=0){
   Agent.call(this,x,y,z);
-  var loader = new THREE.JSONLoader();
-  var createMesh = function( geometry )
-  {
-    var textura1 = new THREE.TextureLoader().load('marmolblanco.jpg');
-    var marmolblanco = new THREE.MeshLambertMaterial({map:textura1});
-    this.actuator = new THREE.Mesh( geometry, marmolblanco);
-    this.actuator.overdraw = true;
-    this.actuator.commands = [];
-    this.actuator.position.x=x;
-    this.actuator.position.y=y;
-    this.actuator.position.z=z;
-    escena.add( this.actuator );
-    
-  };	
-  loader.load( "peon2.js", createMesh );
+//var loader = new THREE.JSONLoader();
+//  var createMesh = function( geometry )
+//  {
+//    var textura1 = new THREE.TextureLoader().load('marmolblanco.jpg');
+//    var marmolblanco = new THREE.MeshLambertMaterial({map:textura1});
+//    this.actuator = new THREE.Mesh( geometry, marmolblanco);
+//    this.actuator.overdraw = true;
+//    this.actuator.commands = [];
+//    this.actuator.position.x=x;
+//    this.actuator.position.y=y;
+//    this.actuator.position.z=z;
+//    escena.add( this.actuator );};
+//loader.load( "peon2.js", createMesh );
+  var textura1 = new THREE.TextureLoader().load('marmolblanco.jpg');
+  var marmolblanco = new THREE.MeshLambertMaterial({map:textura1});  
+  var geometria = new THREE.JSONLoader().load("peon2.js");
+  this.actuator = new THREE.Mesh(geometria,marmolblanco);
+  this.actuator.overdraw = true;
+  this.actuator.commands = [];
+  this.add(this.actuator);
+  this.actuator.position.x=x;
+  this.actuator.position.y=y;
+  this.actuator.position.z=z;
   this.sensor = new Sensor();
 }
 
@@ -492,6 +500,7 @@ function init() {
   bloqueazul = new BloqueAzul(10,0,-10);
   escena.add(grupo,grupo2,grupo3,bloqueazul);
   escena.add(torreblanca1,torreblanca2,torrenegra1,torrenegra2);
+  escena.add(peonblanco1);
   //Luces
   escena.add(luzblan,luzblan2,luzblan3);
   escena.rotateX(Math.PI/4);
