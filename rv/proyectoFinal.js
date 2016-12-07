@@ -113,11 +113,12 @@ this.actuator.load("peon2.js",function (geometry, textura1) {
     var object = new THREE.Mesh(geometry, marmolblanco );
     //escena.add( object );
   });
+  this.add(this.actuator);
   this.actuator.commands = [];
   this.actuator.position.x=x;
   this.actuator.position.y=y;
   this.actuator.position.z=z;
-  escena.add(this.actuator);
+  //escena.add(this.actuator);
   this.sensor = new Sensor();
 }
 
