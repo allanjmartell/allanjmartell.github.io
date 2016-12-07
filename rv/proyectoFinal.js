@@ -104,10 +104,10 @@ function PeonBlanco(x=0,y=0,z=0){
     this.actuator.position.y=y;
     this.actuator.position.z=z;
     escena.add( this.actuator );
-    this.sensor = new Sensor();
+    
   };	
   loader.load( "peon2.js", createMesh );
-
+  this.sensor = new Sensor();
 }
 
 PeonBlanco.prototype = new Agent();
@@ -304,6 +304,7 @@ BloqueAzul.prototype.act = function(environment){
 	          ///////////////////////////////////Peon blanco 1//////////////////////////////////////////////////////////////////
 		  if (peonblanco1.position.x===bloquerojo.position.x && peonblanco1.position.z===bloquerojo.position.z){
 		    var bvpb1=bloqueverde;//Bloqueverdetorreblanca1
+			  
 		    PeonBlanco.prototype.sense = function(environment){
 		      this.sensor.set(this.position,new THREE.Vector3(0,-1,0));
 		      var obstaculo = this.sensor.intersectObjects(bvpb1,true);
