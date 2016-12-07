@@ -23,6 +23,7 @@ toroide3.rotateX(Math.PI/2);
 toroide3.translate(0,15.8,0);
 
 var corona1 = new THREE.CylinderGeometry(2,1.5,3,50);
+corona1.rotateX(Math.PI);
 corona1.translate(0,17,0);
 
 var points = [];
