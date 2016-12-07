@@ -356,7 +356,14 @@ BloqueAzul.prototype.act = function(environment){
 		     //bandera=1;	
 		   }//fin if Torres
                    /////////////////////////////////Peones////////////////////////////////////////////////////////////////////////
-		   if (peonblanco1.position.x===bloquerojo.position.x && peonblanco1.position.z===bloquerojo.position.z){
+		   if ((((((((peonblanco1.position.x===bloquerojo.position.x && peonblanco1.position.z===bloquerojo.position.z)||
+			     (peonblanco2.position.x===bloquerojo.position.x && peonblanco2.position.z===bloquerojo.position.z))||
+			     (peonblanco3.position.x===bloquerojo.position.x && peonblanco3.position.z===bloquerojo.position.z))||
+			     (peonblanco4.position.x===bloquerojo.position.x && peonblanco4.position.z===bloquerojo.position.z))||
+			     (peonblanco5.position.x===bloquerojo.position.x && peonblanco5.position.z===bloquerojo.position.z))||
+			     (peonblanco6.position.x===bloquerojo.position.x && peonblanco6.position.z===bloquerojo.position.z))||
+			     (peonblanco7.position.x===bloquerojo.position.x && peonblanco7.position.z===bloquerojo.position.z))||
+		             (peonblanco8.position.x===bloquerojo.position.x && peonblanco8.position.z===bloquerojo.position.z)){
 		     grupomorado = new THREE.Group();
 		     bloquemorado = new BloqueMorado(bloquerojo.position.x+10,0,bloquerojo.position.z);
 		     grupomorado.add(bloquemorado);
@@ -499,6 +506,14 @@ function init() {
   torrenegra2 = new TorreNegra(80,5,-80);
   /////////////////////////////////////////Peones/////////////////////////////////////////////////////////////////
   peonblanco1 = new PeonBlanco(20,4.5,-10);
+  peonblanco2 = new PeonBlanco(20,4.5,-20);
+  peonblanco3 = new PeonBlanco(20,4.5,-30);
+  peonblanco4 = new PeonBlanco(20,4.5,-40);
+  peonblanco5 = new PeonBlanco(20,4.5,-50);
+  peonblanco6 = new PeonBlanco(20,4.5,-60);
+  peonblanco7 = new PeonBlanco(20,4.5,-70);
+  peonblanco8 = new PeonBlanco(20,4.5,-80);
+	
   /////////////////////////////////////////Bloques////////////////////////////////////////////////////////////////////
   bloqueazul = new BloqueAzul(10,0,-10);
   escena.add(grupo,grupo2,grupo3,bloqueazul);
