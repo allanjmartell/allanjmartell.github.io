@@ -18,6 +18,10 @@ var toroide2 = new THREE.TorusGeometry(2,.35,50,50);
 toroide2.rotateX(Math.PI/2);
 toroide2.translate(0,15.6,0);
 
+var toroide3 = new THREE.TorusGeometry(1.5,.3,50,50);
+toroide3.rotateX(Math.PI/2);
+toroide3.translate(0,15.8,0);
+
 //Mallas
 var mbase = new THREE.Mesh(base);
 var mcolumna1 = new THREE.Mesh(columna1);
@@ -25,6 +29,7 @@ var mtoroide1 = new THREE.Mesh(toroide1);
 var mcolumna2 = new THREE.Mesh(columna2);
 var mbtecho = new THREE.Mesh(btecho);
 var mtoroide2 = new THREE.Mesh(toroide2);
+var mtoroide3 = new THREE.Mesh(toroide3);
 
 //Cuerpo completo
 
@@ -62,10 +67,16 @@ var alfilfinal6 = new THREE.Geometry();
 alfilfinal6.merge(malfilfinal5.geometry,malfilfinal5.matrix);
 alfilfinal6.merge(mtoroide2.geometry,mtoroide2.matrix);
 
-var malfilfinal6 = new THREE.Mesh(alfilfinal6,material);
+var malfilfinal6 = new THREE.Mesh(alfilfinal6);
+
+var alfilfinal7 = new THREE.Geometry();
+alfilfinal7.merge(malfilfinal6.geometry,malfilfinal6.matrix);
+alfilfinal7.merge(mtoroide3.geometry,mtoroide3.matrix);
+
+var malfilfinal7 = new THREE.Mesh(alfilfinal7,material);
 
 var escena=new THREE.Scene();
-escena.add(malfilfinal6);
+escena.add(malfilfinal7);
 escena.rotateX(Math.PI/6);
 
 var camara=new THREE.PerspectiveCamera();
