@@ -115,7 +115,7 @@ function PeonBlanco(x=0,y=0,z=0){
   };
   this.actuator.load( "peon2.js", createMesh );
   this.actuator.commands = [];
-  this.add(this.actuator);
+  escena.add(this.actuator);
   this.sensor = new Sensor();
 }
 
