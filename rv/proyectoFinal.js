@@ -92,33 +92,25 @@ TorreNegra.prototype = new Agent();
 ///////////////////////////////////////Peones//////////////////////////////////////////////////////////////////////////////////////////
 function PeonBlanco(x=0,y=0,z=0){
   Agent.call(this,x,y,z);
-//var loader = new THREE.JSONLoader();
-//  var createMesh = function( geometry )
-//  {
-//    var textura1 = new THREE.TextureLoader().load('marmolblanco.jpg');
-//    var marmolblanco = new THREE.MeshLambertMaterial({map:textura1});
-//    this.actuator = new THREE.Mesh( geometry, marmolblanco);
+  this.actuator = new THREE.JSONLoader();
+  var createMesh = function( geometry )
+  {
+    var textura1 = new THREE.TextureLoader().load('marmolblanco.jpg');
+    var marmolblanco = new THREE.MeshLambertMaterial({map:textura1});
+    var malla = new THREE.Mesh( geometry, marmolblanco);
 //    this.actuator.overdraw = true;
 //    this.actuator.commands = [];
-//    this.actuator.position.x=x;
-//    this.actuator.position.y=y;
-//    this.actuator.position.z=z;
-//    escena.add( this.actuator );};
-//loader.load( "peon2.js", createMesh );
-this.actuator = new THREE.JSONLoader();
-var textura1 = new THREE.TextureLoader().load('marmolblanco.jpg');
-// load a resource
-this.actuator.load("peon2.js",function (geometry, textura1) {
-    var marmolblanco = new THREE.MeshLambertMaterial({map:textura1});
-    var object = new THREE.Mesh(geometry, marmolblanco );
-    //escena.add( object );
-  });
+    malla.position.x=x;
+    malla.actuator.position.y=y;
+    malla.actuator.position.z=z;
+//    escena.add( this.actuator );
+};
+  this.actuator.load( "peon2.js", createMesh );
   this.add(this.actuator);
   this.actuator.commands = [];
-  this.actuator.position.x=x;
-  this.actuator.position.y=y;
-  this.actuator.position.z=z;
-  //escena.add(this.actuator);
+  //this.actuator.position.x=x;
+  //this.actuator.position.y=y;
+  //this.actuator.position.z=z;
   this.sensor = new Sensor();
 }
 
