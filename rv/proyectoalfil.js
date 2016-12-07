@@ -48,7 +48,7 @@ alfilfinal2.merge(mcolumna1.geometry,mcolumna1.matrix);
 var malfilfinal2 = new THREE.Mesh(alfilfinal2);
 
 var alfilfinal3 = new THREE.Geometry();
-alfilfinal3.merge(malfilfinal2.geometry,malfilfinal.matrix);
+alfilfinal3.merge(malfilfinal2.geometry,malfilfinal2.matrix);
 alfilfinal3.merge(mtoroide1.geometry,mtoroide1.matrix);
 
 var malfilfinal3 = new THREE.Mesh(alfilfinal3);
