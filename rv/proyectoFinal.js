@@ -1031,8 +1031,8 @@ function init() {
 	
   escena.add(alfilblanco1,alfilblanco2,alfilnegro1,alfilnegro2);
   ////////////////////////////////////////////Reinas/////////////////////////////////////////////////////////////////
-  reinablanca1 = new ReinaBlanca(10,4.5,-40);
-  reinanegra1 = new ReinaNegra(80,4.5,-40);
+  reinablanca = new ReinaBlanca(10,4.5,-40);
+  reinanegra = new ReinaNegra(80,4.5,-40);
 	
   escena.add(reinablanca,reinanegra);
   /////////////////////////////////////////Bloques////////////////////////////////////////////////////////////////////
