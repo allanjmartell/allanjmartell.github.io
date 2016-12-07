@@ -105,7 +105,7 @@ function PeonBlanco(x=0,y=0,z=0){
   Agent.call(this,x,y,z);
   var textura1 = new THREE.TextureLoader().load('marmolblanco.jpg');
   var marmolblanco = new THREE.MeshLambertMaterial({map:textura1});
-  this.actuator = new THREE.Mesh(peon,marmolblanco);
+  this.actuator = new THREE.Mesh(peonfinal4,marmolblanco);
   this.actuator.commands = [];
   this.add(this.actuator);
   this.position.y=y;
@@ -118,7 +118,7 @@ function PeonNegro(x=0,y=0,z=0){
   Agent.call(this,x,y,z);
   var textura2 = new THREE.TextureLoader().load('marmolnegro.jpg');
   var marmolnegro = new THREE.MeshLambertMaterial({map:textura2});
-  this.actuator = new THREE.Mesh(peon,marmolnegro);
+  this.actuator = new THREE.Mesh(peonfinal4,marmolnegro);
   this.actuator.commands = [];
   this.add(this.actuator);
   this.position.y=y;
