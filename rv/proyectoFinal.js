@@ -101,24 +101,16 @@ function TorreNegra(x=0,y=0,z=0){
 TorreBlanca.prototype = new Agent();
 TorreNegra.prototype = new Agent();
 ///////////////////////////////////////Peones//////////////////////////////////////////////////////////////////////////////////////////
-function PeonBlanco(url){
-  AgentPieza.call(this,url);
-  this.actuator = new THREE.JSONLoader();
-  var createMesh = function( geometry ){
-    function MallaPeon(x=0,y=0,z=0){
-      Agent.call(this,x,y,z);
-      var textura1 = new THREE.TextureLoader().load('marmolblanco.jpg');
-      var marmolblanco = new THREE.MeshLambertMaterial({map:textura1});
-      this.malla = new THREE.Mesh( geometry, marmolblanco);
-      this.malla.overdraw = true;
-      this.position.x = x;
-      this.position.y = y;
-      this.position.z = z;
-      this.add(this.malla);
-    }
-  };
-  this.actuator.load( url, createMesh );
+function PeonBlanco(x=0,y=0,z=0){
+  Agent.call(this,x,y,z);
+  var textura1 = new THREE.TextureLoader().load('marmolblanco.jpg');
+  var marmolblanco = new THREE.MeshLambertMaterial({map:textura1});
+  this.actuator = new THREE.Mesh(peonfinal4,marmolblanco);
   this.actuator.commands = [];
+  this.add(this.actuator);
+  this.position.y=y;
+  this.position.z=z;
+  this.position.x=x;
   this.sensor = new Sensor();
 }
 
@@ -126,74 +118,20 @@ function PeonNegro(x=0,y=0,z=0){
   Agent.call(this,x,y,z);
   var textura2 = new THREE.TextureLoader().load('marmolnegro.jpg');
   var marmolnegro = new THREE.MeshLambertMaterial({map:textura2});
-  var loader = new THREE.JSONLoader();
-  var malla;
-  var createMesh = function( geometry )
-  {
-    malla = new THREE.Mesh( geometry, marmolnegro);
-    malla.overdraw = true;
-    malla.position.x=x;
-    malla.position.y=y;
-    malla.position.z=z;
-    escena.add(malla);
-    malla.commands = [];
-    
-  };
-  loader.load( "peon2.js", createMesh );
+  this.actuator = new THREE.Mesh(peonfinal4,marmolnegro);
+  this.actuator.commands = [];
+  this.add(this.actuator);
+  this.position.y=y;
+  this.position.z=z;
+  this.position.x=x;
   this.sensor = new Sensor();
-  MallaPeon.prototype = new Agent();
-  mpeonblanco1 = new MallaPeon(20,4.5,-10);
 }
 
-PeonBlanco.prototype = new AgentPieza();
-
-peonblanco1 = new PeonBlanco("peon2.js");
+PeonBlanco.prototype = new Agent();
 PeonNegro.prototype = new Agent();
+
 ///////////////////////////////////////Alfiles//////////////////////////////////////////////////////////////////////////////////////
-function AlfilBlanco(x=0,y=0,z=0){
-  Agent.call(this,x,y,z);
-  var textura1 = new THREE.TextureLoader().load('marmolblanco.jpg');
-  var marmolblanco = new THREE.MeshLambertMaterial({map:textura1});
-  var loader = new THREE.JSONLoader();
-  var malla;
-  var createMesh = function( geometry )
-  {
-    malla = new THREE.Mesh( geometry, marmolblanco);
-    malla.overdraw = true;
-    malla.position.x=x;
-    malla.position.y=y;
-    malla.position.z=z;
-    escena.add(malla);
-    malla.commands = [];
-    
-  };
-  loader.load( "Alfil.js", createMesh );
-  this.sensor = new Sensor();
-}
 
-function AlfilNegro(x=0,y=0,z=0){
-  Agent.call(this,x,y,z);
-  var textura2 = new THREE.TextureLoader().load('marmolnegro.jpg');
-  var marmolnegro = new THREE.MeshLambertMaterial({map:textura2});
-  var loader = new THREE.JSONLoader();
-  var malla;
-  var createMesh = function( geometry )
-  {
-    malla = new THREE.Mesh( geometry, marmolnegro);
-    malla.overdraw = true;
-    malla.position.x=x;
-    malla.position.y=y;
-    malla.position.z=z;
-    escena.add(malla);
-    malla.commands = [];
-    
-  };
-  loader.load( "Alfil.js", createMesh );
-  this.sensor = new Sensor();
-}
-
-AlfilBlanco.prototype = new Agent();
-AlfilNegro.prototype = new Agent();
 ///////////////////////////////////////Bloque Azul////////////////////////////////////////////////////////////////////////////////////
 function BloqueAzul(x=0,y=0,z=0){
   Agent.call(this,x,y,z);
@@ -385,7 +323,7 @@ BloqueAzul.prototype.act = function(environment){
 		  }//fin if torreblanca2
 //////////////////////////////////////////////////////Peones///////////////////////////////////////////////////////////////////////////
 	          ///////////////////////////////////Peon blanco 1//////////////////////////////////////////////////////////////////
-		  if (mpeonblanco1.position.x===bloquerojo.position.x && mpeonblanco1.position.z===bloquerojo.position.z){
+		  if (peonblanco1.position.x===bloquerojo.position.x && peonblanco1.position.z===bloquerojo.position.z){
 		    var bvpb1=bloqueverde;//Bloqueverdetorreblanca1
 			  
 		    PeonBlanco.prototype.sense = function(environment){
@@ -399,16 +337,16 @@ BloqueAzul.prototype.act = function(environment){
 		
 		    PeonBlanco.prototype.act = function(environment){ 	
 		      if (this.colision!=1){
-			if(mpeonblanco1.position.x<bvpb1.position.x)
-			  mpeonblanco1.position.x += this.step;
+			if(peonblanco1.position.x<bvpb1.position.x)
+			  peonblanco1.position.x += this.step;
 			else
-			  mpeonblanco1.position.x -= this.step;
+			  peonblanco1.position.x -= this.step;
 		      }//fin if posicion x
 		      if (this.colision!=1){
-			if(mpeonblanco1.position.z<bvpb1.position.z)
-			  mpeonblanco1.position.z += this.step;
+			if(peonblanco1.position.z<bvpb1.position.z)
+			  peonblanco1.position.z += this.step;
 			else
-			  mpeonblanco1.position.z -= this.step;
+			  peonblanco1.position.z -= this.step;
 		      }//fin if posicion z
 		    }//fin prototype act
 		  }//fin if peonblanco1
@@ -434,7 +372,7 @@ BloqueAzul.prototype.act = function(environment){
 		     }	
 		   }//fin if Torres
                    /////////////////////////////////Peones////////////////////////////////////////////////////////////////////////
-		   if ((((((((mpeonblanco1.position.x===bloquerojo.position.x && mpeonblanco1.position.z===bloquerojo.position.z)||
+		   if ((((((((peonblanco1.position.x===bloquerojo.position.x && peonblanco1.position.z===bloquerojo.position.z)||
 			     (peonblanco2.position.x===bloquerojo.position.x && peonblanco2.position.z===bloquerojo.position.z))||
 			     (peonblanco3.position.x===bloquerojo.position.x && peonblanco3.position.z===bloquerojo.position.z))||
 			     (peonblanco4.position.x===bloquerojo.position.x && peonblanco4.position.z===bloquerojo.position.z))||
@@ -459,20 +397,7 @@ BloqueAzul.prototype.act = function(environment){
 		     grupomorado.add(bloquemorado);
 		   }//fin if Peones negros
 		//////////////////////////////////////////////Alfiles////////////////////////////////////////////////////////////
-		   if ((((alfilblanco1.position.x===bloquerojo.position.x && alfilblanco1.position.z===bloquerojo.position.z)||
-		         (alfilblanco2.position.x===bloquerojo.position.x && alfilblanco2.position.z===bloquerojo.position.z))||
-		         (alfilnegro1.position.x===bloquerojo.position.x && alfilnegro1.position.z===bloquerojo.position.z))||
-		         (alfilnegro2.position.x===bloquerojo.position.x && alfilnegro2.position.z===bloquerojo.position.z)){
-		     grupomorado = new THREE.Group();
-		     for (i=1;i<=8;i++){ 
-		       bloquemorado = new BloqueMorado(bloquerojo.position.x,0,-i*10);
-		       grupomorado.add(bloquemorado);
-		     }
-		     for (i=1;i<=8;i++){ 
-		       bloquemorado = new BloqueMorado(i*10,0,bloquerojo.position.z);
-		       grupomorado.add(bloquemorado);
-		     }
-		   }//fin if Alfiles
+
 		escena.add(grupomorado);  
 	        bloqueverde = new BloqueVerde(bloquerojo.position.x,0,bloquerojo.position.z);
 		escena.add(bloqueverde);
@@ -610,7 +535,7 @@ function init() {
   torrenegra1 = new TorreNegra(80,5,-10);
   torrenegra2 = new TorreNegra(80,5,-80);
   /////////////////////////////////////////Peones/////////////////////////////////////////////////////////////////
-  //peonblanco1 = new PeonBlanco(20,4.5,-10);
+  peonblanco1 = new PeonBlanco(20,4.5,-10);
   peonblanco2 = new PeonBlanco(20,4.5,-20);
   peonblanco3 = new PeonBlanco(20,4.5,-30);
   peonblanco4 = new PeonBlanco(20,4.5,-40);
@@ -628,10 +553,10 @@ function init() {
   peonnegro7 = new PeonNegro(70,4.5,-70);
   peonnegro8 = new PeonNegro(70,4.5,-80);
   /////////////////////////////////////////Alfiles/////////////////////////////////////////////////////////////////
-  alfilblanco1 = new AlfilBlanco(10,4.5,-30);
-  alfilblanco2 = new AlfilBlanco(10,4.5,-60);
-  alfilnegro1 = new AlfilNegro(80,4.5,-30);
-  alfilnegro2 = new AlfilNegro(80,4.5,-60);
+  //alfilblanco1 = new AlfilBlanco(10,4.5,-30);
+  //alfilblanco2 = new AlfilBlanco(10,4.5,-60);
+  //alfilnegro1 = new AlfilNegro(80,4.5,-30);
+  //alfilnegro2 = new AlfilNegro(80,4.5,-60);
   /////////////////////////////////////////Bloques////////////////////////////////////////////////////////////////////
   bloqueazul = new BloqueAzul(10,0,-10);
   escena.add(grupo,grupo2,grupo3,bloqueazul);
