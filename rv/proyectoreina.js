@@ -22,8 +22,8 @@ var toroide3 = new THREE.TorusGeometry(1.75,.35,50,50);
 toroide3.rotateX(Math.PI/2);
 toroide3.translate(0,15.8,0);
 
-var corona1 = new THREE.CylinderGeometry(2,1.25,2,50);
-corona1.translate(0,16.5,0);
+var corona1 = new THREE.CylinderGeometry(2,1.25,4,50);
+corona1.translate(0,17.5,0);
 
 //Mallas
 var mbase = new THREE.Mesh(base);
