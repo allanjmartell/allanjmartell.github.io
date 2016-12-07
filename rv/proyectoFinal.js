@@ -100,7 +100,7 @@ function PeonBlanco(x=0,y=0,z=0){
     this.actuator = new THREE.Mesh( geometry, marmolblanco);
     this.actuator.overdraw = true;
     this.actuator.commands = [];
-    this.add(this.actuator);
+    escena.add(this.actuator);
     this.position.x=x;
     this.position.y=y;
     this.position.z=z;
