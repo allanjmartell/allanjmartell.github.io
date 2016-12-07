@@ -44,63 +44,63 @@ var mbola = new THREE.Mesh(bola);
 
 //Cuerpo completo
 
-var alfilfinal = new THREE.Geometry();
-alfilfinal.merge(mbase.geometry,mbase.matrix);
-alfilfinal.merge(mcolumna1.geometry,mcolumna1.matrix);
+var reinafinal = new THREE.Geometry();
+reinafinal.merge(mbase.geometry,mbase.matrix);
+reinafinal.merge(mcolumna1.geometry,mcolumna1.matrix);
 
-var malfilfinal = new THREE.Mesh(alfilfinal);
+var mreinafinal = new THREE.Mesh(reinafinal);
 
-var alfilfinal2 = new THREE.Geometry();
-alfilfinal2.merge(malfilfinal.geometry,malfilfinal.matrix);
-alfilfinal2.merge(mcolumna1.geometry,mcolumna1.matrix);
+var reinafinal2 = new THREE.Geometry();
+reinafinal2.merge(mreinafinal.geometry,mreinafinal.matrix);
+reinafinal2.merge(mcolumna1.geometry,mcolumna1.matrix);
 
-var malfilfinal2 = new THREE.Mesh(alfilfinal2);
+var mreinafinal2 = new THREE.Mesh(reinafinal2);
 
-var alfilfinal3 = new THREE.Geometry();
-alfilfinal3.merge(malfilfinal2.geometry,malfilfinal2.matrix);
-alfilfinal3.merge(mtoroide1.geometry,mtoroide1.matrix);
+var reinafinal3 = new THREE.Geometry();
+reinafinal3.merge(mreinafinal2.geometry,mreinafinal2.matrix);
+reinafinal3.merge(mtoroide1.geometry,mtoroide1.matrix);
 
-var malfilfinal3 = new THREE.Mesh(alfilfinal3);
+var mreinafinal3 = new THREE.Mesh(reinafinal3);
 
-var alfilfinal4 = new THREE.Geometry();
-alfilfinal4.merge(malfilfinal3.geometry,malfilfinal3.matrix);
-alfilfinal4.merge(mcolumna2.geometry,mcolumna2.matrix);
+var reinafinal4 = new THREE.Geometry();
+reinafinal4.merge(mreinafinal3.geometry,mreinafinal3.matrix);
+reinafinal4.merge(mcolumna2.geometry,mcolumna2.matrix);
 
-var malfilfinal4 = new THREE.Mesh(alfilfinal4);
+var malfilfinal4 = new THREE.Mesh(reinafinal4);
 
-var alfilfinal5 = new THREE.Geometry();
-alfilfinal5.merge(malfilfinal4.geometry,malfilfinal4.matrix);
-alfilfinal5.merge(mbtecho.geometry,mbtecho.matrix);
+var reinafinal5 = new THREE.Geometry();
+reinafinal5.merge(mreinafinal4.geometry,mreinafinal4.matrix);
+reinafinal5.merge(mbtecho.geometry,mbtecho.matrix);
 
-var malfilfinal5 = new THREE.Mesh(alfilfinal5);
+var mreinafinal5 = new THREE.Mesh(reinafinal5);
 
-var alfilfinal6 = new THREE.Geometry();
-alfilfinal6.merge(malfilfinal5.geometry,malfilfinal5.matrix);
-alfilfinal6.merge(mtoroide2.geometry,mtoroide2.matrix);
+var reinafinal6 = new THREE.Geometry();
+reinafinal6.merge(mreinafinal5.geometry,mreinafinal5.matrix);
+reinafinal6.merge(mtoroide2.geometry,mtoroide2.matrix);
 
-var malfilfinal6 = new THREE.Mesh(alfilfinal6);
+var mreinafinal6 = new THREE.Mesh(reinafinal6);
 
-var alfilfinal7 = new THREE.Geometry();
-alfilfinal7.merge(malfilfinal6.geometry,malfilfinal6.matrix);
-alfilfinal7.merge(mtoroide3.geometry,mtoroide3.matrix);
+var reinafinal7 = new THREE.Geometry();
+reinafinal7.merge(mreinafinal6.geometry,mreinafinal6.matrix);
+reinafinal7.merge(mtoroide3.geometry,mtoroide3.matrix);
 
-var malfilfinal7 = new THREE.Mesh(alfilfinal7);
+var mreinafinal7 = new THREE.Mesh(reinafinal7);
 
-var alfilfinal8 = new THREE.Geometry();
-alfilfinal8.merge(malfilfinal7.geometry,malfilfinal7.matrix);
-alfilfinal8.merge(mcorona1.geometry,mcorona1.matrix);
+var reinafinal8 = new THREE.Geometry();
+reinafinal8.merge(mreinafinal7.geometry,mreinafinal7.matrix);
+reinafinal8.merge(mcorona1.geometry,mcorona1.matrix);
 
-var malfilfinal8 = new THREE.Mesh(alfilfinal8);
+var mreinafinal8 = new THREE.Mesh(reinafinal8);
 
-var alfilfinal9 = new THREE.Geometry();
-alfilfinal9.merge(malfilfinal8.geometry,malfilfinal8.matrix);
-alfilfinal9.merge(mcorona2.geometry,mcorona2.matrix);
+var reinafinal9 = new THREE.Geometry();
+reinafinal9.merge(mreinafinal8.geometry,mreinafinal8.matrix);
+reinafinal9.merge(mcorona2.geometry,mcorona2.matrix);
 
-var malfilfinal9 = new THREE.Mesh(alfilfinal9);
+var mreinafinal9 = new THREE.Mesh(reinafinal9);
 
-var alfilfinal10 = new THREE.Geometry();
-alfilfinal10.merge(malfilfinal9.geometry,malfilfinal9.matrix);
-alfilfinal10.merge(mbola.geometry,mbola.matrix);
+var reinafinal10 = new THREE.Geometry();
+reinafinal10.merge(mreinafinal9.geometry,mreinafinal9.matrix);
+reinafinal10.merge(mbola.geometry,mbola.matrix);
 
 //var malfilfinal10 = new THREE.Mesh(alfilfinal10,material);
 
