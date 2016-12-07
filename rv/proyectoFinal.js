@@ -13,6 +13,19 @@ Agent.prototype.sense = function(environment) {}; //Percibir
 Agent.prototype.plan = function(environment) {}; //Planificar
 Agent.prototype.act = function(environment) {}; //Actuar
 
+///////////////////////////////////////Agente Pieza//////////////////////////////////////////////////////////////////////////////////
+function AgentPieza(x=0,y=0,z=0){
+  THREE.JSONLoader.call(this);
+  this.position.x=x;
+  this.position.y=y;
+  this.position.z=z;
+}
+
+AgentPieza.prototype = new THREE.JSONLoader();
+
+AgentPieza.prototype.sense = function(environment) {}; //Percibir
+AgentPieza.prototype.plan = function(environment) {}; //Planificar
+AgentPieza.prototype.act = function(environment) {}; //Actuar
 ////////////////////////////////////////////////////Environment/////////////////////////////////////////////////////////////
 //Un Agente opera sobre un entorno
 function Environment(){
@@ -91,22 +104,23 @@ function TorreNegra(x=0,y=0,z=0){
 TorreBlanca.prototype = new Agent();
 TorreNegra.prototype = new Agent();
 ///////////////////////////////////////Peones//////////////////////////////////////////////////////////////////////////////////////////
-var loader = new THREE.JSONLoader();
-var createMesh = function( geometry ){
-  function PeonBlanco(x=0,y=0,z=0){
-    Agent.call(this,x,y,z);
+function PeonBlanco(x=0,y=0,z=0){
+  AgentPieza.call(this,x,y,z);
+  this.actuator = new THREE.JSONLoader();
+  var createMesh = function( geometry ){
     var textura1 = new THREE.TextureLoader().load('marmolblanco.jpg');
     var marmolblanco = new THREE.MeshLambertMaterial({map:textura1});
-    this.actuator = new THREE.Mesh( geometry, marmolblanco);
-    this.actuator.overdraw = true;
-    this.actuator.commands = [];
-    this.add(this.actuator);
-    this.position.x=x;
-    this.position.y=y;
-    this.position.z=z;
-    this.sensor = new Sensor();}
+    var malla = new THREE.Mesh( geometry, marmolblanco);
+    malla.overdraw = true;
   };
-loader.load( "peon2.js", createMesh );
+  this.actuator.load( "peon2.js", createMesh );
+  this.actuator.commands = [];
+  this.add(this.actuator);
+  this.position.x=x;
+  this.position.y=y;
+  this.position.z=z;
+  this.sensor = new Sensor();
+}
 
 function PeonNegro(x=0,y=0,z=0){
   Agent.call(this,x,y,z);
@@ -129,7 +143,7 @@ function PeonNegro(x=0,y=0,z=0){
   this.sensor = new Sensor();
 }
 
-PeonBlanco.prototype = new Agent();
+PeonBlanco.prototype = new AgentPieza();
 PeonNegro.prototype = new Agent();
 ///////////////////////////////////////Alfiles//////////////////////////////////////////////////////////////////////////////////////
 function AlfilBlanco(x=0,y=0,z=0){
