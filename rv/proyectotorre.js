@@ -8,10 +8,10 @@ var toroide1 = new THREE.TorusGeometry(3.5,.5,50,50);
 toroide1.rotateX(Math.PI/2);
 toroide1.translate(0,3.5,0);
 
-var columna2 = new THREE.CylinderGeometry(2.75,3.5,10,50);
+var columna2 = new THREE.CylinderGeometry(2.5,3.5,10,50);
 columna2.translate(0,8.5,0);
 
-var btecho = new THREE.CylinderGeometry(3,2.75,2,50);
+var btecho = new THREE.CylinderGeometry(3.5,2.5,2,50);
 btecho.translate(0,14.5,0);
 
 //Mallas
