@@ -31,7 +31,7 @@ corona2.translate(0,20.75,0);
 //Decoración
 var forma=new THREE.Shape();
 
-forma.moveTo(-.5,,5);
+forma.moveTo(-.5,.5);
 forma.lineTo(-3.5,1.5);
 forma.lineTo(-3.5,-1.5);
 forma.lineTo(-.5,-.5);
