@@ -45,7 +45,7 @@ forma.lineTo(3,7);
 forma.lineTo(-3,7);
 forma.lineTo(-1,1);
 
-var cruz= new THREE.ExtrudeGeometry(forma,{amount:1});
+var cruz= new THREE.ExtrudeGeometry(forma,{amount:2});
 //cruz.rotateX(Math.PI/2);
 cruz.translate(0,21.25,0);
 //Mallas
@@ -127,7 +127,7 @@ escena.add(mreyfinal10);
 escena.rotateX(Math.PI/6);
 
 var camara=new THREE.PerspectiveCamera();
-camara.position.z=55;
+camara.position.z=70;
 
 var renderizador=new THREE.WebGLRenderer();
 renderizador.setSize(window.innerHeight*.95,window.innerHeight*.95);
