@@ -20,8 +20,9 @@ btecho2.translate(0,16,0);
 var piedra = new THREE.BoxGeometry(2,2.5,.1);
 piedra.translate(0,16.5,3.25);
 
-var piedra2 = piedra.clone();
-piedra2.translate(0,16.5,-3.25);            
+var piedra2 = new THREE.BoxGeometry(2,2.5,.1);
+piedra2.translate(0,16.5,-3.25); 
+
 //Mallas
 var mbase = new THREE.Mesh(base);
 var mcolumna1 = new THREE.Mesh(columna1);//1
