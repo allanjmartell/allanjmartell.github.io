@@ -18,7 +18,7 @@ var btecho2 = new THREE.CylinderGeometry(2,3.5,1,50);
 btecho2.translate(0,16,0);
 
 var piedra = new THREE.BoxGeometry(2,2.5,.1);
-piedra.translate(0,15.5,3.5);
+piedra.translate(0,15.5,3);
                  
 //Mallas
 var mbase = new THREE.Mesh(base);
