@@ -46,8 +46,9 @@ forma.lineTo(-3,7);
 forma.lineTo(-1,1);
 
 var cruz= new THREE.ExtrudeGeometry(forma,{amount:2});
-//cruz.rotateX(Math.PI/2);
+cruz.scale(2,2,2);
 cruz.translate(0,21.25,0);
+
 //Mallas
 var mbase = new THREE.Mesh(base);
 var mcolumna1 = new THREE.Mesh(columna1);
