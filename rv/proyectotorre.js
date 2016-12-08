@@ -36,7 +36,7 @@ piedra5.rotateY(Math.PI/4);
 piedra5.translate(2.28,16.5,2.28);
 
 var piedra6 = new THREE.BoxGeometry(2,2.5,.1);
-piedra6.rotateY(Math.PI/4);
+piedra6.rotateY(Math.PI/-4);
 piedra6.translate(-2.28,16.5,2.28);
 
 var piedra7 = new THREE.BoxGeometry(2,2.5,.1);
@@ -44,7 +44,7 @@ piedra7.rotateY(Math.PI/4);
 piedra7.translate(-2.28,16.5,-2.28);
 
 var piedra8 = new THREE.BoxGeometry(2,2.5,.1);
-piedra8.rotateY(Math.PI/4);
+piedra8.rotateY(Math.PI/-4);
 piedra8.translate(2.28,16.5,-2.28);
 
 //Mallas
