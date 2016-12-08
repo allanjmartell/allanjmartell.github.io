@@ -47,7 +47,7 @@ forma.lineTo(-1,1);
 
 var cruz= new THREE.ExtrudeGeometry(forma,{amount:2});
 cruz.scale(.12,.12,.12);
-cruz.translate(0,22.2,0);
+cruz.translate(0,22.4,0);
 
 //Mallas
 var mbase = new THREE.Mesh(base);
@@ -125,7 +125,7 @@ var mreyfinal10 = new THREE.Mesh(reyfinal10,material);
 
 var escena=new THREE.Scene();
 escena.add(mreyfinal10);
-escena.rotateX(Math.PI/6);
+escena.rotateX(Math.PI);
 
 var camara=new THREE.PerspectiveCamera();
 camara.position.z=70;
