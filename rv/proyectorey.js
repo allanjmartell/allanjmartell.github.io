@@ -125,7 +125,7 @@ var mreyfinal10 = new THREE.Mesh(reyfinal10,material);
 
 var escena=new THREE.Scene();
 escena.add(mreyfinal10);
-escena.rotateX(Math.PI/2);
+escena.rotateX(Math.PI/6);
 
 var camara=new THREE.PerspectiveCamera();
 camara.position.z=70;
