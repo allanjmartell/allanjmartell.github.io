@@ -54,6 +54,7 @@ var peonblanco1,peonblanco2,peonblanco3,peonblanco4,peonblanco5,peonblanco6,peon
 var peonnegro1,peonnegro2,peonnegro3,peonnegro4,peonnegro5,peonnegro6,peonnegro7,peonnegro8;
 var alfilblanco1,alfilblanco2,alfilnegro1,alfilnegro2;
 var reinablanca,reinanegra;
+var reyblanco,reynegro;
 //////////////////////////////////////////Sensor/////////////////////////////////////////////////////////////////////////////////
 function Sensor(position,direction){ 
   THREE.Raycaster.call(this,position,direction);
@@ -178,6 +179,35 @@ function ReinaNegra(x=0,y=0,z=0){
 
 ReinaBlanca.prototype = new Agent();
 ReinaNegra.prototype = new Agent();
+////////////////////////////////////////Reyes/////////////////////////////////////////////////////////////////////////////////////
+function ReyBlanco(x=0,y=0,z=0){
+  Agent.call(this,x,y,z);
+  var textura1 = new THREE.TextureLoader().load('maderablanca.jpg');
+  var maderablanca = new THREE.MeshLambertMaterial({map:textura1});
+  this.actuator = new THREE.Mesh(reyfinal10,maderablanca);
+  this.actuator.commands = [];
+  this.add(this.actuator);
+  this.position.y=y;
+  this.position.z=z;
+  this.position.x=x;
+  this.sensor = new Sensor();
+}
+
+function ReyNegro(x=0,y=0,z=0){
+  Agent.call(this,x,y,z);
+  var textura2 = new THREE.TextureLoader().load('maderanegra.jpg');
+  var maderanegra = new THREE.MeshLambertMaterial({map:textura2});
+  this.actuator = new THREE.Mesh(reyfinal10,maderanegra);
+  this.actuator.commands = [];
+  this.add(this.actuator);
+  this.position.y=y;
+  this.position.z=z;
+  this.position.x=x;
+  this.sensor = new Sensor();
+}
+
+ReyBlanco.prototype = new Agent();
+ReyNegro.prototype = new Agent();
 ///////////////////////////////////////Bloque Azul////////////////////////////////////////////////////////////////////////////////////
 function BloqueAzul(x=0,y=0,z=0){
   Agent.call(this,x,y,z);
@@ -1035,6 +1065,11 @@ function init() {
   reinanegra = new ReinaNegra(80,4.5,-40);
 	
   escena.add(reinablanca,reinanegra);
+  ///////////////////////////////////////////Reyes////////////////////////////////////////////////////////////////////
+  reyblanco = new ReyBlanco(10,4.5,-50);
+  reynegro = new ReyNegro(80,4.5,-50);
+	
+  escena.add(reyblanco,reynegro);	
   /////////////////////////////////////////Bloques////////////////////////////////////////////////////////////////////
   bloqueazul = new BloqueAzul(10,0,-10);
   escena.add(grupo,grupo2,grupo3,bloqueazul);
