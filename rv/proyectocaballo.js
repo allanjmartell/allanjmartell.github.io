@@ -32,8 +32,8 @@ forma.lineTo(-7,-3);
 forma.lineTo(-10,0);
 
 var caballo= new THREE.ExtrudeGeometry(forma,{amount:3.5});
-//caballo.scale(.12,.12,.12);
-caballo.translate(0,3.5,0);
+caballo.scale(.5,.5,.5);
+caballo.translate(0,8,0);
 
 //Mallas
 var mbase = new THREE.Mesh(base);
