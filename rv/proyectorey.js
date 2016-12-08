@@ -8,10 +8,10 @@ var toroide1 = new THREE.TorusGeometry(3.5,.5,50,50);
 toroide1.rotateX(Math.PI/2);
 toroide1.translate(0,3.5,0);
 
-var columna2 = new THREE.CylinderGeometry(1.75,3.5,14,50);
+var columna2 = new THREE.CylinderGeometry(2,3.5,14,50);
 columna2.translate(0,10.5,0);
 
-var btecho = new THREE.CylinderGeometry(2,3,2,50);
+var btecho = new THREE.CylinderGeometry(2,3.2,2,50);
 btecho.translate(0,16.5,0);
 
 var toroide2 = new THREE.TorusGeometry(2,.35,50,50);
