@@ -156,7 +156,7 @@ function CaballoBlanco(x=0,y=0,z=0){
   Agent.call(this,x,y,z);
   var textura1 = new THREE.TextureLoader().load('maderablanca.jpg');
   var maderablanca = new THREE.MeshLambertMaterial({map:textura1});
-  this.actuator = new THREE.Mesh(caballofinal4,maderablanca);
+  this.actuator = new THREE.Mesh(caballofinal5,maderablanca);
   this.actuator.commands = [];
   this.add(this.actuator);
   this.position.y=y;
@@ -169,7 +169,7 @@ function CaballoNegro(x=0,y=0,z=0){
   Agent.call(this,x,y,z);
   var textura2 = new THREE.TextureLoader().load('maderanegra.jpg');
   var maderanegra = new THREE.MeshLambertMaterial({map:textura2});
-  this.actuator = new THREE.Mesh(caballofinal5,maderanegra);
+  this.actuator = new THREE.Mesh(caballofinal4,maderanegra);
   this.actuator.commands = [];
   this.add(this.actuator);
   this.position.y=y;
