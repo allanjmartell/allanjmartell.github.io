@@ -121,16 +121,16 @@ var reyfinal10 = new THREE.Geometry();
 reyfinal10.merge(mreyfinal9.geometry,mreyfinal9.matrix);
 reyfinal10.merge(mcruz.geometry,mcruz.matrix);
 
-var mreyfinal10 = new THREE.Mesh(reyfinal10,material);
+//var mreyfinal10 = new THREE.Mesh(reyfinal10,material);
 
-var escena=new THREE.Scene();
-escena.add(mreyfinal10);
-escena.rotateX(Math.PI/6);
+//var escena=new THREE.Scene();
+//escena.add(mreyfinal10);
+//escena.rotateX(Math.PI/6);
 
-var camara=new THREE.PerspectiveCamera();
-camara.position.z=70;
+//var camara=new THREE.PerspectiveCamera();
+//camara.position.z=70;
 
-var renderizador=new THREE.WebGLRenderer();
-renderizador.setSize(window.innerHeight*.95,window.innerHeight*.95);
-document.body.appendChild(renderizador.domElement);
-renderizador.render(escena,camara);
+//var renderizador=new THREE.WebGLRenderer();
+//renderizador.setSize(window.innerHeight*.95,window.innerHeight*.95);
+//document.body.appendChild(renderizador.domElement);
+//renderizador.render(escena,camara);
