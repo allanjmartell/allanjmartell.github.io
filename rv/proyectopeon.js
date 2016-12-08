@@ -12,7 +12,7 @@ var columna2 = new THREE.CylinderGeometry(2,3.5,6,50);
 columna2.translate(0,6.5,0);
 
 var btecho = new THREE.CylinderGeometry(1.5,3.5,2,50);
-btecho.translate(0,7.5,0);
+btecho.translate(0,10.5,0);
 
 //Mallas
 var mbase = new THREE.Mesh(base);
