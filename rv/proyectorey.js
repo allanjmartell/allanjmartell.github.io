@@ -49,7 +49,7 @@ reyfinal2.merge(mcolumna1.geometry,mcolumna1.matrix);
 
 var mreyfinal2 = new THREE.Mesh(reyfinal2);
 
-var reinafinal3 = new THREE.Geometry();
+var reyfinal3 = new THREE.Geometry();
 reyfinal3.merge(mreyfinal2.geometry,mreyfinal2.matrix);
 reyfinal3.merge(mtoroide1.geometry,mtoroide1.matrix);
 
