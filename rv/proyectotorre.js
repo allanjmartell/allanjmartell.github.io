@@ -19,7 +19,9 @@ btecho2.translate(0,16,0);
 
 var piedra = new THREE.BoxGeometry(2,2.5,.1);
 piedra.translate(0,16.5,3.25);
-                 
+
+var piedra2 = piedra.clone();
+piedra2.translate(0,16.5,-3.25);            
 //Mallas
 var mbase = new THREE.Mesh(base);
 var mcolumna1 = new THREE.Mesh(columna1);//1
@@ -28,6 +30,7 @@ var mcolumna2 = new THREE.Mesh(columna2);//3
 var mbtecho = new THREE.Mesh(btecho);
 var mbtecho2 = new THREE.Mesh(btecho2);
 var mpiedra = new THREE.Mesh(piedra);
+var mpiedra2 = new THREE.Mesh(piedra2);
 
 //Cuerpo completo
 var torrefinal = new THREE.Geometry();
@@ -64,10 +67,16 @@ var torrefinal6 = new THREE.Geometry();
 torrefinal6.merge(mtorrefinal5.geometry,mtorrefinal5.matrix);
 torrefinal6.merge(mpiedra.geometry,mpiedra.matrix);
 
-var mtorrefinal6 = new THREE.Mesh(torrefinal6,material);
+var mtorrefinal6 = new THREE.Mesh(torrefinal6);
+
+var torrefinal7 = new THREE.Geometry();
+torrefinal7.merge(mtorrefinal6.geometry,mtorrefinal6.matrix);
+torrefinal7.merge(mpiedra2.geometry,mpiedra2.matrix);
+
+var mtorrefinal7 = new THREE.Mesh(torrefinal7,material);
 
 var escena = new THREE.Scene();
-escena.add(mtorrefinal6);
+escena.add(mtorrefinal7);
 escena.rotateX(Math.PI/6);
 
 var camara = new THREE.PerspectiveCamera();
