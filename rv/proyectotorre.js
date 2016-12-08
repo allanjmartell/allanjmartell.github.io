@@ -15,7 +15,7 @@ var btecho = new THREE.CylinderGeometry(3.5,2.5,2,50);
 btecho.translate(0,14.5,0);
 
 var btecho2 = new THREE.CylinderGeometry(2,3.5,2,50);
-btecho2.translate(0,15.5,0);
+btecho2.translate(0,16.5,0);
 
 //Mallas
 var mbase = new THREE.Mesh(base);
