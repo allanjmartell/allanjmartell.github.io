@@ -65,10 +65,13 @@ var caballofinal4 = new THREE.Geometry();
 caballofinal4.merge(mcaballofinal3.geometry,mcaballofinal3.matrix);
 caballofinal4.merge(mcaballo.geometry,mcaballo.matrix);
 
-var mcaballofinal4 = new THREE.Mesh(caballofinal4,material);
+var caballofinal5 = caballofinal4.clone();
+caballofinal5.rotateY(Math.PI);
+
+var mcaballofinal5 = new THREE.Mesh(caballofinal5,material);
 
 var escena=new THREE.Scene();
-escena.add(mcaballofinal4);
+escena.add(mcaballofinal5);
 escena.rotateX(Math.PI/6);
 
 var camara=new THREE.PerspectiveCamera();
