@@ -37,57 +37,57 @@ var mcorona1 = new THREE.Mesh(corona1);
 
 //Cuerpo completo
 
-var reinafinal = new THREE.Geometry();
-reinafinal.merge(mbase.geometry,mbase.matrix);
-reinafinal.merge(mcolumna1.geometry,mcolumna1.matrix);
+var reyfinal = new THREE.Geometry();
+reyfinal.merge(mbase.geometry,mbase.matrix);
+reyfinal.merge(mcolumna1.geometry,mcolumna1.matrix);
 
-var mreinafinal = new THREE.Mesh(reinafinal);
+var mreyfinal = new THREE.Mesh(reyfinal);
 
-var reinafinal2 = new THREE.Geometry();
-reinafinal2.merge(mreinafinal.geometry,mreinafinal.matrix);
-reinafinal2.merge(mcolumna1.geometry,mcolumna1.matrix);
+var reyfinal2 = new THREE.Geometry();
+reyfinal2.merge(mreyfinal.geometry,mreyfinal.matrix);
+reyfinal2.merge(mcolumna1.geometry,mcolumna1.matrix);
 
-var mreinafinal2 = new THREE.Mesh(reinafinal2);
+var mreyfinal2 = new THREE.Mesh(reyfinal2);
 
 var reinafinal3 = new THREE.Geometry();
-reinafinal3.merge(mreinafinal2.geometry,mreinafinal2.matrix);
-reinafinal3.merge(mtoroide1.geometry,mtoroide1.matrix);
+reyfinal3.merge(mreyfinal2.geometry,mreyfinal2.matrix);
+reyfinal3.merge(mtoroide1.geometry,mtoroide1.matrix);
 
-var mreinafinal3 = new THREE.Mesh(reinafinal3);
+var mreyfinal3 = new THREE.Mesh(reyfinal3);
 
-var reinafinal4 = new THREE.Geometry();
-reinafinal4.merge(mreinafinal3.geometry,mreinafinal3.matrix);
-reinafinal4.merge(mcolumna2.geometry,mcolumna2.matrix);
+var reyfinal4 = new THREE.Geometry();
+reyfinal4.merge(mreyfinal3.geometry,mreyfinal3.matrix);
+reyfinal4.merge(mcolumna2.geometry,mcolumna2.matrix);
 
-var mreinafinal4 = new THREE.Mesh(reinafinal4);
+var mreyfinal4 = new THREE.Mesh(reyfinal4);
 
-var reinafinal5 = new THREE.Geometry();
-reinafinal5.merge(mreinafinal4.geometry,mreinafinal4.matrix);
-reinafinal5.merge(mbtecho.geometry,mbtecho.matrix);
+var reyfinal5 = new THREE.Geometry();
+reyfinal5.merge(mreyfinal4.geometry,mreyfinal4.matrix);
+reyfinal5.merge(mbtecho.geometry,mbtecho.matrix);
 
-var mreinafinal5 = new THREE.Mesh(reinafinal5);
+var mreyfinal5 = new THREE.Mesh(reyfinal5);
 
-var reinafinal6 = new THREE.Geometry();
-reinafinal6.merge(mreinafinal5.geometry,mreinafinal5.matrix);
-reinafinal6.merge(mtoroide2.geometry,mtoroide2.matrix);
+var reyfinal6 = new THREE.Geometry();
+reyfinal6.merge(mreyfinal5.geometry,mreyfinal5.matrix);
+reyfinal6.merge(mtoroide2.geometry,mtoroide2.matrix);
 
-var mreinafinal6 = new THREE.Mesh(reinafinal6);
+var mreyfinal6 = new THREE.Mesh(reyfinal6);
 
-var reinafinal7 = new THREE.Geometry();
-reinafinal7.merge(mreinafinal6.geometry,mreinafinal6.matrix);
-reinafinal7.merge(mtoroide3.geometry,mtoroide3.matrix);
+var reyfinal7 = new THREE.Geometry();
+reyfinal7.merge(mreyfinal6.geometry,mreyfinal6.matrix);
+reyfinal7.merge(mtoroide3.geometry,mtoroide3.matrix);
 
-var mreinafinal7 = new THREE.Mesh(reinafinal7);
+var mreyfinal7 = new THREE.Mesh(reyfinal7);
 
-var reinafinal8 = new THREE.Geometry();
-reinafinal8.merge(mreinafinal7.geometry,mreinafinal7.matrix);
-reinafinal8.merge(mcorona1.geometry,mcorona1.matrix);
+var reyfinal8 = new THREE.Geometry();
+reyfinal8.merge(mreyfinal7.geometry,mreyfinal7.matrix);
+reyfinal8.merge(mcorona1.geometry,mcorona1.matrix);
 
-var mreinafinal8 = new THREE.Mesh(reinafinal8,material);
+var mreyfinal8 = new THREE.Mesh(reyfinal8,material);
 
 
 var escena=new THREE.Scene();
-escena.add(malfilfinal10);
+escena.add(mreyfinal8);
 escena.rotateX(Math.PI/6);
 
 var camara=new THREE.PerspectiveCamera();
