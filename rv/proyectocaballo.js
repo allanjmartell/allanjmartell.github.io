@@ -69,7 +69,7 @@ var mcaballofinal4 = new THREE.Mesh(caballofinal4,material);
 
 var escena=new THREE.Scene();
 escena.add(mcaballofinal4);
-escena.rotateX(Math.PI/2);
+//escena.rotateX(Math.PI/2);
 
 var camara=new THREE.PerspectiveCamera();
 camara.position.z=70;
