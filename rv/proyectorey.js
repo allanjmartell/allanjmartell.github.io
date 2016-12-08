@@ -28,6 +28,26 @@ corona1.translate(0,19,0);
 var corona2 = new THREE.CylinderGeometry(1,2,.5,50);
 corona2.translate(0,20.75,0);
 
+//Decoración
+var forma=new THREE.Shape();
+
+forma.moveTo(-.5,,5);
+forma.lineTo(-3.5,1.5);
+forma.lineTo(-3.5,-1.5);
+forma.lineTo(-.5,-.5);
+forma.lineTo(-1.5,-3.5);
+forma.lineTo(1.5,-3.5);
+forma.lineTo(.5,-.5);
+forma.lineTo(3.5,-1.5);
+forma.lineTo(3.5,1.5);
+forma.lineTo(.5,.5);
+forma.lineTo(1.5,3.5);
+forma.lineTo(-1.5,3.5);
+forma.lineTo(-.5,.5);
+
+var cruz= new THREE.ExtrudeGeometry(forma,{amount:1});
+//cruz.rotateX(Math.PI/2);
+cruz.translate(0,21.25,0);
 //Mallas
 var mbase = new THREE.Mesh(base);
 var mcolumna1 = new THREE.Mesh(columna1);
@@ -38,6 +58,7 @@ var mtoroide2 = new THREE.Mesh(toroide2);
 var mtoroide3 = new THREE.Mesh(toroide3);
 var mcorona1 = new THREE.Mesh(corona1);
 var mcorona2 = new THREE.Mesh(corona2);
+var mcruz = new THREE.Mesh(cruz)
 
 //Cuerpo completo
 
@@ -93,10 +114,16 @@ var reyfinal9 = new THREE.Geometry();
 reyfinal9.merge(mreyfinal8.geometry,mreyfinal8.matrix);
 reyfinal9.merge(mcorona2.geometry,mcorona2.matrix);
 
-var mreyfinal9 = new THREE.Mesh(reyfinal9,material);
+var mreyfinal9 = new THREE.Mesh(reyfinal9);
+
+var reyfinal10 = new THREE.Geometry();
+reyfinal10.merge(mreyfinal9.geometry,mreyfinal9.matrix);
+reyfinal10.merge(mcruz.geometry,mcruz.matrix);
+
+var mreyfinal10 = new THREE.Mesh(reyfinal10,material);
 
 var escena=new THREE.Scene();
-escena.add(mreyfinal9);
+escena.add(mreyfinal10);
 escena.rotateX(Math.PI/6);
 
 var camara=new THREE.PerspectiveCamera();
