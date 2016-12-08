@@ -31,8 +31,8 @@ forma.lineTo(-6,-3);
 forma.lineTo(-7,-3);
 forma.lineTo(-10,0);
 
-var caballo= new THREE.ExtrudeGeometry(forma,{amount:3.5});
-caballo.scale(.5,.5,.5);
+var caballo= new THREE.ExtrudeGeometry(forma,{amount:3.5},{curveSegments:50});
+caballo.scale(.25,.25,.25);
 caballo.translate(0,8,0);
 
 //Mallas
