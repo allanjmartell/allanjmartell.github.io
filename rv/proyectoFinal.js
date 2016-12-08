@@ -1091,10 +1091,10 @@ function init() {
 	
   escena.add(alfilblanco1,alfilblanco2,alfilnegro1,alfilnegro2);
   ////////////////////////////////////////////Caballos/////////////////////////////////////////////////////////////
-  caballoblanco1 = new AlfilBlanco(10,4.5,-20);
-  caballoblanco2 = new AlfilBlanco(10,4.5,-70);
-  caballonegro1 = new AlfilNegro(80,4.5,-20);
-  caballonegro2 = new AlfilNegro(80,4.5,-70);
+  caballoblanco1 = new CaballoBlanco(10,4.5,-20);
+  caballoblanco2 = new CaballoBlanco(10,4.5,-70);
+  caballonegro1 = new CaballoNegro(80,4.5,-20);
+  caballonegro2 = new CaballoNegro(80,4.5,-70);
 	
   escena.add(caballoblanco1,caballoblanco2,caballonegro1,caballonegro2);	
   ////////////////////////////////////////////Reinas/////////////////////////////////////////////////////////////////
