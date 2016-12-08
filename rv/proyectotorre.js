@@ -68,11 +68,11 @@ var mtorrefinal6 = new THREE.Mesh(torrefinal6,material);
 
 var escena = new THREE.Scene();
 escena.add(mtorrefinal6);
-escena.rotateX(Math.PI/6);
+escena.rotateX(Math.PI/2);
 
 var camara = new THREE.PerspectiveCamera();
 //camara.position.y=15;
-camara.position.z=50;
+camara.position.z=70;
 
 var renderizador = new THREE.WebGLRenderer();
 renderizador.setSize(window.innerHeight*.95,window.innerHeight*.95);
