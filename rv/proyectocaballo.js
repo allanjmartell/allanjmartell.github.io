@@ -19,7 +19,7 @@ forma.lineTo(5,7);
 forma.lineTo(8,3);
 forma.lineTo(10,-1);
 forma.lineTo(10,-4);
-forma.lineTo(7,-9);
+forma.lineTo(4,-9);
 forma.lineTo(-5,-9);
 forma.lineTo(-6,-6);
 forma.lineTo(-2,-2);
