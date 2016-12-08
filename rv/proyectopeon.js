@@ -8,14 +8,14 @@ var toroide1 = new THREE.TorusGeometry(3.5,.5,50,50);
 toroide1.rotateX(Math.PI/2);
 toroide1.translate(0,3.5,0);
 
-var columna2 = new THREE.CylinderGeometry(2,3.5,6,50);
-columna2.translate(0,6.5,0);
+var columna2 = new THREE.CylinderGeometry(2,3.5,4,50);
+columna2.translate(0,5.5,0);
 
-var btecho = new THREE.CylinderGeometry(1.5,3.5,2,50);
-btecho.translate(0,10.5,0);
+var btecho = new THREE.CylinderGeometry(1.5,2.5,2,50);
+btecho.translate(0,8.5,0);
 
-var bola = new THREE.SphereGeometry(2,50,50);
-bola.translate(0,12.4,0)
+var bola = new THREE.SphereGeometry(3,50,50);
+bola.translate(0,10.5,0)
 
 //Mallas
 var mbase = new THREE.Mesh(base);
