@@ -33,7 +33,7 @@ piedra4.translate(-3.25,16.5,0);
 
 var piedra5 = new THREE.BoxGeometry(2,2.5,.1);
 piedra5.rotateY(Math.PI/4);
-piedra5.translate(1.67,16.5,1.67);
+piedra5.translate(3.25,16.5,3.25);
 
 //Mallas
 var mbase = new THREE.Mesh(base);
