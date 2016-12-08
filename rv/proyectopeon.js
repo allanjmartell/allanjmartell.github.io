@@ -11,11 +11,11 @@ toroide1.translate(0,3.5,0);
 var columna2 = new THREE.CylinderGeometry(2,3.5,4,50);
 columna2.translate(0,5.5,0);
 
-var btecho = new THREE.CylinderGeometry(1.5,2.5,2,50);
+var btecho = new THREE.CylinderGeometry(1.5,3,2,50);
 btecho.translate(0,8.5,0);
 
-var bola = new THREE.SphereGeometry(3,50,50);
-bola.translate(0,10.5,0)
+var bola = new THREE.SphereGeometry(2,50,50);
+bola.translate(0,10,0)
 
 //Mallas
 var mbase = new THREE.Mesh(base);
