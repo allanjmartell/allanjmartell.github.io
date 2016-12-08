@@ -53,6 +53,7 @@ var torreblanca1,torreblanca2,torrenegra1,torrenegra2;
 var peonblanco1,peonblanco2,peonblanco3,peonblanco4,peonblanco5,peonblanco6,peonblanco7,peonblanco8;
 var peonnegro1,peonnegro2,peonnegro3,peonnegro4,peonnegro5,peonnegro6,peonnegro7,peonnegro8;
 var alfilblanco1,alfilblanco2,alfilnegro1,alfilnegro2;
+var caballoblanco1,caballoblanco2,caballonegro1,caballonegro2;
 var reinablanca,reinanegra;
 var reyblanco,reynegro;
 //////////////////////////////////////////Sensor/////////////////////////////////////////////////////////////////////////////////
@@ -150,6 +151,35 @@ function AlfilNegro(x=0,y=0,z=0){
 
 AlfilBlanco.prototype = new Agent();
 AlfilNegro.prototype = new Agent();
+/////////////////////////////////////////Caballos/////////////////////////////////////////////////////////////////////////////
+function CaballoBlanco(x=0,y=0,z=0){
+  Agent.call(this,x,y,z);
+  var textura1 = new THREE.TextureLoader().load('maderablanca.jpg');
+  var maderablanca = new THREE.MeshLambertMaterial({map:textura1});
+  this.actuator = new THREE.Mesh(caballofinal4,maderablanca);
+  this.actuator.commands = [];
+  this.add(this.actuator);
+  this.position.y=y;
+  this.position.z=z;
+  this.position.x=x;
+  this.sensor = new Sensor();
+}
+
+function CaballoNegro(x=0,y=0,z=0){
+  Agent.call(this,x,y,z);
+  var textura2 = new THREE.TextureLoader().load('maderanegra.jpg');
+  var maderanegra = new THREE.MeshLambertMaterial({map:textura2});
+  this.actuator = new THREE.Mesh(caballofinal5,maderanegra);
+  this.actuator.commands = [];
+  this.add(this.actuator);
+  this.position.y=y;
+  this.position.z=z;
+  this.position.x=x;
+  this.sensor = new Sensor();
+}
+
+CaballoBlanco.prototype = new Agent();
+CaballoNegro.prototype = new Agent();
 //////////////////////////////////////////Reinas//////////////////////////////////////////////////////////////////////////////
 function ReinaBlanca(x=0,y=0,z=0){
   Agent.call(this,x,y,z);
@@ -1060,6 +1090,13 @@ function init() {
   alfilnegro2 = new AlfilNegro(80,4.5,-60);
 	
   escena.add(alfilblanco1,alfilblanco2,alfilnegro1,alfilnegro2);
+  ////////////////////////////////////////////Caballos/////////////////////////////////////////////////////////////
+  caballoblanco1 = new AlfilBlanco(10,4.5,-20);
+  caballoblanco2 = new AlfilBlanco(10,4.5,-70);
+  caballonegro1 = new AlfilNegro(80,4.5,-20);
+  caballonegro2 = new AlfilNegro(80,4.5,-70);
+	
+  escena.add(caballoblanco1,caballoblanco2,caballonegro1,caballonegro2);	
   ////////////////////////////////////////////Reinas/////////////////////////////////////////////////////////////////
   reinablanca = new ReinaBlanca(10,4.5,-40);
   reinanegra = new ReinaNegra(80,4.5,-40);
