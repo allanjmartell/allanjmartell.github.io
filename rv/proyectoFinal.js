@@ -899,6 +899,7 @@ BloqueAzul.prototype.act = function(environment){
 		     escena.add(grupomorado);  
 	             bloqueverde = new BloqueVerde(bloquerojo.position.x,0,bloquerojo.position.z);
 		     escena.add(bloqueverde);
+		     bandera=1;
 		   }//fin if Torres
                    /////////////////////////////////Peones////////////////////////////////////////////////////////////////////////
 		   if ((((((((peonblanco1.position.x===bloquerojo.position.x && peonblanco1.position.z===bloquerojo.position.z)||
@@ -914,7 +915,8 @@ BloqueAzul.prototype.act = function(environment){
 		     grupomorado.add(bloquemorado);
 		     escena.add(grupomorado);  
 	             bloqueverde = new BloqueVerde(bloquerojo.position.x,0,bloquerojo.position.z);
-		     escena.add(bloqueverde);
+		     escena.add(bloqueverde);		
+		     bandera=1;
 		   }//fin if Peones blancos
 		   if ((((((((peonnegro1.position.x===bloquerojo.position.x && peonnegro1.position.z===bloquerojo.position.z)||
 			     (peonnegro2.position.x===bloquerojo.position.x && peonnegro2.position.z===bloquerojo.position.z))||
@@ -930,9 +932,9 @@ BloqueAzul.prototype.act = function(environment){
 		     escena.add(grupomorado);  
 	             bloqueverde = new BloqueVerde(bloquerojo.position.x,0,bloquerojo.position.z);
 		     escena.add(bloqueverde);
+		     bandera=1;
 		   }//fin if Peones negros
-		//////////////////////////////////////////////Alfiles////////////////////////////////////////////////////////////
-		bandera=1;	
+		//////////////////////////////////////////////Alfiles////////////////////////////////////////////////////////////	
 		}//fin else
         break;
 	}//fin switch
