@@ -1056,10 +1056,10 @@ function init() {
     grupo3.add(malla3);
   }}
   ///////////////////////////////////////////Torres////////////////////////////////////////////////////////////////
-  torreblanca1 = new TorreBlanca(10,5,-10);
-  torreblanca2 = new TorreBlanca(10,5,-80);
-  torrenegra1 = new TorreNegra(80,5,-10);
-  torrenegra2 = new TorreNegra(80,5,-80);
+  torreblanca1 = new TorreBlanca(10,4.5,-10);
+  torreblanca2 = new TorreBlanca(10,4.5,-80);
+  torrenegra1 = new TorreNegra(80,4.5,-10);
+  torrenegra2 = new TorreNegra(80,4.5,-80);
 	
   escena.add(torreblanca1,torreblanca2,torrenegra1,torrenegra2);
   /////////////////////////////////////////Peones/////////////////////////////////////////////////////////////////
