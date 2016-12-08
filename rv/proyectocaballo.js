@@ -68,16 +68,16 @@ caballofinal4.merge(mcaballo.geometry,mcaballo.matrix);
 var caballofinal5 = caballofinal4.clone();
 caballofinal5.rotateY(Math.PI);
 
-var mcaballofinal5 = new THREE.Mesh(caballofinal5,material);
+//var mcaballofinal5 = new THREE.Mesh(caballofinal5,material);
 
-var escena=new THREE.Scene();
-escena.add(mcaballofinal5);
-escena.rotateX(Math.PI/6);
+//var escena=new THREE.Scene();
+//escena.add(mcaballofinal5);
+//escena.rotateX(Math.PI/6);
 
-var camara=new THREE.PerspectiveCamera();
-camara.position.z=70;
+//var camara=new THREE.PerspectiveCamera();
+//camara.position.z=70;
 
-var renderizador=new THREE.WebGLRenderer();
-renderizador.setSize(window.innerHeight*.95,window.innerHeight*.95);
-document.body.appendChild(renderizador.domElement);
-renderizador.render(escena,camara);
+//var renderizador=new THREE.WebGLRenderer();
+//renderizador.setSize(window.innerHeight*.95,window.innerHeight*.95);
+//document.body.appendChild(renderizador.domElement);
+//renderizador.render(escena,camara);
