@@ -31,19 +31,19 @@ corona2.translate(0,20.75,0);
 //Decoración
 var forma=new THREE.Shape();
 
-forma.moveTo(-.5,.5);
-forma.lineTo(-3.5,1.5);
-forma.lineTo(-3.5,-1.5);
-forma.lineTo(-.5,-.5);
-forma.lineTo(-1.5,-3.5);
-forma.lineTo(1.5,-3.5);
-forma.lineTo(.5,-.5);
-forma.lineTo(3.5,-1.5);
-forma.lineTo(3.5,1.5);
-forma.lineTo(.5,.5);
-forma.lineTo(1.5,3.5);
-forma.lineTo(-1.5,3.5);
-forma.lineTo(-.5,.5);
+forma.moveTo(-1,1);
+forma.lineTo(-7,3);
+forma.lineTo(-7,-3);
+forma.lineTo(-1,-1);
+forma.lineTo(-3,-7);
+forma.lineTo(3,-7);
+forma.lineTo(1,-1);
+forma.lineTo(7,-3);
+forma.lineTo(7,3);
+forma.lineTo(1,1);
+forma.lineTo(3,7);
+forma.lineTo(-3,7);
+forma.lineTo(-1,1);
 
 var cruz= new THREE.ExtrudeGeometry(forma,{amount:1});
 //cruz.rotateX(Math.PI/2);
