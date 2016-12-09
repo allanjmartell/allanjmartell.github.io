@@ -924,7 +924,7 @@ BloqueAzul.prototype.act = function(environment){
 			  alfilblanco2.position.x -= this.step;
 		      }//fin if posicion x
 		      if (this.colision!=1){
-			if(alfilblanco2.position.z<bvtb2.position.z)
+			if(alfilblanco2.position.z<bvab2.position.z)
 			  alfilblanco2.position.z += this.step;
 			else
 			  alfilblanco2.position.z -= this.step;
@@ -985,6 +985,61 @@ BloqueAzul.prototype.act = function(environment){
 		      }//fin if posicion z
 		    }//fin prototype act
 		  }//fin if alfilnegro2
+//////////////////////////////////////////////////////Reinas///////////////////////////////////////////////////////////////////////////
+	          ///////////////////////////////////Reina Blanca//////////////////////////////////////////////////////////////////
+		  if (reinablanca.position.x===bloquerojo.position.x && reinablanca.position.z===bloquerojo.position.z){
+		    var bvrab=bloqueverde;
+		    ReinaBlanca.prototype.sense = function(environment){
+		      this.sensor.set(this.position,new THREE.Vector3(0,-1,0));
+		      var obstaculo = this.sensor.intersectObjects(bvrab,true);
+		      if(obstaculo.length >0)
+			{this.colision = 1;this.step=0;}
+ 		      else
+		        {this.colision = 0;this.step=0.25;}
+		    }//fin prototype sense
+		
+		    ReinaBlanca.prototype.act = function(environment){ 	
+		      if (this.colision!=1){
+			if(reinablanca.position.x<bvrab.position.x)
+			  reinablanca.position.x += this.step;
+			else
+			  reinablanca.position.x -= this.step;
+		      }//fin if posicion x
+		      if (this.colision!=1){
+			if(reinablanca.position.z<bvrab.position.z)
+			  reinablanca.position.z += this.step;
+			else
+			  reinablanca.position.z -= this.step;
+		      }//fin if posicion z
+		    }//fin prototype act
+		  }//fin if reinablanca
+	          /////////////////////////////////Reina Negra//////////////////////////////////////////////////////////////////
+		  if (reinanegra.position.x===bloquerojo.position.x && reinanegra.position.z===bloquerojo.position.z){
+		    var bvran=bloqueverde;
+		    ReinaNegra.prototype.sense = function(environment){
+		      this.sensor.set(this.position,new THREE.Vector3(0,-1,0));
+		      var obstaculo = this.sensor.intersectObjects(bvran,true);
+		      if(obstaculo.length >0)
+			{this.colision = 1;this.step=0;}
+ 		      else
+		        {this.colision = 0;this.step=0.25;}
+		    }//fin prototype sense
+		
+		    ReinaNegra.prototype.act = function(environment){ 	
+		      if (this.colision!=1){
+			if(reinanegra.position.x<bvran.position.x)
+			  reinanegra.position.x += this.step;
+			else
+			  reinanegra.position.x -= this.step;
+		      }//fin if posicion x
+		      if (this.colision!=1){
+			if(reinanegra.position.z<bvran.position.z)
+			  reinanegra.position.z += this.step;
+			else
+			  reinanegra.position.z -= this.step;
+		      }//fin if posicion z
+		    }//fin prototype act
+		  }//fin if reinanegra
                 bandera=0;
 		}//fin if bandera
 ////////////////////////////////////////Movimientos de piezas/////////////////////////////////////////////////////////////////////////
@@ -1080,6 +1135,43 @@ BloqueAzul.prototype.act = function(environment){
 		     escena.add(bloqueverde);
 		     bandera=1;
 		   }//fin if Alfiles
+		//////////////////////////////////////////////Reinas////////////////////////////////////////////////////////////
+		   if ((reinablanca.position.x===bloquerojo.position.x && reinablanca.position.z===bloquerojo.position.z)||
+		       (reinanegra.position.x===bloquerojo.position.x && reinanegra.position.z===bloquerojo.position.z)){
+		     grupomorado = new THREE.Group();
+		     for (i=1;i<=8;i++){ 
+		       bloquemorado = new BloqueMorado(bloquerojo.position.x+(i*10),0,bloquerojo.position.z-(i*10));
+		       if (bloquemorado.position.x>80 || bloquemorado.position.z<-80){bloquemorado.visible=false;}
+		       grupomorado.add(bloquemorado);
+		     }
+		     for (i=1;i<=8;i++){ 
+		       bloquemorado = new BloqueMorado(bloquerojo.position.x-(i*10),0,bloquerojo.position.z-(i*10));
+		       if (bloquemorado.position.x<10 || bloquemorado.position.z<-80){bloquemorado.visible=false;}
+		       grupomorado.add(bloquemorado);
+		     }	
+		     for (i=1;i<=8;i++){ 
+		       bloquemorado = new BloqueMorado(bloquerojo.position.x+(i*10),0,bloquerojo.position.z+(i*10));
+		       if (bloquemorado.position.x>80 || bloquemorado.position.z>-10){bloquemorado.visible=false;}
+		       grupomorado.add(bloquemorado);
+		     }
+		     for (i=1;i<=8;i++){ 
+		       bloquemorado = new BloqueMorado(bloquerojo.position.x-(i*10),0,bloquerojo.position.z+(i*10));
+		       if (bloquemorado.position.x<10 || bloquemorado.position.z>-10){bloquemorado.visible=false;}
+		       grupomorado.add(bloquemorado);
+		     }	
+		     for (i=1;i<=8;i++){ 
+		       bloquemorado = new BloqueMorado(bloquerojo.position.x,0,-i*10);
+		       grupomorado.add(bloquemorado);
+		     }
+		     for (i=1;i<=8;i++){ 
+		       bloquemorado = new BloqueMorado(i*10,0,bloquerojo.position.z);
+		       grupomorado.add(bloquemorado);
+		     }	
+		     escena.add(grupomorado);  
+	             bloqueverde = new BloqueVerde(bloquerojo.position.x,0,bloquerojo.position.z);
+		     escena.add(bloqueverde);
+		     bandera=1;
+		   }//fin if Reinas
 		}//fin else
         break;
 	}//fin switch
