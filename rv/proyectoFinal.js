@@ -948,12 +948,12 @@ BloqueAzul.prototype.act = function(environment){
 		     grupomorado = new THREE.Group();
 		     for (i=1;i<=8;i++){ 
 		       bloquemorado = new BloqueMorado(bloquerojo.position.x+(i*10),0,bloquerojo.position.z-(i*10));
-		       if (bloquemorado.position.x>80 && bloquemorado.position.z<-80){bloquemorado.visible=false;}
+		       if (bloquemorado.position.x>80 || bloquemorado.position.z<-80){bloquemorado.visible=false;}
 		       grupomorado.add(bloquemorado);
 		     }
 		     for (i=1;i<=8;i++){ 
 		       bloquemorado = new BloqueMorado(bloquerojo.position.x-(i*10),0,bloquerojo.position.z-(i*10));
-		       if (bloquemorado.position.x<10 && bloquemorado.position.z<-80){bloquemorado.visible=false;}
+		       if (bloquemorado.position.x<10 || bloquemorado.position.z<-80){bloquemorado.visible=false;}
 		       grupomorado.add(bloquemorado);
 		     }	
 		     escena.add(grupomorado);  
