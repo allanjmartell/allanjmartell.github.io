@@ -1140,6 +1140,14 @@ BloqueAzul.prototype.act = function(environment){
 		       (reinanegra.position.x===bloquerojo.position.x && reinanegra.position.z===bloquerojo.position.z)){
 		     grupomorado = new THREE.Group();
 		     for (i=1;i<=8;i++){ 
+		       bloquemorado = new BloqueMorado(bloquerojo.position.x,0,-i*10);
+		       grupomorado.add(bloquemorado);
+		     }
+		     for (i=1;i<=8;i++){ 
+		       bloquemorado = new BloqueMorado(i*10,0,bloquerojo.position.z);
+		       grupomorado.add(bloquemorado);
+		     }	
+		     for (i=1;i<=8;i++){ 
 		       bloquemorado = new BloqueMorado(bloquerojo.position.x+(i*10),0,bloquerojo.position.z-(i*10));
 		       if (bloquemorado.position.x>80 || bloquemorado.position.z<-80){bloquemorado.visible=false;}
 		       grupomorado.add(bloquemorado);
@@ -1157,14 +1165,6 @@ BloqueAzul.prototype.act = function(environment){
 		     for (i=1;i<=8;i++){ 
 		       bloquemorado = new BloqueMorado(bloquerojo.position.x-(i*10),0,bloquerojo.position.z+(i*10));
 		       if (bloquemorado.position.x<10 || bloquemorado.position.z>-10){bloquemorado.visible=false;}
-		       grupomorado.add(bloquemorado);
-		     }	
-		     for (i=1;i<=8;i++){ 
-		       bloquemorado = new BloqueMorado(bloquerojo.position.x,0,-i*10);
-		       grupomorado.add(bloquemorado);
-		     }
-		     for (i=1;i<=8;i++){ 
-		       bloquemorado = new BloqueMorado(i*10,0,bloquerojo.position.z);
 		       grupomorado.add(bloquemorado);
 		     }	
 		     escena.add(grupomorado);  
