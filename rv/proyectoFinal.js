@@ -940,7 +940,27 @@ BloqueAzul.prototype.act = function(environment){
 		     escena.add(bloqueverde);
 		     bandera=1;
 		   }//fin if Peones negros
-		//////////////////////////////////////////////Alfiles////////////////////////////////////////////////////////////	
+		//////////////////////////////////////////////Alfiles////////////////////////////////////////////////////////////
+		   if ((((alfilblanco1.position.x===bloquerojo.position.x && alfilblanco1.position.z===bloquerojo.position.z)||
+		         (alfilblanco2.position.x===bloquerojo.position.x && alfilblanco2.position.z===bloquerojo.position.z))||
+		         (alfilnegro1.position.x===bloquerojo.position.x && alfilnegro1.position.z===bloquerojo.position.z))||
+		         (alfilnegro2.position.x===bloquerojo.position.x && alfilnegro2.position.z===bloquerojo.position.z)){
+		     grupomorado = new THREE.Group();
+		     for (i=1;i<=8;i++){ 
+		       bloquemorado = new BloqueMorado(bloquerojo.position.x+(i*10),0,bloquerojo.position.z-(i*10));
+		       if (bloquemorado.position.x>80 && bloquemorado.position.z<-80){bloquemorado.visible=false;}
+		       grupomorado.add(bloquemorado);
+		     }
+		     for (i=1;i<=8;i++){ 
+		       bloquemorado = new BloqueMorado(bloquerojo.position.x-(i*10),0,bloquerojo.position.z-(i*10));
+		       if (bloquemorado.position.x<10 && bloquemorado.position.z<-80){bloquemorado.visible=false;}
+		       grupomorado.add(bloquemorado);
+		     }	
+		     escena.add(grupomorado);  
+	             bloqueverde = new BloqueVerde(bloquerojo.position.x,0,bloquerojo.position.z);
+		     escena.add(bloqueverde);
+		     bandera=1;
+		   }//fin if Alfiles
 		}//fin else
         break;
 	}//fin switch
