@@ -910,13 +910,22 @@ BloqueAzul.prototype.act = function(environment){
 			     (peonblanco6.position.x===bloquerojo.position.x && peonblanco6.position.z===bloquerojo.position.z))||
 			     (peonblanco7.position.x===bloquerojo.position.x && peonblanco7.position.z===bloquerojo.position.z))||
 		             (peonblanco8.position.x===bloquerojo.position.x && peonblanco8.position.z===bloquerojo.position.z)){
-		     grupomorado = new THREE.Group();
-		     bloquemorado = new BloqueMorado(bloquerojo.position.x+10,0,bloquerojo.position.z);
-		     grupomorado.add(bloquemorado);
-		     escena.add(grupomorado);  
-	             bloqueverde = new BloqueVerde(bloquerojo.position.x,0,bloquerojo.position.z);
-		     escena.add(bloqueverde);		
-		     bandera=1;
+		     if ((((((((peonblanco1.position.x>=20 && peonblanco1.position.x<=70)||
+			       (peonblanco2.position.x>=20 && peonblanco2.position.x<=70))||
+			       (peonblanco3.position.x>=20 && peonblanco3.position.x<=70))||
+			       (peonblanco4.position.x>=20 && peonblanco4.position.x<=70))||
+			       (peonblanco5.position.x>=20 && peonblanco5.position.x<=70))||
+			       (peonblanco6.position.x>=20 && peonblanco6.position.x<=70))||
+			       (peonblanco7.position.x>=20 && peonblanco7.position.x<=70))||
+		               (peonblanco8.position.x>=20 && peonblanco8.position.x<=70)){
+		         grupomorado = new THREE.Group();
+		         bloquemorado = new BloqueMorado(bloquerojo.position.x+10,0,bloquerojo.position.z);
+		         grupomorado.add(bloquemorado);
+		         escena.add(grupomorado);  
+	                 bloqueverde = new BloqueVerde(bloquerojo.position.x,0,bloquerojo.position.z);
+		         escena.add(bloqueverde);		
+		         bandera=1;
+		     }
 		   }//fin if Peones blancos
 		   if ((((((((peonnegro1.position.x===bloquerojo.position.x && peonnegro1.position.z===bloquerojo.position.z)||
 			     (peonnegro2.position.x===bloquerojo.position.x && peonnegro2.position.z===bloquerojo.position.z))||
@@ -926,13 +935,22 @@ BloqueAzul.prototype.act = function(environment){
 			     (peonnegro6.position.x===bloquerojo.position.x && peonnegro6.position.z===bloquerojo.position.z))||
 			     (peonnegro7.position.x===bloquerojo.position.x && peonnegro7.position.z===bloquerojo.position.z))||
 		             (peonnegro8.position.x===bloquerojo.position.x && peonnegro8.position.z===bloquerojo.position.z)){
-		     grupomorado = new THREE.Group();
-		     bloquemorado = new BloqueMorado(bloquerojo.position.x-10,0,bloquerojo.position.z);
-		     grupomorado.add(bloquemorado);
-		     escena.add(grupomorado);  
-	             bloqueverde = new BloqueVerde(bloquerojo.position.x,0,bloquerojo.position.z);
-		     escena.add(bloqueverde);
-		     bandera=1;
+		     if ((((((((peonnegro1.position.x>=20 && peonnegro1.position.x<=70)||
+			       (peonnegro2.position.x>=20 && peonnegro2.position.x<=70))||
+			       (peonnegro3.position.x>=20 && peonnegro3.position.x<=70))||
+			       (peonnegro4.position.x>=20 && peonnegro4.position.x<=70))||
+			       (peonnegro5.position.x>=20 && peonnegro5.position.x<=70))||
+			       (peonnegro6.position.x>=20 && peonnegro6.position.x<=70))||
+			       (peonnegro7.position.x>=20 && peonnegro7.position.x<=70))||
+		               (peonnegro8.position.x>=20 && peonnegro8.position.x<=70)){
+		         grupomorado = new THREE.Group();
+		         bloquemorado = new BloqueMorado(bloquerojo.position.x-10,0,bloquerojo.position.z);
+		         grupomorado.add(bloquemorado);
+		         escena.add(grupomorado);  
+	                 bloqueverde = new BloqueVerde(bloquerojo.position.x,0,bloquerojo.position.z);
+		         escena.add(bloqueverde);
+		         bandera=1;
+		     }
 		   }//fin if Peones negros
 		//////////////////////////////////////////////Alfiles////////////////////////////////////////////////////////////	
 		}//fin else
