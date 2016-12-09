@@ -876,6 +876,115 @@ BloqueAzul.prototype.act = function(environment){
 		      }//fin if posicion z
 		    }//fin prototype act
 		  }//fin if peonnegro8
+//////////////////////////////////////////////////////Alfiles///////////////////////////////////////////////////////////////////////////
+	          ///////////////////////////////////Alfil Blanco 1//////////////////////////////////////////////////////////////////
+		  if (alfilblanco1.position.x===bloquerojo.position.x && alfilblanco1.position.z===bloquerojo.position.z){
+		    var bvab1=bloqueverde;//Bloqueverdealfilblanco1
+		    AlfilBlanco.prototype.sense = function(environment){
+		      this.sensor.set(this.position,new THREE.Vector3(0,-1,0));
+		      var obstaculo = this.sensor.intersectObjects(bvab1,true);
+		      if(obstaculo.length >0)
+			{this.colision = 1;this.step=0;}
+ 		      else
+		        {this.colision = 0;this.step=0.25;}
+		    }//fin prototype sense
+		
+		    AlfilBlanco.prototype.act = function(environment){ 	
+		      if (this.colision!=1){
+			if(alfilblanco1.position.x<bvab1.position.x)
+			  alfilblanco1.position.x += this.step;
+			else
+			  alfilblanco1.position.x -= this.step;
+		      }//fin if posicion x
+		      if (this.colision!=1){
+			if(alfilblanco1.position.z<bvab1.position.z)
+			  alfilblanco1.position.z += this.step;
+			else
+			  alfilblanco1.position.z -= this.step;
+		      }//fin if posicion z
+		    }//fin prototype act
+		  }//fin if alfilblanco1
+	          /////////////////////////////////Alfil blanco 2//////////////////////////////////////////////////////////////////
+		  if (alfilblanco2.position.x===bloquerojo.position.x && alfilblanco2.position.z===bloquerojo.position.z){
+		    var bvab2=bloqueverde;//Bloqueverdealfilblanco2
+		    AlfilBlanco.prototype.sense = function(environment){
+		      this.sensor.set(this.position,new THREE.Vector3(0,-1,0));
+		      var obstaculo = this.sensor.intersectObjects(bvab2,true);
+		      if(obstaculo.length >0)
+			{this.colision = 1;this.step=0;}
+ 		      else
+		        {this.colision = 0;this.step=0.25;}
+		    }//fin prototype sense
+		
+		    AlfilBlanco.prototype.act = function(environment){ 	
+		      if (this.colision!=1){
+			if(alfilblanco2.position.x<bvab2.position.x)
+			  alfilblanco2.position.x += this.step;
+			else
+			  alfilblanco2.position.x -= this.step;
+		      }//fin if posicion x
+		      if (this.colision!=1){
+			if(alfilblanco2.position.z<bvtb2.position.z)
+			  alfilblanco2.position.z += this.step;
+			else
+			  alfilblanco2.position.z -= this.step;
+		      }//fin if posicion z
+		    }//fin prototype act
+		  }//fin if alfilblanco2
+	          /////////////////////////////////Alfil Negro 1///////////////////////////////////////////////////////////////////
+		  if (alfilnegro1.position.x===bloquerojo.position.x && alfilnegro1.position.z===bloquerojo.position.z){
+		    var bvan1 = bloqueverde;
+		    AlfilNegro.prototype.sense = function(environment){
+		      this.sensor.set(this.position,new THREE.Vector3(0,-1,0));
+		      var obstaculo2 = this.sensor.intersectObjects(bvan1,true);
+		      if(obstaculo2.length > 0)
+		        {this.colision = 1;this.step=0;}
+ 		      else
+		        {this.colision = 0;this.step=0.25;}
+		    }//fin prototype sense
+		
+		    AlfilNegro.prototype.act = function(environment){ 	
+		      if (this.colision!=1){
+			if(alfilnegro1.position.x<bvan1.position.x)
+			  alfilnegro1.position.x += this.step;
+			else
+			  alfilnegro1.position.x -= this.step;
+		      }//fin if posicion x
+		      if (this.colision!=1){
+			if(alfilnegro1.position.z<bvan1.position.z)
+			  alfilnegro1.position.z += this.step;
+			else
+			  alfilnegro1.position.z -= this.step;
+		      }//fin if posicion z
+		    }//fin prototype act
+		  }//fin if alfilnegro1
+		  ////////////////////////////Alfil Negro 2///////////////////////////////////////////////////////////////////  
+		  if (alfilnegro2.position.x===bloquerojo.position.x && alfilnegro2.position.z===bloquerojo.position.z){
+		    var bvan2 = bloqueverde;
+		    AlfilNegro.prototype.sense = function(environment){
+		      this.sensor.set(this.position,new THREE.Vector3(0,-1,0));
+		      var obstaculo2 = this.sensor.intersectObjects(bvan2,true);
+		      if(obstaculo2.length > 0)
+		        {this.colision = 1;this.step=0;}
+ 		      else
+		        {this.colision = 0;this.step=0.25;}
+		    }//fin prototype sense
+		
+		    AlfilNegro.prototype.act = function(environment){ 	
+		      if (this.colision!=1){
+			if(alfilnegro2.position.x<bvan2.position.x)
+			  alfilnegro2.position.x += this.step;
+			else
+			  alfilnegro2.position.x -= this.step;
+		      }//fin if posicion x
+		      if (this.colision!=1){
+			if(alfilnegro2.position.z<bvan2.position.z)
+			  alfilnegro2.position.z += this.step;
+			else
+			  alfilnegro2.position.z -= this.step;
+		      }//fin if posicion z
+		    }//fin prototype act
+		  }//fin if alfilnegro2
                 bandera=0;
 		}//fin if bandera
 ////////////////////////////////////////Movimientos de piezas/////////////////////////////////////////////////////////////////////////
@@ -954,6 +1063,16 @@ BloqueAzul.prototype.act = function(environment){
 		     for (i=1;i<=8;i++){ 
 		       bloquemorado = new BloqueMorado(bloquerojo.position.x-(i*10),0,bloquerojo.position.z-(i*10));
 		       if (bloquemorado.position.x<10 || bloquemorado.position.z<-80){bloquemorado.visible=false;}
+		       grupomorado.add(bloquemorado);
+		     }	
+		     for (i=1;i<=8;i++){ 
+		       bloquemorado = new BloqueMorado(bloquerojo.position.x+(i*10),0,bloquerojo.position.z+(i*10));
+		       if (bloquemorado.position.x>80 || bloquemorado.position.z>-10){bloquemorado.visible=false;}
+		       grupomorado.add(bloquemorado);
+		     }
+		     for (i=1;i<=8;i++){ 
+		       bloquemorado = new BloqueMorado(bloquerojo.position.x-(i*10),0,bloquerojo.position.z+(i*10));
+		       if (bloquemorado.position.x<10 || bloquemorado.position.z>-10){bloquemorado.visible=false;}
 		       grupomorado.add(bloquemorado);
 		     }	
 		     escena.add(grupomorado);  
