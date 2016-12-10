@@ -1095,6 +1095,115 @@ BloqueAzul.prototype.act = function(environment){
 		      }//fin if posicion z
 		    }//fin prototype act
 		  }//fin if reynegro
+//////////////////////////////////////////////////////Caballos///////////////////////////////////////////////////////////////////////////
+	          ///////////////////////////////////Caballo Blanco 1//////////////////////////////////////////////////////////////////
+		  if (caballoblanco1.position.x===bloquerojo.position.x && caballoblanco1.position.z===bloquerojo.position.z){
+		    var bvcb1=bloqueverde;
+		    CaballoBlanco.prototype.sense = function(environment){
+		      this.sensor.set(this.position,new THREE.Vector3(0,-1,0));
+		      var obstaculo = this.sensor.intersectObjects(bvcb1,true);
+		      if(obstaculo.length >0)
+			{this.colision = 1;this.step=0;}
+ 		      else
+		        {this.colision = 0;this.step=0.25;}
+		    }//fin prototype sense
+		
+		    CaballoBlanco.prototype.act = function(environment){ 	
+		      if (this.colision!=1){
+			if(caballoblanco1.position.x<bvcb1.position.x)
+			  caballoblanco1.position.x += this.step;
+			else
+			  caballoblanco1.position.x -= this.step;
+		      }//fin if posicion x
+		      if (this.colision!=1){
+			if(caballoblanco1.position.z<bvcb1.position.z)
+			  caballoblanco1.position.z += this.step;
+			else
+			  caballoblanco1.position.z -= this.step;
+		      }//fin if posicion z
+		    }//fin prototype act
+		  }//fin if caballoblanco1
+	          /////////////////////////////////Caballo blanco 2//////////////////////////////////////////////////////////////////
+		  if (caballoblanco2.position.x===bloquerojo.position.x && caballoblanco2.position.z===bloquerojo.position.z){
+		    var bvcb2=bloqueverde;//Bloqueverdealfilblanco2
+		    CaballoBlanco.prototype.sense = function(environment){
+		      this.sensor.set(this.position,new THREE.Vector3(0,-1,0));
+		      var obstaculo = this.sensor.intersectObjects(bvcb2,true);
+		      if(obstaculo.length >0)
+			{this.colision = 1;this.step=0;}
+ 		      else
+		        {this.colision = 0;this.step=0.25;}
+		    }//fin prototype sense
+		
+		    CaballoBlanco.prototype.act = function(environment){ 	
+		      if (this.colision!=1){
+			if(caballoblanco2.position.x<bvcb2.position.x)
+			  caballoblanco2.position.x += this.step;
+			else
+			  caballoblanco2.position.x -= this.step;
+		      }//fin if posicion x
+		      if (this.colision!=1){
+			if(caballoblanco2.position.z<bvcb2.position.z)
+			  caballoblanco2.position.z += this.step;
+			else
+			  caballoblanco2.position.z -= this.step;
+		      }//fin if posicion z
+		    }//fin prototype act
+		  }//fin if caballoblanco2
+	          /////////////////////////////////Caballo Negro 1///////////////////////////////////////////////////////////////////
+		  if (caballonegro1.position.x===bloquerojo.position.x && caballonegro1.position.z===bloquerojo.position.z){
+		    var bvcn1 = bloqueverde;
+		    CaballoNegro.prototype.sense = function(environment){
+		      this.sensor.set(this.position,new THREE.Vector3(0,-1,0));
+		      var obstaculo2 = this.sensor.intersectObjects(bvcn1,true);
+		      if(obstaculo2.length > 0)
+		        {this.colision = 1;this.step=0;}
+ 		      else
+		        {this.colision = 0;this.step=0.25;}
+		    }//fin prototype sense
+		
+		    CaballoNegro.prototype.act = function(environment){ 	
+		      if (this.colision!=1){
+			if(caballonegro1.position.x<bvcn1.position.x)
+			  caballonegro1.position.x += this.step;
+			else
+			  caballonegro1.position.x -= this.step;
+		      }//fin if posicion x
+		      if (this.colision!=1){
+			if(caballonegro1.position.z<bvcn1.position.z)
+			  caballonegro1.position.z += this.step;
+			else
+			  caballonegro1.position.z -= this.step;
+		      }//fin if posicion z
+		    }//fin prototype act
+		  }//fin if caballonegro1
+		  ////////////////////////////Caballo Negro 2///////////////////////////////////////////////////////////////////  
+		  if (caballonegro2.position.x===bloquerojo.position.x && caballonegro2.position.z===bloquerojo.position.z){
+		    var bvcn2 = bloqueverde;
+		    CaballoNegro.prototype.sense = function(environment){
+		      this.sensor.set(this.position,new THREE.Vector3(0,-1,0));
+		      var obstaculo2 = this.sensor.intersectObjects(bvcn2,true);
+		      if(obstaculo2.length > 0)
+		        {this.colision = 1;this.step=0;}
+ 		      else
+		        {this.colision = 0;this.step=0.25;}
+		    }//fin prototype sense
+		
+		    CaballoNegro.prototype.act = function(environment){ 	
+		      if (this.colision!=1){
+			if(caballonegro2.position.x<bvcn2.position.x)
+			  caballonegro2.position.x += this.step;
+			else
+			  caballonegro2.position.x -= this.step;
+		      }//fin if posicion x
+		      if (this.colision!=1){
+			if(caballonegro2.position.z<bvcn2.position.z)
+			  caballonegro2.position.z += this.step;
+			else
+			  caballonegro2.position.z -= this.step;
+		      }//fin if posicion z
+		    }//fin prototype act
+		  }//fin if caballonegro2
                 bandera=0;
 		}//fin if bandera
 ////////////////////////////////////////Movimientos de piezas/////////////////////////////////////////////////////////////////////////
@@ -1260,6 +1369,41 @@ BloqueAzul.prototype.act = function(environment){
 		     escena.add(bloqueverde);
 		     bandera=1;
 		   }//fin if Reyes
+		//////////////////////////////////////////////Caballos////////////////////////////////////////////////////////////
+		   if ((((caballoblanco1.position.x===bloquerojo.position.x && caballoblanco1.position.z===bloquerojo.position.z)||
+		         (caballoblanco2.position.x===bloquerojo.position.x && caballoblanco2.position.z===bloquerojo.position.z))||
+		         (caballonegro1.position.x===bloquerojo.position.x && caballonegro1.position.z===bloquerojo.position.z))||
+		         (caballonegro2.position.x===bloquerojo.position.x && caballonegro2.position.z===bloquerojo.position.z)){
+		     grupomorado = new THREE.Group();
+                     bloquemorado1 = new BloqueMorado(bloquerojo.position.x+20,0,bloquerojo.position.z-10);//Noreste
+		     if (bloquemorado1.position.x>80 || bloquemorado1.position.z<-80){bloquemorado1.visible=false;}
+		     grupomorado.add(bloquemorado1);
+	             bloquemorado2 = new BloqueMorado(bloquerojo.position.x+10,0,bloquerojo.position.z-20);//Noreste
+		     if (bloquemorado2.position.x>80 || bloquemorado2.position.z<-80){bloquemorado2.visible=false;}
+		     grupomorado.add(bloquemorado2);
+		     bloquemorado3 = new BloqueMorado(bloquerojo.position.x-10,0,bloquerojo.position.z-20);//Noroeste
+		     if (bloquemorado3.position.x<10 || bloquemorado3.position.z<-80){bloquemorado3.visible=false;}
+		     grupomorado.add(bloquemorado3);
+	             bloquemorado4 = new BloqueMorado(bloquerojo.position.x-20,0,bloquerojo.position.z-10);//Noroeste
+		     if (bloquemorado4.position.x<10 || bloquemorado4.position.z<-80){bloquemorado4.visible=false;}
+		     grupomorado.add(bloquemorado4);
+		     bloquemorado5 = new BloqueMorado(bloquerojo.position.x-20,0,bloquerojo.position.z+10);//Sureste
+		     if (bloquemorado5.position.x<10 || bloquemorado5.position.z>-10){bloquemorado5.visible=false;}
+		     grupomorado.add(bloquemorado5);
+	             bloquemorado6 = new BloqueMorado(bloquerojo.position.x-10,0,bloquerojo.position.z+20);//Sureste
+		     if (bloquemorado6.position.x<10 || bloquemorado6.position.z>-10){bloquemorado6.visible=false;}
+		     grupomorado.add(bloquemorado6);   
+		     bloquemorado7 = new BloqueMorado(bloquerojo.position.x+10,0,bloquerojo.position.z+20);//Suroeste
+		     if (bloquemorado7.position.x>80 || bloquemorado7.position.z>-10){bloquemorado7.visible=false;}
+		     grupomorado.add(bloquemorado7);
+	             bloquemorado8 = new BloqueMorado(bloquerojo.position.x+20,0,bloquerojo.position.z+10);//Suroeste
+		     if (bloquemorado8.position.x>80 || bloquemorado8.position.z>-10){bloquemorado8.visible=false;}
+		     grupomorado.add(bloquemorado8);  
+		     escena.add(grupomorado);  
+	             bloqueverde = new BloqueVerde(bloquerojo.position.x,0,bloquerojo.position.z);
+		     escena.add(bloqueverde);
+		     bandera=1;
+		   }//fin if Caballos
 		}//fin else
         break;
 	}//fin switch
