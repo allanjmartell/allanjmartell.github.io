@@ -422,53 +422,53 @@ BloqueAzul.prototype.act = function(environment){
 		      var obsneo15 = this.sensoro.intersectObjects(peonnegro7,true);
 		      var obsneo16 = this.sensoro.intersectObjects(peonnegro8,true);
 		      ////////////////////////////Condiciones
-		      if ((((obsnen1.length > 0 && (obsnen1.distance <= 5)||(obsnee1.length > 0 && (obsnee1.distance <= 5))||
-			 (obsneo1.length > 0 && (obsneo1.distance <= 5))||(obsnes1.length > 0 && (obsnes1.distance <= 5))
+		      if ((((obsnen1.length > 0 && obsnen1.distance <= 5)||(obsnee1.length > 0 && obsnee1.distance <= 5))||
+			 (obsneo1.length > 0 && obsneo1.distance <= 5))||(obsnes1.length > 0 && obsnes1.distance <= 5))
 			 {this.colision2 = 1;pieza=torrenegra1;}
-		      if ((((obsnen2.length > 0 && (obsnen2.distance <= 5)||(obsnee2.length > 0 && (obsnee2.distance <= 5))||
-			 (obsneo2.length > 0 && (obsneo2.distance <= 5))||(obsnes2.length > 0 && (obsnes2.distance <= 5))
+		      if ((((obsnen2.length > 0 && obsnen2.distance <= 5)||(obsnee2.length > 0 && obsnee2.distance <= 5))||
+			 (obsneo2.length > 0 && obsneo2.distance <= 5))||(obsnes2.length > 0 && obsnes2.distance <= 5))
 			 {this.colision2 = 1;pieza=torrenegra2;}
-		      if ((((obsnen3.length > 0 && (obsnen3.distance <= 5)||(obsnee3.length > 0 && (obsnee3.distance <= 5))||
-			 (obsneo3.length > 0 && (obsneo3.distance <= 5))||(obsnes3.length > 0 && (obsnes3.distance <= 5))
+		      if ((((obsnen3.length > 0 && obsnen3.distance <= 5)||(obsnee3.length > 0 && obsnee3.distance <= 5))||
+			 (obsneo3.length > 0 && obsneo3.distance <= 5))||(obsnes3.length > 0 && obsnes3.distance <= 5))
 			 {this.colision2 = 1;pieza=caballonegro1;}
-		      if ((((obsnen4.length > 0 && (obsnen4.distance <= 5)||(obsnee4.length > 0 && (obsnee4.distance <= 5))||
-			 (obsneo4.length > 0 && (obsneo4.distance <= 5))||(obsnes4.length > 0 && (obsnes4.distance <= 5))
+		      if ((((obsnen4.length > 0 && obsnen4.distance <= 5)||(obsnee4.length > 0 && obsnee4.distance <= 5))||
+			 (obsneo4.length > 0 && obsneo4.distance <= 5))||(obsnes4.length > 0 && obsnes4.distance <= 5))
 			 {this.colision2 = 1;pieza=caballonegro2;}
-		      if ((((obsnen5.length > 0 && (obsnen5.distance <= 5)||(obsnee5.length > 0 && (obsnee5.distance <= 5))||
-			 (obsneo5.length > 0 && (obsneo5.distance <= 5))||(obsnes5.length > 0 && (obsnes5.distance <= 5))
+		      if ((((obsnen5.length > 0 && obsnen5.distance <= 5)||(obsnee5.length > 0 && obsnee5.distance <= 5))||
+			 (obsneo5.length > 0 && obsneo5.distance <= 5))||(obsnes5.length > 0 && obsnes5.distance <= 5))
 			 {this.colision2 = 1;pieza=alfilnegro1;}
-		      if ((((obsnen6.length > 0 && (obsnen6.distance <= 5)||(obsnee6.length > 0 && (obsnee6.distance <= 5))||
-			 (obsneo6.length > 0 && (obsneo6.distance <= 5))||(obsnes6.length > 0 && (obsnes6.distance <= 5))
+		      if ((((obsnen6.length > 0 && obsnen6.distance <= 5)||(obsnee6.length > 0 && obsnee6.distance <= 5))||
+			 (obsneo6.length > 0 && obsneo6.distance <= 5))||(obsnes6.length > 0 && obsnes6.distance <= 5))
 			 {this.colision2 = 1;pieza=alfilnegro2;}
-		      if ((((obsnen7.length > 0 && (obsnen7.distance <= 5)||(obsnee7.length > 0 && (obsnee7.distance <= 5))||
-			 (obsneo7.length > 0 && (obsneo7.distance <= 5))||(obsnes7.length > 0 && (obsnes7.distance <= 5))
+		      if ((((obsnen7.length > 0 && obsnen7.distance <= 5)||(obsnee7.length > 0 && obsnee7.distance <= 5))||
+			 (obsneo7.length > 0 && obsneo7.distance <= 5))||(obsnes7.length > 0 && obsnes7.distance <= 5))
 			 {this.colision2 = 1;pieza=reinanegra;}
-		      if ((((obsnen8.length > 0 && (obsnen8.distance <= 5)||(obsnee8.length > 0 && (obsnee8.distance <= 5))||
-			 (obsneo8.length > 0 && (obsneo8.distance <= 5))||(obsnes8.length > 0 && (obsnes8.distance <= 5))
+		      if ((((obsnen8.length > 0 && obsnen8.distance <= 5)||(obsnee8.length > 0 && obsnee8.distance <= 5))||
+			 (obsneo8.length > 0 && obsneo8.distance <= 5))||(obsnes8.length > 0 && obsnes8.distance <= 5))
 			 {this.colision2 = 1;pieza=reynegro;}
-		      if ((((obsnen9.length > 0 && (obsnen9.distance <= 5)||(obsnee9.length > 0 && (obsnee9.distance <= 5))||
-			 (obsneo9.length > 0 && (obsneo9.distance <= 5))||(obsnes9.length > 0 && (obsnes9.distance <= 5))
+		      if ((((obsnen9.length > 0 && obsnen9.distance <= 5)||(obsnee9.length > 0 && obsnee9.distance <= 5))||
+			 (obsneo9.length > 0 && obsneo9.distance <= 5))||(obsnes9.length > 0 && obsnes9.distance <= 5))
 			 {this.colision2 = 1;pieza=peonnegro1;}
-		      if ((((obsnen10.length > 0 && (obsnen10.distance <= 5)||(obsnee10.length > 0 && (obsnee10.distance <= 5))||
-			 (obsneo10.length > 0 && (obsneo10.distance <= 5))||(obsnes10.length > 0 && (obsnes10.distance <= 5))
+		      if ((((obsnen10.length > 0 && obsnen10.distance <= 5)||(obsnee10.length > 0 && obsnee10.distance <= 5))||
+			 (obsneo10.length > 0 && obsneo10.distance <= 5))||(obsnes10.length > 0 && obsnes10.distance <= 5))
 			 {this.colision2 = 1;pieza=peonnegro2;}
-		      if ((((obsnen11.length > 0 && (obsnen11.distance <= 5)||(obsnee11.length > 0 && (obsnee11.distance <= 5))||
-			 (obsneo11.length > 0 && (obsneo11.distance <= 5))||(obsnes11.length > 0 && (obsnes11.distance <= 5))
+		      if ((((obsnen11.length > 0 && obsnen11.distance <= 5)||(obsnee11.length > 0 && obsnee11.distance <= 5))||
+			 (obsneo11.length > 0 && obsneo11.distance <= 5))||(obsnes11.length > 0 && obsnes11.distance <= 5))
 			 {this.colision2 = 1;pieza=peonnegro3;}
-		      if ((((obsnen12.length > 0 && (obsnen12.distance <= 5)||(obsnee12.length > 0 && (obsnee12.distance <= 5))||
-			 (obsneo12.length > 0 && (obsneo12.distance <= 5))||(obsnes12.length > 0 && (obsnes12.distance <= 5))
+		      if ((((obsnen12.length > 0 && obsnen12.distance <= 5)||(obsnee12.length > 0 && obsnee12.distance <= 5))||
+			 (obsneo12.length > 0 && obsneo12.distance <= 5))||(obsnes12.length > 0 && obsnes12.distance <= 5))
 			 {this.colision2 = 1;pieza=peonnegro4;}
-		      if ((((obsnen13.length > 0 && (obsnen13.distance <= 5)||(obsnee13.length > 0 && (obsnee13.distance <= 5))||
-			 (obsneo13.length > 0 && (obsneo13.distance <= 5))||(obsnes13.length > 0 && (obsnes13.distance <= 5))
+		      if ((((obsnen13.length > 0 && obsnen13.distance <= 5)||(obsnee13.length > 0 && obsnee13.distance <= 5))||
+			 (obsneo13.length > 0 && obsneo13.distance <= 5))||(obsnes13.length > 0 && obsnes13.distance <= 5))
 			 {this.colision2 = 1;pieza=peonnegro5;}
-		      if ((((obsnen14.length > 0 && (obsnen14.distance <= 5)||(obsnee14.length > 0 && (obsnee14.distance <= 5))||
-			 (obsneo14.length > 0 && (obsneo14.distance <= 5))||(obsnes14.length > 0 && (obsnes14.distance <= 5))
+		      if ((((obsnen14.length > 0 && obsnen14.distance <= 5)||(obsnee14.length > 0 && obsnee14.distance <= 5))||
+			 (obsneo14.length > 0 && obsneo14.distance <= 5))||(obsnes14.length > 0 && obsnes14.distance <= 5))
 			 {this.colision2 = 1;pieza=peonnegro6;}
-		      if ((((obsnen15.length > 0 && (obsnen15.distance <= 5)||(obsnee15.length > 0 && (obsnee15.distance <= 5))||
-			 (obsneo15.length > 0 && (obsneo15.distance <= 5))||(obsnes15.length > 0 && (obsnes15.distance <= 5))
+		      if ((((obsnen15.length > 0 && obsnen15.distance <= 5)||(obsnee15.length > 0 && obsnee15.distance <= 5))||
+			 (obsneo15.length > 0 && obsneo15.distance <= 5))||(obsnes15.length > 0 && obsnes15.distance <= 5))
 			 {this.colision2 = 1;pieza=peonnegro7;}
-		      if ((((obsnen16.length > 0 && (obsnen16.distance <= 5)||(obsnee16.length > 0 && (obsnee16.distance <= 5))||
-			 (obsneo16.length > 0 && (obsneo16.distance <= 5))||(obsnes16.length > 0 && (obsnes16.distance <= 5))
+		      if ((((obsnen16.length > 0 && obsnen16.distance <= 5)||(obsnee16.length > 0 && obsnee16.distance <= 5))||
+			 (obsneo16.length > 0 && obsneo16.distance <= 5))||(obsnes16.length > 0 && obsnes16.distance <= 5))
 			 {this.colision2 = 1;pieza=peonnegro8;}
 		    }//fin prototype sense
 		
@@ -485,9 +485,7 @@ BloqueAzul.prototype.act = function(environment){
 			else
 			  torreblanca1.position.z -= this.step;
 		      }//fin if posicion z
-		      if(this.colision2!=1){
-			pieza.position.x=100;
-		      }
+		      if(this.colision2!=1){pieza.position.x=100;}
 		    }//fin prototype act
 		  }//fin if torreblanca1
 	          /////////////////////////////////Torre blanca 2//////////////////////////////////////////////////////////////////
