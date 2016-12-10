@@ -485,7 +485,24 @@ BloqueAzul.prototype.act = function(environment){
 			else
 			  torreblanca1.position.z -= this.step;
 		      }//fin if posicion z
-		      if(this.colision2!=1){pieza.position.x=100;}
+		      if(this.colision2==1){
+		        if(pieza==torrenegra1){torrenegra1.position.x=110;torrenegra1.position.z=-10;}
+		        if(pieza==torrenegra2){torrenegra2.position.x=110;torrenegra2.position.z=-80;}
+		        if(pieza==caballonegro1){caballonegro1.position.x=110;caballonegro1.position.z=-20;}
+		        if(pieza==caballonegro2){caballonegro2.position.x=110;caballonegro2.position.z=-70;}
+		        if(pieza==alfilnegro1){alfilnegro1.position.x=110;alfilnegro1.position.z=-30;}
+		        if(pieza==alfilnegro2){alfilnegro2.position.x=110;alfilnegro2.position.z=-60;}
+		        if(pieza==reinanegra){reinanegra.position.x=110;reinanegra.position.z=-40;}
+		        if(pieza==reynegro){reynegro.position.x=110;reynegro.position.z=-50;}
+		        if(pieza==peonnegro1){peonnegro1.position.x=100;peonnegro1.position.z=-10;}
+		        if(pieza==peonnegro2){peonnegro2.position.x=100;peonnegro2.position.z=-20;}
+		        if(pieza==peonnegro3){peonnegro3.position.x=100;peonnegro3.position.z=-30;}
+		        if(pieza==peonnegro4){peonnegro4.position.x=100;peonnegro4.position.z=-40;}
+		        if(pieza==peonnegro5){peonnegro5.position.x=100;peonnegro5.position.z=-50;}
+		        if(pieza==peonnegro6){peonnegro6.position.x=100;peonnegro6.position.z=-60;}
+		        if(pieza==peonnegro7){peonnegro7.position.x=100;peonnegro7.position.z=-70;}
+		        if(pieza==peonnegro8){peonnegro8.position.x=100;peonnegro8.position.z=-80;}
+		      }
 		    }//fin prototype act
 		  }//fin if torreblanca1
 	          /////////////////////////////////Torre blanca 2//////////////////////////////////////////////////////////////////
