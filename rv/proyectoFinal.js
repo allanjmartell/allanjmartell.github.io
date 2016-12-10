@@ -348,128 +348,6 @@ BloqueAzul.prototype.act = function(environment){
 			{this.colision = 1;this.step=0;}
  		      else
 		        {this.colision = 0;this.step=0.25;}
-		      ///////////////////////////////////////////////////////////////////////////
-		      this.sensorn.set(this.position,new THREE.Vector3(0,0,-1));
-		      this.sensore.set(this.position,new THREE.Vector3(1,0,0));
-		      this.sensors.set(this.position,new THREE.Vector3(0,0,1));
-		      this.sensoro.set(this.position,new THREE.Vector3(-1,0,0));
-		      /////////////////////Sensor norte//////////////////////////////////////////
-		      var obsnen1 = this.sensorn.intersectObjects(torrenegra1,true);
-		      var obsnen2 = this.sensorn.intersectObjects(torrenegra2,true);
-		      var obsnen3 = this.sensorn.intersectObjects(caballonegro1,true);
-		      var obsnen4 = this.sensorn.intersectObjects(caballonegro2,true);
-		      var obsnen5 = this.sensorn.intersectObjects(alfilnegro1,true);
-		      var obsnen6 = this.sensorn.intersectObjects(alfilnegro2,true);
-		      var obsnen7 = this.sensorn.intersectObjects(reinanegra,true);
-		      var obsnen8 = this.sensorn.intersectObjects(reynegro,true);
-		      var obsnen9 = this.sensorn.intersectObjects(peonnegro1,true);
-		      var obsnen10 = this.sensorn.intersectObjects(peonnegro2,true);
-		      var obsnen11 = this.sensorn.intersectObjects(peonnegro3,true);
-		      var obsnen12 = this.sensorn.intersectObjects(peonnegro4,true);
-		      var obsnen13 = this.sensorn.intersectObjects(peonnegro5,true);
-		      var obsnen14 = this.sensorn.intersectObjects(peonnegro6,true);
-		      var obsnen15 = this.sensorn.intersectObjects(peonnegro7,true);
-		      var obsnen16 = this.sensorn.intersectObjects(peonnegro8,true);
-		      /////////////////////Sensor este//////////////////////////////////////////
-		      var obsnee1 = this.sensore.intersectObjects(torrenegra1,true);
-		      var obsnee2 = this.sensore.intersectObjects(torrenegra2,true);
-		      var obsnee3 = this.sensore.intersectObjects(caballonegro1,true);
-		      var obsnee4 = this.sensore.intersectObjects(caballonegro2,true);
-		      var obsnee5 = this.sensore.intersectObjects(alfilnegro1,true);
-		      var obsnee6 = this.sensore.intersectObjects(alfilnegro2,true);
-		      var obsnee7 = this.sensore.intersectObjects(reinanegra,true);
-		      var obsnee8 = this.sensore.intersectObjects(reynegro,true);
-		      var obsnee9 = this.sensore.intersectObjects(peonnegro1,true);
-		      var obsnee10 = this.sensore.intersectObjects(peonnegro2,true);
-		      var obsnee11 = this.sensore.intersectObjects(peonnegro3,true);
-		      var obsnee12 = this.sensore.intersectObjects(peonnegro4,true);
-		      var obsnee13 = this.sensore.intersectObjects(peonnegro5,true);
-		      var obsnee14 = this.sensore.intersectObjects(peonnegro6,true);
-		      var obsnee15 = this.sensore.intersectObjects(peonnegro7,true);
-		      var obsnee16 = this.sensore.intersectObjects(peonnegro8,true);
-		      /////////////////////Sensor sur//////////////////////////////////////////
-		      var obsnes1 = this.sensors.intersectObjects(torrenegra1,true);
-		      var obsnes2 = this.sensors.intersectObjects(torrenegra2,true);
-		      var obsnes3 = this.sensors.intersectObjects(caballonegro1,true);
-		      var obsnes4 = this.sensors.intersectObjects(caballonegro2,true);
-		      var obsnes5 = this.sensors.intersectObjects(alfilnegro1,true);
-		      var obsnes6 = this.sensors.intersectObjects(alfilnegro2,true);
-		      var obsnes7 = this.sensors.intersectObjects(reinanegra,true);
-		      var obsnes8 = this.sensors.intersectObjects(reynegro,true);
-		      var obsnes9 = this.sensors.intersectObjects(peonnegro1,true);
-		      var obsnes10 = this.sensors.intersectObjects(peonnegro2,true);
-		      var obsnes11 = this.sensors.intersectObjects(peonnegro3,true);
-		      var obsnes12 = this.sensors.intersectObjects(peonnegro4,true);
-		      var obsnes13 = this.sensors.intersectObjects(peonnegro5,true);
-		      var obsnes14 = this.sensors.intersectObjects(peonnegro6,true);
-		      var obsnes15 = this.sensors.intersectObjects(peonnegro7,true);
-		      var obsnes16 = this.sensors.intersectObjects(peonnegro8,true);
-		      /////////////////////Sensor oeste//////////////////////////////////////////
-		      var obsneo1 = this.sensoro.intersectObjects(torrenegra1,true);
-		      var obsneo2 = this.sensoro.intersectObjects(torrenegra2,true);
-		      var obsneo3 = this.sensoro.intersectObjects(caballonegro1,true);
-		      var obsneo4 = this.sensoro.intersectObjects(caballonegro2,true);
-		      var obsneo5 = this.sensoro.intersectObjects(alfilnegro1,true);
-		      var obsneo6 = this.sensoro.intersectObjects(alfilnegro2,true);
-		      var obsneo7 = this.sensoro.intersectObjects(reinanegra,true);
-		      var obsneo8 = this.sensoro.intersectObjects(reynegro,true);
-		      var obsneo9 = this.sensoro.intersectObjects(peonnegro1,true);
-		      var obsneo10 = this.sensoro.intersectObjects(peonnegro2,true);
-		      var obsneo11 = this.sensoro.intersectObjects(peonnegro3,true);
-		      var obsneo12 = this.sensoro.intersectObjects(peonnegro4,true);
-		      var obsneo13 = this.sensoro.intersectObjects(peonnegro5,true);
-		      var obsneo14 = this.sensoro.intersectObjects(peonnegro6,true);
-		      var obsneo15 = this.sensoro.intersectObjects(peonnegro7,true);
-		      var obsneo16 = this.sensoro.intersectObjects(peonnegro8,true);
-		      ////////////////////////////Condiciones
-		      if ((((obsnen1.length > 0 && obsnen1.distance <= 5)||(obsnee1.length > 0 && obsnee1.distance <= 5))||
-			 (obsneo1.length > 0 && obsneo1.distance <= 5))||(obsnes1.length > 0 && obsnes1.distance <= 5))
-			 {this.colision2 = 1;pieza=torrenegra1;}
-		      if ((((obsnen2.length > 0 && obsnen2.distance <= 5)||(obsnee2.length > 0 && obsnee2.distance <= 5))||
-			 (obsneo2.length > 0 && obsneo2.distance <= 5))||(obsnes2.length > 0 && obsnes2.distance <= 5))
-			 {this.colision2 = 1;pieza=torrenegra2;}
-		      if ((((obsnen3.length > 0 && obsnen3.distance <= 5)||(obsnee3.length > 0 && obsnee3.distance <= 5))||
-			 (obsneo3.length > 0 && obsneo3.distance <= 5))||(obsnes3.length > 0 && obsnes3.distance <= 5))
-			 {this.colision2 = 1;pieza=caballonegro1;}
-		      if ((((obsnen4.length > 0 && obsnen4.distance <= 5)||(obsnee4.length > 0 && obsnee4.distance <= 5))||
-			 (obsneo4.length > 0 && obsneo4.distance <= 5))||(obsnes4.length > 0 && obsnes4.distance <= 5))
-			 {this.colision2 = 1;pieza=caballonegro2;}
-		      if ((((obsnen5.length > 0 && obsnen5.distance <= 5)||(obsnee5.length > 0 && obsnee5.distance <= 5))||
-			 (obsneo5.length > 0 && obsneo5.distance <= 5))||(obsnes5.length > 0 && obsnes5.distance <= 5))
-			 {this.colision2 = 1;pieza=alfilnegro1;}
-		      if ((((obsnen6.length > 0 && obsnen6.distance <= 5)||(obsnee6.length > 0 && obsnee6.distance <= 5))||
-			 (obsneo6.length > 0 && obsneo6.distance <= 5))||(obsnes6.length > 0 && obsnes6.distance <= 5))
-			 {this.colision2 = 1;pieza=alfilnegro2;}
-		      if ((((obsnen7.length > 0 && obsnen7.distance <= 5)||(obsnee7.length > 0 && obsnee7.distance <= 5))||
-			 (obsneo7.length > 0 && obsneo7.distance <= 5))||(obsnes7.length > 0 && obsnes7.distance <= 5))
-			 {this.colision2 = 1;pieza=reinanegra;}
-		      if ((((obsnen8.length > 0 && obsnen8.distance <= 5)||(obsnee8.length > 0 && obsnee8.distance <= 5))||
-			 (obsneo8.length > 0 && obsneo8.distance <= 5))||(obsnes8.length > 0 && obsnes8.distance <= 5))
-			 {this.colision2 = 1;pieza=reynegro;}
-		      if ((((obsnen9.length > 0 && obsnen9.distance <= 5)||(obsnee9.length > 0 && obsnee9.distance <= 5))||
-			 (obsneo9.length > 0 && obsneo9.distance <= 5))||(obsnes9.length > 0 && obsnes9.distance <= 5))
-			 {this.colision2 = 1;pieza=peonnegro1;}
-		      if ((((obsnen10.length > 0 && obsnen10.distance <= 5)||(obsnee10.length > 0 && obsnee10.distance <= 5))||
-			 (obsneo10.length > 0 && obsneo10.distance <= 5))||(obsnes10.length > 0 && obsnes10.distance <= 5))
-			 {this.colision2 = 1;pieza=peonnegro2;}
-		      if ((((obsnen11.length > 0 && obsnen11.distance <= 5)||(obsnee11.length > 0 && obsnee11.distance <= 5))||
-			 (obsneo11.length > 0 && obsneo11.distance <= 5))||(obsnes11.length > 0 && obsnes11.distance <= 5))
-			 {this.colision2 = 1;pieza=peonnegro3;}
-		      if ((((obsnen12.length > 0 && obsnen12.distance <= 5)||(obsnee12.length > 0 && obsnee12.distance <= 5))||
-			 (obsneo12.length > 0 && obsneo12.distance <= 5))||(obsnes12.length > 0 && obsnes12.distance <= 5))
-			 {this.colision2 = 1;pieza=peonnegro4;}
-		      if ((((obsnen13.length > 0 && obsnen13.distance <= 5)||(obsnee13.length > 0 && obsnee13.distance <= 5))||
-			 (obsneo13.length > 0 && obsneo13.distance <= 5))||(obsnes13.length > 0 && obsnes13.distance <= 5))
-			 {this.colision2 = 1;pieza=peonnegro5;}
-		      if ((((obsnen14.length > 0 && obsnen14.distance <= 5)||(obsnee14.length > 0 && obsnee14.distance <= 5))||
-			 (obsneo14.length > 0 && obsneo14.distance <= 5))||(obsnes14.length > 0 && obsnes14.distance <= 5))
-			 {this.colision2 = 1;pieza=peonnegro6;}
-		      if ((((obsnen15.length > 0 && obsnen15.distance <= 5)||(obsnee15.length > 0 && obsnee15.distance <= 5))||
-			 (obsneo15.length > 0 && obsneo15.distance <= 5))||(obsnes15.length > 0 && obsnes15.distance <= 5))
-			 {this.colision2 = 1;pieza=peonnegro7;}
-		      if ((((obsnen16.length > 0 && obsnen16.distance <= 5)||(obsnee16.length > 0 && obsnee16.distance <= 5))||
-			 (obsneo16.length > 0 && obsneo16.distance <= 5))||(obsnes16.length > 0 && obsnes16.distance <= 5))
-			 {this.colision2 = 1;pieza=peonnegro8;}
 		    }//fin prototype sense
 		
 		    TorreBlanca.prototype.act = function(environment){ 	
@@ -485,23 +363,39 @@ BloqueAzul.prototype.act = function(environment){
 			else
 			  torreblanca1.position.z -= this.step;
 		      }//fin if posicion z
-		      if(this.colision2==1){
-		        if(pieza==torrenegra1){torrenegra1.position.x=110;torrenegra1.position.z=-10;}
-		        if(pieza==torrenegra2){torrenegra2.position.x=110;torrenegra2.position.z=-80;}
-		        if(pieza==caballonegro1){caballonegro1.position.x=110;caballonegro1.position.z=-20;}
-		        if(pieza==caballonegro2){caballonegro2.position.x=110;caballonegro2.position.z=-70;}
-		        if(pieza==alfilnegro1){alfilnegro1.position.x=110;alfilnegro1.position.z=-30;}
-		        if(pieza==alfilnegro2){alfilnegro2.position.x=110;alfilnegro2.position.z=-60;}
-		        if(pieza==reinanegra){reinanegra.position.x=110;reinanegra.position.z=-40;}
-		        if(pieza==reynegro){reynegro.position.x=110;reynegro.position.z=-50;}
-		        if(pieza==peonnegro1){peonnegro1.position.x=100;peonnegro1.position.z=-10;}
-		        if(pieza==peonnegro2){peonnegro2.position.x=100;peonnegro2.position.z=-20;}
-		        if(pieza==peonnegro3){peonnegro3.position.x=100;peonnegro3.position.z=-30;}
-		        if(pieza==peonnegro4){peonnegro4.position.x=100;peonnegro4.position.z=-40;}
-		        if(pieza==peonnegro5){peonnegro5.position.x=100;peonnegro5.position.z=-50;}
-		        if(pieza==peonnegro6){peonnegro6.position.x=100;peonnegro6.position.z=-60;}
-		        if(pieza==peonnegro7){peonnegro7.position.x=100;peonnegro7.position.z=-70;}
-		        if(pieza==peonnegro8){peonnegro8.position.x=100;peonnegro8.position.z=-80;}
+		      if(this.colision==1){
+		        if(torreblanca1.position.x==torrenegra1.position.x)&&(torreblanca1.position.z==torrenegra1.position.z)
+			{torrenegra1.position.x=110;torrenegra1.position.z=-10;}
+		        if(torreblanca1.position.x==torrenegra2.position.x)&&(torreblanca1.position.z==torrenegra2.position.z)
+			{torrenegra2.position.x=110;torrenegra2.position.z=-80;}
+		        if(torreblanca1.position.x==caballonegro1.position.x)&&(torreblanca1.position.z==caballonegro1.position.z)
+			{caballonegro1.position.x=110;caballonegro1.position.z=-20;}
+		        if(torreblanca1.position.x==caballonegro2.position.x)&&(torreblanca1.position.z==caballonegro2.position.z)
+			{caballonegro2.position.x=110;caballonegro2.position.z=-70;}
+		        if(torreblanca1.position.x==alfilnegro1.position.x)&&(torreblanca1.position.z==alfilnegro1.position.z)
+			{alfilnegro1.position.x=110;alfilnegro1.position.z=-30;}
+		        if(torreblanca1.position.x==alfilnegro2.position.x)&&(torreblanca1.position.z==alfilnegro2.position.z)
+			{alfilnegro2.position.x=110;alfilnegro2.position.z=-60;}
+		        if(torreblanca1.position.x==reinanegra.position.x)&&(torreblanca1.position.z==reinanegra.position.z)
+			{reinanegra.position.x=110;reinanegra.position.z=-40;}
+		        if(torreblanca1.position.x==reynegro.position.x)&&(torreblanca1.position.z==reynegro.position.z)
+			{reynegro.position.x=110;reynegro.position.z=-50;}
+		        if(torreblanca1.position.x==peonnegro1.position.x)&&(torreblanca1.position.z==peonnegro1.position.z)
+			{peonnegro1.position.x=100;peonnegro1.position.z=-10;}
+		        if(torreblanca1.position.x==peonnegro2.position.x)&&(torreblanca1.position.z==peonnegro2.position.z)
+			{peonnegro2.position.x=100;peonnegro2.position.z=-20;}
+		        if(torreblanca1.position.x==peonnegro3.position.x)&&(torreblanca1.position.z==peonnegro3.position.z)
+			{peonnegro3.position.x=100;peonnegro3.position.z=-30;}
+		        if(torreblanca1.position.x==peonnegro4.position.x)&&(torreblanca1.position.z==peonnegro4.position.z)
+			{peonnegro4.position.x=100;peonnegro4.position.z=-40;}
+		        if(torreblanca1.position.x==peonnegro5.position.x)&&(torreblanca1.position.z==peonnegro5.position.z)
+			{peonnegro5.position.x=100;peonnegro5.position.z=-50;}
+		        if(torreblanca1.position.x==peonnegro6.position.x)&&(torreblanca1.position.z==peonnegro6.position.z)
+			{peonnegro6.position.x=100;peonnegro6.position.z=-60;}
+		        if(torreblanca1.position.x==peonnegro7.position.x)&&(torreblanca1.position.z==peonnegro7.position.z)
+			{peonnegro7.position.x=100;peonnegro7.position.z=-70;}
+		        if(torreblanca1.position.x==peonnegro8.position.x)&&(torreblanca1.position.z==peonnegro8.position.z)
+			{peonnegro8.position.x=100;peonnegro8.position.z=-80;}
 		      }
 		    }//fin prototype act
 		  }//fin if torreblanca1
