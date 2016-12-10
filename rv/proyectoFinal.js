@@ -1228,8 +1228,8 @@ BloqueAzul.prototype.act = function(environment){
 		     bandera=1;
 		   }//fin if Reinas
 		//////////////////////////////////////////////Reyes////////////////////////////////////////////////////////////
-		   if ((reinablanca.position.x===bloquerojo.position.x && reinablanca.position.z===bloquerojo.position.z)||
-		       (reinanegra.position.x===bloquerojo.position.x && reinanegra.position.z===bloquerojo.position.z)){
+		   if ((reyblanco.position.x===bloquerojo.position.x && reyblanco.position.z===bloquerojo.position.z)||
+		       (reynegro.position.x===bloquerojo.position.x && reynegro.position.z===bloquerojo.position.z)){
 		     grupomorado = new THREE.Group();
 		     bloquemorado = new BloqueMorado(bloquerojo.position.x+10,0,bloquerojo.position.z-10);//Noreste
 		     if (bloquemorado.position.x>80 || bloquemorado.position.z<-80){bloquemorado.visible=false;grupomorado.add(bloquemorado);}
