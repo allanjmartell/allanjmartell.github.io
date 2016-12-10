@@ -1232,21 +1232,29 @@ BloqueAzul.prototype.act = function(environment){
 		       (reynegro.position.x===bloquerojo.position.x && reynegro.position.z===bloquerojo.position.z)){
 		     grupomorado = new THREE.Group();
 		     bloquemorado1 = new BloqueMorado(bloquerojo.position.x+10,0,bloquerojo.position.z-10);//Noreste
-		     if (bloquemorado1.position.x>80 || bloquemorado1.position.z<-80){bloquemorado1.visible=false;grupomorado.add(bloquemorado1);}
+		     if (bloquemorado1.position.x>80 || bloquemorado1.position.z<-80){bloquemorado1.visible=false;}
+		     grupomorado.add(bloquemorado1);
 	             bloquemorado2 = new BloqueMorado(bloquerojo.position.x,0,bloquerojo.position.z-10);//Norte
-		     if (bloquemorado2.position.z<-80){bloquemorado2.visible=false;grupomorado.add(bloquemorado2);}
+		     if (bloquemorado2.position.z<-80){bloquemorado2.visible=false;}
+		     grupomorado.add(bloquemorado2);
 		     bloquemorado3 = new BloqueMorado(bloquerojo.position.x-10,0,bloquerojo.position.z-10);//Noroeste
-		     if (bloquemorado3.position.x<10 || bloquemorado3.position.z<-80){bloquemorado3.visible=false;grupomorado.add(bloquemorado3);}
+		     if (bloquemorado3.position.x<10 || bloquemorado3.position.z<-80){bloquemorado3.visible=false;}
+		     grupomorado.add(bloquemorado3);
 	             bloquemorado4 = new BloqueMorado(bloquerojo.position.x-10,0,bloquerojo.position.z);//Este
-		     if (bloquemorado4.position.x<10){bloquemorado4.visible=false;grupomorado.add(bloquemorado4);}
+		     if (bloquemorado4.position.x<10){bloquemorado4.visible=false;}
+		     grupomorado.add(bloquemorado4);
 		     bloquemorado5 = new BloqueMorado(bloquerojo.position.x-10,0,bloquerojo.position.z+10);//Sureste
-		     if (bloquemorado5.position.x<10 || bloquemorado5.position.z>-10){bloquemorado5.visible=false;grupomorado.add(bloquemorado5);}
+		     if (bloquemorado5.position.x<10 || bloquemorado5.position.z>-10){bloquemorado5.visible=false;}
+		     grupomorado.add(bloquemorado5);
 	             bloquemorado6 = new BloqueMorado(bloquerojo.position.x,0,bloquerojo.position.z+10);//Sur
-		     if (bloquemorado6.position.z>-10){bloquemorado6.visible=false;grupomorado.add(bloquemorado6);}
+		     if (bloquemorado6.position.z>-10){bloquemorado6.visible=false;}
+		     grupomorado.add(bloquemorado6);   
 		     bloquemorado7 = new BloqueMorado(bloquerojo.position.x+10,0,bloquerojo.position.z+10);//Suroeste
-		     if (bloquemorado7.position.x>80 || bloquemorado7.position.z>-10){bloquemorado7.visible=false;grupomorado.add(bloquemorado7);}
+		     if (bloquemorado7.position.x>80 || bloquemorado7.position.z>-10){bloquemorado7.visible=false;}
+		     grupomorado.add(bloquemorado7);
 	             bloquemorado8 = new BloqueMorado(bloquerojo.position.x+10,0,bloquerojo.position.z);//Oeste
-		     if (bloquemorado8.position.x>80){bloquemorado8.visible=false;grupomorado.add(bloquemorado8);}
+		     if (bloquemorado8.position.x>80){bloquemorado8.visible=false;}
+		     grupomorado.add(bloquemorado8); 
 		     escena.add(grupomorado);  
 	             bloqueverde = new BloqueVerde(bloquerojo.position.x,0,bloquerojo.position.z);
 		     escena.add(bloqueverde);
