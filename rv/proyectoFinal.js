@@ -48,7 +48,7 @@ Environment.prototype.act = function(){
 var camara,escena,renderizador;
 var malla,malla2,malla3,grupo,grupo2,grupo3,grupomorado;
 var bloquemorado,bloqueazul,bloquerojo,bloqueverde;
-var bandera=0,pieza;
+var bandera=0;
 var torreblanca1,torreblanca2,torrenegra1,torrenegra2;
 var peonblanco1,peonblanco2,peonblanco3,peonblanco4,peonblanco5,peonblanco6,peonblanco7,peonblanco8;
 var peonnegro1,peonnegro2,peonnegro3,peonnegro4,peonnegro5,peonnegro6,peonnegro7,peonnegro8;
@@ -60,7 +60,6 @@ var reyblanco,reynegro;
 function Sensor(position,direction){ 
   THREE.Raycaster.call(this,position,direction);
   this.colision = false;
-  this.colision2 = false;
 }
 
 Sensor.prototype = new THREE.Raycaster();
@@ -76,10 +75,6 @@ function TorreBlanca(x=0,y=0,z=0){
   this.position.z=z;//-10;
   this.position.x=x;//10;
   this.sensor = new Sensor();
-  this.sensorn = new Sensor();//Sensor norte
-  this.sensoro = new Sensor();//Sensor oeste
-  this.sensors = new Sensor();//Sensor sur
-  this.sensore = new Sensor();//Sensor este
 }
 
 function TorreNegra(x=0,y=0,z=0){
@@ -93,10 +88,6 @@ function TorreNegra(x=0,y=0,z=0){
   this.position.z=z;
   this.position.x=x;
   this.sensor = new Sensor();
-  this.sensorn = new Sensor();//Sensor norte
-  this.sensoro = new Sensor();//Sensor oeste
-  this.sensors = new Sensor();//Sensor sur
-  this.sensore = new Sensor();//Sensor este
 }
 
 TorreBlanca.prototype = new Agent();
@@ -113,7 +104,6 @@ function PeonBlanco(x=0,y=0,z=0){
   this.position.z=z;
   this.position.x=x;
   this.sensor = new Sensor();
-  this.sensor2 = new Sensor();
 }
 
 function PeonNegro(x=0,y=0,z=0){
@@ -127,7 +117,6 @@ function PeonNegro(x=0,y=0,z=0){
   this.position.z=z;
   this.position.x=x;
   this.sensor = new Sensor();
-  
 }
 
 PeonBlanco.prototype = new Agent();
@@ -145,7 +134,6 @@ function AlfilBlanco(x=0,y=0,z=0){
   this.position.z=z;
   this.position.x=x;
   this.sensor = new Sensor();
-  this.sensor2 = new Sensor();
 }
 
 function AlfilNegro(x=0,y=0,z=0){
@@ -159,7 +147,6 @@ function AlfilNegro(x=0,y=0,z=0){
   this.position.z=z;
   this.position.x=x;
   this.sensor = new Sensor();
-  this.sensor2 = new Sensor();
 }
 
 AlfilBlanco.prototype = new Agent();
@@ -176,7 +163,6 @@ function CaballoBlanco(x=0,y=0,z=0){
   this.position.z=z;
   this.position.x=x;
   this.sensor = new Sensor();
-  this.sensor2 = new Sensor();
 }
 
 function CaballoNegro(x=0,y=0,z=0){
@@ -190,7 +176,6 @@ function CaballoNegro(x=0,y=0,z=0){
   this.position.z=z;
   this.position.x=x;
   this.sensor = new Sensor();
-  this.sensor2 = new Sensor();
 }
 
 CaballoBlanco.prototype = new Agent();
@@ -207,7 +192,6 @@ function ReinaBlanca(x=0,y=0,z=0){
   this.position.z=z;
   this.position.x=x;
   this.sensor = new Sensor();
-  this.sensor2 = new Sensor();
 }
 
 function ReinaNegra(x=0,y=0,z=0){
@@ -221,7 +205,6 @@ function ReinaNegra(x=0,y=0,z=0){
   this.position.z=z;
   this.position.x=x;
   this.sensor = new Sensor();
-  this.sensor2 = new Sensor();
 }
 
 ReinaBlanca.prototype = new Agent();
@@ -238,7 +221,6 @@ function ReyBlanco(x=0,y=0,z=0){
   this.position.z=z;
   this.position.x=x;
   this.sensor = new Sensor();
-  this.sensor2 = new Sensor();
 }
 
 function ReyNegro(x=0,y=0,z=0){
@@ -252,7 +234,6 @@ function ReyNegro(x=0,y=0,z=0){
   this.position.z=z;
   this.position.x=x;
   this.sensor = new Sensor();
-  this.sensor2 = new Sensor();
 }
 
 ReyBlanco.prototype = new Agent();
@@ -363,8 +344,8 @@ BloqueAzul.prototype.act = function(environment){
 			else
 			  torreblanca1.position.z -= this.step;
 		      }//fin if posicion z
-		      if(this.colision==1){
-		        if(torreblanca1.position.x==torrenegra1.position.x && torreblanca1.position.z==torrenegra1.position.z)
+		      if(this.colision===1){
+		        if(torreblanca1.position.x===torrenegra1.position.x && torreblanca1.position.z===torrenegra1.position.z)
 			{torrenegra1.position.x=110;torrenegra1.position.z=-10;}
 		        if(torreblanca1.position.x==torrenegra2.position.x && torreblanca1.position.z==torrenegra2.position.z)
 			{torrenegra2.position.x=110;torrenegra2.position.z=-80;}
