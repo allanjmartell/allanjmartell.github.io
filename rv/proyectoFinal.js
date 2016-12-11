@@ -325,7 +325,7 @@ BloqueAzul.prototype.act = function(environment){
 		    TorreBlanca.prototype.sense = function(environment){
 		      this.sensor.set(this.position,new THREE.Vector3(0,-1,0));
 		      var obstaculo = this.sensor.intersectObjects(bvtb1,true);
-		      if(obstaculo.length >0)
+		      if(obstaculo.length >0  && (obstaculo.distance == 0))
 			{this.colision = 1;this.step=0;}
  		      else
 		        {this.colision = 0;this.step=0.25;}
