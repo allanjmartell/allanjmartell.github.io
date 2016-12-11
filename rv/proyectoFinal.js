@@ -344,7 +344,6 @@ BloqueAzul.prototype.act = function(environment){
 			else
 			  torreblanca1.position.z -= this.step;
 		      }//fin if posicion z
-		      if(this.colision==1){
 		        if(bvtb1.position.x===torrenegra1.position.x && bvtb1.position.z===torrenegra1.position.z)
 			{torrenegra1.position.x=110;torrenegra1.position.z=-10;}
 		        if(torreblanca1.position.x==torrenegra2.position.x && torreblanca1.position.z==torrenegra2.position.z)
@@ -377,7 +376,7 @@ BloqueAzul.prototype.act = function(environment){
 			{peonnegro7.position.x=100;peonnegro7.position.z=-70;}
 		        if(torreblanca1.position.x==peonnegro8.position.x && torreblanca1.position.z==peonnegro8.position.z)
 			{peonnegro8.position.x=100;peonnegro8.position.z=-80;}
-		      }
+		      
 		    }//fin prototype act
 		  }//fin if torreblanca1
 	          /////////////////////////////////Torre blanca 2//////////////////////////////////////////////////////////////////
