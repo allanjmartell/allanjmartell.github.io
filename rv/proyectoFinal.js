@@ -379,8 +379,9 @@ BloqueAzul.prototype.act = function(environment){
 			{peonnegro8.position.y=100;peonnegro8.position.x=100;escena.remove(peonnegro8);}  
 			///////////////////////////////////Piezas iguales///////////////////////////////////////////////
 			if (torreblanca1.position.x==peonblanco1.position.x && torreblanca1.position.z==peonblanco1.position.z){
-				alert("Pulsar las flechas del teclado");
+				alert("No puedes comer piezas del mismo color");
 				torreblanca1.position.x=bloquerojo.position.x;torreblanca1.position.z==bloqueorojo.position.z;
+				this.step=0;
 			}
 		    }//fin prototype act
 		  }//fin if torreblanca1
