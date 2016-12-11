@@ -2428,6 +2428,7 @@ BloqueAzul.prototype.act = function(environment){
 		     escena.add(bloqueverde);
 		     bandera=1;
 		   }//fin if Caballos
+		escena.remove(bloquerojo);
 		}//fin else
         break;
 	}//fin switch
