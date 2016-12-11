@@ -380,7 +380,7 @@ BloqueAzul.prototype.act = function(environment){
 			///////////////////////////////////Piezas iguales///////////////////////////////////////////////
 			if (torreblanca1.position.x==peonblanco1.position.x && torreblanca1.position.z==peonblanco1.position.z){
 				alert("No puedes comer piezas del mismo color");
-				torreblanca1.position.x=bloquerojo.position.x;torreblanca1.position.z==bloqueorojo.position.z;
+				torreblanca1.position.x=bloquerojo.position.x;torreblanca1.position.z==bloquerojo.position.z;
 				this.step=0;
 			}
 		    }//fin prototype act
