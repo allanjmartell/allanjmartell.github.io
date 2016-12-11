@@ -344,8 +344,8 @@ BloqueAzul.prototype.act = function(environment){
 			else
 			  torreblanca1.position.z -= this.step;
 		      }//fin if posicion z
-		      if(this.colision===1){
-		        if(torreblanca1.position.x===torrenegra1.position.x && torreblanca1.position.z===torrenegra1.position.z)
+		      if(this.colision==1){
+		        if(bvtb1.position.x===torrenegra1.position.x && bvtb1.position.z===torrenegra1.position.z)
 			{torrenegra1.position.x=110;torrenegra1.position.z=-10;}
 		        if(torreblanca1.position.x==torrenegra2.position.x && torreblanca1.position.z==torrenegra2.position.z)
 			{torrenegra2.position.x=110;torrenegra2.position.z=-80;}
