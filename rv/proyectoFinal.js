@@ -325,7 +325,7 @@ BloqueAzul.prototype.act = function(environment){
 		    TorreBlanca.prototype.sense = function(environment){
 		      this.sensor.set(this.position,new THREE.Vector3(0,-1,0));
 		      var obstaculo = this.sensor.intersectObjects(bvtb1,true);
-		      if(obstaculo.length >0  && (obstaculo.distance == 0))
+		      if(obstaculo.length >0)
 			{this.colision = 1;this.step=0;}
  		      else
 		        {this.colision = 0;this.step=0.25;}
@@ -344,7 +344,9 @@ BloqueAzul.prototype.act = function(environment){
 			else
 			  torreblanca1.position.z -= this.step;
 		      }//fin if posicion z
-		        if(bvtb1.position.x===torrenegra1.position.x && bvtb1.position.z===torrenegra1.position.z)
+			if(this.colision==1)
+			  escena.remove(torreblanca1);
+		        if(torreblanca1.position.x===torrenegra1.position.x && torreblanca1.position.z===torrenegra1.position.z)
 			{torrenegra1.position.x=110;torrenegra1.position.z=-10;}
 		        if(torreblanca1.position.x==torrenegra2.position.x && torreblanca1.position.z==torrenegra2.position.z)
 			{torrenegra2.position.x=110;torrenegra2.position.z=-80;}
