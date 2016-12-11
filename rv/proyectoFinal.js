@@ -344,6 +344,7 @@ BloqueAzul.prototype.act = function(environment){
 			else
 			  torreblanca1.position.z -= this.step;
 		      }//fin if posicion z
+			//////////////////////////////////////////Piezas diferentes////////////////////////////////////////7
 		        if(torreblanca1.position.x==torrenegra1.position.x && torreblanca1.position.z==torrenegra1.position.z)
 			{torrenegra1.position.y=100;torrenegra1.position.x=100;escena.remove(torrenegra1);}
 		        if(torreblanca1.position.x==torrenegra2.position.x && torreblanca1.position.z==torrenegra2.position.z)
@@ -376,6 +377,11 @@ BloqueAzul.prototype.act = function(environment){
 			{peonnegro7.position.y=100;peonnegro7.position.x=100;escena.remove(peonnegro7);}
 		        if(torreblanca1.position.x==peonnegro8.position.x && torreblanca1.position.z==peonnegro8.position.z)
 			{peonnegro8.position.y=100;peonnegro8.position.x=100;escena.remove(peonnegro8);}  
+			///////////////////////////////////Piezas iguales///////////////////////////////////////////////
+			if (torreblanca1.position.x==peonblanco1.position.x && torreblanca1.position.z==peonblanco1.position.z){
+				alert("Pulsar las flechas del teclado");
+				torreblanca1.position.x=bloquerojo.position.x;torreblanca1.position.z==bloqueorojo.position.z;
+			}
 		    }//fin prototype act
 		  }//fin if torreblanca1
 	          /////////////////////////////////Torre blanca 2//////////////////////////////////////////////////////////////////
