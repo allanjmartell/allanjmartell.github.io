@@ -333,13 +333,13 @@ BloqueAzul.prototype.act = function(environment){
 		
 		    TorreBlanca.prototype.act = function(environment){ 	
 		      if (this.colision!=1){
-			if(torreblanca1.position.x<bvtb1.position.x)
+			if(torreblanca1.position.x<=bvtb1.position.x)
 			  torreblanca1.position.x += this.step;
 			else
 			  torreblanca1.position.x -= this.step;
 		      }//fin if posicion x
 		      if (this.colision!=1){
-			if(torreblanca1.position.z<bvtb1.position.z)
+			if(torreblanca1.position.z<=bvtb1.position.z)
 			  torreblanca1.position.z += this.step;
 			else
 			  torreblanca1.position.z -= this.step;
@@ -381,7 +381,7 @@ BloqueAzul.prototype.act = function(environment){
 			if (torreblanca1.position.x==peonblanco1.position.x && torreblanca1.position.z==peonblanco1.position.z){
 				alert("No puedes comer piezas del mismo color");
 				torreblanca1.position.x=bloquerojo.position.x;torreblanca1.position.z==bloquerojo.position.z;
-				this.step=0;
+				bloqueverde.position.x=bloquerojo.position.x;loqueverde.position.z==bloquerojo.position.z;
 			}
 		    }//fin prototype act
 		  }//fin if torreblanca1
