@@ -2232,6 +2232,7 @@ BloqueAzul.prototype.act = function(environment){
 		}//fin if bandera
 ////////////////////////////////////////Movimientos de piezas/////////////////////////////////////////////////////////////////////////
 		else{
+		   escena.remove(bloquerojo);
 		   bloquerojo = new BloqueRojo(bloqueazul.position.x,0,bloqueazul.position.z);
 		   escena.add(bloquerojo);
 		   //////////////////////////////////////Torres////////////////////////////////////////////////////////////////////
@@ -2429,7 +2430,6 @@ BloqueAzul.prototype.act = function(environment){
 		     bandera=1;
 		   }//fin if Caballos
 		}//fin else
-	escena.remove(bloquerojo);
         break;
 	}//fin switch
     }//fin function desplazar
