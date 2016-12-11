@@ -467,7 +467,7 @@ BloqueAzul.prototype.act = function(environment){
 		        if(torrenegra1.position.x==torreblanca2.position.x && torrenegra1.position.z==torreblanca2.position.z)
 			{torreblanca2.position.y=100;torreblanca2.position.x=100;escena.remove(torreblanca2);}
 		        if(torrenegra1.position.x==caballoblanco1.position.x && torrenegra1.position.z==caballoblanco1.position.z)
-			{caballoblanco1.position.y=100;.position.x=100;escena.remove(caballoblanco1);}
+			{caballoblanco1.position.y=100;caballoblanco1.position.x=100;escena.remove(caballoblanco1);}
 		        if(torrenegra1.position.x==caballoblanco2.position.x && torrenegra1.position.z==caballoblanco2.position.z)
 			{caballoblanco2.position.y=100;caballoblanco2.position.x=100;escena.remove(caballoblanco2);}
 		        if(torrenegra1.position.x==alfilblanco1.position.x && torrenegra1.position.z==alfilblanco1.position.z)
