@@ -394,8 +394,8 @@ BloqueAzul.prototype.act = function(environment){
 			   (torreblanca1.position.x==reyblanco.position.x && torreblanca1.position.z==reyblanco.position.z))||
 			   (torreblanca1.position.x==reinablanca.position.x && torreblanca1.position.z==reinablanca.position.z)){
 				alert("No puedes comer piezas del mismo color");
-				torreblanca1.position.x=bloquerojo.position.x;torreblanca1.position.z==bloquerojo.position.z;
-				bloqueverde.position.x=bloquerojo.position.x;bloqueverde.position.z==bloquerojo.position.z;
+				torreblanca1.position.x=bloquerojo.position.x;torreblanca1.position.z=bloquerojo.position.z;
+				bloqueverde.position.x=bloquerojo.position.x;bloqueverde.position.z=bloquerojo.position.z;
 			}
 		    }//fin prototype act
 		  }//fin if torreblanca1
