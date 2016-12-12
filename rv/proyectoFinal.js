@@ -3026,6 +3026,12 @@ BloqueAzul.prototype.act = function(environment){
 			else
 			  caballoblanco1.position.z -= this.step;
 		      }//fin if posicion z
+		      if (this.colision!=1){
+			if(caballoblanco1.position.y==bvcb1.position.y && caballoblanco1.position.z<bvcb1.position.z)
+			  caballoblanco1.position.y += this.step/5;
+			else
+			  caballoblanco1.position.y -= this.step;
+		      }//fin if posicion z
 			if((caballoblanco1.position.x==torrenegra1.position.x && caballoblanco1.position.z==torrenegra1.position.z)&&
 			  (caballoblanco1.position.y==torrenegra1.position.y))
 			{torrenegra1.position.y=100;torrenegra1.position.x=100;escena.remove(torrenegra1);}
