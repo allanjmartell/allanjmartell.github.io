@@ -48,7 +48,7 @@ Environment.prototype.act = function(){
 var camara,escena,renderizador;
 var malla,malla2,malla3,grupo,grupo2,grupo3,grupomorado;
 var bloquemorado,bloqueazul,bloquerojo,bloqueverde;
-var bandera=0;
+var bandera=0,banderacaballo=0;
 var torreblanca1,torreblanca2,torrenegra1,torrenegra2;
 var peonblanco1,peonblanco2,peonblanco3,peonblanco4,peonblanco5,peonblanco6,peonblanco7,peonblanco8;
 var peonnegro1,peonnegro2,peonnegro3,peonnegro4,peonnegro5,peonnegro6,peonnegro7,peonnegro8;
@@ -3027,13 +3027,12 @@ BloqueAzul.prototype.act = function(environment){
 			  caballoblanco1.position.z -= this.step;
 		      }//fin if posicion z
 		      if (this.colision!=1){
-			var operacion=Math.abs(bvcb1.position.x-caballoblanco1.position.x);
-			if((caballoblanco1.position.y==bvcb1.position.y && caballoblanco1.position.x<caballoblanco1.position.x+operacion)||
-			   (caballoblanco1.position.y==bvcb1.position.y && caballoblanco1.position.x>caballoblanco1.position.x-operacion))
-			  caballoblanco1.position.y += this.step+1;
-			if(caballoblanco1.position.x>=caballoblanco1.position.x+operacion || caballoblanco1.position.x<=caballoblanco1.position.x-operacion)
-			  caballoblanco1.position.y -= this.step+1;
-		      }//fin if posicion z
+			if((caballoblanco1.position.y==4.5 && caballoblanco1.position.x!=bvcb1.position.x)&&
+			   (caballoblanco1.position.z!=bvcb1.position.z))
+			   {caballoblanco1.position.y += this.step;}
+			if(caballoblanco1.position.x==bvcb1.position.x && caballoblanco1.position.z==bvcb1.position.z)
+			   {caballoblanco1.position.y = 4.5;}
+		      }//fin if posicion y
 			if((caballoblanco1.position.x==torrenegra1.position.x && caballoblanco1.position.z==torrenegra1.position.z)&&
 			  (caballoblanco1.position.y==torrenegra1.position.y))
 			{torrenegra1.position.y=100;torrenegra1.position.x=100;escena.remove(torrenegra1);}
