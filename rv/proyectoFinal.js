@@ -328,7 +328,7 @@ BloqueAzul.prototype.act = function(environment){
 		      if(obstaculo.length >0)
 			{this.colision = 1;this.step=0;}
  		      else
-		        {this.colision = 0;this.step=0.25;}
+		        {this.colision = 0;this.step=0.2;}
 		    }//fin prototype sense
 		
 		    TorreBlanca.prototype.act = function(environment){ 	
@@ -424,7 +424,7 @@ BloqueAzul.prototype.act = function(environment){
 		      if(obstaculo.length >0)
 			{this.colision = 1;this.step=0;}
  		      else
-		        {this.colision = 0;this.step=0.25;}
+		        {this.colision = 0;this.step=0.2;}
 		    }//fin prototype sense
 		
 		    TorreBlanca.prototype.act = function(environment){ 	
@@ -519,7 +519,7 @@ BloqueAzul.prototype.act = function(environment){
 		      if(obstaculo2.length > 0)
 		        {this.colision = 1;this.step=0;}
  		      else
-		        {this.colision = 0;this.step=0.25;}
+		        {this.colision = 0;this.step=0.2;}
 		    }//fin prototype sense
 		
 		    TorreNegra.prototype.act = function(environment){ 	
@@ -614,7 +614,7 @@ BloqueAzul.prototype.act = function(environment){
 		      if(obstaculo2.length > 0)
 		        {this.colision = 1;this.step=0;}
  		      else
-		        {this.colision = 0;this.step=0.25;}
+		        {this.colision = 0;this.step=0.2;}
 		    }//fin prototype sense
 		
 		    TorreNegra.prototype.act = function(environment){ 	
@@ -711,7 +711,7 @@ BloqueAzul.prototype.act = function(environment){
 		      if(obstaculo.length >0)
 			{this.colision = 1;this.step=0;}
  		      else
-		        {this.colision = 0;this.step=0.25;}
+		        {this.colision = 0;this.step=0.2;}
 		    }//fin prototype sense
 		
 		    PeonBlanco.prototype.act = function(environment){ 	
@@ -807,7 +807,7 @@ BloqueAzul.prototype.act = function(environment){
 		      if(obstaculo.length >0)
 			{this.colision = 1;this.step=0;}
  		      else
-		        {this.colision = 0;this.step=0.25;}
+		        {this.colision = 0;this.step=0.2;}
 		    }//fin prototype sense
 		
 		    PeonBlanco.prototype.act = function(environment){ 	
@@ -903,7 +903,7 @@ BloqueAzul.prototype.act = function(environment){
 		      if(obstaculo.length >0)
 			{this.colision = 1;this.step=0;}
  		      else
-		        {this.colision = 0;this.step=0.25;}
+		        {this.colision = 0;this.step=0.2;}
 		    }//fin prototype sense
 		
 		    PeonBlanco.prototype.act = function(environment){ 	
@@ -999,7 +999,7 @@ BloqueAzul.prototype.act = function(environment){
 		      if(obstaculo.length >0)
 			{this.colision = 1;this.step=0;}
  		      else
-		        {this.colision = 0;this.step=0.25;}
+		        {this.colision = 0;this.step=0.2;}
 		    }//fin prototype sense
 		
 		    PeonBlanco.prototype.act = function(environment){ 	
@@ -1095,7 +1095,7 @@ BloqueAzul.prototype.act = function(environment){
 		      if(obstaculo.length >0)
 			{this.colision = 1;this.step=0;}
  		      else
-		        {this.colision = 0;this.step=0.25;}
+		        {this.colision = 0;this.step=0.2;}
 		    }//fin prototype sense
 		
 		    PeonBlanco.prototype.act = function(environment){ 	
@@ -1191,7 +1191,7 @@ BloqueAzul.prototype.act = function(environment){
 		      if(obstaculo.length >0)
 			{this.colision = 1;this.step=0;}
  		      else
-		        {this.colision = 0;this.step=0.25;}
+		        {this.colision = 0;this.step=0.2;}
 		    }//fin prototype sense
 		
 		    PeonBlanco.prototype.act = function(environment){ 	
@@ -1287,7 +1287,7 @@ BloqueAzul.prototype.act = function(environment){
 		      if(obstaculo.length >0)
 			{this.colision = 1;this.step=0;}
  		      else
-		        {this.colision = 0;this.step=0.25;}
+		        {this.colision = 0;this.step=0.2;}
 		    }//fin prototype sense
 		
 		    PeonBlanco.prototype.act = function(environment){ 	
@@ -1383,7 +1383,7 @@ BloqueAzul.prototype.act = function(environment){
 		      if(obstaculo.length >0)
 			{this.colision = 1;this.step=0;}
  		      else
-		        {this.colision = 0;this.step=0.25;}
+		        {this.colision = 0;this.step=0.2;}
 		    }//fin prototype sense
 		
 		    PeonBlanco.prototype.act = function(environment){ 	
@@ -1479,7 +1479,7 @@ BloqueAzul.prototype.act = function(environment){
 		      if(obstaculo.length >0)
 			{this.colision = 1;this.step=0;}
  		      else
-		        {this.colision = 0;this.step=0.25;}
+		        {this.colision = 0;this.step=0.2;}
 		    }//fin prototype sense
 		
 		    PeonNegro.prototype.act = function(environment){ 	
@@ -1575,7 +1575,7 @@ BloqueAzul.prototype.act = function(environment){
 		      if(obstaculo.length >0)
 			{this.colision = 1;this.step=0;}
  		      else
-		        {this.colision = 0;this.step=0.25;}
+		        {this.colision = 0;this.step=0.2;}
 		    }//fin prototype sense
 		
 		    PeonNegro.prototype.act = function(environment){ 	
@@ -1671,7 +1671,7 @@ BloqueAzul.prototype.act = function(environment){
 		      if(obstaculo.length >0)
 			{this.colision = 1;this.step=0;}
  		      else
-		        {this.colision = 0;this.step=0.25;}
+		        {this.colision = 0;this.step=0.2;}
 		    }//fin prototype sense
 		
 		    PeonNegro.prototype.act = function(environment){ 	
@@ -1767,7 +1767,7 @@ BloqueAzul.prototype.act = function(environment){
 		      if(obstaculo.length >0)
 			{this.colision = 1;this.step=0;}
  		      else
-		        {this.colision = 0;this.step=0.25;}
+		        {this.colision = 0;this.step=0.2;}
 		    }//fin prototype sense
 		
 		    PeonNegro.prototype.act = function(environment){ 	
@@ -1863,7 +1863,7 @@ BloqueAzul.prototype.act = function(environment){
 		      if(obstaculo.length >0)
 			{this.colision = 1;this.step=0;}
  		      else
-		        {this.colision = 0;this.step=0.25;}
+		        {this.colision = 0;this.step=0.2;}
 		    }//fin prototype sense
 		
 		    PeonNegro.prototype.act = function(environment){ 	
@@ -1959,7 +1959,7 @@ BloqueAzul.prototype.act = function(environment){
 		      if(obstaculo.length >0)
 			{this.colision = 1;this.step=0;}
  		      else
-		        {this.colision = 0;this.step=0.25;}
+		        {this.colision = 0;this.step=0.2;}
 		    }//fin prototype sense
 		
 		    PeonNegro.prototype.act = function(environment){ 	
@@ -2055,7 +2055,7 @@ BloqueAzul.prototype.act = function(environment){
 		      if(obstaculo.length >0)
 			{this.colision = 1;this.step=0;}
  		      else
-		        {this.colision = 0;this.step=0.25;}
+		        {this.colision = 0;this.step=0.2;}
 		    }//fin prototype sense
 		
 		    PeonNegro.prototype.act = function(environment){ 	
@@ -2151,7 +2151,7 @@ BloqueAzul.prototype.act = function(environment){
 		      if(obstaculo.length >0)
 			{this.colision = 1;this.step=0;}
  		      else
-		        {this.colision = 0;this.step=0.25;}
+		        {this.colision = 0;this.step=0.2;}
 		    }//fin prototype sense
 		
 		    PeonNegro.prototype.act = function(environment){ 	
@@ -2247,7 +2247,7 @@ BloqueAzul.prototype.act = function(environment){
 		      if(obstaculo.length >0)
 			{this.colision = 1;this.step=0;}
  		      else
-		        {this.colision = 0;this.step=0.25;}
+		        {this.colision = 0;this.step=0.2;}
 		    }//fin prototype sense
 		
 		    AlfilBlanco.prototype.act = function(environment){ 	
@@ -2342,7 +2342,7 @@ BloqueAzul.prototype.act = function(environment){
 		      if(obstaculo.length >0)
 			{this.colision = 1;this.step=0;}
  		      else
-		        {this.colision = 0;this.step=0.25;}
+		        {this.colision = 0;this.step=0.2;}
 		    }//fin prototype sense
 		
 		    AlfilBlanco.prototype.act = function(environment){ 	
@@ -2437,7 +2437,7 @@ BloqueAzul.prototype.act = function(environment){
 		      if(obstaculo2.length > 0)
 		        {this.colision = 1;this.step=0;}
  		      else
-		        {this.colision = 0;this.step=0.25;}
+		        {this.colision = 0;this.step=0.2;}
 		    }//fin prototype sense
 		
 		    AlfilNegro.prototype.act = function(environment){ 	
@@ -2532,7 +2532,7 @@ BloqueAzul.prototype.act = function(environment){
 		      if(obstaculo2.length > 0)
 		        {this.colision = 1;this.step=0;}
  		      else
-		        {this.colision = 0;this.step=0.25;}
+		        {this.colision = 0;this.step=0.2;}
 		    }//fin prototype sense
 		
 		    AlfilNegro.prototype.act = function(environment){ 	
@@ -2628,7 +2628,7 @@ BloqueAzul.prototype.act = function(environment){
 		      if(obstaculo.length >0)
 			{this.colision = 1;this.step=0;}
  		      else
-		        {this.colision = 0;this.step=0.25;}
+		        {this.colision = 0;this.step=0.2;}
 		    }//fin prototype sense
 		
 		    ReinaBlanca.prototype.act = function(environment){ 	
@@ -2723,7 +2723,7 @@ BloqueAzul.prototype.act = function(environment){
 		      if(obstaculo.length >0)
 			{this.colision = 1;this.step=0;}
  		      else
-		        {this.colision = 0;this.step=0.25;}
+		        {this.colision = 0;this.step=0.2;}
 		    }//fin prototype sense
 		
 		    ReinaNegra.prototype.act = function(environment){ 	
@@ -2819,7 +2819,7 @@ BloqueAzul.prototype.act = function(environment){
 		      if(obstaculo.length >0)
 			{this.colision = 1;this.step=0;}
  		      else
-		        {this.colision = 0;this.step=0.25;}
+		        {this.colision = 0;this.step=0.2;}
 		    }//fin prototype sense
 		
 		    ReyBlanco.prototype.act = function(environment){ 	
@@ -2914,7 +2914,7 @@ BloqueAzul.prototype.act = function(environment){
 		      if(obstaculo.length >0)
 			{this.colision = 1;this.step=0;}
  		      else
-		        {this.colision = 0;this.step=0.25;}
+		        {this.colision = 0;this.step=0.2;}
 		    }//fin prototype sense
 		
 		    ReyNegro.prototype.act = function(environment){ 	
@@ -3010,7 +3010,7 @@ BloqueAzul.prototype.act = function(environment){
 		      if(obstaculo.length >0)
 			{this.colision = 1;this.step=0;}
  		      else
-		        {this.colision = 0;this.step=0.25;}
+		        {this.colision = 0;this.step=0.2;}
 		    }//fin prototype sense
 		
 		    CaballoBlanco.prototype.act = function(environment){ 	
@@ -3105,7 +3105,7 @@ BloqueAzul.prototype.act = function(environment){
 		      if(obstaculo.length >0)
 			{this.colision = 1;this.step=0;}
  		      else
-		        {this.colision = 0;this.step=0.25;}
+		        {this.colision = 0;this.step=0.2;}
 		    }//fin prototype sense
 		
 		    CaballoBlanco.prototype.act = function(environment){ 	
@@ -3200,7 +3200,7 @@ BloqueAzul.prototype.act = function(environment){
 		      if(obstaculo2.length > 0)
 		        {this.colision = 1;this.step=0;}
  		      else
-		        {this.colision = 0;this.step=0.25;}
+		        {this.colision = 0;this.step=0.2;}
 		    }//fin prototype sense
 		
 		    CaballoNegro.prototype.act = function(environment){ 	
@@ -3295,7 +3295,7 @@ BloqueAzul.prototype.act = function(environment){
 		      if(obstaculo2.length > 0)
 		        {this.colision = 1;this.step=0;}
  		      else
-		        {this.colision = 0;this.step=0.25;}
+		        {this.colision = 0;this.step=0.2;}
 		    }//fin prototype sense
 		
 		    CaballoNegro.prototype.act = function(environment){ 	
