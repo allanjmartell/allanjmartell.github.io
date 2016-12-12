@@ -3756,7 +3756,7 @@ function init() {
   ///////////////////////////////////////////Renderizador//////////////////////////////////////////////////////////////////////////
   renderizador = new THREE.WebGLRenderer();
   renderizador.setSize( window.innerHeight*.95, window.innerHeight*.95 );
-  renderizador.setClearColor(0x00fd00);
+  renderizador.setClearColor(scene.fog.color);
   renderizador.shadowMap.enabled=true;
   document.body.appendChild(renderizador.domElement);
   
