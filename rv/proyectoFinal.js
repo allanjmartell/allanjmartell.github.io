@@ -883,7 +883,8 @@ BloqueAzul.prototype.act = function(environment){
 			   (peonblanco2.position.x==torreblanca2.position.x && peonblanco2.position.z==torreblanca2.position.z))||
 			   (peonblanco2.position.x==alfilblanco1.position.x && peonblanco2.position.z==alfilblanco1.position.z))||
 			   (peonblanco2.position.x==alfilblanco2.position.x && peonblanco2.position.z==alfilblanco2.position.z))||
-			   (peonblanco2.position.x==caballoblanco1.position.x && peonblanco2.position.z==caballoblanco1.position.z))||
+			   ((peonblanco2.position.x==caballoblanco1.position.x && peonblanco2.position.z==caballoblanco1.position.z)&&
+			      (peonblanco2.position.y==caballoblanco1.position.y)))||
 			   (peonblanco2.position.x==caballoblanco2.position.x && peonblanco2.position.z==caballoblanco2.position.z))||
 			   (peonblanco2.position.x==reyblanco.position.x && peonblanco2.position.z==reyblanco.position.z))||
 			   (peonblanco2.position.x==reinablanca.position.x && peonblanco2.position.z==reinablanca.position.z)){
