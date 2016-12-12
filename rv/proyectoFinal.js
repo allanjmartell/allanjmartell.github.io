@@ -3747,8 +3747,9 @@ loop();
 
 function init() {
   ////////////////////////////////////////////Escena//////////////////////////////////////////////////////////////////////////////
+  var texturaescena = new THREE.TextureLoader().load('wallpaper.jpg');
   escena = new Environment();
-  
+  escena.background(texturaescena);
   //////////////////////////////////////////////////Camara///////////////////////////////////////////////////////////////////////
   camara = new THREE.PerspectiveCamera();
   camara.position.z=130;
@@ -3756,7 +3757,6 @@ function init() {
   ///////////////////////////////////////////Renderizador//////////////////////////////////////////////////////////////////////////
   renderizador = new THREE.WebGLRenderer();
   renderizador.setSize( window.innerHeight*.95, window.innerHeight*.95 );
-  renderizador.setClearColor(scene.fog.color);
   renderizador.shadowMap.enabled=true;
   document.body.appendChild(renderizador.domElement);
   
