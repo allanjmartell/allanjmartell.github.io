@@ -3757,7 +3757,7 @@ function init() {
   camara.position.z=130;
   camara.position.x=50; 
   ///////////////////////////////////////////Renderizador//////////////////////////////////////////////////////////////////////////
-  renderizador = new THREE.WebGLRenderer();
+  renderizador = new THREE.WebGLRenderer({antialias:true});
   renderizador.setSize( window.innerHeight*.95, window.innerHeight*.95 );
   renderizador.shadowMap.enabled=true;
   document.body.appendChild(renderizador.domElement);
@@ -3766,7 +3766,9 @@ function init() {
   var luzblan= new THREE.PointLight(0xFFFFFF);
   var luzblan2=new THREE.PointLight(0xFFFFFF);
   var luzblan3= new THREE.PointLight(0xFFFFFF);
-  
+  luzblan.castShadow=true;
+  luzblan2.castShadow=true;
+  luzblan3.castShadow=true;
   luzblan.position.y=300; luzblan.position.z=50; luzblan.position.x=-50;
   luzblan2.position.y=300;  luzblan2.position.z=-150; luzblan2.position.x=50;
   luzblan3.position.y=-300;  luzblan3.position.z=-50;  luzblan3.position.x=50;
