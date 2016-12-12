@@ -3027,7 +3027,7 @@ BloqueAzul.prototype.act = function(environment){
 			  caballoblanco1.position.z -= this.step;
 		      }//fin if posicion z
 		      if (this.colision!=1){
-			if(caballoblanco1.position.x!=bvcb1.position.x && caballoblanco1.position.z!=bvcb1.position.z)
+			if(caballoblanco1.position.x!=bvcb1.position.x || caballoblanco1.position.z!=bvcb1.position.z)
 			   {caballoblanco1.position.y += this.step;}
 			else
 			   {caballoblanco1.position.y = 4.5;}
@@ -3082,8 +3082,7 @@ BloqueAzul.prototype.act = function(environment){
 			{peonnegro8.position.y=100;peonnegro8.position.x=100;escena.remove(peonnegro8);}
 			///////////////////////////////////Piezas iguales///////////////////////////////////////////////
                         if (((((((((((((((caballoblanco1.position.x==peonblanco1.position.x && caballoblanco1.position.z==peonblanco1.position.z)||
-			   ((caballoblanco1.position.x==peonblanco2.position.x && caballoblanco1.position.z==peonblanco2.position.z)&&
-					(caballoblanco1.position.y==4.5)))||
+			   (caballoblanco1.position.x==peonblanco2.position.x && caballoblanco1.position.z==peonblanco2.position.z))||
 			   (caballoblanco1.position.x==peonblanco3.position.x && caballoblanco1.position.z==peonblanco3.position.z))||
 			   (caballoblanco1.position.x==peonblanco4.position.x && caballoblanco1.position.z==peonblanco4.position.z))||
 			   (caballoblanco1.position.x==peonblanco5.position.x && caballoblanco1.position.z==peonblanco5.position.z))||
