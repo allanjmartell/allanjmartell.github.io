@@ -162,6 +162,7 @@ function CaballoBlanco(x=0,y=0,z=0){
   this.position.y=y;
   this.position.z=z;
   this.position.x=x;
+  this.castShadow=true;
   this.sensor = new Sensor();
 }
 
@@ -175,6 +176,7 @@ function CaballoNegro(x=0,y=0,z=0){
   this.position.y=y;
   this.position.z=z;
   this.position.x=x;
+  this.castShadow=true;
   this.sensor = new Sensor();
 }
 
@@ -3762,12 +3764,12 @@ function init() {
   
   /////////////////////////////////////////////////////Luces/////////////////////////////////////////////////////////////////////
   var luzblan= new THREE.PointLight(0xFFFFFF);
-  //var luzblan2=new THREE.PointLight(0xFFFFFF);
-  //var luzblan3= new THREE.PointLight(0xFFFFFF);
+  var luzblan2=new THREE.PointLight(0xFFFFFF);
+  var luzblan3= new THREE.PointLight(0xFFFFFF);
   
   luzblan.position.y=300; luzblan.position.z=50; luzblan.position.x=-50;
-  //luzblan2.position.y=300;  luzblan2.position.z=-150; luzblan2.position.x=50;
-  //luzblan3.position.y=300;  luzblan3.position.z=50;  luzblan3.position.x=150;
+  luzblan2.position.y=300;  luzblan2.position.z=-150; luzblan2.position.x=50;
+  luzblan3.position.y=-300;  luzblan3.position.z=-50;  luzblan3.position.x=50;
   ///////////////////////////////////////////////Textura/////////////////////////////////////////////////////////////////////////////
 
   var textura3 = new THREE.TextureLoader().load('cerablanca.jpg');
@@ -3888,7 +3890,7 @@ function init() {
   caballonegro1.castShadow=true;
   caballonegro2.castShadow=true;
   //Luces
-  escena.add(luzblan);
+  escena.add(luzblan,luzblan2,luzblan3);
   escena.rotateX(Math.PI/4);
 }
 
