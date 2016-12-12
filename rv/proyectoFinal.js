@@ -3886,11 +3886,6 @@ function init() {
   /////////////////////////////////////////Bloques////////////////////////////////////////////////////////////////////
   bloqueazul = new BloqueAzul(10,0,-10);
   escena.add(grupo,grupo2,grupo3,bloqueazul);
-  ////////////////////////////////////////Sombras/////////////////////////////////////////////////////////////////////7
-  caballoblanco1.castShadow=true;
-  caballoblanco2.castShadow=true;
-  caballonegro1.castShadow=true;
-  caballonegro2.castShadow=true;
   //Luces
   escena.add(luzblan,luzblan2,luzblan3);
   escena.rotateX(Math.PI/4);
