@@ -3030,9 +3030,9 @@ BloqueAzul.prototype.act = function(environment){
 			var operacion=Math.abs(bvcb1.position.x-caballoblanco1.position.x);
 			if((caballoblanco1.position.y==bvcb1.position.y && caballoblanco1.position.x<caballoblanco1.position.x+operacion)||
 			   (caballoblanco1.position.y==bvcb1.position.y && caballoblanco1.position.x>caballoblanco1.position.x-operacion))
-			  caballoblanco1.position.y += this.step/5;
+			  caballoblanco1.position.y += this.step+1;
 			if(caballoblanco1.position.x>=caballoblanco1.position.x+operacion || caballoblanco1.position.x<=caballoblanco1.position.x-operacion)
-			  caballoblanco1.position.y -= this.step/5;
+			  caballoblanco1.position.y -= this.step+1;
 		      }//fin if posicion z
 			if((caballoblanco1.position.x==torrenegra1.position.x && caballoblanco1.position.z==torrenegra1.position.z)&&
 			  (caballoblanco1.position.y==torrenegra1.position.y))
