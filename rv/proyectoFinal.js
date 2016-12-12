@@ -3028,7 +3028,7 @@ BloqueAzul.prototype.act = function(environment){
 		      }//fin if posicion z
 		      if (this.colision!=1){
 			if(caballoblanco1.position.x!=bvcb1.position.x || caballoblanco1.position.z!=bvcb1.position.z)
-			   {caballoblanco1.position.y += this.step;}
+			   {caballoblanco1.position.y += this.step*2;}
 			else
 			   {caballoblanco1.position.y = 4.5;}
 		      }//fin if posicion y
