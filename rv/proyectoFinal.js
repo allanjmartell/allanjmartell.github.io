@@ -3756,6 +3756,8 @@ function init() {
   ///////////////////////////////////////////Renderizador//////////////////////////////////////////////////////////////////////////
   renderizador = new THREE.WebGLRenderer();
   renderizador.setSize( window.innerHeight*.95, window.innerHeight*.95 );
+  renderizador.setClearColor(0x00fd00);
+  renderizador.shadowMap.enabled=true;
   document.body.appendChild(renderizador.domElement);
   
   /////////////////////////////////////////////////////Luces/////////////////////////////////////////////////////////////////////
@@ -3880,6 +3882,11 @@ function init() {
   /////////////////////////////////////////Bloques////////////////////////////////////////////////////////////////////
   bloqueazul = new BloqueAzul(10,0,-10);
   escena.add(grupo,grupo2,grupo3,bloqueazul);
+  ////////////////////////////////////////Sombras/////////////////////////////////////////////////////////////////////7
+  caballoblanco1.castShadow=true;
+  caballoblanco2.castShadow=true;
+  caballonegro1.castShadow=true;
+  caballonegro2.castShadow=true;
   //Luces
   escena.add(luzblan,luzblan2,luzblan3);
   escena.rotateX(Math.PI/4);
