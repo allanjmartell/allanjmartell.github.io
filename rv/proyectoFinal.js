@@ -3422,6 +3422,50 @@ BloqueAzul.prototype.act = function(environment){
 			bloquemorado.visible=false;
 		     }
 		     grupomorado.add(bloquemorado);
+		     if ((((((((((((((((peonnegro1.position.x===bloquerojo.position.x+10 && peonnegro1.position.z===bloquerojo.position.z-10)||
+			     (peonnegro2.position.x===bloquerojo.position.x+10 && peonnegro2.position.z===bloquerojo.position.z-10))||
+			     (peonnegro3.position.x===bloquerojo.position.x+10 && peonnegro3.position.z===bloquerojo.position.z-10))||
+			     (peonnegro4.position.x===bloquerojo.position.x+10 && peonnegro4.position.z===bloquerojo.position.z-10))||
+			     (peonnegro5.position.x===bloquerojo.position.x+10 && peonnegro5.position.z===bloquerojo.position.z-10))||
+			     (peonnegro6.position.x===bloquerojo.position.x+10 && peonnegro6.position.z===bloquerojo.position.z-10))||
+			     (peonnegro7.position.x===bloquerojo.position.x+10 && peonnegro7.position.z===bloquerojo.position.z-10))||
+		             (peonnegro8.position.x===bloquerojo.position.x+10 && peonnegro8.position.z===bloquerojo.position.z-10))||
+			     (torrenegra1.position.x===bloquerojo.position.x+10 && torrenegra1.position.z===bloquerojo.position.z-10))||
+		             (torrenegra2.position.x===bloquerojo.position.x+10 && torrenegra2.position.z===bloquerojo.position.z-10))||
+		             (caballonegro1.position.x===bloquerojo.position.x+10 && caballonegro1.position.z===bloquerojo.position.z-10))||
+		             (caballonegro2.position.x===bloquerojo.position.x+10 && caballonegro2.position.z===bloquerojo.position.z-10))||
+		             (alfilnegro1.position.x===bloquerojo.position.x+10 && alfilnegro1.position.z===bloquerojo.position.z-10))||
+		             (alfilnegro2.position.x===bloquerojo.position.x+10 && alfilnegro2.position.z===bloquerojo.position.z-10))||
+		             (reinanegra.position.x===bloquerojo.position.x+10 && reinanegra.position.z===bloquerojo.position.z-10))||
+		             (reynegro.position.x===bloquerojo.position.x+10 && reynegro.position.z===bloquerojo.position.z-10)){
+			     bloquemorado = new BloqueMorado(bloquerojo.position.x+10,0,bloquerojo.position.z-10);
+		     	     if (bloquemorado.position.x>80){
+				bloquemorado.visible=false;
+		     	     }
+		     	     grupomorado.add(bloquemorado);
+		     }
+		     if ((((((((((((((((peonnegro1.position.x===bloquerojo.position.x+10 && peonnegro1.position.z===bloquerojo.position.z+10)||
+			     (peonnegro2.position.x===bloquerojo.position.x+10 && peonnegro2.position.z===bloquerojo.position.z+10))||
+			     (peonnegro3.position.x===bloquerojo.position.x+10 && peonnegro3.position.z===bloquerojo.position.z+10))||
+			     (peonnegro4.position.x===bloquerojo.position.x+10 && peonnegro4.position.z===bloquerojo.position.z+10))||
+			     (peonnegro5.position.x===bloquerojo.position.x+10 && peonnegro5.position.z===bloquerojo.position.z+10))||
+			     (peonnegro6.position.x===bloquerojo.position.x+10 && peonnegro6.position.z===bloquerojo.position.z+10))||
+			     (peonnegro7.position.x===bloquerojo.position.x+10 && peonnegro7.position.z===bloquerojo.position.z+10))||
+		             (peonnegro8.position.x===bloquerojo.position.x+10 && peonnegro8.position.z===bloquerojo.position.z+10))||
+			     (torrenegra1.position.x===bloquerojo.position.x+10 && torrenegra1.position.z===bloquerojo.position.z+10))||
+		             (torrenegra2.position.x===bloquerojo.position.x+10 && torrenegra2.position.z===bloquerojo.position.z+10))||
+		             (caballonegro1.position.x===bloquerojo.position.x+10 && caballonegro1.position.z===bloquerojo.position.z+10))||
+		             (caballonegro2.position.x===bloquerojo.position.x+10 && caballonegro2.position.z===bloquerojo.position.z+10))||
+		             (alfilnegro1.position.x===bloquerojo.position.x+10 && alfilnegro1.position.z===bloquerojo.position.z+10))||
+		             (alfilnegro2.position.x===bloquerojo.position.x+10 && alfilnegro2.position.z===bloquerojo.position.z+10))||
+		             (reinanegra.position.x===bloquerojo.position.x+10 && reinanegra.position.z===bloquerojo.position.z+10))||
+		             (reynegro.position.x===bloquerojo.position.x+10 && reynegro.position.z===bloquerojo.position.z+10)){
+			     bloquemorado = new BloqueMorado(bloquerojo.position.x+10,0,bloquerojo.position.z+10);
+		     	     if (bloquemorado.position.x>80){
+				bloquemorado.visible=false;
+		     	     }
+		     	     grupomorado.add(bloquemorado);
+		     }
 		     escena.add(grupomorado);  
 	             bloqueverde = new BloqueVerde(bloquerojo.position.x,0,bloquerojo.position.z);
 		     escena.add(bloqueverde);
@@ -3441,6 +3485,50 @@ BloqueAzul.prototype.act = function(environment){
 			bloquemorado.visible=false;
 		     }
 		     grupomorado.add(bloquemorado);
+		     if (((((((((((((((peonblanco1.position.x===bloquerojo.position.x-10 && peonblanco1.position.z===bloquerojo.position.z-10)||
+			     (peonblanco2.position.x===bloquerojo.position.x-10 && peonblanco2.position.z===bloquerojo.position.z-10))||
+			     (peonblanco3.position.x===bloquerojo.position.x-10 && peonblanco3.position.z===bloquerojo.position.z-10))||
+			     (peonblanco4.position.x===bloquerojo.position.x-10 && peonblanco4.position.z===bloquerojo.position.z-10))||
+			     (peonblanco5.position.x===bloquerojo.position.x-10 && peonblanco5.position.z===bloquerojo.position.z-10))||
+			     (peonblanco6.position.x===bloquerojo.position.x-10 && peonblanco6.position.z===bloquerojo.position.z-10))||
+			     (peonblanco7.position.x===bloquerojo.position.x-10 && peonblanco7.position.z===bloquerojo.position.z-10))||
+		             (peonblanco8.position.x===bloquerojo.position.x-10 && peonblanco8.position.z===bloquerojo.position.z-10))||
+ 			     (torreblanca1.position.x===bloquerojo.position.x-10 && torreblanca1.position.z===bloquerojo.position.z-10)||
+			     (torreblanca2.position.x===bloquerojo.position.x-10 && torreblanca2.position.z===bloquerojo.position.z-10))||
+			     (caballoblanco1.position.x===bloquerojo.position.x-10 && caballoblanco1.position.z===bloquerojo.position.z-10))||
+			     (caballoblanco2.position.x===bloquerojo.position.x-10 && caballoblanco2.position.z===bloquerojo.position.z-10))||
+			     (alfilblanco1.position.x===bloquerojo.position.x-10 && alfilblanco1.position.z===bloquerojo.position.z-10))||
+			     (alfilblanco2.position.x===bloquerojo.position.x-10 && alfilblanco2.position.z===bloquerojo.position.z-10))||
+			     (reinablanca.position.x===bloquerojo.position.x-10 && reinablanca.position.z===bloquerojo.position.z-10))||
+		             (reyblanco.position.x===bloquerojo.position.x-10 && reyblanco.position.z===bloquerojo.position.z-10)){
+			     bloquemorado = new BloqueMorado(bloquerojo.position.x-10,0,bloquerojo.position.z-10);
+		     	     if (bloquemorado.position.x<10){
+				bloquemorado.visible=false;
+		     	     }
+		     	     grupomorado.add(bloquemorado);
+		     }
+		     if (((((((((((((((peonblanco1.position.x===bloquerojo.position.x-10 && peonblanco1.position.z===bloquerojo.position.z+10)||
+			     (peonblanco2.position.x===bloquerojo.position.x-10 && peonblanco2.position.z===bloquerojo.position.z+10))||
+			     (peonblanco3.position.x===bloquerojo.position.x-10 && peonblanco3.position.z===bloquerojo.position.z+10))||
+			     (peonblanco4.position.x===bloquerojo.position.x-10 && peonblanco4.position.z===bloquerojo.position.z+10))||
+			     (peonblanco5.position.x===bloquerojo.position.x-10 && peonblanco5.position.z===bloquerojo.position.z+10))||
+			     (peonblanco6.position.x===bloquerojo.position.x-10 && peonblanco6.position.z===bloquerojo.position.z+10))||
+			     (peonblanco7.position.x===bloquerojo.position.x-10 && peonblanco7.position.z===bloquerojo.position.z+10))||
+		             (peonblanco8.position.x===bloquerojo.position.x-10 && peonblanco8.position.z===bloquerojo.position.z+10))||
+ 			     (torreblanca1.position.x===bloquerojo.position.x-10 && torreblanca1.position.z===bloquerojo.position.z+10)||
+			     (torreblanca2.position.x===bloquerojo.position.x-10 && torreblanca2.position.z===bloquerojo.position.z+10))||
+			     (caballoblanco1.position.x===bloquerojo.position.x-10 && caballoblanco1.position.z===bloquerojo.position.z+10))||
+			     (caballoblanco2.position.x===bloquerojo.position.x-10 && caballoblanco2.position.z===bloquerojo.position.z+10))||
+			     (alfilblanco1.position.x===bloquerojo.position.x-10 && alfilblanco1.position.z===bloquerojo.position.z+10))||
+			     (alfilblanco2.position.x===bloquerojo.position.x-10 && alfilblanco2.position.z===bloquerojo.position.z+10))||
+			     (reinablanca.position.x===bloquerojo.position.x-10 && reinablanca.position.z===bloquerojo.position.z+10))||
+		             (reyblanco.position.x===bloquerojo.position.x-10 && reyblanco.position.z===bloquerojo.position.z+10)){
+			     bloquemorado = new BloqueMorado(bloquerojo.position.x-10,0,bloquerojo.position.z+10);
+		     	     if (bloquemorado.position.x<10){
+				bloquemorado.visible=false;
+		     	     }
+		     	     grupomorado.add(bloquemorado);
+		     }  
 		     escena.add(grupomorado);  
 	             bloqueverde = new BloqueVerde(bloquerojo.position.x,0,bloquerojo.position.z);
 		     escena.add(bloqueverde);
